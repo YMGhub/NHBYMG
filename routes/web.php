@@ -12,6 +12,11 @@ Route::get('/about-us', function () {
     return view('about-us');
 })->name('about-us');
 
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -27,11 +32,11 @@ Route::middleware([
     Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard2', function () {
         return view('dashboard2');
     })->name('dashboard2');
-    
+
     Route::middleware(['auth:sanctum', 'verified'])->get('/page1', function () {
         return view('page1');
     })->name('page1');
-    
+
     Route::middleware(['auth:sanctum', 'verified'])->get('/page2', function () {
         return view('page2');
     })->name('page2');
