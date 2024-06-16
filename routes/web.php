@@ -38,8 +38,18 @@ Route::get('/careers', function () {
     return view('careers');
 })->name('careers');
 
+Route::post('/careers/apply', [CareerController::class, 'submitApplication'])->name('careers.apply');
 
-Route::post('/careers/apply', [CareerController::class, 'submitApplication'])->name('careers.apply');;
+Route::get('/faq', function () {
+    return view('faq');
+})->name('faq');
+
+Route::get('/our-services', function () {
+    return view('our-services');
+})->name('our-services');
+
+
+
 
 Route::get('/contact', function () {
     return view('contact');
