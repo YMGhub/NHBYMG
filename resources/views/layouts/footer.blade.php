@@ -8,7 +8,7 @@
                 <div class="col-md-5 col-sm-6">
                     <img class="footer-logo" src="/images/thumbnail_image001-removebg-preview.png" alt="">
                     <br><br>
-                    <p>Essstablished on April 1st, 1973, under the Housing Act cap 226, the National Housing Corporation boasts over five decades of dedicated service. As a government-owned entity, our headquarters are conveniently located on Country Road in St. Michael, with multiple depots spread across urban and rural Barbados to better serve our tenants. </p>
+                    <p>Established on April 1st, 1973, under the Housing Act cap 226, the National Housing Corporation boasts over five decades of dedicated service. As a government-owned entity, our headquarters are conveniently located on Country Road in St. Michael, with multiple depots spread across urban and rural Barbados to better serve our tenants. </p>
                 </div>
 
                 <div class="col-md-4 col-sm-6 ">
