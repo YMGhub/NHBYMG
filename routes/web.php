@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ListingsController;
+use App\Http\Controllers\CareerController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -32,6 +33,13 @@ Route::get('/our-department', function () {
 Route::get('/commercial-endeavors', function () {
     return view('commercial-endeavors');
 })->name('commercial-endeavors');
+
+Route::get('/careers', function () {
+    return view('careers');
+})->name('careers');
+
+
+Route::post('/careers/apply', [CareerController::class, 'submitApplication'])->name('careers.apply');;
 
 Route::get('/contact', function () {
     return view('contact');
