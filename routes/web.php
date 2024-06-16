@@ -12,6 +12,14 @@ Route::get('/about-us', function () {
     return view('about-us');
 })->name('about-us');
 
+Route::get('/mission-and-vision', function () {
+    return view('mission-and-vision');
+})->name('mission-and-vision');
+
+Route::get('/our-executives', function () {
+    return view('our-executives');
+})->name('our-executives');
+
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
