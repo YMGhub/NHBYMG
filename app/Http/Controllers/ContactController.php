@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use Validator;
 use App\Models\Contact;
 use Illuminate\Http\Request;
-use Validator;
+use App\Mail\ContactFormMail;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -27,6 +29,8 @@ class ContactController extends Controller
             'comments' => $request->comments,
 
         ]);
+
+        Mail::to('jonathan.motta@yellomg.com')->send(new ContactFormMail($validatedData['name'],$validatedData['comments']));
 
         // Redirect back with success message
         return redirect("/contact")->with('success', 'Message received successfully!');
