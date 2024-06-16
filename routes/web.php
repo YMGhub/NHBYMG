@@ -20,6 +20,19 @@ Route::get('/our-executives', function () {
     return view('our-executives');
 })->name('our-executives');
 
+Route::get('/our-executives', function () {
+    return view('our-executives');
+})->name('our-executives');
+
+
+Route::get('/our-department', function () {
+    return view('our-department');
+})->name('our-department');
+
+Route::get('/commercial-endeavors', function () {
+    return view('commercial-endeavors');
+})->name('commercial-endeavors');
+
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
