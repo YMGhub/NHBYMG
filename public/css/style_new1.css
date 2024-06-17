@@ -16281,7 +16281,7 @@ body .pac-container {
 }
 
 #header.cloned {
-    z-index: 99999 !important;
+    z-index: 999 !important;
 }
 
 .showForm {
@@ -16311,7 +16311,7 @@ body .pac-container {
 
 .photo-grid-item h3 {
     color: #274abb;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-align: center;
     margin-top: 10px;
     font-weight: bold;

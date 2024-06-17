@@ -5,11 +5,8 @@
 $(document).ready(function(){
 
     //modal Project
-    jQuery('#lightboxModal').on('show.bs.modal', function (event) {
-        var button = jQuery(event.relatedTarget); // Button that triggered the modal
-        var imageSrc = button.data('image'); // Extract info from data-* attributes
-        var modal = jQuery(this);
-        modal.find('.modal-body img').attr('src', imageSrc);
+    Fancybox.bind("[data-fancybox]", {
+        // Your custom options
       });
 
     /*Login and register form*/

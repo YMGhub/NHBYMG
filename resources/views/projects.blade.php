@@ -103,33 +103,33 @@
                     <!-- <h3 class="desc-headline no-border">Floorplans</h3> -->
                     <!-- Accordion -->
                     <!-- <div class="style-1 fp-accordion">
-                                            <div class="accordion">
+                                                    <div class="accordion">
 
-                                                <h3>First Floor <span>460 sq ft</span> <i class="fa fa-angle-down"></i> </h3>
-                                                <div>
-                                                    <a class="floor-pic mfp-image" href="https://i.imgur.com/kChy7IU.jpg">
-                                                        <img src="https://i.imgur.com/kChy7IU.jpg" alt="">
-                                                    </a>
-                                                    <p>Mauris mauris ante, blandit et, ultrices a, susceros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate aliquam egestas litora torquent conubia.</p>
-                                                </div>
+                                                        <h3>First Floor <span>460 sq ft</span> <i class="fa fa-angle-down"></i> </h3>
+                                                        <div>
+                                                            <a class="floor-pic mfp-image" href="https://i.imgur.com/kChy7IU.jpg">
+                                                                <img src="https://i.imgur.com/kChy7IU.jpg" alt="">
+                                                            </a>
+                                                            <p>Mauris mauris ante, blandit et, ultrices a, susceros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate aliquam egestas litora torquent conubia.</p>
+                                                        </div>
 
-                                                <h3>Second Floor <span>440 sq ft</span> <i class="fa fa-angle-down"></i></h3>
-                                                <div>
-                                                    <a class="floor-pic mfp-image" href="https://i.imgur.com/l2VNlwu.jpg">
-                                                        <img src="https://i.imgur.com/l2VNlwu.jpg" alt="">
-                                                    </a>
-                                                    <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. Nullam laoreet, velit ut taciti sociosqu condimentum feugiat.</p>
-                                                </div>
+                                                        <h3>Second Floor <span>440 sq ft</span> <i class="fa fa-angle-down"></i></h3>
+                                                        <div>
+                                                            <a class="floor-pic mfp-image" href="https://i.imgur.com/l2VNlwu.jpg">
+                                                                <img src="https://i.imgur.com/l2VNlwu.jpg" alt="">
+                                                            </a>
+                                                            <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. Nullam laoreet, velit ut taciti sociosqu condimentum feugiat.</p>
+                                                        </div>
 
-                                                <h3>Garage <span>140 sq ft</span> <i class="fa fa-angle-down"></i></h3>
-                                                <div>
-                                                    <a class="floor-pic mfp-image" href="https://i.imgur.com/0zJYERy.jpg">
-                                                        <img src="https://i.imgur.com/0zJYERy.jpg" alt="">
-                                                    </a>
-                                                </div>
+                                                        <h3>Garage <span>140 sq ft</span> <i class="fa fa-angle-down"></i></h3>
+                                                        <div>
+                                                            <a class="floor-pic mfp-image" href="https://i.imgur.com/0zJYERy.jpg">
+                                                                <img src="https://i.imgur.com/0zJYERy.jpg" alt="">
+                                                            </a>
+                                                        </div>
 
-                                            </div>
-                                        </div> -->
+                                                    </div>
+                                                </div> -->
                 </div>
             </div>
             <!-- Property Description / End -->
@@ -141,8 +141,10 @@
             <div class="col-md-4">
                 <div class="photo-grid-item">
                     <div class="boxImage">
-                        <img src="images/project/1.jpg" class="img-fluid" alt="Photo 1" data-toggle="modal"
-                            data-target="#lightboxModal" data-image="images/project/1.jpg">
+
+                        <a href="images/project/1.jpg" data-fancybox data-caption="Electrical Upgrade Project">
+                            <img src="images/project/1.jpg" />
+                        </a>
                     </div>
                     <div class="titleImage">
                         <h3>Electrical Upgrade Project</h3>
@@ -154,8 +156,10 @@
             <div class="col-md-4">
                 <div class="photo-grid-item">
                     <div class="boxImage">
-                        <img src="images/project/21.jpg" class="img-fluid" alt="Photo 2" data-toggle="modal"
-                            data-target="#lightboxModal" data-image="images/project/21.jpg">
+
+                        <a href="images/project/21.jpg" data-fancybox data-caption="Hurricane Elsa Project">
+                            <img src="images/project/21.jpg" />
+                        </a>
                     </div>
                     <div class="titleImage">
                         <h3>Hurricane Elsa Project</h3>
@@ -166,9 +170,11 @@
             <div class="col-md-4">
                 <div class="photo-grid-item">
                     <div class="boxImage">
-                        <img src="images/project/23.jpg" class="img-fluid" alt="Photo 3" data-toggle="modal"
-                            data-target="#lightboxModal" data-image="images/project/23.jpg">
+                        <a href="images/project/23.jpg" data-fancybox data-caption="Hurricane Elsa Project">
+                            <img src="images/project/23.jpg" />
+                        </a>
                     </div>
+
                     <div class="titleImage">
                         <h3>Hurricane Elsa Project</h3>
                     </div>
@@ -181,8 +187,10 @@
             <div class="col-md-4">
                 <div class="photo-grid-item">
                     <div class="boxImage">
-                        <img src="images/project/24.jpg" class="img-fluid" alt="Photo 1" data-toggle="modal"
-                            data-target="#lightboxModal" data-image="images/project/24.jpg">
+
+                        <a href="images/project/24.jpg" data-fancybox data-caption="Hurricane Elsa Project">
+                            <img src="images/project/24.jpg" />
+                        </a>
                     </div>
                     <div class="titleImage">
                         <h3>Hurricane Elsa Project</h3>
@@ -193,8 +201,11 @@
             <div class="col-md-4">
                 <div class="photo-grid-item">
                     <div class="boxImage">
-                        <img src="images/project/26.jpg" class="img-fluid" alt="Photo 2" data-toggle="modal"
-                            data-target="#lightboxModal" data-image="images/project/26.jpg">
+
+
+                        <a href="images/project/26.jpg" data-fancybox data-caption="NHC East/Project">
+                            <img src="images/project/26.jpg" />
+                        </a>
                     </div>
 
                     <div class="titleImage">
@@ -205,8 +216,10 @@
             <div class="col-md-4">
                 <div class="photo-grid-item">
                     <div class="boxImage">
-                        <img src="images/project/27.jpg" class="img-fluid" alt="Photo 3" data-toggle="modal"
-                            data-target="#lightboxModal" data-image="images/project/27.jpg">
+
+                        <a href="images/project/27.jpg" data-fancybox data-caption="Whitehall Relocation Project">
+                            <img src="images/project/27.jpg" />
+                        </a>
                     </div>
                     <div class="titleImage">
                         <h3>Whitehall Relocation Project</h3>
@@ -216,21 +229,7 @@
             <!-- Add more photo items here -->
         </div>
 
-        <div class="modal fade" id="lightboxModal" tabindex="-1" aria-labelledby="lightboxModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered"  style="max-width: 60%;" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close closeModal" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <img src="" id="lightboxImage" class="img-fluid" alt="Lightbox Image">
-                    </div>
-                </div>
-            </div>
-        </div>
+
 
     </div>
 @endsection
