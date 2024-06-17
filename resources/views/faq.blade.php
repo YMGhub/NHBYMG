@@ -48,7 +48,6 @@
         <div class="col-lg-12 col-md-7 sp-content">
 			<div class="property-description">
 				<!-- Description -->
-				<h3 class="desc-headline">FAQS</h3>
 				<div class="input">
 											<div class="toggle-wrap style-2">
                         <span class="trigger">
