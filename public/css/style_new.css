@@ -70,7 +70,7 @@
 /* ------------------------------------------------------------------- */
 /* 01. Import Section
 ---------------------------------------------------------------------- */
-@import url("bootstrap.css");
+@import url("bootstrap3.css");
 /* Default Reset, Typography, Forms, Responsive Grid etc. */
 @import url("icons.css");
 /* Webfont Icons: FontAwesome, Line, Simple Line */
