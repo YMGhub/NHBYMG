@@ -36,7 +36,7 @@
                 <div class="col-md-3  col-sm-12">
                     <h4>Contact Us</h4>
                     <div class="text-widget">
-                        <span>“The Garden” Country Roade</span> <br>
+                        <span>“The Garden” Country Road</span> <br>
                         Phone: <span>1-246-536-5300</span><br>
                         E-Mail:<span> <a href="#">NHC.CustomerService@barbados.gov.bb</a> </span><br>
                     </div>
