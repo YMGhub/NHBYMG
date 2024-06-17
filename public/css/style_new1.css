@@ -12993,19 +12993,19 @@ body .notification strong {
     line-height: 130px;
 }
 
-.icon-box-1 .icon-container i {
+.icon-box-1 .icon-container .iconImg {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
     transition: all 0.2s ease-in;
     display: inline-block;
 }
 
-.icon-box-1:hover .icon-container i {
+.icon-box-1:hover .icon-container .iconImg {
     opacity: 0;
     transform: translate3d(0, 0, 0) scale(1.16);
 }
 
-.icon-box-1.alternative:hover .icon-container i {
+.icon-box-1.alternative:hover .icon-container .iconImg {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
 }
@@ -16324,4 +16324,33 @@ body .pac-container {
     padding: 10px;
     margin-top: 10px;
     display: inline-table;
+}
+
+.iconImg{
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.iconImg svg{
+    width: 70px;
+    height: 70px;
+}
+
+.iconImg svg path{
+    fill: #fff !important;
+}
+
+
+.servicesHome .input{
+    height: 210px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.ourServices .input{
+    height: 210px;
+    font-size: 13px;
+    margin-bottom: 20px;
 }
