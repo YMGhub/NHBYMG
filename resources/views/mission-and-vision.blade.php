@@ -66,13 +66,13 @@
 	</div>
 </div>
 
-<div class="container">
+<!--div class="container">
 	<div class="row">
 
-		<!-- Property Description -->
+
 		<div class="col-lg-12 col-md-7 sp-content mt-10">
 			<div class="property-description">
-				<!-- Description -->
+
 				<h3 class="desc-headline">VISION STATEMENT:</h3>
 				<h5 class="desc-headline">To ensure quality affordable for every Barbadian through the following core values: -</h5>
 				<div class="input">
@@ -85,7 +85,7 @@
 		</div>
 		<!-- Property Description / End -->
 	</div>
-</div>
+</div-->
 <br>
 <br>
 <br>
