@@ -7,7 +7,15 @@ $(document).ready(function(){
 
 
     //modal Project
-    Fancybox.bind("[data-fancybox]", {});
+    //Fancybox.bind("[data-fancybox]", {});
+    Fancybox.bind('[data-fancybox="gallery-a"]', {});
+    Fancybox.bind('[data-fancybox="gallery-b"]', {});
+    Fancybox.bind('[data-fancybox="gallery-c"]', {});
+    Fancybox.bind('[data-fancybox="gallery-d"]', {});
+    Fancybox.bind('[data-fancybox="gallery-e"]', {});
+    Fancybox.bind('[data-fancybox="gallery-f"]', {});
+    Fancybox.bind('[data-fancybox="gallery-g"]', {});
+    Fancybox.bind('[data-fancybox="gallery-h"]', {});
 
     /*Login and register form*/
 
