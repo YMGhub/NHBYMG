@@ -4,7 +4,7 @@
 
 $(document).ready(function(){
 
-    console.log("TEST");
+
 
     //modal Project
     Fancybox.bind("[data-fancybox]", {});
