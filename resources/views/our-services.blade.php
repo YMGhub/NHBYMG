@@ -31,11 +31,7 @@
                     <!-- Description -->
                     <h3 class="desc-headline">Our Services</h3>
                     <div class="input">
-                        <p>The National Housing Corporation offers a comprehensive range of housing and property-related
-                            services. With a history spanning over five decades, our commitment to providing affordable
-                            housing solutions to low- and middle-income individuals remains unwavering. Our dedication is to
-                            create thriving communities and provide quality housing solutions to benefit our clients and the
-                            community at large.</p>
+                        <p>The National Housing Corporation offers a comprehensive range of housing and property-related services. With a history spanning over five decades, our commitment to providing affordable housing solutions to low- and middle-income individuals remains unwavering. Our dedication is to create thriving communities and provide quality housing solutions to benefit our clients and the community at large. </p>
 
                         <!-- <a href="#" class="show-more-button">Show More <i class="fa fa-angle-down"></i></a> -->
                     </div>
@@ -193,6 +189,9 @@
                         </div>
 
                         <h4>Sale and Rental of Houses</h4>
+                        <div class="input">
+                            <p>Explore our diverse range of houses available for both sale and rental. Whether you're looking for a new home or a temporary residence, we offer a variety of housing options to suit your needs.</p>
+                        </div>
                        <p>
                         <a href="/our-services" class="button border">Apply Now</a>
                     </div>
@@ -211,6 +210,9 @@
                         </div>
 
                         <h4>Sale and Rental of Lots</h4>
+                        <div class="input">
+                            <p>Discover the perfect plot of land to build your dream home or invest in. We have a selection of lots available for sale or rental, allowing you to shape your future according to your preferences. </p>
+                        </div>
                         <a href="/our-services" class="button border">Apply Now</a>
                     </div>
                 </div>
@@ -228,6 +230,9 @@
                         </div>
 
                         <h4>Rent-to-Own Programs</h4>
+                        <div class="input">
+                            <p>Our rent-to-own programs provide a pathway to homeownership. Rent a property with the option to purchase it in the future, making it easier for you to transition from renting to owning. </p>
+                        </div>
                         <a href="/our-services" class="button border">Apply Now</a>
                     </div>
                 </div>
@@ -245,6 +250,9 @@
                         </div>
 
                         <h4>Relocation Programs</h4>
+                        <div class="input">
+                            <p>In times of national emergencies or planned relocations, our relocation programs help by providing new housing solutions. We aim to make the transition as smooth as possible during challenging circumstances. </p>
+                        </div>
                         <a href="/our-services" class="button border">Apply Now</a>
                     </div>
                 </div>
@@ -268,6 +276,9 @@
                         </div>
 
                         <h4>Issuance of Loans</h4>
+                        <div class="input">
+                            <p>Take advantage of our loan offerings, including the General Workers Loan Scheme, to support your housing-related financial needs. We're here to help you access the financial resources necessary for your housing goals. </p>
+                        </div>
                         <a href="/our-services" class="button border">Apply Now</a>
                     </div>
                 </div>
@@ -284,6 +295,9 @@
                         </div>
 
                         <h4>Maintenance of Estates</h4>
+                        <div class="input">
+                            <p>Our commitment to providing quality housing doesn't end at the point of sale or rental. We also offer estate maintenance services to ensure that your living environment remains safe, clean, and well-maintained for your convenience and peace of mind. </p>
+                        </div>
                         <a href="/our-services" class="button border">Apply Now</a>
                     </div>
                 </div>
