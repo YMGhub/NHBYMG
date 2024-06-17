@@ -16,7 +16,7 @@
 
 
 
-    <link rel="stylesheet" href="{{ asset('css/style_new.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style_new1.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style-template.css') }}">
     <link rel="stylesheet" href="{{ asset('css/color.css') }}">
 
