@@ -17,15 +17,16 @@
 
                         <li><a class="{{ Request::is('/') ? 'current' : '' }}" href="/">Home</a>
                         </li>
-
-                        <li><a class="{{ Request::is('projects') ? 'current' : '' }}" href="/projects">Projects</a>
-                        <li><a class="{{ Request::is('our-services') ? 'current' : '' }}" href="/our-services">Our Services</a>
                         <li><a class="{{ Request::is('about-us') ? 'current' : '' }}" href="/about-us">About Us</a>
-                            {{--<ul>--}}
-                                {{--<li><a class="{{ Request::is('mission-and-vision') ? 'current' : '' }}" href="mission-and-vision">Mission & Vision</a></li>--}}
-                                {{--<li><a class="{{ Request::is('commercial-endeavors') ? 'current' : '' }}" href="commercial-endeavors">Commercial Endeavors</a></li>--}}
-                            {{--</ul>--}}
-                        </li>
+                            <li><a class="{{ Request::is('our-services') ? 'current' : '' }}" href="/our-services">Our Services</a>
+
+                                {{--<ul>--}}
+                                    {{--<li><a class="{{ Request::is('mission-and-vision') ? 'current' : '' }}" href="mission-and-vision">Mission & Vision</a></li>--}}
+                                    {{--<li><a class="{{ Request::is('commercial-endeavors') ? 'current' : '' }}" href="commercial-endeavors">Commercial Endeavors</a></li>--}}
+                                {{--</ul>--}}
+                            </li>
+                        <li><a class="{{ Request::is('projects') ? 'current' : '' }}" href="/projects">Our Projects</a>
+
                         <li><a class="{{ Request::is('contact') ? 'current' : '' }}" href="contact">Contact Us</a></li>
                         </li>
                     </ul>

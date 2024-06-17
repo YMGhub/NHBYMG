@@ -36,18 +36,7 @@
                             future of housing in Barbados.
 
                         </p>
-                        • Joint Venture Projects <br>
-                        • Electrical Upgrade Programme <br>
-                        • Sewage and Wells Rejuvenation Programme <br>
-                        • East/West Project <br>
-                        • Whitehill to Farmers Relocation <br>
-                        • Rock Hall Relocation <br>
-                        • Hurricane Elsa Programme <br>
-                        • 20 Year Divestment Programme <br>
-                        • Environmental Protection Department – Report of Derelict Buildings and Car <br>
-                        • Report of Derelict Buildings and Cars <br>
-                        <a
-                            href="https://survey123.arcgis.com/share/7fcc232f06824bd1a428954c6db73882">https://survey123.arcgis.com/share/7fcc232f06824bd1a428954c6db73882</a>
+
 
                         <!-- <a href="#" class="show-more-button">Show More <i class="fa fa-angle-down"></i></a> -->
                     </div>
@@ -229,7 +218,13 @@
             <!-- Add more photo items here -->
         </div>
 
-
+        <div class="container">
+            <div class="row text-center">
+            <a href="https://survey123.arcgis.com/share/7fcc232f06824bd1a428954c6db73882" class="linkButton">
+                ENVIRONMENTAL PROTECTION DEPARTMENT
+            </a>
+            </div>
+        </div>
 
     </div>
 @endsection

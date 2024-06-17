@@ -616,8 +616,7 @@
             <div class="vc_column-inner">
                 <div class="wpb_wrapper">
                     <h3 style="font-weight:normal;text-align:center;"
-                        class="headline margin-top-15 margin-bottom-35     ">Companies We&#8217;ve Worked With <span>We can
-                            assist you with your innovation or commercialisation journey!</span></h3>
+                        class="headline margin-top-15 margin-bottom-35     ">Companies We&#8217;ve Worked With <span>Collaborating with our key government agencies to deliver comprehensive and sustainable housing solutions. </span></h3>
                     <div class="logo-carousel dot-navigation">
                         <div class="item">
                             <a href="https://ezpay.gov.bb/login" target="_blank">
