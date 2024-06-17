@@ -36,7 +36,7 @@
 		<!-- Contact Details -->
 		<div class="col-md-4 col-sm-4">
 
-			<h4 class="headline margin-bottom-30">Find Us There</h4>
+			<h4 class="headline margin-bottom-30">Find Us Here</h4>
 
 			<!-- Contact Details -->
 			<div class="sidebar-textbox">
@@ -60,7 +60,7 @@
 		<div class="col-md-8 col-sm-8">
 
 			<section id="contact">
-				<h4 class="headline margin-bottom-35">Contact Form</h4>
+				<h4 class="headline margin-bottom-35">Send Us A Message</h4>
 
 				<!--div id="contact-message"></div-->
 
