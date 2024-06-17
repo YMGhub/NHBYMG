@@ -46,7 +46,7 @@
 	<div class="row">
 		<!-- Property Description -->
         <div class="col-lg-12 col-md-7 sp-content">
-			<div class="property-description">
+			<div class="property-description" style="padding-top:25px;padding-bottom:25px">
 				<!-- Description -->
 				<div class="input">
 											<div class="toggle-wrap style-2">
