@@ -92,33 +92,33 @@
                     <!-- <h3 class="desc-headline no-border">Floorplans</h3> -->
                     <!-- Accordion -->
                     <!-- <div class="style-1 fp-accordion">
-                                                                                <div class="accordion">
+                                                                                        <div class="accordion">
 
-                                                                                    <h3>First Floor <span>460 sq ft</span> <i class="fa fa-angle-down"></i> </h3>
-                                                                                    <div>
-                                                                                        <a class="floor-pic mfp-image" href="https://i.imgur.com/kChy7IU.jpg">
-                                                                                            <img src="https://i.imgur.com/kChy7IU.jpg" alt="">
-                                                                                        </a>
-                                                                                        <p>Mauris mauris ante, blandit et, ultrices a, susceros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate aliquam egestas litora torquent conubia.</p>
-                                                                                    </div>
+                                                                                            <h3>First Floor <span>460 sq ft</span> <i class="fa fa-angle-down"></i> </h3>
+                                                                                            <div>
+                                                                                                <a class="floor-pic mfp-image" href="https://i.imgur.com/kChy7IU.jpg">
+                                                                                                    <img src="https://i.imgur.com/kChy7IU.jpg" alt="">
+                                                                                                </a>
+                                                                                                <p>Mauris mauris ante, blandit et, ultrices a, susceros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate aliquam egestas litora torquent conubia.</p>
+                                                                                            </div>
 
-                                                                                    <h3>Second Floor <span>440 sq ft</span> <i class="fa fa-angle-down"></i></h3>
-                                                                                    <div>
-                                                                                        <a class="floor-pic mfp-image" href="https://i.imgur.com/l2VNlwu.jpg">
-                                                                                            <img src="https://i.imgur.com/l2VNlwu.jpg" alt="">
-                                                                                        </a>
-                                                                                        <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. Nullam laoreet, velit ut taciti sociosqu condimentum feugiat.</p>
-                                                                                    </div>
+                                                                                            <h3>Second Floor <span>440 sq ft</span> <i class="fa fa-angle-down"></i></h3>
+                                                                                            <div>
+                                                                                                <a class="floor-pic mfp-image" href="https://i.imgur.com/l2VNlwu.jpg">
+                                                                                                    <img src="https://i.imgur.com/l2VNlwu.jpg" alt="">
+                                                                                                </a>
+                                                                                                <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. Nullam laoreet, velit ut taciti sociosqu condimentum feugiat.</p>
+                                                                                            </div>
 
-                                                                                    <h3>Garage <span>140 sq ft</span> <i class="fa fa-angle-down"></i></h3>
-                                                                                    <div>
-                                                                                        <a class="floor-pic mfp-image" href="https://i.imgur.com/0zJYERy.jpg">
-                                                                                            <img src="https://i.imgur.com/0zJYERy.jpg" alt="">
-                                                                                        </a>
-                                                                                    </div>
+                                                                                            <h3>Garage <span>140 sq ft</span> <i class="fa fa-angle-down"></i></h3>
+                                                                                            <div>
+                                                                                                <a class="floor-pic mfp-image" href="https://i.imgur.com/0zJYERy.jpg">
+                                                                                                    <img src="https://i.imgur.com/0zJYERy.jpg" alt="">
+                                                                                                </a>
+                                                                                            </div>
 
-                                                                                </div>
-                                                                            </div> -->
+                                                                                        </div>
+                                                                                    </div> -->
                 </div>
             </div>
             <!-- Property Description / End -->
@@ -296,7 +296,7 @@
     </div>
 
     <!-- Content
-                                    ================================================== -->
+                                            ================================================== -->
     <div class="container">
         <div class="row">
 
@@ -577,4 +577,22 @@
 
         </div>
     </div>
+
+    <!--hero banner-->
+    <div class="parallax bannerProject white-font" data-background="images/sevenAcres.jpeg" data-color="#36383e"
+        data-color-opacity="0.45" data-img-width="2500" data-img-height="1600">
+        <div class="parallax-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-8">
+                        <h2>It's your journey. We're here to help.</h2>
+                        <p>We’re full-service, local agents who know how to find people and home each together. We use online tools with an unmatched search capability to make you smarter and faster.</p>
+                        <a href="/contact" class="button margin-top-25">Get Started</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--hero banner-->
 @endsection

@@ -16354,3 +16354,23 @@ body .pac-container {
     font-size: 13px;
     margin-bottom: 20px;
 }
+
+
+.bannerProject h2{
+    color:#fff !important;
+}
+
+.bannerProject{
+    margin-top: 50px;
+    background: transparent;
+    padding: 110px 0px;
+    font-weight: 500;
+    z-index: 999;
+    color:#fff;
+    position: relative;
+}
+
+.bannerProject p {
+    font-size: 17px;
+    line-height: 32px;
+}
