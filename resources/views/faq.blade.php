@@ -30,7 +30,7 @@
 
 					<!-- Main Search Container -->
 					<div class="main-search-container">
-						<h2>FAQ</h2>
+						<h2>Frequently Asked Questions</h2>
 
 
 					</div>
