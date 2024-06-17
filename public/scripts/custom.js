@@ -4,6 +4,14 @@
 
 $(document).ready(function(){
 
+    //modal Project
+    jQuery('#lightboxModal').on('show.bs.modal', function (event) {
+        var button = jQuery(event.relatedTarget); // Button that triggered the modal
+        var imageSrc = button.data('image'); // Extract info from data-* attributes
+        var modal = jQuery(this);
+        modal.find('.modal-body img').attr('src', imageSrc);
+      });
+
     /*Login and register form*/
 
     jQuery(".my-account .tabs-nav .firstLi").on("click",function(){
@@ -19,7 +27,7 @@ $(document).ready(function(){
     })
 
     /*slider home*/
-    $('.sliderHome').slick({
+    jQuery('.sliderHome').slick({
         dots: false,
         infinite: true,
         speed: 700,
