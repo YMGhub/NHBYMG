@@ -177,7 +177,6 @@
             </div>
             <!-- Add more photo items here -->
         </div>
-
         <div class="row mb-2">
             <div class="col-md-4">
                 <div class="photo-grid-item">
