@@ -16217,6 +16217,12 @@ body .pac-container {
 
 
 /*custom css yello media*/
+.sliderHome img{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
 .servicesHome {
     margin-bottom: 0px !important;
 }
@@ -16309,30 +16315,4 @@ body .pac-container {
     text-align: center;
     margin-top: 10px;
     font-weight: bold;
-}
-
-
-.closeModal {
-    position: absolute;
-    top: 0px;
-    background-color: #274abb !important;
-    right: 0;
-    width: 10px;
-    height: 10px;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 1 !important;
-    border-radius: 10px;
-    right: 0px;
-}
-
-.closeModal span {
-    color: #fff;
-}
-
-
-#lightboxModal {
-    z-index: 9999999999999;
 }
