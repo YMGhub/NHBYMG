@@ -181,7 +181,7 @@
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-md-3 col-sm-12">
+                        <div class="col-md-4 col-sm-12">
                             <!-- Icon Box -->
                             <div class="icon-box-1">
 
@@ -230,7 +230,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-3 col-sm-12">
+                        <div class="col-md-4 col-sm-12">
                             <!-- Icon Box -->
                             <div class="icon-box-1">
 
@@ -277,7 +277,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-3 col-sm-12">
+                        <div class="col-md-4 col-sm-12">
                             <!-- Icon Box -->
                             <div class="icon-box-1">
 
@@ -322,7 +322,16 @@
                             </div>
                         </div>
 
-                        <div class="col-md-3 col-sm-12">
+
+
+                    </div>
+                </div>
+                <hr>
+                <!-- Content -->
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-4 col-sm-12">
                             <!-- Icon Box -->
                             <div class="icon-box-1">
 
@@ -368,13 +377,7 @@
                             </div>
                         </div>
 
-                    </div>
-                </div>
-                <hr>
-                <!-- Content -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-12">
+                        <div class="col-md-4 col-sm-12">
                             <!-- Icon Box -->
                             <div class="icon-box-1">
 
@@ -420,7 +423,7 @@
                                 <a href="/our-services" class="button border">Apply Now</a>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-12">
+                        <div class="col-md-4 col-sm-12">
                             <!-- Icon Box -->
                             <div class="icon-box-1">
 
