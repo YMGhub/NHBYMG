@@ -16,6 +16,9 @@ $(document).ready(function(){
     Fancybox.bind('[data-fancybox="gallery-f"]', {});
     Fancybox.bind('[data-fancybox="gallery-g"]', {});
     Fancybox.bind('[data-fancybox="gallery-h"]', {});
+    Fancybox.bind('[data-fancybox="gallery-i"]', {});
+    Fancybox.bind('[data-fancybox="gallery-j"]', {});
+    Fancybox.bind('[data-fancybox="gallery-k"]', {});
 
     /*Login and register form*/
 
