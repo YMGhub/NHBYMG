@@ -27,10 +27,15 @@ class ContactController extends Controller
             'email' => $request->email,
             'subject' => $request->subject,
             'comments' => $request->comments,
-
         ]);
 
-        Mail::to('jonathan.motta@yellomg.com')->send(new ContactFormMail($validatedData['name'],$validatedData['comments']));
+
+
+         Mail::to('jonathan.motta@yellomg.com')->send(new ContactFormMail($validatedData['name'],
+                                                                         $validatedData['email'],
+                                                                         $validatedData['subject'],
+                                                                         $validatedData['comments']));
+
 
         // Redirect back with success message
         return redirect("/contact")->with('success', 'Message received successfully!');
