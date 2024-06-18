@@ -666,9 +666,8 @@
                 <div class="row">
                     <div class="col-lg-6 col-sm-8">
                         <h2>It's your journey. We're here to help.</h2>
-                        <p>We’re full-service, local agents who know how to find people and home each together. We use
-                            online tools with an unmatched search capability to make you smarter and faster.</p>
-                        <a href="/contact" class="button margin-top-25">Get Started</a>
+                        <p>Explore our diverse portfolio of affordable housing solutions and contact the National Housing Corporation today to discuss how we can meet your unique housing needs.</p>
+                        <a href="/our-services" class="button margin-top-25">Get Started</a>
                     </div>
 
                 </div>
