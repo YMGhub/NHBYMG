@@ -339,10 +339,10 @@
                                     </g>
                                 </svg>
                             </div>
-                            <div class="icon-links">
+                            <!--div class="icon-links">
                                 <a href="/our-services">For Sale</a>
                                 <a href="/our-services">For Rent</a>
-                            </div>
+                            </div-->
                         </div>
 
                         <h4>Sale and Rental of Houses</h4>
@@ -385,10 +385,10 @@
                                     </g>
                                 </svg>
                             </div>
-                            <div class="icon-links">
+                                                   <!--div class="icon-links">
                                 <a href="/our-services">For Sale</a>
                                 <a href="/our-services">For Rent</a>
-                            </div>
+                            </div-->
                         </div>
 
                         <h4>Sale and Rental of Lots</h4>
@@ -428,10 +428,10 @@
                                     </g>
                                 </svg>
                             </div>
-                            <div class="icon-links">
+                                                        <!--div class="icon-links">
                                 <a href="/our-services">For Sale</a>
                                 <a href="/our-services">For Rent</a>
-                            </div>
+                            </div-->
                         </div>
 
                         <h4>Rent-to-Own Programs</h4>
@@ -480,10 +480,10 @@
                                     </g>
                                 </svg>
                             </div>
-                            <div class="icon-links">
+                                                       <!--div class="icon-links">
                                 <a href="/our-services">For Sale</a>
                                 <a href="/our-services">For Rent</a>
-                            </div>
+                            </div-->
                         </div>
 
                         <h4>Relocation Programs</h4>
@@ -524,10 +524,10 @@
                                     </g>
                                 </svg>
                             </div>
-                            <div class="icon-links">
+                                                      <!--div class="icon-links">
                                 <a href="/our-services">For Sale</a>
                                 <a href="/our-services">For Rent</a>
-                            </div>
+                            </div-->
                         </div>
 
                         <h4>Issuance of Loans</h4>
@@ -568,10 +568,10 @@
                                     </g>
                                 </svg>
                             </div>
-                            <div class="icon-links">
+                                                       <!--div class="icon-links">
                                 <a href="/our-services">For Sale</a>
                                 <a href="/our-services">For Rent</a>
-                            </div>
+                            </div-->
                         </div>
 
                         <h4>Maintenance of Estates</h4>
