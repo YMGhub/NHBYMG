@@ -39,8 +39,8 @@
 
                     <!-- Top bar -->
                     <ul class="top-bar-menu">
-                        <li><i class="fa fa-phone"></i>1-246-536-5300</li>
-                        <li><i class="fa fa-envelope"></i> <a href="#">NHC.CustomerService@barbados.gov.bb</a>
+                        <li><i class="fa fa-phone"></i><a href="tel:12465365300">1-246-536-5300</a></li>
+                        <li><i class="fa fa-envelope"></i> <a href="mailto:NHC.CustomerService@barbados.gov.bb">NHC.CustomerService@barbados.gov.bb</a>
                         </li>
                         <!-- <li>
                                         <div class="top-bar-dropdown">
