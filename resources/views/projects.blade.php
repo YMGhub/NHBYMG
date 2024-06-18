@@ -127,7 +127,7 @@
 
     <div class="container mt-5">
         <div class="row mb-2">
-            <div class="col-md-4">
+            <div class="col-md-4 bottomMargin">
                 <!--Electrical Upgrade Project-->
                 <div class="photo-grid-item">
                     <div class="boxImage">
@@ -148,7 +148,7 @@
             </div>
 
             <!--NHC Hurricane Elsa Project-->
-            <div class="col-md-4">
+            <div class="col-md-4 bottomMargin">
                 <div class="photo-grid-item">
                     <div class="boxImage">
 
@@ -168,7 +168,7 @@
             </div>
 
             <!--NHC East West Quad Housing Project-->
-            <div class="col-md-4">
+            <div class="col-md-4 bottomMargin">
                 <div class="photo-grid-item">
                     <div class="boxImage">
 
@@ -190,7 +190,7 @@
 
 
             <!--NHC Whitehill Relocation Project-->
-            <div class="col-md-4">
+            <div class="col-md-4 bottomMargin">
                 <div class="photo-grid-item">
                     <div class="boxImage">
 
@@ -206,7 +206,7 @@
             </div>
 
             <!--NHC Ridge Meadows Housing-->
-            <div class="col-md-4">
+            <div class="col-md-4 bottomMargin">
                 <div class="photo-grid-item">
                     <div class="boxImage">
 
@@ -227,7 +227,7 @@
             </div>
 
             <!--NHC Alleynes Court Housing Project-->
-            <div class="col-md-4">
+            <div class="col-md-4 bottomMargin">
                 <div class="photo-grid-item">
                     <div class="boxImage">
 
@@ -246,7 +246,7 @@
 
 
             <!--SolarasCourt-->
-            <div class="col-md-4">
+            <div class="col-md-4 bottomMargin">
                 <div class="photo-grid-item">
                     <div class="boxImage">
 
@@ -263,7 +263,7 @@
             </div>
 
             <!--Todds South Site Rendition 2-->
-            <div class="col-md-4">
+            <div class="col-md-4 bottomMargin">
                 <div class="photo-grid-item">
                     <div class="boxImage">
 
