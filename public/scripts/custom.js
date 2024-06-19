@@ -646,6 +646,8 @@ $(document).ready(function(){
         afterMove:function(){
             if(jQuery(".owl-item:not(.active)")){
                 jQuery(".owl-item:not(.active) video").get(0).pause();;
+            }else{
+                jQuery(".owl-item:not(.active) video").get(0).play();;
             }
         },
 
