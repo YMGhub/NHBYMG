@@ -61,6 +61,12 @@ Route::get('/contact', function () {
 
 Route::post('/contact/apply', [ContactController::class, 'submitApplication'])->name('contact.apply');
 
+//application for rental Form
+Route::get('/application-for-rental', function () {
+    return view('application-for-rental');
+})->name('application-for-rental');
+
+
 
 Route::middleware([
     'auth:sanctum',

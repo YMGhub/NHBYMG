@@ -633,7 +633,7 @@ $(document).ready(function(){
     /*  Owl Carousel
     /*----------------------------------------------------*/
 
-    $('.carousel_video').owlCarousel({
+    var owl = $('.carousel_video').owlCarousel({
         loop: true,
         margin: 0,
         navigation: true,
@@ -641,8 +641,21 @@ $(document).ready(function(){
         autoplay: false,
         items: 1,
         touchDrag:false,
-        mouseDrag:false
+        mouseDrag:false,
+        addClassActive: true,
+        afterMove:function(){
+            if(jQuery(".owl-item:not(.active)")){
+                jQuery(".owl-item:not(.active) video").get(0).pause();;
+            }
+        },
+
 	});
+
+
+
+
+
+
 
 	$('.carousel').owlCarousel({
 		autoPlay: false,
