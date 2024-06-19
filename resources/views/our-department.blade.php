@@ -646,7 +646,7 @@
                                                                 </div>
                                                                 <div class="toggle-wrap style-2">
                                                                     <span class="trigger ">
-                                                                        <a href="#"> Human resources Department
+                                                                        <a href="#"> Human Resources Department
                                                                             <i class="sl sl-icon-plus"></i></a></span>
                                                                     <div class="toggle-container">
                                                                         <div class="container">
