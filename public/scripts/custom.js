@@ -633,6 +633,17 @@ $(document).ready(function(){
     /*  Owl Carousel
     /*----------------------------------------------------*/
 
+    $('.carousel_video').owlCarousel({
+        loop: true,
+        margin: 0,
+        navigation: true,
+        dots: false,
+        autoplay: false,
+        items: 1,
+        touchDrag:false,
+        mouseDrag:false
+	});
+
 	$('.carousel').owlCarousel({
 		autoPlay: false,
 		navigation: true,
