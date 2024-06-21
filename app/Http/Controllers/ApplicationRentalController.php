@@ -15,6 +15,8 @@ class ApplicationRentalController extends Controller
         /*var_dump($request->addmore);
         die;*/
 
+
+
         ApplicationRental::create([
             'applicant_surname' => $request->applicant_surname,
             'applicant_first' => $request->applicant_first,
@@ -34,7 +36,6 @@ class ApplicationRentalController extends Controller
             'children' => $request->children,
             'own_landorproperty' => $request->own_landorproperty,
             'state_address' => $request->state_address,
-            'financial_institution' => $request->financial_institution,
             'financial_institution' => $request->financial_institution,
             'commoccupedaunitents' => $request->occupedaunit,
             'addmore' => $request->addmore,
@@ -62,7 +63,7 @@ class ApplicationRentalController extends Controller
             'signatures' => $request->signatures,
             'datedthis' => $request->datedthis,
             'dayofdatedthis' => $request->dayofdatedthis,
-            'yeardatedthis' => $request->yeardatedthis,
+            'yeardatedthis' => $request->yeardatedthis
 
         ]);
 
