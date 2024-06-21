@@ -1,102 +1,673 @@
-
 @extends('layouts.layout')
 @section('content')
-
-<!-- Map Container -->
-<style>
-    .list-layout .listing-img-container:after {
-        background: linear-gradient(to bottom, transparent 55%, transparent);
-    }
-</style>
-<div class="parallax" data-background="/images/Project-Hero.jpg" data-color="#" data-color-opacity="0.1"
-    data-img-width="1000" data-img-height="1200" style="background-position: 0">
-    <div class="parallax-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="main-search-container">
-                        <h2>NATIONAL HOUSING CORPORATION</h2>
-                        <h3>APPLICATION FOR RENTAL UNIT/ LOT</h3>
-
+    <!-- Map Container -->
+    <style>
+        .list-layout .listing-img-container:after {
+            background: linear-gradient(to bottom, transparent 55%, transparent);
+        }
+    </style>
+    <div class="parallax" data-background="/images/Project-Hero.jpg" data-color="#" data-color-opacity="0.1"
+        data-img-width="1000" data-img-height="1200" style="background-position: 0">
+        <div class="parallax-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="main-search-container">
+                            <h2>NATIONAL HOUSING CORPORATION</h2>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="clearfix"></div>
-<!-- Map Container / End -->
+    <div class="clearfix"></div>
+    <!-- Map Container / End -->
 
 
-<!-- Container / Start -->
-<div class="container">
+    <!-- Container / Start -->
+    <div class="container">
 
-	<div class="row">
+        <div class="row">
 
-		<!-- Contact Details -->
-		<div class="col-md-4 col-sm-4">
 
-			<h4 class="headline margin-bottom-30">Find Us Here</h4>
+            <!-- Contact Form -->
+            <div class="col-md-12 col-sm-12">
 
-			<!-- Contact Details -->
-			<div class="sidebar-textbox">
+                <section id="contact">
+                    <h4 class="text-center headline margin-top-35 margin-bottom-35">
+                        APPLICATION FOR RENTAL UNIT/ LOT <br>
+                        TO BE RETURNED BY APPLICANT(S)</h4>
 
-				<p>National Housing Corporation</p>
-				<p>“The Garden” Country Road</p>
-				<p>St. Michael</p>
-				<p>Barbados</p>
+                    <p class="text-center headline margin-top-35 margin-bottom-35">
+                        (Income not exceeding $3,000 Monthly)<br>
+                        Required Documents: 1) Two Recent Pay slips, 2) One ID Card, 3) One Job Letter, 4) One Passport Size
+                        Photo <br>
+                    </p>
 
-				<ul class="contact-details">
-					<li><i class="im im-icon-Phone-2"></i> <strong>PBX:</strong> <span><a href="#1-246-536-5300">1-246-536-5300<a href="#"></a></span></li>
-					<li><i class="im im-icon-Fax"></i> <strong>Fax:</strong> <span><a href="#1-246-437-8297">1-246-437-8297</a> </span></li>
-					<li><i class="im im-icon-Globe"></i> <strong>Opening Hours:</strong> <span><a href="#">Friday 8.15am – 4.30pm</a></span></li>
-					<li><i class="im im-icon-Envelope"></i> <strong>Email:</strong> <span><a href="mailto:NHC.CustomerService@barbados.gov.bb">NHC.CustomerService@barbados.gov.bb</a></span></li>
-				</ul>
-			</div>
+                    <!--div id="contact-message"></div-->
 
-		</div>
+                    <form method="post" action="{{ route('application-for-rental.apply') }}" name="contactform" id="contactform"
+                        autocomplete="on">
+                        @csrf
 
-		<!-- Contact Form -->
-		<div class="col-md-8 col-sm-8">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>APPLICANT: Mr. Miss. Mrs.</b></label>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <input name="applicant_surname" type="text" id="applicant_surname"
+                                                placeholder="Surname" required="required" />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input name="applicant_first" type="text" id="applicant_first"
+                                                placeholder="First" required="required" />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input name="applicant_middle" type="text" id="applicant_middle"
+                                                placeholder="Middle" required="required" />
+                                        </div>
+                                    </div>
 
-			<section id="contact">
-				<h4 class="headline margin-bottom-35">Send Us A Message</h4>
+                                </div>
+                            </div>
 
-				<!--div id="contact-message"></div-->
+                            <!--Address-->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>Address</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input name="applicant_address" type="text" id="applicant_address"
+                                                placeholder="Address" required="required" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!----------->
 
-				<form method="post" action="{{ route('contact.apply') }}" name="contactform" id="contactform" autocomplete="on">
-                    @csrf
-					<div class="row">
-						<div class="col-md-6">
-							<div>
-								<input name="name" type="text" id="name" placeholder="Your Name" required="required" />
-							</div>
-						</div>
+                            <!--Coapplicant-->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>CO-APPLICANT: Mr. Miss. Mrs.</b></label>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <input name="co_applicant_name" type="text" id="co_applicant_name"
+                                                placeholder="Name" required="required" />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input name="co_applicant_surname" type="text" id="co_applicant_surname"
+                                                placeholder="Surname" required="required" />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input name="co_applicant_middle" type="text" id="co_applicant_middle"
+                                                placeholder="Middle" required="required" />
+                                        </div>
+                                    </div>
 
-						<div class="col-md-6">
-							<div>
-								<input name="email" type="email" id="email" placeholder="Email Address" pattern="^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$" required="required" />
-							</div>
-						</div>
-					</div>
+                                </div>
+                            </div>
+                            <!--------------->
 
-					<div>
-						<input name="subject" type="text" id="subject" placeholder="Subject" required="required" />
-					</div>
+                            <!---ADDRESS--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>Address</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input name="co_applicant_address" type="text" id="co_applicant_address"
+                                                placeholder="Address" required="required" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---ADDRESS--->
 
-					<div>
-						<textarea name="comments" cols="40" rows="3" id="comments" placeholder="Message" spellcheck="true" required="required"></textarea>
-					</div>
+                            <!---NATIONAL REGISTRATION NUMBER--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>NATIONAL REGISTRATION NUMBER</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input name="national_registration_number" type="text"
+                                                id="national_registration_number" placeholder="National Registration Number"
+                                                required="required" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---ADDRESS--->
 
-					<input type="submit" class="submit button" id="submit" value="Submit Message" />
+                            <!---EMPLOYER:--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>EMPLOYER:</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input name="employer" type="text" id="employer" placeholder="Employer"
+                                                required="required" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---EMPLOYER:--->
 
-				</form>
-			</section>
-		</div>
-		<!-- Contact Form / End -->
+                            <!---OCCUPATION::--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>OCCUPATION:</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input name="occupation" type="text" id="occupation"
+                                                placeholder="Occupation" required="required" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---OCCUPATION::--->
 
-	</div>
+                            <!---CITIZENSHIP:::--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>CITIZENSHIP:</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input name="citizenship" type="text" id="citizenship"
+                                                placeholder="Citizenship" required="required" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---CITIZENSHIP:::--->
 
-</div>
-<!-- Container / End -->
+                            <!---INCOME--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>INCOME:</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input name="income" type="text" id="income" placeholder="Income"
+                                                required="required" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---INCOME--->
+
+
+
+                            <div class="col-md-12">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label><b>SIZE OF FAMILY:</b></label>
+                                            <input name="size_of_family" type="number" id="size_of_family"
+                                                placeholder="Size of Family" required="required" />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label><b>ADULT:</b></label>
+                                            <input name="adults" type="number" id="adults" placeholder="Adults"
+                                                required="required" />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label><b>CHILDREN:</b></label>
+                                            <input name="children" type="number" id="children" placeholder="Children"
+                                                required="required" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!---DO YOU OR YOUR SPOUSE OWN LAND/ PROPERTY?--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>DO YOU OR YOUR SPOUSE OWN LAND/ PROPERTY?</b></label>
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <div class="btn-group" data-toggle="buttons">
+                                                <label class="btn btn-primary radio-inline">
+                                                    <input type="radio" name="own_landorproperty">Yes
+                                                </label>
+                                                <label class="btn btn-primary radio-inline">
+                                                    <input type="radio" name="own_landorproperty"> No
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---DO YOU OR YOUR SPOUSE OWN LAND/ PROPERTY?--->
+
+                            <!---IF YES, PLEASE STATE ADDRESS--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>IF YES, PLEASE STATE ADDRESS:</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input name="state_address" type="text" id="state_address"
+                                                placeholder="If Yes, Please State Address" required="required" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---INIF YES, PLEASE STATE ADDRESSCOME--->
+
+
+                            <!---ARE YOU INDEBTED TO THE N.H.C. OR ANY OTHER FINANCIAL INSITUTION?--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>ARE YOU INDEBTED TO THE N.H.C. OR ANY OTHER FINANCIAL INSITUTION?</b></label>
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <div class="btn-group" data-toggle="buttons">
+                                                <label class="btn btn-primary ">
+                                                    <input type="radio" value="yes" name="financial_institution">Yes
+                                                </label>
+                                                <label class="btn btn-primary">
+                                                    <input type="radio" value="no" name="financial_institution"> No
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---ARE YOU INDEBTED TO THE N.H.C. OR ANY OTHER FINANCIAL INSITUTION?--->
+
+
+                            <!---IF YES, PLEASE GIVE DETAILS--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>IF YES, PLEASE GIVE DETAILS:</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input name="give_details" type="text" id="give_details"
+                                                placeholder="If Yes, Please Give Details" required="required" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---IF YES, PLEASE GIVE DETAILS--->
+
+
+                            <!---HAVE YOU EVER OCCUPIED A UNIT? IF YES, WHERE?--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>HAVE YOU EVER OCCUPIED A UNIT? IF YES, WHERE?</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input name="occupedaunit" type="text" id="occupedaunit"
+                                                placeholder="Have you ever occupied a unit? If Yes, Where?"
+                                                required="required" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---HAVE YOU EVER OCCUPIED A UNIT? IF YES, WHERE?--->
+
+                            <!---INFORMATION ON INTENDED OCCUPANTS --->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>INFORMATION ON INTENDED OCCUPANTS:</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table table-bordered" id="dynamicTable">
+                                                <tr>
+                                                    <th>NAME</th>
+                                                    <th>RELATION</th>
+                                                    <th>AGE</th>
+                                                    <th>OCCUPATION / SCHOOL</th>
+                                                    <th>INCOME</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="text" name="addmore[0][name_occupant]"
+                                                            placeholder="Enter Name" class="form-control" /></td>
+                                                    <td><input type="text" name="addmore[0][relation_occupant]"
+                                                            placeholder="Enter Relation" class="form-control" /></td>
+                                                    <td><input type="text" name="addmore[0][age_accupant]"
+                                                            placeholder="Enter Age" class="form-control" /></td>
+                                                    <td><input type="text"
+                                                            name="addmore[0][occupation_school_occupant]"
+                                                            placeholder="Enter Occupation / School"
+                                                            class="form-control" /></td>
+                                                    <td><input type="text" name="addmore[0][income_occupant]"
+                                                            placeholder="Enter Income" class="form-control" /></td>
+                                                    <td><button type="button" name="add" id="add"
+                                                            class="btn btn-success">Add More</button></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---INFORMATION ON INTENDED OCCUPANTS --->
+
+                            <h4 class="text-center headline margin-top-35 margin-bottom-35">
+                                FOR OFFICIAL USE</h4>
+
+                            <!---IS APPLICANT A TENANT OR LODGER?--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>IS APPLICANT A TENANT OR LODGER?</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input name="tenantorlodger" type="text" id="tenantorlodger"
+                                                placeholder="Is Applicant a Tenant or Lodger" required="required" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---IS APPLICANT A TENANT OR LODGER?--->
+
+
+                            <!---NAME AND ADDRESS OF LANDLORD:--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>NAME AND ADDRESS OF LANDLORD:</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input name="addressoflandlord" type="text" id="addressoflandlord"
+                                                placeholder="Name and Address of Landlord" required="required" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---NAME AND ADDRESS OF LANDLORD:--->
+
+
+                            <!---DATE OF OCCUPATION OF PRESENT ACCOMMODATION--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>DATE OF OCCUPATION OF PRESENT ACCOMMODATION</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input name="present_accommodation" type="date" id="present_accommodation"
+                                                placeholder="Date of Occupation of Present Accommodation"
+                                                required="required" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--DATE OF OCCUPATION OF PRESENT ACCOMMODATION--->
+
+
+                            <!--STRUCTURE OF HOUSE / RENTAL RATE--->
+                            <div class="col-md-12">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label><b>STRUCTURE OF HOUSE:</b></label>
+                                            <input name="structureofhouse" type="text" id="structureofhouse"
+                                                placeholder="Structure of House" required="required" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label><b>RENTAL RATE:</b></label>
+                                            <input name="rental_date" type="text" id="rental_date"
+                                                placeholder="Rental Date" required="required" />
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--STRUCTURE OF HOUSE / RENTAL RATE--->
+
+
+                            <!--TYPE OF SANITARY FACILITIES / WATER SUPPLY--->
+                            <div class="col-md-12">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label><b>TYPE OF SANITARY FACILITIES:</b></label>
+                                            <input name="typeofsanityfacilities" type="text"
+                                                id="typeofsanityfacilities"
+                                                placeholder="Type of Sanitary Facilities of House" required="required" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label><b>WATER SUPPLY:</b></label>
+                                            <input name="water_supply" type="text" id="water_supply"
+                                                placeholder="Water Supply" required="required" />
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--STRUCTURE OF HOUSE / WATER SUPPLY--->
+
+
+                            <h4 class="text-center headline margin-top-35 margin-bottom-35">
+                                HOUSING OFFICER’S COMMENTS</h4>
+
+                            <!-- HOUSING OFFICER’S COMMENTS--->
+                            <div class="col-md-12">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+
+                                            <textarea style="field-sizing:content" name="housingofficercomments" id="housingofficercomments"
+                                                placeholder="Housing Officer´s Comments" required="required"></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- HOUSING OFFICER’S COMMENTS--->
+
+                            <!--ACKNOWLEDGED THIS--->
+                            <div class="col-md-12">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label><b>ACKNOWLEDGED THIS</b></label>
+                                            <input name="acknowledged" type="text" id="acknowledged"
+                                                placeholder="Acknowledged this" required="required" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label><b>Day Of</b></label>
+                                            <div class="row">
+                                                <div class="col-md-9">
+                                                    <input name="dayof" type="text" id="dayof"
+                                                        placeholder="Day Of" required="required" />
+                                                </div>
+
+                                                <div class="col-md-13">
+                                                    <input type="hidden" value="<?php echo date('Y'); ?>" name="year" />
+                                                    <p> <?php echo date('Y'); ?> </p>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <label><b>By</b></label>
+                                            <input name="by" type="text" id="by" placeholder="By"
+                                                required="required" />
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--ACKNOWLEDGED THIS--->
+
+                            <!--KEYS RECEIVED BY--->
+
+                            <div class="col-md-12">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label><b>KEYS RECEIVED BY</b></label>
+                                            <input name="keysreceived" type="text" id="keysreceived"
+                                                placeholder="Keys Received" required="required" />
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label><b>THIS</b></label>
+                                            <input name="thiskeys" type="text" id="thiskeys" placeholder=""
+                                                required="required" />
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label><b>DAY OF</b></label>
+                                            <input name="dayofkeys" type="text" id="dayofkeys" placeholder=""
+                                                required="required" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="hidden" value="<?php echo date('Y'); ?>" name="yearkeys" />
+                                            <p> <?php echo date('Y'); ?> </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--KEYS RECEIVED BY--->
+
+
+                            <!--WITNESSED BY--->
+
+                            <div class="col-md-12">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label><b>WITNESSED BY</b></label>
+                                            <input name="whitnessed" type="text" id="whitnessed"
+                                                placeholder="Witnessed By" required="required" />
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label><b>THIS</b></label>
+                                            <input name="thiswhitnessed" type="text" id="thiswhitnessed"
+                                                placeholder="" required="required" />
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label><b>DAY OF</b></label>
+                                            <input name="dayofwhitnessed" type="text" id="dayofwhitnessed"
+                                                placeholder="" required="required" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="hidden" value="<?php echo date('Y'); ?>" name="yearwhitnessed" />
+                                            <p> <?php echo date('Y'); ?> </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--WITNESSED BY--->
+
+
+                            <!---HOUSING OFFICER / ASST. HOUSING OFFICER--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>HOUSING OFFICER / ASST. HOUSING OFFICER</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input name="housingofficer" type="text" id="housingofficer"
+                                                placeholder="Housing Officer / Asst. Housing Officer"
+                                                required="required" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--HOUSING OFFICER / ASST. HOUSING OFFICER--->
+
+
+                            <!---Signatures--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>SIGNATURE(S)</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input name="signatures" type="text" id="signatures"
+                                                placeholder="Signatures" required="required" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Signatures--->
+
+                            <!--DATED THIS - Signatures--->
+                            <div class="col-md-12">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label><b>DATED THIS</b></label>
+                                            <input name="datedthis" type="text" id="datedthis"
+                                                placeholder="Dated This" required="required" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label><b>Day Of</b></label>
+                                            <div class="row">
+                                                <div class="col-md-9">
+                                                    <input name="dayofdatedthis" type="text" id="dayofdatedthis"
+                                                        placeholder="Day Of" required="required" />
+                                                </div>
+
+                                                <div class="col-md-13">
+                                                    <input type="hidden" value="<?php echo date('Y'); ?>" name="yeardatedthis" />
+                                                    <p> <?php echo date('Y'); ?> </p>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--ACKNOWLEDGED THIS--->
+
+                </div>
+
+                        <input type="submit" class="submit button" id="submit" value="Submit" />
+
+                    </form>
+                </section>
+            </div>
+            <!-- Contact Form / End -->
+
+        </div>
+
+    </div>
+
+    <!-- Container / End -->
 @endsection
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let i = 0;
+
+        document.getElementById("add").addEventListener("click", function() {
+            ++i;
+
+            const table = document.getElementById("dynamicTable");
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+        <td><input type="text" name="addmore[${i}][name_occupant]" placeholder="Enter Name" class="form-control" /></td>
+        <td><input type="text" name="addmore[${i}][relation_occupant]" placeholder="Enter Relation" class="form-control" /></td>
+        <td><input type="text" name="addmore[${i}][age_accupant]" placeholder="Enter Age" class="form-control" /></td>
+        <td><input type="text" name="addmore[${i}][occupation_school_occupant]" placeholder="Enter Occupation / School" class="form-control" /></td>
+        <td><input type="text" name="addmore[${i}][income_occupant]" placeholder="Enter Income" class="form-control" /></td>
+        <td><button type="button" class="btn btn-danger remove-tr">Remove</button></td>
+    `;
+
+            table.appendChild(row);
+        });
+
+        document.addEventListener('click', function(event) {
+            if (event.target && event.target.classList.contains('remove-tr')) {
+                event.target.closest('tr').remove();
+            }
+        });
+
+    });
+</script>

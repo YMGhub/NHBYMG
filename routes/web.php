@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\ListingsController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\ContactController;
-use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ListingsController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\FrontEndContentController;
+use App\Http\Controllers\ApplicationRentalController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -66,6 +68,12 @@ Route::get('/application-for-rental', function () {
     return view('application-for-rental');
 })->name('application-for-rental');
 
+Route::post('/application-for-rental/apply', [ApplicationRentalController::class, 'submitApplication'])->name('application-for-rental.apply');
+
+
+
+
+
 
 
 Route::middleware([
@@ -73,9 +81,13 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+
+
 
     Route::resource('listings', ListingsController::class);
 

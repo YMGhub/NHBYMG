@@ -165,7 +165,7 @@
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                             <i class="fa fa-user"></i> Profile </a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="{{ route('profile') }}">View Profile</a></li>
+                                            <li><a href="{{ route('profile.show') }}">View Profile</a></li>
                                             {{-- <li><hr class="dropdown-divider"></li> --}}
                                             <li>
                                                 <a href="#" class="dropdown-item"
