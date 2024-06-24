@@ -45,9 +45,28 @@
                     </p>
 
                     <!--div id="contact-message"></div-->
+                    @if(Session::has('success'))
+                    <div class="alert alert-success alert-custom alert-success-custom">
+                        {{ Session::get('success') }}
+                        @php
+                            Session::forget('success');
+                        @endphp
+                    </div>
+                    @endif
 
-                    <form method="post" action="{{ route('application-for-rental.apply') }}" name="contactform" id="contactform"
-                        autocomplete="on">
+                        <!-- Form Validation Error Messages -->
+                    @if ($errors->any())
+                    <div class="alert alert-danger alert-custom alert-danger-custom">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                    <form method="post" enctype="multipart/form-data" action="{{ route('application-for-rental.apply') }}" name="applicationrental"
+                        id="applicationrental" autocomplete="on">
                         @csrf
 
                         <div class="row">
@@ -91,14 +110,16 @@
                                 <div>
                                     <label><b>CO-APPLICANT: Mr. Miss. Mrs.</b></label>
                                     <div class="row">
-                                        <div class="col-md-4">
-                                            <input name="co_applicant_name" type="text" id="co_applicant_name"
-                                                placeholder="Name" required="required" />
-                                        </div>
+
                                         <div class="col-md-4">
                                             <input name="co_applicant_surname" type="text" id="co_applicant_surname"
                                                 placeholder="Surname" required="required" />
                                         </div>
+                                        <div class="col-md-4">
+                                            <input name="co_applicant_name" type="text" id="co_applicant_name"
+                                                placeholder="Name" required="required" />
+                                        </div>
+
                                         <div class="col-md-4">
                                             <input name="co_applicant_middle" type="text" id="co_applicant_middle"
                                                 placeholder="Middle" required="required" />
@@ -129,7 +150,7 @@
                                     <label><b>NATIONAL REGISTRATION NUMBER</b></label>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <input name="national_registration_number" type="text"
+                                            <input name="national_registration_number" type="number"
                                                 id="national_registration_number" placeholder="National Registration Number"
                                                 required="required" />
                                         </div>
@@ -309,6 +330,19 @@
                             </div>
                             <!---HAVE YOU EVER OCCUPIED A UNIT? IF YES, WHERE?--->
 
+                            <!---Photograph--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>PHOTOGRAPH</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="file" name="photograph" accept="image/jpg, image/jpeg, image/png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Photograph--->
+
                             <!---INFORMATION ON INTENDED OCCUPANTS --->
                             <div class="col-md-12">
                                 <div>
@@ -329,7 +363,7 @@
                                                             placeholder="Enter Name" class="form-control" /></td>
                                                     <td><input type="text" name="addmore[0][relation_occupant]"
                                                             placeholder="Enter Relation" class="form-control" /></td>
-                                                    <td><input type="text" name="addmore[0][age_accupant]"
+                                                    <td><input type="number" name="addmore[0][age_accupant]"
                                                             placeholder="Enter Age" class="form-control" /></td>
                                                     <td><input type="text"
                                                             name="addmore[0][occupation_school_occupant]"
@@ -337,8 +371,8 @@
                                                             class="form-control" /></td>
                                                     <td><input type="text" name="addmore[0][income_occupant]"
                                                             placeholder="Enter Income" class="form-control" /></td>
-                                                    <td><button type="button" name="add" id="add"
-                                                            class="btn btn-success">Add More</button></td>
+                                                    <td><button type="button" name="add"  id="add"
+                                                            class="btn btn-success addMore">+</button></td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -407,7 +441,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <label><b>RENTAL RATE:</b></label>
-                                            <input name="rental_date" type="text" id="rental_date"
+                                            <input name="rental_date" type="date" id="rental_date"
                                                 placeholder="Rental Date" required="required" />
                                         </div>
 
@@ -520,6 +554,7 @@
                                                 required="required" />
                                         </div>
                                         <div class="col-md-2">
+                                            <label style="color:#fff"><b>Year OF</b></label>
                                             <input type="hidden" value="<?php echo date('Y'); ?>" name="yearkeys" />
                                             <p> <?php echo date('Y'); ?> </p>
                                         </div>
@@ -551,6 +586,7 @@
                                                 placeholder="" required="required" />
                                         </div>
                                         <div class="col-md-2">
+                                            <label style="color:#fff"><b>Year OF</b></label>
                                             <input type="hidden" value="<?php echo date('Y'); ?>" name="yearwhitnessed" />
                                             <p> <?php echo date('Y'); ?> </p>
                                         </div>
@@ -601,15 +637,19 @@
                                                 placeholder="Dated This" required="required" />
                                         </div>
                                         <div class="col-md-6">
-                                            <label><b>Day Of</b></label>
+
                                             <div class="row">
+
                                                 <div class="col-md-9">
+                                                    <label><b>Day Of</b></label>
                                                     <input name="dayofdatedthis" type="text" id="dayofdatedthis"
                                                         placeholder="Day Of" required="required" />
                                                 </div>
 
-                                                <div class="col-md-13">
-                                                    <input type="hidden" value="<?php echo date('Y'); ?>" name="yeardatedthis" />
+                                                <div class="col-md-3">
+                                                    <label style="color:#fff"><b>Year OF</b></label>
+                                                    <input type="hidden" value="<?php echo date('Y'); ?>"
+                                                        name="yeardatedthis" />
                                                     <p> <?php echo date('Y'); ?> </p>
                                                 </div>
 
@@ -626,7 +666,7 @@
                             </div>
                             <!--ACKNOWLEDGED THIS--->
 
-                </div>
+                        </div>
 
                         <input type="submit" class="submit button" id="submit" value="Submit" />
 
@@ -640,34 +680,37 @@
     </div>
 
     <!-- Container / End -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let i = 0;
+
+            document.getElementById("add").addEventListener("click", function() {
+                ++i;
+
+                const table = document.getElementById("dynamicTable");
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
+            <td><input type="text" name="addmore[${i}][name_occupant]" placeholder="Enter Name" class="form-control" /></td>
+            <td><input type="text" name="addmore[${i}][relation_occupant]" placeholder="Enter Relation" class="form-control" /></td>
+            <td><input type="text" name="addmore[${i}][age_accupant]" placeholder="Enter Age" class="form-control" /></td>
+            <td><input type="text" name="addmore[${i}][occupation_school_occupant]" placeholder="Enter Occupation / School" class="form-control" /></td>
+            <td><input type="text" name="addmore[${i}][income_occupant]" placeholder="Enter Income" class="form-control" /></td>
+            <td><button type="button" class="btn btn-danger remove-tr">delete</button></td>
+        `;
+
+                table.querySelector('tbody').appendChild(row);
+            });
+
+            document.addEventListener('click', function(event) {
+
+                if (event.target && event.target.classList.contains('remove-tr')) {
+                    event.target.closest('tr').remove();
+                }
+            });
+
+        });
+    </script>
+
 @endsection
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        let i = 0;
-
-        document.getElementById("add").addEventListener("click", function() {
-            ++i;
-
-            const table = document.getElementById("dynamicTable");
-            const row = document.createElement("tr");
-
-            row.innerHTML = `
-        <td><input type="text" name="addmore[${i}][name_occupant]" placeholder="Enter Name" class="form-control" /></td>
-        <td><input type="text" name="addmore[${i}][relation_occupant]" placeholder="Enter Relation" class="form-control" /></td>
-        <td><input type="text" name="addmore[${i}][age_accupant]" placeholder="Enter Age" class="form-control" /></td>
-        <td><input type="text" name="addmore[${i}][occupation_school_occupant]" placeholder="Enter Occupation / School" class="form-control" /></td>
-        <td><input type="text" name="addmore[${i}][income_occupant]" placeholder="Enter Income" class="form-control" /></td>
-        <td><button type="button" class="btn btn-danger remove-tr">Remove</button></td>
-    `;
-
-            table.appendChild(row);
-        });
-
-        document.addEventListener('click', function(event) {
-            if (event.target && event.target.classList.contains('remove-tr')) {
-                event.target.closest('tr').remove();
-            }
-        });
-
-    });
-</script>

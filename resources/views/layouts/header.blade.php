@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="{{ asset('css/style-template.css') }}">
     <link rel="stylesheet" href="{{ asset('css/color.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fancybox.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/icons.css') }}">
+
 
 
 </head>

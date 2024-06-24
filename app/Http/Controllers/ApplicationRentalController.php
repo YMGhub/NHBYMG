@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ApplicationRental;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 use function Ramsey\Uuid\v1;
 
@@ -15,15 +17,30 @@ class ApplicationRentalController extends Controller
         /*var_dump($request->addmore);
         die;*/
 
+            $validatedData = $request->validate([
+                'photograph' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+            ]);
 
 
-        ApplicationRental::create([
+
+
+            // Store the uploaded file
+
+
+            if ($request->hasFile('photograph')) {
+                $photographName = time() . "-" . $request->photograph->getClientOriginalName();
+                $photographPath = $request->file('photograph')->storeAs('photograph', $photographName, 'public');
+                $validatedData['photograph'] = $photographPath;
+            }
+
+
+            ApplicationRental::create([
             'applicant_surname' => $request->applicant_surname,
             'applicant_first' => $request->applicant_first,
             'applicant_middle' => $request->applicant_middle,
             'applicant_address' => $request->applicant_address,
-            'co_applicant_name' => $request->co_applicant_name,
             'co_applicant_surname' => $request->co_applicant_surname,
+            'co_applicant_name' => $request->co_applicant_name,
             'co_applicant_middle' => $request->co_applicant_middle,
             'co_applicant_address' => $request->co_applicant_address,
             'national_registration_number' => $request->national_registration_number,
@@ -37,8 +54,10 @@ class ApplicationRentalController extends Controller
             'own_landorproperty' => $request->own_landorproperty,
             'state_address' => $request->state_address,
             'financial_institution' => $request->financial_institution,
-            'commoccupedaunitents' => $request->occupedaunit,
-            'addmore' => $request->addmore,
+            'give_details' => $request->give_details,
+            'occupedaunit' => $request->occupedaunit,
+            'photograph' => $photographPath ,
+            'addmore' => json_encode($request->addmore),
             'tenantorlodger' => $request->tenantorlodger,
             'addressoflandlord' => $request->addressoflandlord,
             'present_accommodation' => $request->present_accommodation,
@@ -68,6 +87,14 @@ class ApplicationRentalController extends Controller
         ]);
 
          // Redirect back with success message
-         return redirect("/application-for-rental")->with('success', 'Message received successfully!');
+         //return redirect("/application-for-rental")->with('success', 'Message received successfully!');
+
+         try {
+            return redirect()->back()->with('success', 'Application submitted successfully!');
+
+        } catch (\Exception $e) {
+            return back()->with('error', 'Please try again.');
+        }
+
     }
 }
