@@ -88,6 +88,8 @@
 <script type="text/javascript" src="{{ asset('scripts/mmenu.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('scripts/tooltips.min.js') }}"></script>
 
+<script type="text/javascript" src="{{ asset('scripts/sweetalert.js') }}"></script>
+
 <script type="text/javascript" src="{{ asset('scripts/popper.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('scripts/bootstrap.min.js') }}"></script>
 
