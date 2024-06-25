@@ -30,11 +30,17 @@ class ContactController extends Controller
         ]);
 
 
+        $details = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'comments' => $request->comments
+        ];
 
-         Mail::to('jonathan.motta@yellomg.com')->send(new ContactFormMail($validatedData['name'],
-                                                                         $validatedData['email'],
-                                                                         $validatedData['subject'],
-                                                                         $validatedData['comments']));
+
+        Mail::to('jonathan.motta@yellomg.com')->send(new ContactFormMail($details));
+
+
 
 
         // Redirect back with success message

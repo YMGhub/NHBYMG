@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
@@ -9,23 +10,29 @@ class ContactFormMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $messageContent,$messageEmail,$messageSubject,$messageMessage;
+    public $details;
 
-    public function __construct($messageContent,$messageEmail,$messageSubject,$messageMessage)
+    /**
+     * Create a new message instance.
+     *
+     * @return void
+     */
+    public function __construct($details)
     {
-        $this->messageContent = $messageContent;
-        $this->messageEmail = $messageEmail;
-        $this->messageSubject = $messageSubject;
-        $this->messageMessage = $messageMessage;
-
+        $this->details = $details;
     }
 
+    /**
+     * Build the message.
+     *
+     * @return $this
+     */
     public function build()
     {
-        return $this->view('emails.contact')
-                    ->with(['nameMessage' => $this->messageContent,
-                            'emailMessage' => $this->messageEmail,
-                            'subjectMessage' => $this->messageSubject,
-                            'meesageMessage' => $this->messageMessage]);
+        $email = $this->subject('New Contact Message ')
+        ->view('emails.contact');
+
+
+        return $email;
     }
 }
