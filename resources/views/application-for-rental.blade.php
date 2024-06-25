@@ -45,28 +45,27 @@
                     </p>
 
                     <!--div id="contact-message"></div-->
-                    @if(Session::has('success'))
-                    <div class="alert alert-success alert-custom alert-success-custom">
-                        {{ Session::get('success') }}
-                        @php
-                            Session::forget('success');
-                        @endphp
-                    </div>
+                    @if (Session::has('success'))
+                        <div class="alert alert-success alert-custom alert-success-custom">
+                            {{ Session::get('success') }}
+                            @php
+                                Session::forget('success');
+                            @endphp
+                        </div>
+                    @endif
+                    <!-- Form Validation Error Messages -->
+                    @if ($errors->any())
+                        <div class="alert alert-danger alert-custom alert-danger-custom">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
                     @endif
 
-                        <!-- Form Validation Error Messages -->
-                    @if ($errors->any())
-                    <div class="alert alert-danger alert-custom alert-danger-custom">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
-                    <form method="post" enctype="multipart/form-data" action="{{ route('application-for-rental.apply') }}" name="applicationrental"
-                        id="applicationrental" autocomplete="on">
+                    <form method="post" enctype="multipart/form-data" action="{{ route('application-for-rental.apply') }}"
+                        name="applicationrental" id="applicationrental" autocomplete="on">
                         @csrf
 
                         <div class="row">
@@ -201,6 +200,20 @@
                             </div>
                             <!---CITIZENSHIP:::--->
 
+                            <!---TELEPHONE:::--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>TELEPHONE:</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input name="telephone" type="tel" id="telephone"
+                                                placeholder="Telephone" required="required" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---TELEPHONE:::--->
+
                             <!---INCOME--->
                             <div class="col-md-12">
                                 <div>
@@ -249,10 +262,10 @@
                                         <div class="col-md-6">
                                             <div class="btn-group" data-toggle="buttons">
                                                 <label class="btn btn-primary radio-inline">
-                                                    <input type="radio" name="own_landorproperty">Yes
+                                                    <input type="radio" value="yes" name="own_landorproperty">Yes
                                                 </label>
                                                 <label class="btn btn-primary radio-inline">
-                                                    <input type="radio" name="own_landorproperty"> No
+                                                    <input type="radio" value="no" name="own_landorproperty"> No
                                                 </label>
 
                                             </div>
@@ -269,7 +282,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <input name="state_address" type="text" id="state_address"
-                                                placeholder="If Yes, Please State Address" required="required" />
+                                                placeholder="If Yes, Please State Address"  />
                                         </div>
                                     </div>
                                 </div>
@@ -307,7 +320,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <input name="give_details" type="text" id="give_details"
-                                                placeholder="If Yes, Please Give Details" required="required" />
+                                                placeholder="If Yes, Please Give Details" />
                                         </div>
                                     </div>
                                 </div>
@@ -336,7 +349,8 @@
                                     <label><b>PHOTOGRAPH</b></label>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <input type="file" name="photograph" accept="image/jpg, image/jpeg, image/png">
+                                            <input type="file" name="photograph"
+                                                accept="image/jpg, image/jpeg, image/png">
                                         </div>
                                     </div>
                                 </div>
@@ -371,7 +385,7 @@
                                                             class="form-control" /></td>
                                                     <td><input type="text" name="addmore[0][income_occupant]"
                                                             placeholder="Enter Income" class="form-control" /></td>
-                                                    <td><button type="button" name="add"  id="add"
+                                                    <td><button type="button" name="add" id="add"
                                                             class="btn btn-success addMore">+</button></td>
                                                 </tr>
                                             </table>
