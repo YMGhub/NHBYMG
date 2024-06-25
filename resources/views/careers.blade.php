@@ -139,27 +139,29 @@
             })
                 .then(response => {
                 if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-            .then(data => {
-                Swal.fire({
-                title: 'Success!',
-                text: data.message, // Assuming the server returns a message key in the JSON response
-                icon: 'success',
-                confirmButtonText: 'OK'
-            });
-        })
-            .catch(error => {
-                console.error('There was an error!', error);
-            Swal.fire({
+                    Swal.fire({
                 title: 'Error!',
                 text: 'An error occurred while submitting the form. Please try again later.',
                 icon: 'error',
                 confirmButtonText: 'OK'
             });
-        });
+                    throw new Error('Network response was not ok');
+                }else{
+
+                    Swal.fire({
+                        title: 'Success!',
+                        text: "Submitted successfully", // Assuming the server returns a message key in the JSON response
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    });
+
+
+                }
+            return response.json();
+        })
+
+        document.getElementById('careerApplicationForm').reset();
+
         });
     });
 </script>
