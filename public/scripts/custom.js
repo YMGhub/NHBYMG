@@ -274,9 +274,9 @@ $(document).ready(function(){
 	}
 
 	// replacing comma with dot
-	$(document).on('change', function() {
+	/*$(document).on('change', function() {
 		$("#interest").val($("#interest").val().replace(/,/g, '.'));
-	});
+	});*/
 
 	// Calculator
 	function mortgageCalc() {
@@ -1308,7 +1308,7 @@ $(document).ready(function(){
         });
     });
 
-    $('#contactform').submit(function(){
+    /*$('#contactform').submit(function(){
 
         if ($('#contact mark.error').size()>0) {
             if(shake == "Yes") {
@@ -1338,7 +1338,7 @@ $(document).ready(function(){
 
         return false;
 
-    });
+    });*/
 
     function isEmail(emailAddress) {
 
