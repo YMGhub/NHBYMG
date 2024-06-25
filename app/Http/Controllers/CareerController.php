@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Career;
+use App\Mail\CareersMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CareerController extends Controller
 {
@@ -52,7 +55,27 @@ class CareerController extends Controller
             'cover_letter' => $coverLetterPath, // Assuming $coverLetterUrl is the URL of the stored cover letter file
         ]);
 
+        $details = [
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'gender' => $request->gender,
+            'age' => $request->age,
+            'phone_home' => $request->phone_home,
+            'phone_work' => $request->phone_work,
+            'phone_mobile' => $request->phone_mobile,
+            'email' => $request->email,
+            'resume' => $resumePath, // Assuming $resumeUrl is the URL of the stored resume file
+            'cover_letter' => $coverLetterPath, // Assuming $coverLetterUrl is the URL of the stored cover letter file
+        ];
+
+        Mail::to('jonathan.motta@yellomg.com')->send(new CareersMail($details));
+
         // Redirect back with success message
-        return redirect()->back()->with('success', 'Application submitted successfully!');
+        try {
+            return redirect()->back()->with('success', 'Application submitted successfully!');
+
+        } catch (\Exception $e) {
+            return back()->with('error', 'Please try again.');
+        }
     }
 }

@@ -99,14 +99,15 @@
                             <input name="email" type="email" id="email" placeholder="Email Address" required="required" />
                         </div>
 
-                        <div>
+                        <div><label for="resume">Upload Resume/CV (PDF, DOC, DOCX, TXT)</label>
                             <input name="resume" type="file" id="resume" accept=".pdf,.doc,.docx,.txt" required="required">
-                            <label for="resume">Upload Resume/CV (PDF, DOC, DOCX, TXT)</label>
+
                         </div>
 
                         <div>
-                            <input name="cover_letter" type="file" id="cover_letter" accept=".pdf,.doc,.docx,.txt" required="required">
                             <label for="cover_letter">Upload Cover Letter (PDF, DOC, DOCX, TXT)</label>
+                            <input name="cover_letter" type="file" id="cover_letter" accept=".pdf,.doc,.docx,.txt" required="required">
+
                         </div>
 
                         <input type="submit" class="submit button" id="submit" value="Submit Application" />
