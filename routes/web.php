@@ -7,6 +7,8 @@ use App\Http\Controllers\ListingsController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\FrontEndContentController;
 use App\Http\Controllers\ApplicationRentalController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PageController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -91,6 +93,18 @@ Route::middleware([
 
     Route::resource('listings', ListingsController::class);
 
+
+
+//rutas para administracion
+    Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+        Route::middleware(['role:admin'])->group(function () {
+            Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+            Route::resource('admin/pages', PageController::class);
+        });
+    });
+
+
+
     //2222 aun no estoy seguro que esto este ejecutandose pero no ha crasheado nada aun
     Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard2', function () {
         return view('dashboard2');
@@ -104,5 +118,10 @@ Route::middleware([
         return view('page2');
     })->name('page2');
 
+//jjjjjkev
+    Route::middleware(['role:user'])->group(function () {
+        Route::get('/user/dashboard', [UserController::class, 'index'])->name('user.dashboard');
+        // Añade más rutas específicas para usuarios aquí
+    });
 
 });
