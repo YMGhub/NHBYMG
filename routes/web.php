@@ -87,54 +87,13 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-
-
-
-
-    Route::resource('listings', ListingsController::class);
-
-
-
-//rutas para administracion
-    /*Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-        Route::middleware(['role:admin'])->group(function () {
-            Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-            Route::resource('admin/pages', PageController::class);
-        });
-    });
-
-    */
-
-
-
-
-
-    //2222 aun no estoy seguro que esto este ejecutandose pero no ha crasheado nada aun
-   /* Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard2', function () {
-        return view('dashboard2');
-    })->name('dashboard2');
-
-    Route::middleware(['auth:sanctum', 'verified'])->get('/page1', function () {
-        return view('page1');
-    })->name('page1');
-
-    Route::middleware(['auth:sanctum', 'verified'])->get('/page2', function () {
-        return view('page2');
-    })->name('page2');*/
-
-//jjjjjkev
-    /*Route::middleware(['role:user'])->group(function () {
-        Route::get('/user/dashboard', [UserController::class, 'index'])->name('user.dashboard');
-        // Añade más rutas específicas para usuarios aquí
-    });*/
-
-});
-
-Route::group(['middleware' => ['auth:sanctum']], function(){
-
-    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard')->middleware('restrictRole:admin');
-
-
 });
 
 
+
+
+Route::middleware(['auth:sanctum', 'restrictRole:admin'])->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/admin/about-us/create', [AdminController::class, 'createAboutUs'])->name('admin.about.create');
+    Route::post('/admin/about-us', [AdminController::class, 'storeAboutUs'])->name('admin.about.store');
+});
