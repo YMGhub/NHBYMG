@@ -8,7 +8,7 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     
+
     *public function up(): void
     *{
        * Schema::table('users', function (Blueprint $table) {
@@ -17,7 +17,7 @@ return new class extends Migration
     *} */
     /**
      * Reverse the migrations.
-    
+
     *public function down(): void
     *{
      *   Schema::table('users', function (Blueprint $table) {
@@ -29,7 +29,7 @@ return new class extends Migration
          public function up()
 {
     Schema::table('users', function (Blueprint $table) {
-        $table->string('role')->default('user'); // Añadir campo 'role'
+        $table->enum('role', [ 'admin', 'moderator','user'])->default('user');
     });
 }
 

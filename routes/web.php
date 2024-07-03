@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ListingsController;
-use App\Http\Controllers\Admin\UserController;
+//use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\FrontEndContentController;
 use App\Http\Controllers\ApplicationRentalController;
 use App\Http\Controllers\AdminController;
@@ -96,17 +96,21 @@ Route::middleware([
 
 
 //rutas para administracion
-    Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    /*Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::middleware(['role:admin'])->group(function () {
             Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
             Route::resource('admin/pages', PageController::class);
         });
     });
 
+    */
+
+
+
 
 
     //2222 aun no estoy seguro que esto este ejecutandose pero no ha crasheado nada aun
-    Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard2', function () {
+   /* Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard2', function () {
         return view('dashboard2');
     })->name('dashboard2');
 
@@ -116,12 +120,21 @@ Route::middleware([
 
     Route::middleware(['auth:sanctum', 'verified'])->get('/page2', function () {
         return view('page2');
-    })->name('page2');
+    })->name('page2');*/
 
 //jjjjjkev
-    Route::middleware(['role:user'])->group(function () {
+    /*Route::middleware(['role:user'])->group(function () {
         Route::get('/user/dashboard', [UserController::class, 'index'])->name('user.dashboard');
         // Añade más rutas específicas para usuarios aquí
-    });
+    });*/
 
 });
+
+Route::group(['middleware' => ['auth:sanctum']], function(){
+
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard')->middleware('restrictRole:admin');
+
+
+});
+
+
