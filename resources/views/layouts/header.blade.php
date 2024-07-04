@@ -183,7 +183,7 @@
                             <a href="{{ route('login') }}" class="sign-in"><i class="fa fa-user"></i> Log In /
                                 Register</a>
                         @endif
-                        <a href="/our-services" class="button border">Apply Now</a>
+                        <a href="/application-for-rental" class="button border">Apply Now</a>
                     </div>
                     <!-- Header Widget / End -->
                 </div>

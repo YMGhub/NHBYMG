@@ -226,7 +226,7 @@
                                         suit your needs.</p>
                                 </div>
                                 <p>
-                                    <a href="/our-services" class="button border">Apply Now</a>
+                                    <a href="/application-for-rental" class="button border">Apply Now</a>
                             </div>
                         </div>
 
@@ -273,7 +273,7 @@
                                         your
                                         preferences. </p>
                                 </div>
-                                <a href="/our-services" class="button border">Apply Now</a>
+                                <a href="/application-for-rental" class="button border">Apply Now</a>
                             </div>
                         </div>
 
@@ -318,7 +318,7 @@
                                         owning.
                                     </p>
                                 </div>
-                                <a href="/our-services" class="button border">Apply Now</a>
+                                <a href="/application-for-rental" class="button border">Apply Now</a>
                             </div>
                         </div>
 
@@ -373,7 +373,7 @@
                                         during
                                         challenging circumstances. </p>
                                 </div>
-                                <a href="/our-services" class="button border">Apply Now</a>
+                                <a href="/application-for-rental" class="button border">Apply Now</a>
                             </div>
                         </div>
 
@@ -420,7 +420,7 @@
                                         resources
                                         necessary for your housing goals. </p>
                                 </div>
-                                <a href="/our-services" class="button border">Apply Now</a>
+                                <a href="/application-for-rental" class="button border">Apply Now</a>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-12">
@@ -466,7 +466,7 @@
                                         remains safe,
                                         clean, and well-maintained for your convenience and peace of mind. </p>
                                 </div>
-                                <a href="/our-services" class="button border">Apply Now</a>
+                                <a href="/application-for-rental" class="button border">Apply Now</a>
                             </div>
                         </div>
                     </div>

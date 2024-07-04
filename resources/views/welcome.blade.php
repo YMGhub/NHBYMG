@@ -352,7 +352,7 @@
                                 suit your needs.</p>
                         </div>
                         <p>
-                            <a href="/our-services" class="button border">Apply Now</a>
+                            <a href="/application-for-rental" class="button border">Apply Now</a>
                     </div>
                 </div>
 
@@ -397,7 +397,7 @@
                                 of lots available for sale or rental, allowing you to shape your future according to your
                                 preferences. </p>
                         </div>
-                        <a href="/our-services" class="button border">Apply Now</a>
+                        <a href="/application-for-rental" class="button border">Apply Now</a>
                     </div>
                 </div>
 
@@ -440,7 +440,7 @@
                                 to purchase it in the future, making it easier for you to transition from renting to owning.
                             </p>
                         </div>
-                        <a href="/our-services" class="button border">Apply Now</a>
+                        <a href="/application-for-rental" class="button border">Apply Now</a>
                     </div>
                 </div>
 
@@ -492,7 +492,7 @@
                                 providing new housing solutions. We aim to make the transition as smooth as possible during
                                 challenging circumstances. </p>
                         </div>
-                        <a href="/our-services" class="button border">Apply Now</a>
+                        <a href="/application-for-rental" class="button border">Apply Now</a>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
@@ -538,7 +538,7 @@
                                 your housing-related financial needs. We're here to help you access the financial resources
                                 necessary for your housing goals. </p>
                         </div>
-                        <a href="/our-services" class="button border">Apply Now</a>
+                        <a href="/application-for-rental" class="button border">Apply Now</a>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
@@ -582,7 +582,7 @@
                                 also offer estate maintenance services to ensure that your living environment remains safe,
                                 clean, and well-maintained for your convenience and peace of mind. </p>
                         </div>
-                        <a href="/our-services" class="button border">Apply Now</a>
+                        <a href="/application-for-rental" class="button border">Apply Now</a>
                     </div>
                 </div>
             </div>
