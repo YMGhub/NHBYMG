@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ListFormController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\ContactController;
@@ -96,4 +97,9 @@ Route::middleware(['auth:sanctum', 'restrictRole:admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.index');
     Route::get('/admin/about-us/create', [AdminController::class, 'createAboutUs'])->name('admin.about.create');
     Route::post('/admin/about-us', [AdminController::class, 'storeAboutUs'])->name('admin.about.store');
+});
+
+//Rutas forms
+Route::middleware(['auth:sanctum', 'restrictRole:user'])->group(function () {
+    Route::get('/list-form', [ListFormController::class, 'index'])->name('listform.index');
 });
