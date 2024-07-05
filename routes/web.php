@@ -100,6 +100,6 @@ Route::middleware(['auth:sanctum', 'restrictRole:admin'])->group(function () {
 });
 
 //Rutas forms
-Route::middleware(['auth:sanctum', 'restrictRole:user'])->group(function () {
+Route::middleware(['auth:sanctum', 'restrictRole:user,admin'])->group(function () {
     Route::get('/list-form', [ListFormController::class, 'index'])->name('listform.index');
 });

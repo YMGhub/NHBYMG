@@ -5,26 +5,26 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="containerOut">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="overflow-hidden bg-white shadow-xl dark:bg-gray-800 sm:rounded-lg">
+            <div class="overflow-hidden bg-white shadow-xl dark:bg-gray-800 sm:rounded-lg containerInner">
 
                 <form action="{{ route('admin.about.store') }}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="section1">Section
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 labelSection" for="section1">Section
                             1</label>
                         <textarea class="form-control" id="section1" name="section1">{{ old('section1') }}</textarea>
                     </div>
                     <br>
                     <div class="form-group">
-                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="section2">Section
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 labelSection" for="section2">Section
                             2</label>
                         <textarea class="form-control" id="section2" name="section2">{{ old('section2') }}</textarea>
                     </div>
                     <br>
                     <div class="form-group">
-                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="section3">Section
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 labelSection" for="section3">Section
                             3</label>
                         <textarea class="form-control" id="section3" name="section3">{{ old('section3') }}</textarea>
                     </div>
