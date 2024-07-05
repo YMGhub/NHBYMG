@@ -92,6 +92,9 @@ Route::middleware(['auth:sanctum', 'restrictRole:admin'])->group(function () {
         // Edit
         Route::get('/edit/{id}', [AboutUsController::class, 'edit'])->name('admin.aboutus.edit');
 
+        // Edit
+        Route::post('/', [AboutUsController::class, 'storeAboutUs'])->name('admin.aboutus.store');
+
         ///Update
         Route::put('/update-about-us/{id}', [AboutUsController::class, 'update'])->name('admin.aboutus.update');
     });
