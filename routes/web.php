@@ -1,27 +1,22 @@
 <?php
 
+use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ApplicationRentalController;
+use App\Http\Controllers\CareerController;
+//use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ListFormController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CareerController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ListingsController;
-//use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Admin\FrontEndContentController;
-use App\Http\Controllers\ApplicationRentalController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\PageController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about-us', function () {
-    return view('about-us');
-})->name('about-us');
+Route::get('/about-us', [AboutUsController::class, 'aboutus_info'])->name('about-us');
 
-Route::get('/mission-and-vision', function () {
-    return view('mission-and-vision');
-})->name('mission-and-vision');
+
+Route::get('/mission-and-vision', [AboutUsController::class, 'mission_vision_info'])->name('mission-and-vision');
 
 Route::get('/our-executives', function () {
     return view('our-executives');
@@ -30,7 +25,6 @@ Route::get('/our-executives', function () {
 Route::get('/our-executives', function () {
     return view('our-executives');
 })->name('our-executives');
-
 
 Route::get('/our-department', function () {
     return view('our-department');
@@ -58,8 +52,6 @@ Route::get('/projects', function () {
     return view('projects');
 })->name('projects');
 
-
-
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
@@ -73,12 +65,6 @@ Route::get('/application-for-rental', function () {
 
 Route::post('/application-for-rental/apply', [ApplicationRentalController::class, 'submitApplication'])->name('application-for-rental.apply');
 
-
-
-
-
-
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -90,14 +76,40 @@ Route::middleware([
     })->name('dashboard');
 });
 
-
-
-
 Route::middleware(['auth:sanctum', 'restrictRole:admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.index');
-    Route::get('/admin/about-us/create', [AdminController::class, 'createAboutUs'])->name('admin.about.create');
-    Route::post('/admin/about-us', [AdminController::class, 'storeAboutUs'])->name('admin.about.store');
+
+
+
+    //About Us
+    Route::prefix('/admin/about-us')->group(function () {
+
+        Route::get('/', [AboutUsController::class, 'index'])->name('admin.aboutus.index');
+
+        //Show the form for creating new front-end content.
+        Route::get('/create', [AboutUsController::class, 'create'])->name('admin.aboutus.create');
+
+        // Edit
+        Route::get('/edit/{id}', [AboutUsController::class, 'edit'])->name('admin.aboutus.edit');
+
+        ///Update
+        Route::put('/update-about-us/{id}', [AboutUsController::class, 'update'])->name('admin.aboutus.update');
+
+        /*
+        //guarda la informacion
+        Route::post('/', [AboutUsController::class, 'storeAboutUs'])->name('admin.aboutus.store');
+
+        // Edit
+        Route::get('/edit', [AboutUsController::class, 'edit'])->name('admin.aboutus.edit');
+        
+    
+        
+        Route::put('/', [AboutUsController::class, 'update'])->name('admin.aboutus.update');*/
+    });
 });
+
+
+
 
 //Rutas forms
 Route::middleware(['auth:sanctum', 'restrictRole:user,admin'])->group(function () {

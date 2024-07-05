@@ -9,9 +9,11 @@ class AboutUs extends Model
 {
     use HasFactory;
 
+    protected $table = "about_us";
+
     protected $fillable = [
-            'section1',
-            'section2',
-            'section3',
-        ];
+        'section1',
+        'section2',
+        'section3',
+    ];
 }
