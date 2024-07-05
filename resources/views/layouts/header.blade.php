@@ -30,21 +30,22 @@
 
 <body class="font-sans antialiased dark:bg-black dark:text-white/50">
     <div id="wrapper">
-    <header id="header-container">
+        <header id="header-container">
 
-        <!-- Topbar -->
-        <div id="top-bar">
-            <div class="container">
+            <!-- Topbar -->
+            <div id="top-bar">
+                <div class="container">
 
-                <!-- Left Side Content -->
-                <div class="left-side">
+                    <!-- Left Side Content -->
+                    <div class="left-side">
 
-                    <!-- Top bar -->
-                    <ul class="top-bar-menu">
-                        <li><i class="fa fa-phone"></i><a href="tel:12465365300">1-246-536-5300</a></li>
-                        <li><i class="fa fa-envelope"></i> <a href="mailto:NHC.CustomerService@barbados.gov.bb">NHC.CustomerService@barbados.gov.bb</a>
-                        </li>
-                        <!-- <li>
+                        <!-- Top bar -->
+                        <ul class="top-bar-menu">
+                            <li><i class="fa fa-phone"></i><a href="tel:12465365300">1-246-536-5300</a></li>
+                            <li><i class="fa fa-envelope"></i> <a
+                                    href="mailto:NHC.CustomerService@barbados.gov.bb">NHC.CustomerService@barbados.gov.bb</a>
+                            </li>
+                            <!-- <li>
                                         <div class="top-bar-dropdown">
                                             <span>Dropdown Menu</span>
                                             <ul class="options">
@@ -57,14 +58,14 @@
                                             </ul>
                                         </div>
                                     </li> -->
-                    </ul>
+                        </ul>
 
-                </div>
-                <!-- Left Side Content / End -->
+                    </div>
+                    <!-- Left Side Content / End -->
 
 
-                <!-- Left Side Content -->
-                <!-- <div class="right-side">
+                    <!-- Left Side Content -->
+                    <!-- <div class="right-side">
                                 <ul class="social-icons">
                                     <li><a class="facebook" href="#"><i class="icon-facebook"></i></a></li>
                                     <li><a class="twitter" href="#"><i class="icon-twitter"></i></a></li>
@@ -73,128 +74,132 @@
                                 </ul>
 
                             </div> -->
-                <!-- Left Side Content / End -->
+                    <!-- Left Side Content / End -->
 
+                </div>
             </div>
-        </div>
-        <div class="clearfix"></div>
-        <!-- Topbar / End -->
+            <div class="clearfix"></div>
+            <!-- Topbar / End -->
 
 
-        <!-- Header -->
-        <div id="header">
-            <div class="container">
+            <!-- Header -->
+            <div id="header">
+                <div class="container">
 
-                <!-- Left Side Content -->
-                <div class="left-side">
+                    <!-- Left Side Content -->
+                    <div class="left-side">
 
-                    <!-- Logo -->
-                    <div id="logo">
-                        <a href="javascript:void(0);"><img src="images/thumbnail_image001-removebg-preview.png"
-                                alt=""></a>
-                    </div>
-
-
-                    <!-- Mobile Navigation -->
-                    <div class="mmenu-trigger">
-                        <button class="hamburger hamburger--collapse" type="button">
-                            <span class="hamburger-box">
-                                <span class="hamburger-inner"></span>
-                            </span>
-                        </button>
-                    </div>
+                        <!-- Logo -->
+                        <div id="logo">
+                            <a href="/"><img src="images/thumbnail_image001-removebg-preview.png"
+                                    alt=""></a>
+                        </div>
 
 
-                    <!-- Main Navigation -->
-                    <nav id="navigation" class="style-1">
-                        <ul id="responsive">
+                        <!-- Mobile Navigation -->
+                        <div class="mmenu-trigger">
+                            <button class="hamburger hamburger--collapse" type="button">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                        </div>
 
-                            <li><a class="{{ Request::is('/') ? 'current' : '' }}" href="/">Home</a>
-                                <!-- <ul>
+
+                        <!-- Main Navigation -->
+                        <nav id="navigation" class="style-1">
+                            <ul id="responsive">
+
+                                <li><a class="{{ Request::is('/') ? 'current' : '' }}" href="/">Home</a>
+                                    <!-- <ul>
                                                 <li><a href="index.html">Home 1</a></li>
                                                 <li><a href="index-2.html">Home 2</a></li>
                                                 <li><a href="index-3.html">Home 3</a></li>
                                                 <li><a href="index-4.html">Home 4</a></li>
                                             </ul> -->
-                            </li>
-                            <li><a class="{{ Request::is('about-us') ? 'current' : '' }}" href="/about-us">About Us</a>
-                                <ul>
-                                    <li><a class="{{ Request::is('mission-and-vision') ? 'current' : '' }}"
-                                            href="/mission-and-vision">Mission & Vision</a></li>
-                                    <li><a class="{{ Request::is('our-executives') ? 'current' : '' }}"
-                                            href="our-executives">Our Executives</a></li>
-                                    <li><a class="{{ Request::is('our-department') ? 'current' : '' }}"
-                                            href="our-department">Our Department</a></li>
-                                    <li><a class="{{ Request::is('commercial-endeavors') ? 'current' : '' }}"
-                                            href="commercial-endeavors">Commercial Endeavors</a></li>
-                                    <li><a class="{{ Request::is('careers') ? 'current' : '' }}"
-                                            href="careers">Careers</a></li>
-                                    <li><a class="{{ Request::is('faq') ? 'current' : '' }}" href="faq">FAQS</a>
-                                    </li>
+                                </li>
+                                <li><a class="{{ Request::is('about-us') ? 'current' : '' }}" href="/about-us">About
+                                        Us</a>
+                                    <ul>
+                                        <li><a class="{{ Request::is('mission-and-vision') ? 'current' : '' }}"
+                                                href="/mission-and-vision">Mission & Vision</a></li>
+                                        <li><a class="{{ Request::is('our-executives') ? 'current' : '' }}"
+                                                href="our-executives">Our Executives</a></li>
+                                        <li><a class="{{ Request::is('our-department') ? 'current' : '' }}"
+                                                href="our-department">Our Department</a></li>
+                                        <li><a class="{{ Request::is('commercial-endeavors') ? 'current' : '' }}"
+                                                href="commercial-endeavors">Commercial Endeavors</a></li>
+                                        <li><a class="{{ Request::is('careers') ? 'current' : '' }}"
+                                                href="careers">Careers</a></li>
+                                        <li><a class="{{ Request::is('faq') ? 'current' : '' }}"
+                                                href="faq">FAQS</a>
+                                        </li>
 
-                                </ul>
-                            </li>
-                            <li><a class="{{ Request::is('our-services') ? 'current' : '' }}" href="/our-services">Our
-                                    Services</a>
-                            <li><a class="{{ Request::is('projects') ? 'current' : '' }}" href="/projects">Our
-                                    Projects</a>
+                                    </ul>
+                                </li>
+                                <li><a class="{{ Request::is('our-services') ? 'current' : '' }}"
+                                        href="/our-services">Our
+                                        Services</a>
+                                <li><a class="{{ Request::is('projects') ? 'current' : '' }}" href="/projects">Our
+                                        Projects</a>
 
-                                {{-- <li><a class="{{ Request::is('mission-and-vision') ? 'current' : '' }}" style="width: 102px;" href="/mission-and-vision">Mission & Vision</a> --}}
+                                    {{-- <li><a class="{{ Request::is('mission-and-vision') ? 'current' : '' }}" style="width: 102px;" href="/mission-and-vision">Mission & Vision</a> --}}
 
-                            <li><a class="{{ Request::is('contact') ? 'current' : '' }}" href="contact">Contact Us</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="clearfix"></div>
-                    <!-- Main Navigation / End -->
+                                <li><a class="{{ Request::is('contact') ? 'current' : '' }}" href="contact">Contact
+                                        Us</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="clearfix"></div>
+                        <!-- Main Navigation / End -->
 
-                </div>
-                <!-- Left Side Content / End -->
-
-                <!-- Right Side Content / End -->
-                <div class="right-side">
-                    <!-- Header Widget -->
-                    <div class="header-widget">
-
-                        @if (\Illuminate\Support\Facades\Auth::check())
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                style="display: none;">
-                                @csrf
-                            </form>
-                            <nav id="navigation" class="style-1">
-                                <ul id="responsive">
-                                    <li class="dropdown"> <a href="#" class="profile-link dropdown-toggle"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa fa-user"></i> Profile </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="{{ route('profile.show') }}">View Profile</a></li>
-                                            {{-- <li><hr class="dropdown-divider"></li> --}}
-                                            <li>
-                                                <a href="#" class="dropdown-item"
-                                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                                    Logout
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </nav>
-                        @else
-                            <a href="{{ route('login') }}" class="sign-in"><i class="fa fa-user"></i> Log In /
-                                Register</a>
-                        @endif
-                        <a href="/application-for-rental" class="button border">Apply Now</a>
                     </div>
-                    <!-- Header Widget / End -->
+                    <!-- Left Side Content / End -->
+
+                    <!-- Right Side Content / End -->
+                    <div class="right-side">
+                        <!-- Header Widget -->
+                        <div class="header-widget">
+
+                            @if (\Illuminate\Support\Facades\Auth::check())
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    style="display: none;">
+                                    @csrf
+                                </form>
+                                <nav id="navigation" class="style-1">
+                                    <ul id="responsive">
+                                        <li class="dropdown"> <a href="#" class="profile-link dropdown-toggle"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa fa-user"></i> Profile </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="{{ route('profile.show') }}">View Profile</a></li>
+                                                {{-- <li><hr class="dropdown-divider"></li> --}}
+                                                <li>
+                                                    <a href="#" class="dropdown-item"
+                                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                        Logout
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            @else
+                                <a href="{{ route('login') }}" class="sign-in"><i class="fa fa-user"></i> Log In /
+                                    Register</a>
+                            @endif
+                            <a href="/application-for-rental" class="button border">Apply Now</a>
+                        </div>
+                        <!-- Header Widget / End -->
+                    </div>
+                    <!-- Right Side Content / End -->
+
                 </div>
-                <!-- Right Side Content / End -->
-
             </div>
-        </div>
-        <!-- Header / End -->
+            <!-- Header / End -->
 
-    </header>
-    <div class="clearfix"></div>
-    <!-- Header Container / End -->
+        </header>
+        <div class="clearfix"></div>
+        <!-- Header Container / End -->
 
-    <main class="">
+        <main class="">
