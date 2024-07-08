@@ -5,3 +5,25 @@
 [x-cloak] {
     display: none;
 }
+
+.cke_notifications_area {
+    display: none !important;
+}
+
+.containerOut {
+    padding: 2rem;
+}
+
+.containerInner {
+    padding: 2rem;
+}
+
+.labelSection {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.alert-success {
+    color: #ffff;
+}
