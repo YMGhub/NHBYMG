@@ -15,7 +15,7 @@
                         About Us, Vision and Mission
                     </a>
                 @else
-                    <a href="{{ url('/admin/about-us/edit/1') }}" class="btn btn-xs btn-info pull-right text-white">
+                    <a href="{{ url('/admin/about-us/create') }}" class="btn btn-xs btn-info pull-right text-white">
                         Create About Us, Vision and Mission Content
                     </a>
                 @endif
