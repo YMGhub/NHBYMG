@@ -21,6 +21,14 @@
                 @endif
                 <!--Record about us-->
 
+                <!--Our Executives-->
+                <a href="{{ url('/admin/our-executives/create') }}" class="btn btn-xs btn-info pull-right text-white">
+                    Create Executive
+                </a>
+                <!--Our Executives-->
+
+
+
 
             </div>
         </div>

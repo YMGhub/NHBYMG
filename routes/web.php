@@ -7,6 +7,7 @@ use App\Http\Controllers\CareerController;
 //use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ListFormController;
+use App\Http\Controllers\OurExecutivesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -97,6 +98,18 @@ Route::middleware(['auth:sanctum', 'restrictRole:admin'])->group(function () {
 
         ///Update
         Route::put('/update-about-us/{id}', [AboutUsController::class, 'update'])->name('admin.aboutus.update');
+    });
+
+    //Our Executive
+    Route::prefix('/admin/our-executives')->group(function () {
+
+
+        Route::get('/', [OurExecutivesController::class, 'index'])->name('admin.our-executives.index');
+
+        //Show the form for creating new front-end content.
+        Route::get('/create', [OurExecutivesController::class, 'create'])->name('admin.our-executives.create');
+
+        Route::post('/', [OurExecutivesController::class, 'store'])->name('admin.our-executives.store');
     });
 });
 
