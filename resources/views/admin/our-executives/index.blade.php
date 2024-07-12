@@ -15,25 +15,29 @@
                 @endif
 
 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Rol</th>
-                            <th>email_executive</th>
-                            <th>Actions</th>
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr class="text-white">
+                            <th scope="col" class="px-6 py-3">#</th>
+                            <th scope="col" class="px-6 py-3">Name</th>
+                            <th scope="col" class="px-6 py-3">Rol</th>
+                            <th scope="col" class="px-6 py-3">email_executive</th>
+                            <th scope="col" class="px-6 py-3">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($contents as $item)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->name_executive }}</td>
-                                <td>{{ $item->rol_executive }}</td>
-                                <td>{{ $item->email_executive }}</td>
-                                <td>{{ $item->iteration }}</td>
-
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center">
+                                <td class="px-6 py-5">{{ $loop->iteration }}</td>
+                                <td class="px-6 py-5">{{ $item->name_executive }}</td>
+                                <td class="px-6 py-5">{{ $item->rol_executive }}</td>
+                                <td class="px-6 py-5">{{ $item->email_executive }}</td>
+                                <td class="px-6 py-5">
+                                    <a href="#"
+                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a> |
+                                    <a href="#"
+                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
