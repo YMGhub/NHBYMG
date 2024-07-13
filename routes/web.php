@@ -93,7 +93,7 @@ Route::middleware(['auth:sanctum', 'restrictRole:admin'])->group(function () {
         // Edit
         Route::get('/edit/{id}', [AboutUsController::class, 'edit'])->name('admin.aboutus.edit');
 
-        // Edit
+        // store
         Route::post('/', [AboutUsController::class, 'storeAboutUs'])->name('admin.aboutus.store');
 
         ///Update
@@ -110,6 +110,15 @@ Route::middleware(['auth:sanctum', 'restrictRole:admin'])->group(function () {
         Route::get('/create', [OurExecutivesController::class, 'create'])->name('admin.our-executives.create');
 
         Route::post('/', [OurExecutivesController::class, 'store'])->name('admin.our-executives.store');
+
+        // Edit
+        Route::get('/edit/{id}', [OurExecutivesController::class, 'edit'])->name('admin.our-executives.edit');
+
+        ///Update
+        Route::put('/update-our-executives/{id}', [OurExecutivesController::class, 'update'])->name('admin.our-executives.update');
+
+        ///delete
+        Route::delete('/delete-our-executives/{id}/delete', [OurExecutivesController::class, 'destroy'])->name('admin.our-executives.destroy');
     });
 });
 

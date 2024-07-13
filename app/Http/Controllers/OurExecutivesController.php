@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\OurExecutives;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class OurExecutivesController extends Controller
 {
@@ -23,8 +24,10 @@ class OurExecutivesController extends Controller
 
     function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'photo_path' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+
+
+        $request->validate([
+            'photo_path' => 'required|nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         // Store the uploaded file
@@ -36,8 +39,9 @@ class OurExecutivesController extends Controller
             $validatedData['photo_path'] = $photographPath;
         }
 
+
         OurExecutives::create([
-            'photo_path' => $request->photo_path,
+            'photo_path' => $photographPath,
             'name_executive' => $request->name_executive,
             'rol_executive' => $request->rol_executive,
             'phone_executive' => $request->phone_executive,
@@ -50,9 +54,84 @@ class OurExecutivesController extends Controller
 
 
         try {
-            return redirect()->back()->with('success', 'The executive has been saved successfully.');
+            return redirect()->route('admin.our-executives.index')->with('success', 'The executive has been saved successfully.');
         } catch (\Exception $e) {
             return back()->with('error', 'Please try again.');
         }
+    }
+
+
+    public function edit($id)
+    {
+
+        $ourexecutives = OurExecutives::find($id);
+        return view('admin.our-executives.edit', compact('ourexecutives'));
+    }
+
+    public function update(Request $request, OurExecutives  $ourExecutives)
+    {
+
+        $id = $_POST['id_executive'];
+
+        $request->validate([
+            'photo_path' => 'required|nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        // Store the uploaded file
+        /*if ($request->hasFile('photo_path')) {
+            $photographName = time() . "-" . $request->photo_path->getClientOriginalName();
+            $photographPath = $request->file('photo_path')->storeAs('our_executives', $photographName, 'public');
+            $validatedData['photo_path'] = $photographPath;
+        }*/
+
+        //$imagePath = $ourExecutives->photo_path;
+
+        if ($request->hasFile('photo_path')) {
+            $photographName = time() . "-" . $request->photo_path->getClientOriginalName();
+            if ($ourExecutives->photo_path) {
+
+                Storage::disk('public')->delete($ourExecutives->photo_path);
+            }
+            $imagePath = $request->file('photo_path')->storeAs('our_executives', $photographName, 'public');
+        }
+
+
+
+
+
+        $ourexecutives = OurExecutives::find($id);
+
+
+        $ourexecutives->photo_path = $request->input('photo_path');
+        $ourexecutives->name_executive = $request->input('name_executive');
+        $ourexecutives->rol_executive = $request->input('rol_executive');
+        $ourexecutives->phone_executive = $request->input('phone_executive');
+        $ourexecutives->email_executive = $request->input('email_executive');
+        $ourexecutives->facebook_executive = $request->input('facebook_executive');
+
+        $ourexecutives->twitter_executive = $request->input('twitter_executive');
+        $ourexecutives->gplus_executive = $request->input('gplus_executive');
+        $ourexecutives->linkedin_executive = $request->input('linkedin_executive');
+
+
+        $ourexecutives->update();
+
+
+
+
+
+        return  redirect()->route('admin.our-executives.index')->with('success', 'Content updated successfully!');
+    }
+
+    public function destroy($id)
+    {
+        $ourExe = OurExecutives::findOrFail($id);
+        $ourExe->delete();
+
+
+
+
+
+        return redirect()->route('admin.our-executives.index')->with('success', 'Executive deleted successfully');
     }
 }

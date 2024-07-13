@@ -9,24 +9,52 @@
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-xl dark:bg-gray-800 sm:rounded-lg containerInner">
 
-                <!--Record about us-->
-                @if ($recordAboutsUs)
-                    <a href="{{ url('/admin/about-us/edit/1') }}" class="btn btn-xs btn-info pull-right text-white">
-                        About Us, Vision and Mission
-                    </a>
-                @else
-                    <a href="{{ url('/admin/about-us/create') }}" class="btn btn-xs btn-info pull-right text-white">
-                        Create About Us, Vision and Mission Content
-                    </a>
-                @endif
-                <!--Record about us-->
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr class="text-gray text-center">
+                            <th scope="col" class="px-6 py-3">Content</th>
+                            <th scope="col" class="px-6 py-3">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--About us-->
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center">
+                            <td class="px-6 py-5"> About Us, Vision and Mission</td>
+                            <td class="px-6 py-5">
 
-                <!--Our Executives-->
-                <a href="{{ url('/admin/our-executives/create') }}" class="btn btn-xs btn-info pull-right text-white">
-                    Create Executive
-                </a>
-                <!--Our Executives-->
+                                @if ($recordAboutsUs)
+                                    <a href="{{ url('/admin/about-us/edit/1') }}"
+                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                        Edit
+                                    </a>
+                                @else
+                                    | <a href="{{ url('/admin/about-us/create') }}"
+                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                        Create
+                                    </a>
+                                @endif
 
+                            </td>
+                        </tr>
+                        <!--About us-->
+                        <!--Our Executive-->
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center">
+                            <td class="px-6 py-5"> Our Executives</td>
+                            <td class="px-6 py-5">
+
+                                @if ($recordAboutsUs)
+                                    <a href="{{ url('/admin/our-executives') }}"
+                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                        View
+                                    </a>
+                                @endif
+
+                            </td>
+                        </tr>
+                        <!--Our Executive-->
+
+                    </tbody>
+                </table>
 
 
 
