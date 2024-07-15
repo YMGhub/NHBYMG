@@ -41,7 +41,7 @@
                                 <td class="px-6 py-5">{{ $item->rol_executive }}</td>
                                 <td class="px-6 py-5">{{ $item->email_executive }}</td>
                                 <td class="px-6 py-5">
-                                    <a href=""
+                                    <a href="{{ route('our-executives') }}"
                                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a> |
                                     <a href="{{ route('admin.our-executives.edit', $item->id) }}"
                                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> |
