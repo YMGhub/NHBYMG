@@ -31,7 +31,7 @@
                     </div>
                 @endif
 
-                <form class="max-w-sm mx-auto" action="{{ route('admin.our-executives.store') }}" method="POST"
+                <form class="" action="{{ route('admin.our-executives.store') }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
 
