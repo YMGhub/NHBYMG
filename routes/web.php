@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ApplicationRentalController;
 use App\Http\Controllers\CareerController;
+use App\Http\Controllers\CommercialEndeavorsController;
 //use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ListFormController;
@@ -115,6 +116,12 @@ Route::middleware(['auth:sanctum', 'restrictRole:admin'])->group(function () {
 
         ///delete
         Route::delete('/delete-our-executives/{id}/delete', [OurExecutivesController::class, 'destroy'])->name('admin.our-executives.destroy');
+    });
+
+    //Commercial Endeavors
+    Route::prefix('/admin/commercial-endeavors')->group(function () {
+
+        Route::get('/', [CommercialEndeavorsController::class, 'index'])->name('admin.our-executives.index');
     });
 });
 
