@@ -8,6 +8,7 @@ use App\Http\Controllers\CareerController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ListFormController;
 use App\Http\Controllers\OurExecutivesController;
+use App\Models\OurExecutives;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -19,13 +20,8 @@ Route::get('/about-us', [AboutUsController::class, 'aboutus_info'])->name('about
 
 Route::get('/mission-and-vision', [AboutUsController::class, 'mission_vision_info'])->name('mission-and-vision');
 
-Route::get('/our-executives', function () {
-    return view('our-executives');
-})->name('our-executives');
+Route::get('/our-executives', [OurExecutivesController::class, 'ourexecutives_info'])->name('our-executives');
 
-Route::get('/our-executives', function () {
-    return view('our-executives');
-})->name('our-executives');
 
 Route::get('/our-department', function () {
     return view('our-department');

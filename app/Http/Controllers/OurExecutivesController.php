@@ -33,8 +33,11 @@ class OurExecutivesController extends Controller
         // Store the uploaded file
 
 
+        $photographPath = "";
+        // Store the uploaded file
         if ($request->hasFile('photo_path')) {
-            $photographName = time() . "-" . $request->photo_path->getClientOriginalName();
+            $name = str_replace(' ', '', $request->photo_path->getClientOriginalName());
+            $photographName = time() . "-" . $name;
             $photographPath = $request->file('photo_path')->storeAs('our_executives', $photographName, 'public');
             $validatedData['photo_path'] = $photographPath;
         }
@@ -73,36 +76,24 @@ class OurExecutivesController extends Controller
 
         $id = $_POST['id_executive'];
 
-        $request->validate([
+        $validatedData = $request->validate([
             'photo_path' => 'required|nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
+        $photographPath = "";
         // Store the uploaded file
-        /*if ($request->hasFile('photo_path')) {
-            $photographName = time() . "-" . $request->photo_path->getClientOriginalName();
+        if ($request->hasFile('photo_path')) {
+            $name = str_replace(' ', '', $request->photo_path->getClientOriginalName());
+            $photographName = time() . "-" . $name;
             $photographPath = $request->file('photo_path')->storeAs('our_executives', $photographName, 'public');
             $validatedData['photo_path'] = $photographPath;
-        }*/
-
-        //$imagePath = $ourExecutives->photo_path;
-
-        if ($request->hasFile('photo_path')) {
-            $photographName = time() . "-" . $request->photo_path->getClientOriginalName();
-            if ($ourExecutives->photo_path) {
-
-                Storage::disk('public')->delete($ourExecutives->photo_path);
-            }
-            $imagePath = $request->file('photo_path')->storeAs('our_executives', $photographName, 'public');
         }
-
-
 
 
 
         $ourexecutives = OurExecutives::find($id);
 
-
-        $ourexecutives->photo_path = $request->input('photo_path');
+        $ourexecutives->photo_path = $photographPath;
         $ourexecutives->name_executive = $request->input('name_executive');
         $ourexecutives->rol_executive = $request->input('rol_executive');
         $ourexecutives->phone_executive = $request->input('phone_executive');
@@ -114,13 +105,17 @@ class OurExecutivesController extends Controller
         $ourexecutives->linkedin_executive = $request->input('linkedin_executive');
 
 
-        $ourexecutives->update();
+
+
+        //$ourexecutives->update();
+
+        $update = $ourexecutives->update();
 
 
 
-
-
-        return  redirect()->route('admin.our-executives.index')->with('success', 'Content updated successfully!');
+        if ($update) {
+            return  redirect()->route('admin.our-executives.index')->with('success', 'Content updated successfully!');
+        }
     }
 
     public function destroy($id)
@@ -129,9 +124,14 @@ class OurExecutivesController extends Controller
         $ourExe->delete();
 
 
-
-
-
         return redirect()->route('admin.our-executives.index')->with('success', 'Executive deleted successfully');
+    }
+
+    //get content our_executives us to frontpage
+    public function ourexecutives_info()
+    {
+        $data = OurExecutives::all();
+
+        return view('our-executives', compact('data'));
     }
 }
