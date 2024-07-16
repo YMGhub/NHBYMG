@@ -5,10 +5,12 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ApplicationRentalController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\CommercialEndeavorsController;
+use App\Http\Controllers\CommercialEndeavorsInformationController;
 //use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ListFormController;
 use App\Http\Controllers\OurExecutivesController;
+use App\Models\CommercialEndeavors;
 use App\Models\OurExecutives;
 use Illuminate\Support\Facades\Route;
 
@@ -28,9 +30,7 @@ Route::get('/our-department', function () {
     return view('our-department');
 })->name('our-department');
 
-Route::get('/commercial-endeavors', function () {
-    return view('commercial-endeavors');
-})->name('commercial-endeavors');
+Route::get('/commercial-endeavors', [CommercialEndeavorsController::class, 'commercial_info'])->name('commercial-endeavors');
 
 Route::get('/careers', function () {
     return view('careers');
@@ -121,7 +121,41 @@ Route::middleware(['auth:sanctum', 'restrictRole:admin'])->group(function () {
     //Commercial Endeavors
     Route::prefix('/admin/commercial-endeavors')->group(function () {
 
-        Route::get('/', [CommercialEndeavorsController::class, 'index'])->name('admin.our-executives.index');
+        Route::get('/', [CommercialEndeavorsController::class, 'index'])->name('admin.commercial-endeavors.index');
+
+        //Show the form for creating new front-end content.
+        Route::get('/create', [CommercialEndeavorsController::class, 'create'])->name('admin.commercial-endeavors.create');
+
+        Route::post('/', [CommercialEndeavorsController::class, 'store'])->name('admin.commercial-endeavors.store');
+
+        // Edit
+        Route::get('/edit/{id}', [CommercialEndeavorsController::class, 'edit'])->name('admin.commercial.endeavors.edit');
+
+        ///Update
+        Route::put('/update-commercial/{id}', [CommercialEndeavorsController::class, 'update'])->name('admin.commercial.endeavors.update');
+
+        ///delete
+        Route::delete('/delete-commercial/{id}/delete', [CommercialEndeavorsController::class, 'destroy'])->name('admin.commercial.endeavors.destroy');
+    });
+
+    //Commercial Endeavors Information Page
+    Route::prefix('/admin/commercial-endeavors/information')->group(function () {
+        //page information
+        Route::get('/', [CommercialEndeavorsInformationController::class, 'index'])->name('admin.commercial-endeavors.information.index');
+
+        //Show the form for creating new front-end content.
+        Route::get('/create', [CommercialEndeavorsInformationController::class, 'create'])->name('admin.commercial-endeavors.information.create');
+
+        Route::post('/', [CommercialEndeavorsInformationController::class, 'store'])->name('admin.commercial-endeavors.information.store');
+
+        // Edit
+        Route::get('/edit-info_page/{id}', [CommercialEndeavorsInformationController::class, 'edit'])->name('admin.commercial.endeavors.information.edit');
+
+        ///Update
+        Route::put('/update-commercial-info-page/{id}', [CommercialEndeavorsInformationController::class, 'update'])->name('admin.commercial.endeavors.information.update');
+
+        ///delete
+        Route::delete('/delete-commercial-info-page/{id}/delete', [CommercialEndeavorsInformationController::class, 'destroy'])->name('admin.commercial.endeavors.information.destroy');
     });
 });
 
