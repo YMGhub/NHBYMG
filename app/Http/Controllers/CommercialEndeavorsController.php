@@ -100,7 +100,8 @@ class CommercialEndeavorsController extends Controller
     public function commercial_info()
     {
         $data = CommercialEndeavors::all();
+        $data1 = CommercialEndeavorsInformation::all();
 
-        return view('commercial-endeavors', compact('data'));
+        return view('commercial-endeavors', compact('data', 'data1'));
     }
 }

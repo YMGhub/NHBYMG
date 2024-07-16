@@ -10,7 +10,13 @@
 
                         <!-- Main Search Container -->
                         <div class="main-search-container">
-                            <h2>Commercial Endeavors</h2>
+                            <h2>
+                                <?php
+                                if (isset($data1[0])) {
+                                    print $data1[0]->title_page;
+                                }
+                                ?>
+                            </h2>
 
 
                         </div>
@@ -30,12 +36,12 @@
                     <br>
                     <br>
                     <div class="input">
-                        <p>Our diverse business activities encompass every aspect of the housing sector. From the
-                            development of lands, construction of houses, and providing legal and project management
-                            services, to offering comprehensive property management solutions, we are a trusted and
-                            all-encompassing partner in the realm of real estate. With a rich history and a commitment to
-                            excellence, the National Housing Corporation is your go-to resource for all your housing and
-                            real estate needs.
+                        <p>
+                            <?php
+                            if (isset($data1[0])) {
+                                print $data1[0]->description_page;
+                            }
+                            ?>
                         </p>
 
                         <!-- <a href="#" class="show-more-button">Show More <i class="fa fa-angle-down"></i></a> -->

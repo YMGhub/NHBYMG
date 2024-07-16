@@ -87,12 +87,4 @@ class CommercialEndeavorsInformationController extends Controller
 
         return redirect()->route('admin.commercial-endeavors.index')->with('success', 'Commercial deleted successfully');
     }
-
-    //get content our_executives us to frontpage
-    public function commercial_info_page()
-    {
-        $data = CommercialEndeavorsInformation::all();
-
-        return view('commercial-endeavors', compact('data'));
-    }
 }
