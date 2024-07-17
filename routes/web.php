@@ -10,6 +10,7 @@ use App\Http\Controllers\CommercialEndeavorsInformationController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ListFormController;
 use App\Http\Controllers\OurExecutivesController;
+use App\Models\Career;
 use App\Models\CommercialEndeavors;
 use App\Models\OurExecutives;
 use Illuminate\Support\Facades\Route;
@@ -156,6 +157,12 @@ Route::middleware(['auth:sanctum', 'restrictRole:admin'])->group(function () {
 
         ///delete
         Route::delete('/delete-commercial-info-page/{id}/delete', [CommercialEndeavorsInformationController::class, 'destroy'])->name('admin.commercial.endeavors.information.destroy');
+    });
+
+    //Career Admin
+    Route::prefix('/admin/career')->group(function () {
+        //page information
+        Route::get('/', [CareerController::class, 'index'])->name('admin.career.index');
     });
 });
 

@@ -6,6 +6,7 @@ use App\Models\Career;
 use App\Mail\CareersMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 class CareerController extends Controller
 {
@@ -73,9 +74,16 @@ class CareerController extends Controller
         // Redirect back with success message
         try {
             return redirect()->back()->with('success', 'Application submitted successfully!');
-
         } catch (\Exception $e) {
             return back()->with('error', 'Please try again.');
         }
+    }
+
+
+    //admin Panel
+    public function index()
+    {
+        $data = Career::all();
+        return view('admin.career.index', compact('data'));
     }
 }
