@@ -30,7 +30,6 @@
                                 <th scope="col" class="px-6 py-3">Email</th>
                                 <th scope="col" class="px-6 py-3">Resume</th>
                                 <th scope="col" class="px-6 py-3">Cover Letter</th>
-                                <th scope="col" class="px-6 py-3">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,23 +44,22 @@
                                     <td class="px-6 py-5">{{ $item->phone_work }}</td>
                                     <td class="px-6 py-5">{{ $item->phone_mobile }}</td>
                                     <td class="px-6 py-5">{{ $item->email }}</td>
-                                    <td class="px-6 py-5">{{ $item->resume }}</td>
-                                    <td class="px-6 py-5">{{ $item->cover_letter }}</td>
                                     <td class="px-6 py-5">
-                                        <a href="{{ route('our-executives') }}"
-                                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
-                                        |
-                                        <a href="{{ route('admin.our-executives.edit', $item->id) }}"
-                                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                        |
-
-                                        <form action="{{ route('admin.our-executives.destroy', $item->id) }}"
-                                            method="POST">
-                                            @csrf
-                                            @method('delete')
-                                            <button type="submit"
-                                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</button>
-                                        </form>
+                                        @if ($item->resume)
+                                            <a href="{{ asset('storage/' . $item->resume) }}" download>Download
+                                                Resume</a>
+                                        @else
+                                            -
+                                        @endif
+                                    </td>
+                                    <td class="px-6 py-5">
+                                        @if ($item->cover_letter)
+                                            <a href="{{ asset('storage/' . $item->cover_letter) }}" download>Download
+                                                Cover
+                                                Letter</a>
+                                        @else
+                                            -
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
