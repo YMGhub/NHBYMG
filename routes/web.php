@@ -8,6 +8,7 @@ use App\Http\Controllers\CommercialEndeavorsController;
 use App\Http\Controllers\CommercialEndeavorsInformationController;
 //use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FaqsController;
 use App\Http\Controllers\ListFormController;
 use App\Http\Controllers\OurExecutivesController;
 use App\Models\Career;
@@ -39,9 +40,7 @@ Route::get('/careers', function () {
 
 Route::post('/careers/apply', [CareerController::class, 'submitApplication'])->name('careers.apply');
 
-Route::get('/faq', function () {
-    return view('faq');
-})->name('faq');
+Route::get('/faq', [FaqsController::class, 'faq_info'])->name('faq');
 
 Route::get('/our-services', function () {
     return view('our-services');
@@ -163,6 +162,18 @@ Route::middleware(['auth:sanctum', 'restrictRole:admin'])->group(function () {
     Route::prefix('/admin/career')->group(function () {
         //page information
         Route::get('/', [CareerController::class, 'index'])->name('admin.career.index');
+    });
+
+    //FAQS
+    Route::prefix('/admin/faqs')->group(function () {
+        Route::get('/', [FaqsController::class, 'index'])->name('admin.faqs.index');
+        Route::get('/faqs/search', [FaqsController::class, 'index'])->name('admin.faqs.search');
+        Route::get('/create', [FaqsController::class, 'create'])->name('admin.faqs.create');
+        Route::post('/', [FaqsController::class, 'store'])->name('admin.faqs.store');
+        Route::get('/{faq}', [FaqsController::class, 'show'])->name('admin.faqs.show');
+        Route::get('/{faq}/edit', [FaqsController::class, 'edit'])->name('admin.faqs.edit');
+        Route::put('/{faq}', [FaqsController::class, 'update'])->name('admin.faqs.update');
+        Route::delete('/{faq}', [FaqsController::class, 'destroy'])->name('admin.faqs.destroy');
     });
 });
 

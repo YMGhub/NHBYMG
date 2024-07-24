@@ -85,6 +85,22 @@
                         </tr>
                         <!--Career -->
 
+                        <!--Career -->
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center">
+                            <td class="px-6 py-5">FAQS</td>
+                            <td class="px-6 py-5">
+
+
+                                <a href="{{ url('/admin/faqs') }}"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                    View
+                                </a>
+
+
+                            </td>
+                        </tr>
+                        <!--Career -->
+
                     </tbody>
                 </table>
 
