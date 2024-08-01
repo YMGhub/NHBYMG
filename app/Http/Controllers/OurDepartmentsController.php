@@ -64,7 +64,7 @@ class OurDepartmentsController extends Controller
         }
 
         return redirect()->route('admin.our-department.index')
-            ->with('success', 'Deparment created successfully.');
+            ->with('success', 'Department created successfully.');
     }
 
     /**
