@@ -27,3 +27,27 @@
 .alert-success {
     color: #ffff;
 }
+
+.boxImage {
+    position: relative;
+}
+
+.deletePhoto {
+    position: absolute;
+    right: -10px;
+    top: -14px;
+    display: block;
+    padding: 3px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    width: 25px;
+    text-align: center;
+}
+
+.deletePhoto a {
+    display: block;
+    padding: 0;
+    margin: 0;
+    margin-top: -5px;
+}

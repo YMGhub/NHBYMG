@@ -52,6 +52,21 @@
                         </tr>
                         <!--Our Executive-->
 
+                        <!--Our Executive-->
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center">
+                            <td class="px-6 py-5">Our Departments</td>
+                            <td class="px-6 py-5">
+
+                                <a href="{{ url('/admin/our-department') }}"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                    View
+                                </a>
+
+
+                            </td>
+                        </tr>
+                        <!--Our Executive-->
+
                         <!--Commercial Endeavors -->
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center">
                             <td class="px-6 py-5">Commercial Endeavors</td>

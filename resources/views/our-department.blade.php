@@ -354,6 +354,45 @@
                                     <div class="wpb_wrapper">
                                         <h4 style="font-weight:normal;text-align:left;"
                                             class="headline margin-top-15 margin-bottom-35     "></h4>
+
+                                        @foreach ($data as $row)
+                                            <div class="toggle-wrap style-2">
+                                                <span class="trigger opened"><a href="#">{{ $row->title }}
+                                                        <i class="sl sl-icon-plus"></i></a></span>
+                                                <div class="toggle-container">
+                                                    <div class="container">
+                                                        <div class="row margin-bottom-50">
+                                                            <div class="col-md-12">
+
+                                                                <div id="property-slider-1" class="property-slider default">
+                                                                    @foreach (json_decode($row->images) as $images)
+                                                                        <a href="images/our_deparment/{{ $images->path }}"
+                                                                            data-background-image="images/our_deparment/{{ $images->path }}"
+                                                                            class="item mfp-gallery"></a>
+                                                                    @endforeach
+                                                                </div>
+
+                                                                <div id="property-slider-nav-1" class="property-slider-nav">
+                                                                    @foreach (json_decode($row->images) as $images)
+                                                                        <div class="item">
+                                                                            <img src="images/our_deparment/{{ $images->path }}"
+                                                                                alt="">
+                                                                        </div>
+                                                                    @endforeach
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!--description-->
+                                                    <p>{{ $row->description }}
+                                                    </p>
+                                                    <!--description-->
+
+                                                </div>
+                                            </div>
+                                        @endforeach
+
                                         <div class="toggle-wrap style-2  ">
                                             <span class="trigger opened"><a href="#">Administration Department
                                                     <i class="sl sl-icon-plus"></i></a></span>

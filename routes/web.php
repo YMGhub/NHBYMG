@@ -10,9 +10,11 @@ use App\Http\Controllers\CommercialEndeavorsInformationController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqsController;
 use App\Http\Controllers\ListFormController;
+use App\Http\Controllers\OurDepartmentsController;
 use App\Http\Controllers\OurExecutivesController;
 use App\Models\Career;
 use App\Models\CommercialEndeavors;
+use App\Models\OurDepartments;
 use App\Models\OurExecutives;
 use Illuminate\Support\Facades\Route;
 
@@ -28,9 +30,7 @@ Route::get('/mission-and-vision', [AboutUsController::class, 'mission_vision_inf
 Route::get('/our-executives', [OurExecutivesController::class, 'ourexecutives_info'])->name('our-executives');
 
 
-Route::get('/our-department', function () {
-    return view('our-department');
-})->name('our-department');
+Route::get('/our-department', [OurDepartmentsController::class, 'ourdepartment_info'])->name('our-department');
 
 Route::get('/commercial-endeavors', [CommercialEndeavorsController::class, 'commercial_info'])->name('commercial-endeavors');
 
@@ -167,13 +167,28 @@ Route::middleware(['auth:sanctum', 'restrictRole:admin'])->group(function () {
     //FAQS
     Route::prefix('/admin/faqs')->group(function () {
         Route::get('/', [FaqsController::class, 'index'])->name('admin.faqs.index');
-        Route::get('/faqs/search', [FaqsController::class, 'index'])->name('admin.faqs.search');
         Route::get('/create', [FaqsController::class, 'create'])->name('admin.faqs.create');
         Route::post('/', [FaqsController::class, 'store'])->name('admin.faqs.store');
         Route::get('/{faq}', [FaqsController::class, 'show'])->name('admin.faqs.show');
         Route::get('/{faq}/edit', [FaqsController::class, 'edit'])->name('admin.faqs.edit');
         Route::put('/{faq}', [FaqsController::class, 'update'])->name('admin.faqs.update');
         Route::delete('/{faq}', [FaqsController::class, 'destroy'])->name('admin.faqs.destroy');
+    });
+
+    //OurDeparment
+    Route::prefix('/admin/our-department')->group(function () {
+        Route::get('/', [OurDepartmentsController::class, 'index'])->name('admin.our-department.index');
+        Route::get('/create', [OurDepartmentsController::class, 'create'])->name('admin.our-department.create');
+        Route::post('/', [OurDepartmentsController::class, 'store'])->name('admin.our-department.store');
+
+        Route::get('/edit/{id}', [OurDepartmentsController::class, 'edit'])->name('admin.our-department.edit');
+
+        Route::put('/update/{id}', [OurDepartmentsController::class, 'update'])->name('admin.our-department.update');
+
+        Route::delete('/{id}/delete', [OurDepartmentsController::class, 'destroy'])->name('admin.our-department.destroy');
+
+        //delete photo in post
+        Route::get('/edit/photo/{id}', [OurDepartmentsController::class, 'destroyPhoto'])->name('admin.our-department.deletephoto');
     });
 });
 
