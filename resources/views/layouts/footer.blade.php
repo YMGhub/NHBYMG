@@ -8,7 +8,10 @@
                 <div class="col-md-5 col-sm-6">
                     <img class="footer-logo" src="/images/thumbnail_image001-removebg-preview.png" alt="">
                     <br><br>
-                    <p>Established on April 1st, 1973, under the Housing Act cap 226, the National Housing Corporation boasts over five decades of dedicated service. As a government-owned entity, our headquarters are conveniently located on Country Road in St. Michael, with multiple depots spread across urban and rural Barbados to better serve our tenants. </p>
+                    <p>Established on April 1st, 1973, under the Housing Act cap 226, the National Housing Corporation
+                        boasts over five decades of dedicated service. As a government-owned entity, our headquarters
+                        are conveniently located on Country Road in St. Michael, with multiple depots spread across
+                        urban and rural Barbados to better serve our tenants. </p>
                 </div>
 
                 <div class="col-md-4 col-sm-6 ">
@@ -18,13 +21,14 @@
                         <li><a class="{{ Request::is('/') ? 'current' : '' }}" href="/">Home</a>
                         </li>
                         <li><a class="{{ Request::is('about-us') ? 'current' : '' }}" href="/about-us">About Us</a>
-                            <li><a class="{{ Request::is('our-services') ? 'current' : '' }}" href="/our-services">Our Services</a>
+                        <li><a class="{{ Request::is('our-services') ? 'current' : '' }}" href="/our-services">Our
+                                Services</a>
 
-                                {{--<ul>--}}
-                                    {{--<li><a class="{{ Request::is('mission-and-vision') ? 'current' : '' }}" href="mission-and-vision">Mission & Vision</a></li>--}}
-                                    {{--<li><a class="{{ Request::is('commercial-endeavors') ? 'current' : '' }}" href="commercial-endeavors">Commercial Endeavors</a></li>--}}
-                                {{--</ul>--}}
-                            </li>
+                            {{-- <ul> --}}
+                            {{-- <li><a class="{{ Request::is('mission-and-vision') ? 'current' : '' }}" href="mission-and-vision">Mission & Vision</a></li> --}}
+                            {{-- <li><a class="{{ Request::is('commercial-endeavors') ? 'current' : '' }}" href="commercial-endeavors">Commercial Endeavors</a></li> --}}
+                            {{-- </ul> --}}
+                        </li>
                         <li><a class="{{ Request::is('projects') ? 'current' : '' }}" href="/projects">Our Projects</a>
 
                         <li><a class="{{ Request::is('contact') ? 'current' : '' }}" href="contact">Contact Us</a></li>
@@ -42,10 +46,11 @@
                     </div>
 
                     <ul class="social-icons margin-top-20">
-                        <li><a class="facebook" href="https://www.facebook.com/Nhcbarbados"><i class="icon-facebook"></i></a></li>
-                        {{--<li><a class="twitter" href="#"><i class="icon-twitter"></i></a></li>--}}
-                        {{--<li><a class="gplus" href="#"><i class="icon-gplus"></i></a></li>--}}
-                        {{--<li><a class="vimeo" href="#"><i class="icon-vimeo"></i></a></li>--}}
+                        <li><a class="facebook" href="https://www.facebook.com/Nhcbarbados"><i
+                                    class="icon-facebook"></i></a></li>
+                        {{-- <li><a class="twitter" href="#"><i class="icon-twitter"></i></a></li> --}}
+                        {{-- <li><a class="gplus" href="#"><i class="icon-gplus"></i></a></li> --}}
+                        {{-- <li><a class="vimeo" href="#"><i class="icon-vimeo"></i></a></li> --}}
                     </ul>
 
                 </div>
@@ -55,7 +60,9 @@
             <!-- Copyright -->
             <div class="row">
                 <div class="col-md-12">
-                    <div class="copyrights"><p>NHC &copy; {{ date('Y') }} All Rights Reserved.</p>  </div>
+                    <div class="copyrights">
+                        <p>NHC &copy; {{ date('Y') }} All Rights Reserved.</p>
+                    </div>
                 </div>
             </div>
 
@@ -72,9 +79,9 @@
 
 
 </html>
-		<!-- Scripts
+<!-- Scripts
 ================================================== -->
-		<!-- Scripts
+<!-- Scripts
 ================================================== -->
 <script type="text/javascript" src="{{ asset('scripts/jquery-3.6.0.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('scripts/jquery-migrate-3.3.2.min.js') }}"></script>
@@ -96,4 +103,4 @@
 <script type="text/javascript" src="{{ asset('scripts/fancybox.umd.js') }}"></script>
 
 
-<script type="text/javascript" src="{{ asset('scripts/custom.js') }}"></script>
+<script type="text/javascript" src="{{ asset('scripts/custom100.js') }}"></script>
