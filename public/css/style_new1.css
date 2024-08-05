@@ -16217,7 +16217,7 @@ body .pac-container {
 
 
 /*custom css yello media*/
-.sliderHome img{
+.sliderHome img {
     width: 100%;
     height: 600px;
     object-fit: cover;
@@ -16299,7 +16299,7 @@ body .pac-container {
 
 
 .photo-grid-item .boxImage {
-    height: 300px
+    height: 255px
 }
 
 .photo-grid-item .boxImage img {
@@ -16317,7 +16317,7 @@ body .pac-container {
     font-weight: bold;
 }
 
-.linkButton{
+.linkButton {
     background-color: #274abb;
     color: #fff;
     margin: 0 auto;
@@ -16326,7 +16326,7 @@ body .pac-container {
     display: inline-table;
 }
 
-.iconImg{
+.iconImg {
     display: flex !important;
     align-items: center;
     justify-content: center;
@@ -16334,40 +16334,40 @@ body .pac-container {
 }
 
 
-.iconImg svg{
+.iconImg svg {
     width: 70px;
     height: 70px;
 }
 
-.iconImg svg path{
+.iconImg svg path {
     fill: #fff !important;
 }
 
 
-.servicesHome .input{
+.servicesHome .input {
     height: 150px;
     font-size: 13px;
     margin-bottom: 20px;
 }
 
-.ourServices .input{
+.ourServices .input {
     height: 150px;
     font-size: 13px;
     margin-bottom: 20px;
 }
 
 
-.bannerProject h2{
-    color:#fff !important;
+.bannerProject h2 {
+    color: #fff !important;
 }
 
-.bannerProject{
+.bannerProject {
     margin-top: 50px;
     background: transparent;
     padding: 110px 0px;
     font-weight: 500;
     z-index: 999;
-    color:#fff;
+    color: #fff;
     position: relative;
 }
 
@@ -16376,25 +16376,26 @@ body .pac-container {
     line-height: 32px;
 }
 
-.bottomMargin{
-    margin-bottom:25px  ;
+.bottomMargin {
+    margin-bottom: 25px;
 }
 
 video {
     max-width: 100%;
-  }
+}
 
 
-.videoOut   {
+.videoOut {
     margin-bottom: 20px;
     overflow: hidden;
 }
 
-.btn-group{
-    display: flex;;
+.btn-group {
+    display: flex;
+    ;
 }
 
-.btn-group .btn-primary{
+.btn-group .btn-primary {
     width: 100px;
     display: inline-flex;
     align-items: center;
@@ -16402,20 +16403,19 @@ video {
 }
 
 
-.btn-group .btn-primary input{
+.btn-group .btn-primary input {
     margin-bottom: 0 !important;
 }
 
-.addMore{
-    background:#274abb;
-    color:#fff;
-    border:0px
-
+.addMore {
+    background: #274abb;
+    color: #fff;
+    border: 0px
 }
 
-.remove-tr{
+.remove-tr {
     background: red;
-    color:#fff;
+    color: #fff;
     border: none;
 }
 
@@ -16425,14 +16425,28 @@ video {
     margin-bottom: 20px;
     text-align: center;
 }
+
 .alert-success-custom {
     background-color: #d4edda;
     color: #155724;
     border-color: #c3e6cb;
 
 }
+
 .alert-danger-custom {
     background-color: #f8d7da;
     color: #721c24;
     border-color: #f5c6cb;
+}
+
+
+
+.boxImage a {
+    display: none;
+
+}
+
+
+.boxImage a:first-child {
+    display: block !important;
 }

@@ -1,75 +1,74 @@
-
 /*custom css yello media*/
-.servicesHome{
+.servicesHome {
     margin-bottom: 0px !important;
 }
 
-.flipBannerHome i{
+.flipBannerHome i {
     font-size: 58px;
 
 }
 
-.flipBannerHome .numberCounter{
+.flipBannerHome .numberCounter {
     font-size: 2rem;
     margin-top: 10px;
     display: block;
     font-weight: bold;
 }
 
-.flipBannerHome h5{
+.flipBannerHome h5 {
     font-size: 1.5rem;
 
 }
 
-.logo-carousel .item a{
+.logo-carousel .item a {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.logo-carousel .item a img{
+.logo-carousel .item a img {
     object-fit: contain;
     height: 100px
 }
 
-.agent-avatar{
+.agent-avatar {
     height: 300px;
     width: 100%;
     text-align: center;
     padding: 10px;
 }
 
-.agent-avatar img{
+.agent-avatar img {
     object-fit: contain;
 }
 
-.agent-name{
+.agent-name {
     margin-top: -25px;
 }
 
-.agent-name h4{
+.agent-name h4 {
     height: 45px;
     display: flex;
     align-items: center;
 }
 
-.agent-name span{
+.agent-name span {
     height: 50px;
 }
 
-#header.cloned{
+#header.cloned {
     z-index: 99999 !important;
 }
 
-.showForm{
+.showForm {
     opacity: 1 !important;
 }
 
-.showForm2{
+.showForm2 {
     opacity: 1 !important;
 }
 
-.sliderHome img{
+.sliderHome img {
     width: 100%;
     height: 600px;
     object-fit: cover;
