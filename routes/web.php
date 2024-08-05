@@ -47,9 +47,7 @@ Route::get('/our-services', function () {
     return view('our-services');
 })->name('our-services');
 
-Route::get('/projects', function () {
-    return view('projects');
-})->name('projects');
+Route::get('/projects', [OurProjectsController::class, 'ourprojects_info'])->name('projects');
 
 Route::get('/contact', function () {
     return view('contact');

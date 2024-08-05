@@ -92,33 +92,33 @@
                     <!-- <h3 class="desc-headline no-border">Floorplans</h3> -->
                     <!-- Accordion -->
                     <!-- <div class="style-1 fp-accordion">
-                                                                                                                <div class="accordion">
+                                                                                                                                                                                                                                                        <div class="accordion">
 
-                                                                                                                    <h3>First Floor <span>460 sq ft</span> <i class="fa fa-angle-down"></i> </h3>
-                                                                                                                    <div>
-                                                                                                                        <a class="floor-pic mfp-image" href="https://i.imgur.com/kChy7IU.jpg">
-                                                                                                                            <img src="https://i.imgur.com/kChy7IU.jpg" alt="">
-                                                                                                                        </a>
-                                                                                                                        <p>Mauris mauris ante, blandit et, ultrices a, susceros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate aliquam egestas litora torquent conubia.</p>
-                                                                                                                    </div>
+                                                                                                                                                                                                                                                            <h3>First Floor <span>460 sq ft</span> <i class="fa fa-angle-down"></i> </h3>
+                                                                                                                                                                                                                                                            <div>
+                                                                                                                                                                                                                                                                <a class="floor-pic mfp-image" href="https://i.imgur.com/kChy7IU.jpg">
+                                                                                                                                                                                                                                                                    <img src="https://i.imgur.com/kChy7IU.jpg" alt="">
+                                                                                                                                                                                                                                                                </a>
+                                                                                                                                                                                                                                                                <p>Mauris mauris ante, blandit et, ultrices a, susceros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate aliquam egestas litora torquent conubia.</p>
+                                                                                                                                                                                                                                                            </div>
 
-                                                                                                                    <h3>Second Floor <span>440 sq ft</span> <i class="fa fa-angle-down"></i></h3>
-                                                                                                                    <div>
-                                                                                                                        <a class="floor-pic mfp-image" href="https://i.imgur.com/l2VNlwu.jpg">
-                                                                                                                            <img src="https://i.imgur.com/l2VNlwu.jpg" alt="">
-                                                                                                                        </a>
-                                                                                                                        <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. Nullam laoreet, velit ut taciti sociosqu condimentum feugiat.</p>
-                                                                                                                    </div>
+                                                                                                                                                                                                                                                            <h3>Second Floor <span>440 sq ft</span> <i class="fa fa-angle-down"></i></h3>
+                                                                                                                                                                                                                                                            <div>
+                                                                                                                                                                                                                                                                <a class="floor-pic mfp-image" href="https://i.imgur.com/l2VNlwu.jpg">
+                                                                                                                                                                                                                                                                    <img src="https://i.imgur.com/l2VNlwu.jpg" alt="">
+                                                                                                                                                                                                                                                                </a>
+                                                                                                                                                                                                                                                                <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. Nullam laoreet, velit ut taciti sociosqu condimentum feugiat.</p>
+                                                                                                                                                                                                                                                            </div>
 
-                                                                                                                    <h3>Garage <span>140 sq ft</span> <i class="fa fa-angle-down"></i></h3>
-                                                                                                                    <div>
-                                                                                                                        <a class="floor-pic mfp-image" href="https://i.imgur.com/0zJYERy.jpg">
-                                                                                                                            <img src="https://i.imgur.com/0zJYERy.jpg" alt="">
-                                                                                                                        </a>
-                                                                                                                    </div>
+                                                                                                                                                                                                                                                            <h3>Garage <span>140 sq ft</span> <i class="fa fa-angle-down"></i></h3>
+                                                                                                                                                                                                                                                            <div>
+                                                                                                                                                                                                                                                                <a class="floor-pic mfp-image" href="https://i.imgur.com/0zJYERy.jpg">
+                                                                                                                                                                                                                                                                    <img src="https://i.imgur.com/0zJYERy.jpg" alt="">
+                                                                                                                                                                                                                                                                </a>
+                                                                                                                                                                                                                                                            </div>
 
-                                                                                                                </div>
-                                                                                                            </div> -->
+                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                    </div> -->
                 </div>
             </div>
             <!-- Property Description / End -->
@@ -127,25 +127,27 @@
 
     <div class="container mt-5">
         <div class="row mb-2">
-            <div class="col-md-4 bottomMargin">
-                <!--Electrical Upgrade Project-->
-                <div class="photo-grid-item">
-                    <div class="boxImage">
 
-                        <a href="images/project/1.jpg" data-fancybox="gallery-a" data-caption="Electrical Upgrade Project">
-                            <img src="images/project/1.jpg" />
-                        </a>
 
-                        <a class="hide" href="images/project/2.jpg" data-fancybox="gallery-a"
-                            data-caption="Electrical Upgrade Project">
-                            <img src="images/project/2.jpg" />
-                        </a>
-                    </div>
-                    <div class="titleImage">
-                        <h3>Electrical Upgrade Project</h3>
+            @foreach ($data as $k => $row)
+                {{ $k = 1 }}
+                <div class="col-md-4 bottomMargin">
+                    <div class="photo-grid-item">
+                        <div class="boxImage">
+
+                            @foreach (json_decode($row->imagesOurProjects) as $images)
+                                <a href="{{ url('storage/' . $images->path) }}" data-caption="{{ $row->title }}"
+                                    data-fancybox="gallery-{{ $k }}">
+                                    <img src="{{ url('storage/' . $images->path) }}" /></a>
+                            @endforeach
+                        </div>
+                        <div class="titleImage">
+                            <h3>{{ $row->title }}</h3>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
+
 
             <!--NHC Hurricane Elsa Project-->
             <div class="col-md-4 bottomMargin">
@@ -398,13 +400,14 @@
 
                     <div class="carousel-item">
                         <video class="video-item" muted controls width="100%" height="400">
-                            <source src="images/project/video/HaggatHallVideoMinisterSutherlandandDugid.mp4" type="video/mp4">
+                            <source src="images/project/video/HaggatHallVideoMinisterSutherlandandDugid.mp4"
+                                type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
 
                     <div class="carousel-item">
-                        <video class="video-item" muted controls width="100%" height="400" >
+                        <video class="video-item" muted controls width="100%" height="400">
                             <source src="images/project/video/WhitehillrelocationMinisterSutherland.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>

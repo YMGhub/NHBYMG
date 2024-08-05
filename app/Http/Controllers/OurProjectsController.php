@@ -129,4 +129,12 @@ class OurProjectsController extends Controller
 
         return redirect()->route('admin.our-projects.index')->with('success', 'Our Project deleted successfully');
     }
+
+    public function ourprojects_info()
+    {
+        $data = OurProjects::with('imagesOurProjects')->get();
+
+
+        return view('projects', compact('data'));
+    }
 }
