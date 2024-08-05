@@ -12,6 +12,7 @@ use App\Http\Controllers\FaqsController;
 use App\Http\Controllers\ListFormController;
 use App\Http\Controllers\OurDepartmentsController;
 use App\Http\Controllers\OurExecutivesController;
+use App\Http\Controllers\OurProjectsController;
 use App\Models\Career;
 use App\Models\CommercialEndeavors;
 use App\Models\OurDepartments;
@@ -189,6 +190,21 @@ Route::middleware(['auth:sanctum', 'restrictRole:admin'])->group(function () {
 
         //delete photo in post
         Route::get('/edit/photo/{id}', [OurDepartmentsController::class, 'destroyPhoto'])->name('admin.our-department.deletephoto');
+    });
+
+    //OurProjects
+    Route::prefix('/admin/our-projects')->group(function () {
+        Route::get('/', [OurProjectsController::class, 'index'])->name('admin.our-projects.index');
+
+        Route::get('/create', [OurProjectsController::class, 'create'])->name('admin.our-projects.create');
+
+        Route::post('/', [OurProjectsController::class, 'store'])->name('admin.our-projects.store');
+
+        Route::get('/edit/{id}', [OurProjectsController::class, 'edit'])->name('admin.our-projects.edit');
+
+        Route::put('/update/{id}', [OurProjectsController::class, 'update'])->name('admin.our-projects.update');
+
+        Route::delete('/{id}/delete', [OurProjectsController::class, 'destroy'])->name('admin.our-projects.destroy');
     });
 });
 
