@@ -76,40 +76,68 @@ class OurExecutivesController extends Controller
 
         $id = $_POST['id_executive'];
 
-        $validatedData = $request->validate([
-            'photo_path' => 'required|nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
 
-        $photographPath = "";
+
+
+
+
         // Store the uploaded file
-        if ($request->hasFile('photo_path')) {
+        /*if ($request->hasFile('photo_path')) {
             $name = str_replace(' ', '', $request->photo_path->getClientOriginalName());
             $photographName = time() . "-" . $name;
             $photographPath = $request->file('photo_path')->storeAs('our_executives', $photographName, 'public');
             $validatedData['photo_path'] = $photographPath;
+        }*/
+
+        if ($request->hasFile('photo_path')) {
+            $name = str_replace(' ', '', $request->photo_path->getClientOriginalName());
+            $photographName = time() . "-" . $name;
+            $path = $request->file('photo_path')->storeAs('our_executives', $photographName, 'public');
+            $ourExecutives->update([
+                'name_executive' => $request->name_executive,
+                'rol_executive' => $request->rol_executive,
+                'phone_executive' => $request->phone_executive,
+                'email_executive' => $request->email_executive,
+                'facebook_executive' => $request->facebook_executive,
+                'twitter_executive' => $request->twitter_executive,
+                'gplus_executive' => $request->gplus_executive,
+                'linkedin_executive' => $request->linkedin_executive,
+                'photo_path' => $path,
+            ]);
+        } else {
+            $ourExecutives->update($request->only([
+                'name_executive',
+                'rol_executive',
+                'phone_executive',
+                'email_executive',
+                'facebook_executive',
+                'twitter_executive',
+                'gplus_executive',
+                'linkedin_executive',
+            ]));
         }
 
 
 
-        $ourexecutives = OurExecutives::find($id);
 
-        $ourexecutives->photo_path = $photographPath;
-        $ourexecutives->name_executive = $request->input('name_executive');
-        $ourexecutives->rol_executive = $request->input('rol_executive');
-        $ourexecutives->phone_executive = $request->input('phone_executive');
-        $ourexecutives->email_executive = $request->input('email_executive');
-        $ourexecutives->facebook_executive = $request->input('facebook_executive');
+        $ourExecutive1 = OurExecutives::find($id);
 
-        $ourexecutives->twitter_executive = $request->input('twitter_executive');
-        $ourexecutives->gplus_executive = $request->input('gplus_executive');
-        $ourexecutives->linkedin_executive = $request->input('linkedin_executive');
+        $ourExecutive1->name_executive = $request->input('name_executive');
+        $ourExecutive1->rol_executive = $request->input('rol_executive');
+        $ourExecutive1->phone_executive = $request->input('phone_executive');
+        $ourExecutive1->email_executive = $request->input('email_executive');
+        $ourExecutive1->facebook_executive = $request->input('facebook_executive');
+
+        $ourExecutive1->twitter_executive = $request->input('twitter_executive');
+        $ourExecutive1->gplus_executive = $request->input('gplus_executive');
+        $ourExecutive1->linkedin_executive = $request->input('linkedin_executive');
 
 
 
 
         //$ourexecutives->update();
 
-        $update = $ourexecutives->update();
+        $update = $ourExecutive1->update();
 
 
 
