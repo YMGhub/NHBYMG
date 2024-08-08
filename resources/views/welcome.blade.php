@@ -15,7 +15,7 @@
     <!--slider--->
 
     <!-- Content
-                                ================================================== -->
+                                                    ================================================== -->
     <div class="container">
         <div class="row">
 
@@ -340,9 +340,9 @@
                                 </svg>
                             </div>
                             <!--div class="icon-links">
-                                <a href="/our-services">For Sale</a>
-                                <a href="/our-services">For Rent</a>
-                            </div-->
+                                                    <a href="/our-services">For Sale</a>
+                                                    <a href="/our-services">For Rent</a>
+                                                </div-->
                         </div>
 
                         <h4>Sale and Rental of Houses</h4>
@@ -385,10 +385,10 @@
                                     </g>
                                 </svg>
                             </div>
-                                                   <!--div class="icon-links">
-                                <a href="/our-services">For Sale</a>
-                                <a href="/our-services">For Rent</a>
-                            </div-->
+                            <!--div class="icon-links">
+                                                    <a href="/our-services">For Sale</a>
+                                                    <a href="/our-services">For Rent</a>
+                                                </div-->
                         </div>
 
                         <h4>Sale and Rental of Lots</h4>
@@ -428,10 +428,10 @@
                                     </g>
                                 </svg>
                             </div>
-                                                        <!--div class="icon-links">
-                                <a href="/our-services">For Sale</a>
-                                <a href="/our-services">For Rent</a>
-                            </div-->
+                            <!--div class="icon-links">
+                                                    <a href="/our-services">For Sale</a>
+                                                    <a href="/our-services">For Rent</a>
+                                                </div-->
                         </div>
 
                         <h4>Rent-to-Own Programs</h4>
@@ -480,10 +480,10 @@
                                     </g>
                                 </svg>
                             </div>
-                                                       <!--div class="icon-links">
-                                <a href="/our-services">For Sale</a>
-                                <a href="/our-services">For Rent</a>
-                            </div-->
+                            <!--div class="icon-links">
+                                                    <a href="/our-services">For Sale</a>
+                                                    <a href="/our-services">For Rent</a>
+                                                </div-->
                         </div>
 
                         <h4>Relocation Programs</h4>
@@ -526,10 +526,10 @@
                                     </g>
                                 </svg>
                             </div>
-                                                      <!--div class="icon-links">
-                                <a href="/our-services">For Sale</a>
-                                <a href="/our-services">For Rent</a>
-                            </div-->
+                            <!--div class="icon-links">
+                                                    <a href="/our-services">For Sale</a>
+                                                    <a href="/our-services">For Rent</a>
+                                                </div-->
                         </div>
 
                         <h4>Issuance of Loans</h4>
@@ -570,10 +570,10 @@
                                     </g>
                                 </svg>
                             </div>
-                                                       <!--div class="icon-links">
-                                <a href="/our-services">For Sale</a>
-                                <a href="/our-services">For Rent</a>
-                            </div-->
+                            <!--div class="icon-links">
+                                                    <a href="/our-services">For Sale</a>
+                                                    <a href="/our-services">For Rent</a>
+                                                </div-->
                         </div>
 
                         <h4>Maintenance of Estates</h4>
@@ -851,12 +851,12 @@
     </section>
 
     <a href="/our-services" class="flip-banner parallax" data-background="images/back.jpg" data-color=""
-    data-color-opacity="0.1" data-img-width="2500" data-img-height="1600">
-    <div class="flip-banner-content">
-        <h2 class="flip-visible">How can we help today?</h2>
-        <h2 class="flip-hidden">Our Services <i class="sl sl-icon-arrow-right"></i></h2>
-    </div>
-</a>
+        data-color-opacity="0.1" data-img-width="2500" data-img-height="1600">
+        <div class="flip-banner-content">
+            <h2 class="flip-visible">How can we help today?</h2>
+            <h2 class="flip-hidden">Our Services <i class="sl sl-icon-arrow-right"></i></h2>
+        </div>
+    </a>
 
 
     <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true"
@@ -911,6 +911,16 @@
                         </div>
 
                     </div>
+
+                    <div class="container" style="margin-top:25px">
+                        <div class="row text-center">
+                            <a href="https://survey123.arcgis.com/share/7fcc232f06824bd1a428954c6db73882"
+                                class="linkButton">
+                                ENVIRONMENTAL PROTECTION DEPARTMENT
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
