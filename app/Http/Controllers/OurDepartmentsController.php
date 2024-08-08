@@ -83,7 +83,7 @@ class OurDepartmentsController extends Controller
         //
         $data = OurDepartments::find($id);
 
-        $data1 = ImageOurDepartments::where('our_deparments_id', $id)->get();
+        $data1 = ImageOurDepartments::where('our_departments_id', $id)->get();
 
 
 
