@@ -15,7 +15,7 @@
     <!--slider--->
 
     <!-- Content
-                                                                                                                ================================================== -->
+                                                                                                                    ================================================== -->
     <div class="container">
         <div class="row">
 
@@ -340,9 +340,9 @@
                                 </svg>
                             </div>
                             <!--div class="icon-links">
-                                                                                                                <a href="/our-services">For Sale</a>
-                                                                                                                <a href="/our-services">For Rent</a>
-                                                                                                            </div-->
+                                                                                                                    <a href="/our-services">For Sale</a>
+                                                                                                                    <a href="/our-services">For Rent</a>
+                                                                                                                </div-->
                         </div>
 
                         <h4>Sale and Rental of Houses</h4>
@@ -386,9 +386,9 @@
                                 </svg>
                             </div>
                             <!--div class="icon-links">
-                                                                                                                <a href="/our-services">For Sale</a>
-                                                                                                                <a href="/our-services">For Rent</a>
-                                                                                                            </div-->
+                                                                                                                    <a href="/our-services">For Sale</a>
+                                                                                                                    <a href="/our-services">For Rent</a>
+                                                                                                                </div-->
                         </div>
 
                         <h4>Sale and Rental of Lots</h4>
@@ -429,9 +429,9 @@
                                 </svg>
                             </div>
                             <!--div class="icon-links">
-                                                                                                                <a href="/our-services">For Sale</a>
-                                                                                                                <a href="/our-services">For Rent</a>
-                                                                                                            </div-->
+                                                                                                                    <a href="/our-services">For Sale</a>
+                                                                                                                    <a href="/our-services">For Rent</a>
+                                                                                                                </div-->
                         </div>
 
                         <h4>Rent-to-Own Programs</h4>
@@ -481,9 +481,9 @@
                                 </svg>
                             </div>
                             <!--div class="icon-links">
-                                                                                                                <a href="/our-services">For Sale</a>
-                                                                                                                <a href="/our-services">For Rent</a>
-                                                                                                            </div-->
+                                                                                                                    <a href="/our-services">For Sale</a>
+                                                                                                                    <a href="/our-services">For Rent</a>
+                                                                                                                </div-->
                         </div>
 
                         <h4>Relocation Programs</h4>
@@ -526,9 +526,9 @@
                                 </svg>
                             </div>
                             <!--div class="icon-links">
-                                                                                                                <a href="/our-services">For Sale</a>
-                                                                                                                <a href="/our-services">For Rent</a>
-                                                                                                            </div-->
+                                                                                                                    <a href="/our-services">For Sale</a>
+                                                                                                                    <a href="/our-services">For Rent</a>
+                                                                                                                </div-->
                         </div>
 
                         <h4>Maintenance of Estates</h4>
@@ -851,7 +851,9 @@
                             </a>
                         </div>
                         <div class="item">
-                            <a href="https://www.gov.bb/Ministries/housing" target="_blank">
+                            <!--https://www.gov.bb/Ministries/housing-->
+
+                            <a href="https://gov-bb.bonfirehub.com/portal/?tab=openOpportunities" target="_blank">
                                 <img src="{{ url('/images/logos/Picture3.png') }}" alt="" /></a>
                             </a>
                         </div>
