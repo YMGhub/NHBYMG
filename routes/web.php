@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ApplicationRentalController;
 use App\Http\Controllers\CareerController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommercialEndeavorsController;
 use App\Http\Controllers\CommercialEndeavorsInformationController;
 //use App\Http\Controllers\Admin\UserController;
@@ -13,10 +14,14 @@ use App\Http\Controllers\ListFormController;
 use App\Http\Controllers\OurDepartmentsController;
 use App\Http\Controllers\OurExecutivesController;
 use App\Http\Controllers\OurProjectsController;
+use App\Http\Controllers\OurServiceController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\VideoController;
 use App\Models\Career;
 use App\Models\CommercialEndeavors;
 use App\Models\OurDepartments;
 use App\Models\OurExecutives;
+use App\Models\OurServices;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -43,9 +48,7 @@ Route::post('/careers/apply', [CareerController::class, 'submitApplication'])->n
 
 Route::get('/faq', [FaqsController::class, 'faq_info'])->name('faq');
 
-Route::get('/our-services', function () {
-    return view('our-services');
-})->name('our-services');
+Route::get('/our-services', [OurServiceController::class, 'ourservices_info'])->name('our-services');
 
 Route::get('/projects', [OurProjectsController::class, 'ourprojects_info'])->name('projects');
 
@@ -204,7 +207,23 @@ Route::middleware(['auth:sanctum', 'restrictRole:admin'])->group(function () {
 
         Route::delete('/{id}/delete', [OurProjectsController::class, 'destroy'])->name('admin.our-projects.destroy');
     });
+
+    //OurProjects
+    Route::prefix('/admin/our-services')->group(function () {
+        Route::get('/', [OurServiceController::class, 'index'])->name('admin.our-services.index');
+
+        Route::get('/create', [OurServiceController::class, 'create'])->name('admin.our-services.create');
+
+        Route::post('/', [OurServiceController::class, 'store'])->name('admin.our-services.store');
+
+        Route::get('/edit/{id}', [OurServiceController::class, 'edit'])->name('admin.our-services.edit');
+
+        Route::put('/update/{id}', [OurServiceController::class, 'update'])->name('admin.our-services.update');
+
+        Route::delete('/{id}/delete', [OurServiceController::class, 'destroy'])->name('admin.our-services.destroy');
+    });
 });
+
 
 
 

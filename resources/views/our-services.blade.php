@@ -181,6 +181,35 @@
                 <div class="container">
                     <div class="row">
 
+                        @foreach ($data as $row)
+                            <div class="col-md-4 col-sm-12">
+                                <div class="icon-box-1">
+
+
+                                    <div class="icon-container">
+                                        <div class="iconImg">
+
+                                            @foreach (json_decode($row->imagesOurServices) as $images)
+                                                <img src="{{ url('storage/our_services/' . $images->path) }}"
+                                                    style="width:50%" />
+                                            @endforeach
+
+                                        </div>
+
+                                    </div>
+
+                                    <h4>{{ $row->title }}</h4>
+                                    <div class="input">
+                                        <p>{{ strip_tags(html_entity_decode($row->description)) }}</p>
+                                    </div>
+
+                                    <p>
+                                        <a href="/application-for-rental" class="button border">Apply Now</a>
+
+                                </div>
+                            </div>
+                        @endforeach
+
                         <div class="col-md-4 col-sm-12">
                             <!-- Icon Box -->
                             <div class="icon-box-1">
@@ -212,9 +241,9 @@
                                         </svg>
                                     </div>
                                     <!--div class="icon-links">
-                                            <a href="/our-services">For Sale</a>
-                                            <a href="/our-services">For Rent</a>
-                                        </div--->
+                                                                                                                                                                                <a href="/our-services">For Sale</a>
+                                                                                                                                                                                <a href="/our-services">For Rent</a>
+                                                                                                                                                                            </div--->
                                 </div>
 
                                 <h4>Sale and Rental of Houses</h4>
@@ -260,9 +289,9 @@
                                         </svg>
                                     </div>
                                     <!--div class="icon-links">
-                                            <a href="/our-services">For Sale</a>
-                                            <a href="/our-services">For Rent</a>
-                                        </div--->
+                                                                                                                                                                                <a href="/our-services">For Sale</a>
+                                                                                                                                                                                <a href="/our-services">For Rent</a>
+                                                                                                                                                                            </div--->
                                 </div>
 
                                 <h4>Sale and Rental of Lots</h4>
@@ -305,9 +334,9 @@
                                         </svg>
                                     </div>
                                     <!--div class="icon-links">
-                                            <a href="/our-services">For Sale</a>
-                                            <a href="/our-services">For Rent</a>
-                                        </div--->
+                                                                                                                                                                                <a href="/our-services">For Sale</a>
+                                                                                                                                                                                <a href="/our-services">For Rent</a>
+                                                                                                                                                                            </div--->
                                 </div>
 
                                 <h4>Rent-to-Own Programs</h4>
@@ -360,9 +389,9 @@
                                         </svg>
                                     </div>
                                     <!--div class="icon-links">
-                                            <a href="/our-services">For Sale</a>
-                                            <a href="/our-services">For Rent</a>
-                                        </div--->
+                                                                                                                                                                                <a href="/our-services">For Sale</a>
+                                                                                                                                                                                <a href="/our-services">For Rent</a>
+                                                                                                                                                                            </div--->
                                 </div>
 
                                 <h4>Relocation Programs</h4>
@@ -379,47 +408,47 @@
 
                         <!--div class="col-md-4 col-sm-12">
 
-                                <div class="icon-box-1">
+                                                                                                                                                                    <div class="icon-box-1">
 
-                                    <div class="icon-container">
-                                        <div class="iconImg">
-                                            <?xml version="1.0" encoding="UTF-8"?>
-                                            <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 301.52 313.67">
-                                                <defs>
-                                                    <style>
-                                                        .cls-1 {
-                                                            fill: #323232;
-                                                            stroke-width: 0px;
-                                                        }
-                                                    </style>
-                                                </defs>
-                                                <g id="_Í_ã_1" data-name="Í¼²ã_1">
-                                                    <g>
-                                                        <path class="cls-1"
-                                                            d="m301.34,166.62c-.82-7.26-4.48-13.71-10.3-18.16-11.11-8.48-27.85-6.21-37.36,5.13l-40.55,49.53c-3.28,3.91-7.44,6.87-12.07,8.69,1.88-3.64,2.94-7.76,2.94-12.13,0-14.63-11.9-26.53-26.53-26.53h-107.5c-1.61,0-3.16.63-4.31,1.76L1.85,237.42C.67,238.57,0,240.14,0,241.79c0,1.65.64,3.23,1.8,4.39l65.69,65.69c1.2,1.2,2.78,1.8,4.36,1.8s3.03-.56,4.22-1.68l47.82-45.03h76.05c18.82,0,36.54-8.3,48.63-22.82l46.78-57.54c4.67-5.62,6.8-12.71,5.99-19.98Zm-15.5,12.15l-46.78,57.54c-9.7,11.65-23.96,18.33-39.12,18.33h-78.49c-1.57,0-3.08.6-4.22,1.67l-45.25,42.61-57.06-57.06,57.57-56.39h104.98c7.84,0,14.21,6.38,14.21,14.21s-6.37,14.21-14.21,14.21h-60.93c-3.4,0-6.16,2.76-6.16,6.16s2.76,6.16,6.16,6.16h73.49c12.59,0,24.45-5.53,32.6-15.23l40.55-49.53c5.3-6.31,14.44-7.75,20.4-3.2,3.13,2.39,5.09,5.85,5.53,9.74.44,3.9-.7,7.7-3.26,10.77Z" />
-                                                        <path class="cls-1"
-                                                            d="m56.12,135.64h228.69c3.4,0,6.16-2.76,6.16-6.16V6.16c0-3.4-2.76-6.16-6.16-6.16H56.12c-3.4,0-6.16,2.76-6.16,6.16v123.32c0,3.4,2.76,6.16,6.16,6.16Zm222.53-12.32h-21.71c2.39-10.81,10.91-19.33,21.71-21.72v21.72Zm0-111.01v21.71c-10.81-2.39-19.33-10.91-21.71-21.71h21.71Zm-216.36,0h21.71c-2.39,10.81-10.91,19.33-21.71,21.71V12.32Zm0,34.21c17.61-2.68,31.53-16.6,34.21-34.21h147.95c2.68,17.61,16.6,31.53,34.21,34.21v42.59c-17.61,2.68-31.53,16.6-34.21,34.21H96.49c-2.68-17.61-16.6-31.53-34.21-34.21v-42.59Zm0,55.08c10.81,2.39,19.33,10.91,21.71,21.72h-21.71v-21.72Z" />
-                                                        <path class="cls-1"
-                                                            d="m170.47,92.03c-7.53,0-14.13-4.22-14.13-9.03,0-3.4-2.76-6.16-6.16-6.16s-6.16,2.76-6.16,6.16c0,10.05,8.67,18.49,20.29,20.74v8.38c0,3.4,2.76,6.16,6.16,6.16s6.16-2.76,6.16-6.16v-8.38c11.62-2.25,20.29-10.68,20.29-20.74,0-12.71-13.38-17.25-24.14-20.91l-.67-.23c-6.66-2.26-15.77-5.36-15.77-9.24,0-4.81,6.6-9.03,14.13-9.03s14.13,4.22,14.13,9.03c0,3.4,2.76,6.16,6.16,6.16s6.16-2.76,6.16-6.16c0-10.25-8.53-18.58-20.29-20.76v-8.35c0-3.4-2.76-6.16-6.16-6.16s-6.16,2.76-6.16,6.16v8.35c-11.76,2.19-20.29,10.51-20.29,20.76,0,12.7,13.38,17.25,24.13,20.9l.68.23c6.66,2.26,15.77,5.36,15.77,9.24,0,4.81-6.6,9.03-14.13,9.03Z" />
-                                                    </g>
-                                                </g>
-                                            </svg>
-                                        </div>
+                                                                                                                                                                        <div class="icon-container">
+                                                                                                                                                                            <div class="iconImg">
+                                                                                                                                                                                <?xml version="1.0" encoding="UTF-8"?>
+                                                                                                                                                                                <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg"
+                                                                                                                                                                                    viewBox="0 0 301.52 313.67">
+                                                                                                                                                                                    <defs>
+                                                                                                                                                                                        <style>
+                                                                                                                                                                                            .cls-1 {
+                                                                                                                                                                                                fill: #323232;
+                                                                                                                                                                                                stroke-width: 0px;
+                                                                                                                                                                                            }
+                                                                                                                                                                                        </style>
+                                                                                                                                                                                    </defs>
+                                                                                                                                                                                    <g id="_Í_ã_1" data-name="Í¼²ã_1">
+                                                                                                                                                                                        <g>
+                                                                                                                                                                                            <path class="cls-1"
+                                                                                                                                                                                                d="m301.34,166.62c-.82-7.26-4.48-13.71-10.3-18.16-11.11-8.48-27.85-6.21-37.36,5.13l-40.55,49.53c-3.28,3.91-7.44,6.87-12.07,8.69,1.88-3.64,2.94-7.76,2.94-12.13,0-14.63-11.9-26.53-26.53-26.53h-107.5c-1.61,0-3.16.63-4.31,1.76L1.85,237.42C.67,238.57,0,240.14,0,241.79c0,1.65.64,3.23,1.8,4.39l65.69,65.69c1.2,1.2,2.78,1.8,4.36,1.8s3.03-.56,4.22-1.68l47.82-45.03h76.05c18.82,0,36.54-8.3,48.63-22.82l46.78-57.54c4.67-5.62,6.8-12.71,5.99-19.98Zm-15.5,12.15l-46.78,57.54c-9.7,11.65-23.96,18.33-39.12,18.33h-78.49c-1.57,0-3.08.6-4.22,1.67l-45.25,42.61-57.06-57.06,57.57-56.39h104.98c7.84,0,14.21,6.38,14.21,14.21s-6.37,14.21-14.21,14.21h-60.93c-3.4,0-6.16,2.76-6.16,6.16s2.76,6.16,6.16,6.16h73.49c12.59,0,24.45-5.53,32.6-15.23l40.55-49.53c5.3-6.31,14.44-7.75,20.4-3.2,3.13,2.39,5.09,5.85,5.53,9.74.44,3.9-.7,7.7-3.26,10.77Z" />
+                                                                                                                                                                                            <path class="cls-1"
+                                                                                                                                                                                                d="m56.12,135.64h228.69c3.4,0,6.16-2.76,6.16-6.16V6.16c0-3.4-2.76-6.16-6.16-6.16H56.12c-3.4,0-6.16,2.76-6.16,6.16v123.32c0,3.4,2.76,6.16,6.16,6.16Zm222.53-12.32h-21.71c2.39-10.81,10.91-19.33,21.71-21.72v21.72Zm0-111.01v21.71c-10.81-2.39-19.33-10.91-21.71-21.71h21.71Zm-216.36,0h21.71c-2.39,10.81-10.91,19.33-21.71,21.71V12.32Zm0,34.21c17.61-2.68,31.53-16.6,34.21-34.21h147.95c2.68,17.61,16.6,31.53,34.21,34.21v42.59c-17.61,2.68-31.53,16.6-34.21,34.21H96.49c-2.68-17.61-16.6-31.53-34.21-34.21v-42.59Zm0,55.08c10.81,2.39,19.33,10.91,21.71,21.72h-21.71v-21.72Z" />
+                                                                                                                                                                                            <path class="cls-1"
+                                                                                                                                                                                                d="m170.47,92.03c-7.53,0-14.13-4.22-14.13-9.03,0-3.4-2.76-6.16-6.16-6.16s-6.16,2.76-6.16,6.16c0,10.05,8.67,18.49,20.29,20.74v8.38c0,3.4,2.76,6.16,6.16,6.16s6.16-2.76,6.16-6.16v-8.38c11.62-2.25,20.29-10.68,20.29-20.74,0-12.71-13.38-17.25-24.14-20.91l-.67-.23c-6.66-2.26-15.77-5.36-15.77-9.24,0-4.81,6.6-9.03,14.13-9.03s14.13,4.22,14.13,9.03c0,3.4,2.76,6.16,6.16,6.16s6.16-2.76,6.16-6.16c0-10.25-8.53-18.58-20.29-20.76v-8.35c0-3.4-2.76-6.16-6.16-6.16s-6.16,2.76-6.16,6.16v8.35c-11.76,2.19-20.29,10.51-20.29,20.76,0,12.7,13.38,17.25,24.13,20.9l.68.23c6.66,2.26,15.77,5.36,15.77,9.24,0,4.81-6.6,9.03-14.13,9.03Z" />
+                                                                                                                                                                                        </g>
+                                                                                                                                                                                    </g>
+                                                                                                                                                                                </svg>
+                                                                                                                                                                            </div>
 
-                                    </div>
+                                                                                                                                                                        </div>
 
-                                    <h4>Issuance of Loans</h4>
-                                    <div class="input">
-                                        <p>Take advantage of our loan offerings, including the General Workers Loan Scheme, to
-                                            support
-                                            your housing-related financial needs. We're here to help you access the financial
-                                            resources
-                                            necessary for your housing goals. </p>
-                                    </div>
-                                    <a href="/application-for-rental" class="button border">Apply Now</a>
-                                </div>
-                            </div-->
+                                                                                                                                                                        <h4>Issuance of Loans</h4>
+                                                                                                                                                                        <div class="input">
+                                                                                                                                                                            <p>Take advantage of our loan offerings, including the General Workers Loan Scheme, to
+                                                                                                                                                                                support
+                                                                                                                                                                                your housing-related financial needs. We're here to help you access the financial
+                                                                                                                                                                                resources
+                                                                                                                                                                                necessary for your housing goals. </p>
+                                                                                                                                                                        </div>
+                                                                                                                                                                        <a href="/application-for-rental" class="button border">Apply Now</a>
+                                                                                                                                                                    </div>
+                                                                                                                                                                </div-->
                         <div class="col-md-4 col-sm-12">
                             <!-- Icon Box -->
                             <div class="icon-box-1">
@@ -450,9 +479,9 @@
                                         </svg>
                                     </div>
                                     <!--div class="icon-links">
-                                            <a href="/our-services">For Sale</a>
-                                            <a href="/our-services">For Rent</a>
-                                        </div--->
+                                                                                                                                                                                <a href="/our-services">For Sale</a>
+                                                                                                                                                                                <a href="/our-services">For Rent</a>
+                                                                                                                                                                            </div--->
                                 </div>
 
                                 <h4>Maintenance of Estates</h4>
