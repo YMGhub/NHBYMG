@@ -25,6 +25,7 @@ class OurServiceController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'url_form' => 'required',
             'image_path.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -33,6 +34,7 @@ class OurServiceController extends Controller
         $ourServices = OurServices::create([
             'title' => $request->title,
             'description' => $request->description,
+            'url_form' => $request->url_form
         ]);
 
 
@@ -84,6 +86,7 @@ class OurServiceController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'url_form' => 'required',
             'image_path.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048',
         ]);
 
@@ -91,6 +94,7 @@ class OurServiceController extends Controller
         $ourServices->update([
             'name' => $request->name,
             'description' => $request->description,
+            'url_form' => $request->url_form,
 
         ]);
 
@@ -129,6 +133,7 @@ class OurServiceController extends Controller
 
         $ourserv->title = $request->input('title');
         $ourserv->description = $request->input('description');
+        $ourserv->url_form = $request->input('url_form');
 
         //$ourexecutives->update();
 
