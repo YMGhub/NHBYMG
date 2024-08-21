@@ -160,4 +160,12 @@ class OurServiceController extends Controller
 
         return view('our-services', compact('data'));
     }
+
+    public function ourservices_info2()
+    {
+        $data = OurServices::with('imagesOurServices')->get();
+
+
+        return view('welcome', compact('data'));
+    }
 }

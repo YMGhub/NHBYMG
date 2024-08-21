@@ -24,9 +24,7 @@ use App\Models\OurExecutives;
 use App\Models\OurServices;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [OurServiceController::class, 'ourservices_info2'])->name('welcome');
 
 Route::get('/about-us', [AboutUsController::class, 'aboutus_info'])->name('about-us');
 
