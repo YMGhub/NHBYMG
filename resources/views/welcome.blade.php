@@ -15,7 +15,7 @@
     <!--slider--->
 
     <!-- Content
-                                                                                                                                                                        ================================================== -->
+                                                                                                                                                                            ================================================== -->
     <div class="container">
         <div class="row">
 
@@ -331,7 +331,7 @@
                             </div>
 
                             <p>
-                                <a href="/application-for-rental" class="button border">Apply Now</a>
+                                <a href="{{ $row->url_form }}" class="button border">Apply Now</a>
 
                         </div>
                     </div>
