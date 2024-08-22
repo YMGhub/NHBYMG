@@ -47,7 +47,7 @@
                     <div class="text-widget">
                         @if ($settings && $settings->site_contact_us)
                             {!! $settings->site_contact_us !!}
-                        @endif;
+                        @endif
                     </div>
 
                     <ul class="social-icons margin-top-20">
