@@ -2,16 +2,17 @@
 </div>
 <footer class="py-16  text-sm text-black dark:text-white/70">
     <div id="footer">
+        @php
+            $settings = App\Models\SiteSetting::first();
+        @endphp
         <!-- Main -->
         <div class="container">
             <div class="row">
                 <div class="col-md-5 col-sm-6">
-                    <img class="footer-logo" src="/images/logo.jpeg" alt="">
-                    <br>Established on April 1st, 1973, under
-                    the Housing Act cap 226, the National Housing Corporation boasts over five decades of dedicated
-                    service. As a state-owned entity, our headquarters are conveniently located on Country Road in
-                    St. Michael, with multiple depots spread across urban and rural Barbados to better serve our
-                    tenants.</p>
+                    <img class="footer-logo" src="{{ asset('storage/' . $settings->logo) }}" alt="">
+                    <br>
+                    {{ $settings->site_description }}
+
                 </div>
 
                 <div class="col-md-4 col-sm-6 ">
@@ -40,16 +41,13 @@
                 <div class="col-md-3  col-sm-12">
                     <h4>Contact Us</h4>
                     <div class="text-widget">
-                        <span>“The Garden” Country Road</span> <br>
-                        Phone: <span>1-246-536-5300</span><br>
-                        E-Mail:<span> <a href="#">NHC.CustomerService@barbados.gov.bb</a> </span><br>
+                        {!! $settings->site_contact_us !!}
                     </div>
 
                     <ul class="social-icons margin-top-20">
-                        <li><a class="facebook" target="_blank" href="https://www.facebook.com/Nhcbarbados"><i
+                        <li><a class="facebook" target="_blank" href="{{ $settings->facebook_url }}"><i
                                     class="icon-facebook"></i></a></li>
-                        <li><a class="instagram" target="_blank"
-                                href="https://www.instagram.com/national_housing_barbados/"><i
+                        <li><a class="instagram" target="_blank" href="{{ $settings->instagram_url }}"><i
                                     class="icon-instagram"></i></a></li>
                         {{-- <li><a class="twitter" href="#"><i class="icon-twitter"></i></a></li> --}}
                         {{-- <li><a class="gplus" href="#"><i class="icon-gplus"></i></a></li> --}}

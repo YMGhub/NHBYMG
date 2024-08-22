@@ -16,6 +16,7 @@ use App\Http\Controllers\OurExecutivesController;
 use App\Http\Controllers\OurProjectsController;
 use App\Http\Controllers\OurServiceController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SiteSettingsController;
 use App\Http\Controllers\VideoController;
 use App\Models\Career;
 use App\Models\CommercialEndeavors;
@@ -219,6 +220,16 @@ Route::middleware(['auth:sanctum', 'restrictRole:admin'])->group(function () {
         Route::put('/update/{id}', [OurServiceController::class, 'update'])->name('admin.our-services.update');
 
         Route::delete('/{id}/delete', [OurServiceController::class, 'destroy'])->name('admin.our-services.destroy');
+    });
+
+
+    //setttings website
+
+    Route::prefix('/admin/settings')->group(function () {
+        Route::get('/', [SiteSettingsController::class, 'index'])->name('admin.settings.index');
+        //Route::get('/', [SiteSettingsController::class, 'create'])->name('admin.settings.create')
+
+        Route::put('/update', [SiteSettingsController::class, 'update'])->name('admin.settings.update');
     });
 });
 

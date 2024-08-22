@@ -85,13 +85,16 @@
             <!-- Header -->
             <div id="header">
                 <div class="container">
+                    @php
+                        $settings = App\Models\SiteSetting::first();
+                    @endphp
 
                     <!-- Left Side Content -->
                     <div class="left-side">
 
                         <!-- Logo -->
                         <div id="logo">
-                            <a href="/"><img src="images/logo.jpeg" alt=""></a>
+                            <a href="/"><img src="{{ asset('storage/' . $settings->logo) }}" alt=""></a>
                         </div>
 
 

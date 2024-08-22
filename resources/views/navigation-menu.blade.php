@@ -1,4 +1,7 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100 dark:bg-gray-800 dark:border-gray-700">
+    @php
+        $settings = App\Models\SiteSetting::first();
+    @endphp
     <!-- Primary Navigation Menu -->
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -6,7 +9,7 @@
                 <!-- Logo -->
                 <div class="flex items-center shrink-0">
                     <a href="{{ route('dashboard') }}">
-                        <img style="width:60px" src="{{ URL::asset('/images/logo.png') }}" />
+                        <img style="width:60px" src="{{ asset('storage/' . $settings->logo) }}" />
                     </a>
                 </div>
 
@@ -14,6 +17,10 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('admin.index') }}" :active="request()->routeIs('admin.index')">
                         {{ __('Website Administration Manager') }}
+                    </x-nav-link>
+
+                    <x-nav-link href="{{ route('admin.settings.index') }}" :active="request()->routeIs('admin.settings')">
+                        {{ __('Settings') }}
                     </x-nav-link>
 
                 </div>
