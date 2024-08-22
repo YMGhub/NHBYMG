@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5 col-sm-6">
-                    <img class="footer-logo" src="/images/thumbnail_image001-removebg-preview.png" alt="">
+                    <img class="footer-logo" src="/images/logo.jpeg" alt="">
                     <br>Established on April 1st, 1973, under
                     the Housing Act cap 226, the National Housing Corporation boasts over five decades of dedicated
                     service. As a state-owned entity, our headquarters are conveniently located on Country Road in

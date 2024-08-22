@@ -12,7 +12,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
 
-    <link rel="icon" href="{{ asset('images/thumbnail_image001-removebg-preview.png') }}">
+    <link rel="icon" href="{{ asset('/images/logo.jpeg') }}">
 
 
 
@@ -91,8 +91,7 @@
 
                         <!-- Logo -->
                         <div id="logo">
-                            <a href="/"><img src="images/thumbnail_image001-removebg-preview.png"
-                                    alt=""></a>
+                            <a href="/"><img src="images/logo.jpeg" alt=""></a>
                         </div>
 
 
