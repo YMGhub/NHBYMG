@@ -9,9 +9,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5 col-sm-6">
-                    <img class="footer-logo" src="{{ asset('storage/' . $settings->logo) }}" alt="">
+                    @if ($settings && $settings->logo)
+                        <img class="footer-logo" src="{{ asset('storage/' . $settings->logo) }}" alt="">
+                    @endif;
                     <br>
-                    {!! $settings->site_description !!}
+                    @if ($settings && $settings->site_description)
+                        {!! $settings->site_description !!}
+                    @endif
 
                 </div>
 
@@ -41,14 +45,25 @@
                 <div class="col-md-3  col-sm-12">
                     <h4>Contact Us</h4>
                     <div class="text-widget">
-                        {!! $settings->site_contact_us !!}
+                        @if ($settings && $settings->site_contact_us)
+                            {!! $settings->site_contact_us !!}
+                        @endif;
                     </div>
 
                     <ul class="social-icons margin-top-20">
-                        <li><a class="facebook" target="_blank" href="{{ $settings->facebook_url }}"><i
-                                    class="icon-facebook"></i></a></li>
-                        <li><a class="instagram" target="_blank" href="{{ $settings->instagram_url }}"><i
-                                    class="icon-instagram"></i></a></li>
+                        @if ($settings && $settings->facebook_url)
+                            <li>
+
+                                <a class="facebook" target="_blank" href="{{ $settings->facebook_url }}"><i
+                                        class="icon-facebook"></i>
+
+                                </a>
+                            </li>
+                        @endif
+                        @if ($settings && $settings->instagram_url)
+                            <li><a class="instagram" target="_blank" href="{{ $settings->instagram_url }}"><i
+                                        class="icon-instagram"></i></a></li>
+                        @endif
                         {{-- <li><a class="twitter" href="#"><i class="icon-twitter"></i></a></li> --}}
                         {{-- <li><a class="gplus" href="#"><i class="icon-gplus"></i></a></li> --}}
                         {{-- <li><a class="vimeo" href="#"><i class="icon-vimeo"></i></a></li> --}}

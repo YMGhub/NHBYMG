@@ -94,7 +94,10 @@
 
                         <!-- Logo -->
                         <div id="logo">
-                            <a href="/"><img src="{{ asset('storage/' . $settings->logo) }}" alt=""></a>
+                            @if ($settings && $settings->logo)
+                                <a href="/"><img src="{{ asset('storage/' . $settings->logo) }}"
+                                        alt=""></a>
+                            @endif;
                         </div>
 
 

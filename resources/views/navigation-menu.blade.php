@@ -9,7 +9,9 @@
                 <!-- Logo -->
                 <div class="flex items-center shrink-0">
                     <a href="{{ route('dashboard') }}">
-                        <img style="width:60px" src="{{ asset('storage/' . $settings->logo) }}" />
+                        @if ($settings && $settings->logo)
+                            <img style="width:60px" src="{{ asset('storage/' . $settings->logo) }}" />
+                        @endif
                     </a>
                 </div>
 
