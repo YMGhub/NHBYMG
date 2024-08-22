@@ -3,13 +3,15 @@
 <footer class="py-16  text-sm text-black dark:text-white/70">
     <div id="footer">
         @php
-
+            $settings = App\Models\SiteSetting::first();
         @endphp
         <!-- Main -->
         <div class="container">
             <div class="row">
                 <div class="col-md-5 col-sm-6">
-
+                    <img class="footer-logo" src="{{ asset('storage/' . $settings->logo) }}" alt="">
+                    <br>
+                    {!! $settings->site_description !!}
 
                 </div>
 
@@ -39,11 +41,14 @@
                 <div class="col-md-3  col-sm-12">
                     <h4>Contact Us</h4>
                     <div class="text-widget">
-
+                        {!! $settings->site_contact_us !!}
                     </div>
 
                     <ul class="social-icons margin-top-20">
-
+                        <li><a class="facebook" target="_blank" href="{{ $settings->facebook_url }}"><i
+                                    class="icon-facebook"></i></a></li>
+                        <li><a class="instagram" target="_blank" href="{{ $settings->instagram_url }}"><i
+                                    class="icon-instagram"></i></a></li>
                         {{-- <li><a class="twitter" href="#"><i class="icon-twitter"></i></a></li> --}}
                         {{-- <li><a class="gplus" href="#"><i class="icon-gplus"></i></a></li> --}}
                         {{-- <li><a class="vimeo" href="#"><i class="icon-vimeo"></i></a></li> --}}

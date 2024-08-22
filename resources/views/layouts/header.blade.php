@@ -86,7 +86,7 @@
             <div id="header">
                 <div class="container">
                     @php
-
+                        $settings = App\Models\SiteSetting::first();
                     @endphp
 
                     <!-- Left Side Content -->
@@ -94,7 +94,7 @@
 
                         <!-- Logo -->
                         <div id="logo">
-
+                            <a href="/"><img src="{{ asset('storage/' . $settings->logo) }}" alt=""></a>
                         </div>
 
 
