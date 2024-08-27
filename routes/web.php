@@ -15,8 +15,10 @@ use App\Http\Controllers\OurDepartmentsController;
 use App\Http\Controllers\OurExecutivesController;
 use App\Http\Controllers\OurProjectsController;
 use App\Http\Controllers\OurServiceController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SiteSettingsController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use App\Models\Career;
 use App\Models\CommercialEndeavors;
@@ -75,10 +77,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::middleware(['auth:sanctum', 'restrictRole:admin'])->group(function () {
-    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.index');
-
-
+Route::middleware(['auth:sanctum'])->group(function () {
 
     //About Us
     Route::prefix('/admin/about-us')->group(function () {
@@ -234,6 +233,14 @@ Route::middleware(['auth:sanctum', 'restrictRole:admin'])->group(function () {
 });
 
 
+//Manage users and Role
+Route::middleware('auth')->group(function () {
+
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.index');
+
+    Route::resource('/admin/roles', RoleController::class);
+    Route::resource('/admin/users', UserController::class);
+});
 
 
 

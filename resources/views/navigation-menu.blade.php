@@ -21,9 +21,25 @@
                         {{ __('Website Administration Manager') }}
                     </x-nav-link>
 
-                    <x-nav-link href="{{ route('admin.settings.index') }}" :active="request()->routeIs('admin.settings')">
-                        {{ __('Settings') }}
-                    </x-nav-link>
+                    @can('users-list')
+                        <x-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
+                            {{ __('Manage Users') }}
+                        </x-nav-link>
+                    @endcan
+
+                    @can('role-list')
+                        <x-nav-link href="{{ route('roles.index') }}" :active="request()->routeIs('roles.index')">
+                            {{ __('Manage Role') }}
+                        </x-nav-link>
+                    @endcan
+
+                    @can('site-settings-list')
+                        <x-nav-link href="{{ route('admin.settings.index') }}" :active="request()->routeIs('admin.settings')">
+                            {{ __('Settings') }}
+                        </x-nav-link>
+                    @endcan
+
+
 
                 </div>
             </div>
