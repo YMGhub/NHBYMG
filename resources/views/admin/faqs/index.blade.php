@@ -43,7 +43,7 @@
 
                                 <td class="px-6 py-5">{{ $loop->iteration }}</td>
                                 <td class="px-6 py-5">{{ $item->question }}</td>
-                                <td class="px-6 py-5">{{ strip_tags(html_entity_decode($item->answer)) }}</td>
+                                <td class="px-6 py-5">{!! $item->answer !!}</td>
 
                                 <td class="px-6 py-5">
                                     <a href="{{ route('faq') }}"
