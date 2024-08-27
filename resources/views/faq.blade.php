@@ -62,7 +62,7 @@
                                     </a>
                                 </span>
                                 <div class="toggle-container" style="display: none;">
-                                    {{ $row->answer }}
+                                    {{ strip_tags(html_entity_decode($row->answer)) }}
                                 </div>
                             </div>
                         @endforeach
