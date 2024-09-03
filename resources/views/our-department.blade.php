@@ -357,7 +357,7 @@
 
                                         @foreach ($data as $row)
                                             <div class="toggle-wrap style-2">
-                                                <span class="trigger opened"><a href="#">{{ $row->title }}
+                                                <span class="trigger"><a href="#">{{ $row->title }}
                                                         <i class="sl sl-icon-plus"></i></a></span>
                                                 <div class="toggle-container">
                                                     <div class="container">
