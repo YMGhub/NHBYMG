@@ -5,6 +5,41 @@
     $(document).ready(function () {
 
 
+        //OurDepartment
+        // Slider 1 initialization
+        jQuery('#property-slider-1').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            fade: true,
+            asNavFor: '#property-slider-nav-1'
+        });
+        jQuery('#property-slider-nav-1').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            asNavFor: '#property-slider-1',
+            dots: true,
+            centerMode: true,
+            focusOnSelect: true
+        });
+
+        // Slider 2 initialization
+        jQuery('#property-slider-2').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            fade: true,
+            asNavFor: '#property-slider-nav-2'
+        });
+        jQuery('#property-slider-nav-2').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            asNavFor: '#property-slider-2',
+            dots: true,
+            centerMode: true,
+            focusOnSelect: true
+        });
+
 
         //modal Project
         //Fancybox.bind("[data-fancybox]", {});
