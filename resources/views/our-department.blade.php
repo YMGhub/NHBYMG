@@ -632,8 +632,9 @@
 </style>
 
 
-<script type="module">
-    $(function() {
+
+<script>
+    $(document).ready(function() {
         // Slider 1 initialization
         $('#property-slider-1').slick({
             slidesToShow: 1,
