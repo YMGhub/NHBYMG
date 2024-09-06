@@ -97,7 +97,7 @@
                             @if ($settings && $settings->logo)
                                 <a href="/"><img src="{{ asset('storage/' . $settings->logo) }}"
                                         alt=""></a>
-                            @endif;
+                            @endif
                         </div>
 
 
