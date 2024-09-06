@@ -16459,3 +16459,7 @@ video {
 .icon-box-1 p a.button {
     margin-top: 20px;
 }
+
+#navigation.style-1 ul li {
+    margin: 0 4px !important;
+}
