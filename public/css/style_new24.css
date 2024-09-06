@@ -13049,7 +13049,7 @@ body .notification strong {
 }
 
 .icon-box-1 p {
-    font-size: 15px;
+    font-size: 15px !important;
     color: #888;
     margin: 18px 0 0 0;
 }
