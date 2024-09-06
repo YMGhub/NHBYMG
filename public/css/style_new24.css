@@ -1171,7 +1171,7 @@ button.widget-button {
 }
 
 #navigation.style-1 ul li {
-    margin: 0 4px;
+    margin: 0 4px !important;
 }
 
 #navigation.style-1 ul ul li {
