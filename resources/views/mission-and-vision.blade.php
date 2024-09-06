@@ -10,7 +10,7 @@
 
                         <!-- Main Search Container -->
                         <div class="main-search-container">
-                            <h2>Mission & Vision</h2>
+                            <h2>Mission Statement</h2>
 
 
                         </div>
@@ -69,23 +69,23 @@
     </div>
 
     <!--div class="container">
-                     <div class="row">
+                         <div class="row">
 
 
-                      <div class="col-lg-12 col-md-7 sp-content mt-10">
-                       <div class="property-description">
+                          <div class="col-lg-12 col-md-7 sp-content mt-10">
+                           <div class="property-description">
 
-                        <h3 class="desc-headline">VISION STATEMENT:</h3>
-                        <h5 class="desc-headline">To ensure quality affordable for every Barbadian through the following core values: -</h5>
-                        <div class="input">
-                         • Professionalism
-                         • Accountability
-                         • Credibility
-                         • Efficiency
-                        </div>
-                       </div>
-                      </div>
-                      <!-- Property Description / End -->
+                            <h3 class="desc-headline">VISION STATEMENT:</h3>
+                            <h5 class="desc-headline">To ensure quality affordable for every Barbadian through the following core values: -</h5>
+                            <div class="input">
+                             • Professionalism
+                             • Accountability
+                             • Credibility
+                             • Efficiency
+                            </div>
+                           </div>
+                          </div>
+                          <!-- Property Description / End -->
     </div>
     </div-->
     <br>
