@@ -11,7 +11,7 @@
                 <div class="col-md-5 col-sm-6">
                     @if ($settings && $settings->logo)
                         <img class="footer-logo" src="{{ asset('storage/' . $settings->logo) }}" alt="">
-                    @endif;
+                    @endif
                     <br>
                     @if ($settings && $settings->site_description)
                         {!! $settings->site_description !!}
