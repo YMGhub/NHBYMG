@@ -16452,6 +16452,9 @@ video {
     display: block !important;
 }
 
+.icon-box-1 p {
+    font-size: 15px !important;
+}
 
 .icon-box-1 p a.button {
     margin-top: 20px;
