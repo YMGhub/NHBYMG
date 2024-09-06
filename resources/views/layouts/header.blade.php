@@ -127,11 +127,11 @@
                                         Us</a>
                                     <ul>
                                         <li><a class="{{ Request::is('mission-and-vision') ? 'current' : '' }}"
-                                                href="/mission-and-vision">Mission & Vision</a></li>
+                                                href="/mission-and-vision">Mission Statement</a></li>
                                         <li><a class="{{ Request::is('our-executives') ? 'current' : '' }}"
                                                 href="our-executives">Our Executives</a></li>
                                         <li><a class="{{ Request::is('our-department') ? 'current' : '' }}"
-                                                href="our-department">Our Department</a></li>
+                                                href="our-department">Our Departments</a></li>
                                         <li><a class="{{ Request::is('commercial-endeavors') ? 'current' : '' }}"
                                                 href="commercial-endeavors">Commercial Endeavors</a></li>
                                         <li><a class="{{ Request::is('careers') ? 'current' : '' }}"
