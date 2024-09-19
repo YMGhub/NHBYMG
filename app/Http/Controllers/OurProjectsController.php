@@ -27,7 +27,7 @@ class OurProjectsController extends Controller
             'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $ourProject = OurProjects::create($request->only('title'));
+        $ourProject = OurProjects::create($request->only('title'), $request->only('map_url'));
 
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
@@ -76,6 +76,7 @@ class OurProjectsController extends Controller
         // Update gallery title and description
         $ourProject->update([
             'title' => $request->title,
+            'map_url' => $request->map_url,
 
         ]);
 
@@ -107,6 +108,7 @@ class OurProjectsController extends Controller
         $ourproj = OurProjects::find($id);
 
         $ourproj->title = $request->input('title');
+        $ourproj->map_url = $request->input('map_url');
 
         //$ourexecutives->update();
 
