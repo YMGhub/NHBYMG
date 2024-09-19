@@ -16,7 +16,7 @@
 
 
 
-    <link rel="stylesheet" href="{{ asset('css/style_new25.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style_new26.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style-template2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/color.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fancybox.css') }}">

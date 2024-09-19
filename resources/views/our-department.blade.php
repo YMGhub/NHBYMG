@@ -329,7 +329,7 @@
             display: none;
         }
     </style>
-    <div class="parallax"
+    <div class="parallax bannerOurDeparment"
         sytle="background: url('https://nhc.ymgweb.com/images/headOffice.jpeg');background-attachment: fixed;background-size: 1519.2px 972.288px;background-position: 50% -271.587px;"
         data-color="#36383e" data-color-opacity="0.45" data-img-width="2500" data-img-height="1600">
         <div class="parallax-content">
