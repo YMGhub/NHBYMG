@@ -336,6 +336,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="main-search-container">
+
                             <h2>Our Departments</h2>
                         </div>
                     </div>
