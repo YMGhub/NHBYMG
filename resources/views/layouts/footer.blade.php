@@ -119,4 +119,4 @@
 <script type="text/javascript" src="{{ asset('scripts/fancybox.umd.js') }}"></script>
 
 
-<script type="text/javascript" src="{{ asset('scripts/custom104.js') }}"></script>
+<script type="text/javascript" src="{{ asset('scripts/custom104a.js') }}"></script>

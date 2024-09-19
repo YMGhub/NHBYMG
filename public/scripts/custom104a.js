@@ -24,6 +24,9 @@
         Fancybox.bind('[data-fancybox="gallery-12"]', {});
         Fancybox.bind('[data-fancybox="gallery-13"]', {});
         Fancybox.bind('[data-fancybox="gallery-14"]', {});
+        Fancybox.bind('[data-fancybox="gallery-15"]', {});
+        Fancybox.bind('[data-fancybox="gallery-16"]', {});
+        Fancybox.bind('[data-fancybox="gallery-17"]', {});
 
         /*Login and register form*/
 
