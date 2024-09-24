@@ -5,9 +5,11 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Content;
+use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class ApplicationRentalMail extends Mailable
+class ApplicationForEmploymentWeeklyMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -22,16 +24,10 @@ class ApplicationRentalMail extends Mailable
     {
 
 
-
         $email = $this->subject('New Contact Application Rental Form')
-            ->view('emails.applicationrental');
+            ->view('emails.applicationforemploymentweekly');
 
 
-
-
-        if (!empty($this->details['photograph'])) {
-            $email->attach(storage_path('app/public/' . $this->details['photograph']));
-        }
 
         return $email;
     }

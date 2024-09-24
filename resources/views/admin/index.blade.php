@@ -148,6 +148,40 @@
                         </tr>
                         <!--Our Services -->
 
+
+
+                        <!--Our Properties -->
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center">
+                            <td class="px-6 py-5">Our Properties </td>
+                            <td class="px-6 py-5">
+
+
+                                <a href="{{ url('/admin/properties') }}"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                    View
+                                </a>
+
+
+                            </td>
+                        </tr>
+                        <!--Our Properties -->
+
+                        <!--Application For Employment Weekly - Submission -->
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center">
+                            <td class="px-6 py-5">Application For Employment Weekly - Submission </td>
+                            <td class="px-6 py-5">
+
+
+                                <a href="{{ url('/admin/application-for-employment-weekly') }}"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                    View
+                                </a>
+
+
+                            </td>
+                        </tr>
+                        <!--Application For Employment Weekly - Submission -->
+
                     </tbody>
                 </table>
 

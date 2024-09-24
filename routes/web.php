@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ApplicationForEmploymentWeeklyController;
 use App\Http\Controllers\ApplicationRentalController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\CategoryController;
@@ -11,15 +12,19 @@ use App\Http\Controllers\CommercialEndeavorsInformationController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqsController;
 use App\Http\Controllers\ListFormController;
+use App\Http\Controllers\MonthlyWorkApplicationController;
 use App\Http\Controllers\OurDepartmentsController;
 use App\Http\Controllers\OurExecutivesController;
 use App\Http\Controllers\OurProjectsController;
 use App\Http\Controllers\OurServiceController;
+use App\Http\Controllers\PropertyCategoryController;
+use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SiteSettingsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
+use App\Models\ApplicationForEmploymentWeekly;
 use App\Models\Career;
 use App\Models\CommercialEndeavors;
 use App\Models\OurDepartments;
@@ -65,6 +70,29 @@ Route::get('/application-for-rental', function () {
 })->name('application-for-rental');
 
 Route::post('/application-for-rental/apply', [ApplicationRentalController::class, 'submitApplication'])->name('application-for-rental.apply');
+
+//form application APPLICATION FOR EMPLOYMENT - Monthly
+Route::get('/monthly-work-application', function () {
+    return view('monthly-work-application');
+})->name('monthly-work-application');
+
+Route::post('/monthly-work-application/apply', [MonthlyWorkApplicationController::class, 'submitApplication'])->name('monthly-work-application.apply');
+
+//Form Appplication APPLICATION FOR EMPLOYMENT (WEEKLY)
+Route::get('/application-for-employment-weekly', function () {
+    return view('application-for-employment-weekly');
+})->name('application-for-employment-weekly');
+
+Route::post('/application-for-employment-weekly/apply', [ApplicationForEmploymentWeeklyController::class, 'submitApplication'])->name('application-for-employment-weekly.apply');
+
+
+//Form Application for the purchase
+Route::get('/application-for-the-purchase', function () {
+    return view('application-for-the-purchase');
+})->name('application-for-the-purchase');
+
+//Route::post('/application-for-employment-weekly/apply', [ApplicationForEmploymentWeeklyController::class, 'submitApplication'])->name('application-for-employment-weekly.apply');
+
 
 Route::middleware([
     'auth:sanctum',
@@ -230,6 +258,19 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
         Route::put('/update', [SiteSettingsController::class, 'update'])->name('admin.settings.update');
     });
+
+
+    //NATIONAL HOUSING CORPORATION APPLICATION FOR EMPLOYMENT (WEEKLY) - ADMIN
+    Route::prefix('/admin/application-for-employment-weekly')->group(function () {
+        //page information
+        Route::get('/', [ApplicationForEmploymentWeeklyController::class, 'index'])->name('admin.application-for-employment-weekly.index');
+
+        // Edit
+        Route::get('/edit/{id}', [ApplicationForEmploymentWeeklyController::class, 'edit'])->name('admin.application-for-employment-weekly.edit');
+
+        ///Update
+        Route::put('/update-form-submission/{id}', [ApplicationForEmploymentWeeklyController::class, 'update'])->name('admin.application-for-employment-weekly.update');
+    });
 });
 
 
@@ -240,6 +281,9 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/admin/roles', RoleController::class);
     Route::resource('/admin/users', UserController::class);
+
+    Route::resource('/admin/properties', PropertyController::class);
+    Route::resource('/admin/property-categories', PropertyCategoryController::class);
 });
 
 
