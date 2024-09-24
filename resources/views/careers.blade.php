@@ -43,7 +43,7 @@
             <div class="col-md-12 col-sm-12">
 
                 <section id="contact">
-                    <h4 class="headline margin-bottom-35">Careers Form</h4>
+                    <h4 class="headline margin-bottom-35">Careers</h4>
 
                     <p>
                         At the National Housing Corporation, we are always on the lookout for passionate, skilled
@@ -135,6 +135,15 @@
                     </form>
 
                 </section>
+
+                <div class="row">
+                    <div class="col-md-6 text-center"><a href="/monthly-work-application" class="button">The Application
+                            Forms for Employment (Weekly)</a>
+                    </div>
+                    <div class="col-md-6 text-center"><a href="/application-for-employment-weekly" class="button">The
+                            Application Forms for Employment (Monthly)</a>
+                    </div>
+                </div>
             </div>
             <!-- Contact Form / End -->
 
