@@ -91,7 +91,7 @@ Route::get('/application-for-the-purchase', function () {
     return view('application-for-the-purchase');
 })->name('application-for-the-purchase');
 
-//Route::post('/application-for-employment-weekly/apply', [ApplicationForEmploymentWeeklyController::class, 'submitApplication'])->name('application-for-employment-weekly.apply');
+Route::post('/application-for-the-purchase/apply', [ApplicationForEmploymentWeeklyController::class, 'submitApplication'])->name('application-for-the-purchase.apply');
 
 
 Route::middleware([
