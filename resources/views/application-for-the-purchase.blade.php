@@ -6,8 +6,10 @@
             background: linear-gradient(to bottom, transparent 55%, transparent);
         }
     </style>
-    <div class="parallax" data-background="images/Project-Hero.jpg" data-color="#" data-color-opacity="0.1" data-img-width="1000"
-        data-img-height="1200" style="background-position: 0;background-size:100% !important">
+    <div class="parallax bannerOurDeparment" data-background="images/Project-Hero.jpg" data-color="#" data-color-opacity="0.1"
+        data-img-width="1000" data-img-height="1200"
+        style="background-position: 0 !important;background-size:100% !important;    position: relative;
+    z-index: 99;    background-repeat: no-repeat;">
         <div class="parallax-content">
             <div class="container">
                 <div class="row">
