@@ -182,6 +182,40 @@
                         </tr>
                         <!--Application For Employment Weekly - Submission -->
 
+
+                        <!--Application For Employment Montly - Submission -->
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center">
+                            <td class="px-6 py-5">Application For Employment Montly - Submission </td>
+                            <td class="px-6 py-5">
+
+
+                                <a href="{{ url('/admin/application-for-employment-monthly') }}"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                    View
+                                </a>
+
+
+                            </td>
+                        </tr>
+                        <!--Application For Employment Weekly - Submission -->
+
+                        <!--Application For Employment Weekly - Submission -->
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center">
+                            <td class="px-6 py-5">Application Form For The Purchase of Land Or Property - Submission
+                            </td>
+                            <td class="px-6 py-5">
+
+
+                                <a href="{{ url('/admin/application-for-the-purchase') }}"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                    View
+                                </a>
+
+
+                            </td>
+                        </tr>
+                        <!--Application For Employment Weekly - Submission -->
+
                     </tbody>
                 </table>
 

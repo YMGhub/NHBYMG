@@ -20,24 +20,24 @@ class ApplicationRentalController extends Controller
         /*var_dump($request->addmore);
         die;*/
 
-            $validatedData = $request->validate([
-                'photograph' => 'required|image|mimes:jpg,jpeg,png|max:2048',
-            ]);
+        $validatedData = $request->validate([
+            'photograph' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+        ]);
 
 
 
 
-            // Store the uploaded file
+        // Store the uploaded file
 
 
-            if ($request->hasFile('photograph')) {
-                $photographName = time() . "-" . $request->photograph->getClientOriginalName();
-                $photographPath = $request->file('photograph')->storeAs('photograph', $photographName, 'public');
-                $validatedData['photograph'] = $photographPath;
-            }
+        if ($request->hasFile('photograph')) {
+            $photographName = time() . "-" . $request->photograph->getClientOriginalName();
+            $photographPath = $request->file('photograph')->storeAs('photograph', $photographName, 'public');
+            $validatedData['photograph'] = $photographPath;
+        }
 
 
-            ApplicationRental::create([
+        ApplicationRental::create([
             'applicant_surname' => $request->applicant_surname,
             'applicant_first' => $request->applicant_first,
             'applicant_middle' => $request->applicant_middle,
@@ -60,7 +60,7 @@ class ApplicationRentalController extends Controller
             'financial_institution' => $request->financial_institution,
             'give_details' => $request->give_details,
             'occupedaunit' => $request->occupedaunit,
-            'photograph' => $photographPath ,
+            'photograph' => $photographPath,
             'addmore' => json_encode($request->addmore),
             'tenantorlodger' => $request->tenantorlodger,
             'addressoflandlord' => $request->addressoflandlord,
@@ -90,10 +90,10 @@ class ApplicationRentalController extends Controller
 
         ]);
 
-         // Redirect back with success message
-         //return redirect("/application-for-rental")->with('success', 'Message received successfully!');
+        // Redirect back with success message
+        //return redirect("/application-for-rental")->with('success', 'Message received successfully!');
 
-         $details = [
+        $details = [
             'applicant_surname' => $request->applicant_surname,
             'applicant_first' => $request->applicant_first,
             'applicant_middle' => $request->applicant_middle,
@@ -116,7 +116,7 @@ class ApplicationRentalController extends Controller
             'financial_institution' => $request->financial_institution,
             'give_details' => $request->give_details,
             'occupedaunit' => $request->occupedaunit,
-            'photograph' => $photographPath ,
+            'photograph' => $photographPath,
             'addmore' => json_encode($request->addmore),
             'tenantorlodger' => $request->tenantorlodger,
             'addressoflandlord' => $request->addressoflandlord,
@@ -147,12 +147,10 @@ class ApplicationRentalController extends Controller
 
         Mail::to('jonathan.motta@yellomg.com')->send(new ApplicationRentalMail($details));
 
-         try {
+        try {
             return redirect()->back()->with('success', 'Application submitted successfully!');
-
         } catch (\Exception $e) {
             return back()->with('error', 'Please try again.');
         }
-
     }
 }

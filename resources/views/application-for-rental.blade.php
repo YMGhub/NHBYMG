@@ -282,7 +282,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <input name="state_address" type="text" id="state_address"
-                                                placeholder="If Yes, Please State Address"  />
+                                                placeholder="If Yes, Please State Address" />
                                         </div>
                                     </div>
                                 </div>
@@ -729,8 +729,8 @@
 
 @endsection
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('applicationrental').addEventListener('submit', function (event) {
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('applicationrental').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the form from submitting normally
 
             // Assuming you have included SweetAlert library script tag
@@ -739,33 +739,33 @@
             let formData = new FormData(this);
 
             fetch(this.action, {
-                method: this.method,
-                body: formData
-            })
+                    method: this.method,
+                    body: formData
+                })
                 .then(response => {
-                if (!response.ok) {
-                    Swal.fire({
-                title: 'Error!',
-                text: 'An error occurred while submitting the form. Please try again later.',
-                icon: 'error',
-                confirmButtonText: 'OK'
-            });
-                    throw new Error('Network response was not ok');
-                }else{
+                    if (!response.ok) {
+                        Swal.fire({
+                            title: 'Error!',
+                            text: 'An error occurred while submitting the form. Please try again later.',
+                            icon: 'error',
+                            confirmButtonText: 'OK'
+                        });
+                        throw new Error('Network response was not ok');
+                    } else {
 
-                    Swal.fire({
-                        title: 'Success!',
-                        text: "Submitted successfully", // Assuming the server returns a message key in the JSON response
-                        icon: 'success',
-                        confirmButtonText: 'OK'
-                    });
+                        Swal.fire({
+                            title: 'Success!',
+                            text: "Submitted successfully", // Assuming the server returns a message key in the JSON response
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        });
 
 
-                }
-            return response.json();
-        })
+                    }
+                    return response.json();
+                })
 
-        document.getElementById('applicationrental').reset();
+            document.getElementById('applicationrental').reset();
 
         });
     });

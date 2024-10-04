@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ApplicationForEmploymentWeeklyController;
+use App\Http\Controllers\ApplicationForThePurchaseController;
 use App\Http\Controllers\ApplicationRentalController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\CategoryController;
@@ -25,6 +26,7 @@ use App\Http\Controllers\SiteSettingsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use App\Models\ApplicationForEmploymentWeekly;
+use App\Models\ApplicationForThePurchase;
 use App\Models\Career;
 use App\Models\CommercialEndeavors;
 use App\Models\OurDepartments;
@@ -91,7 +93,7 @@ Route::get('/application-for-the-purchase', function () {
     return view('application-for-the-purchase');
 })->name('application-for-the-purchase');
 
-Route::post('/application-for-the-purchase/apply', [ApplicationForEmploymentWeeklyController::class, 'submitApplication'])->name('application-for-the-purchase.apply');
+Route::post('/application-for-the-purchase/apply', [ApplicationForThePurchaseController::class, 'submitApplication'])->name('application-for-the-purchase.apply');
 
 
 Route::middleware([
@@ -270,6 +272,31 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
         ///Update
         Route::put('/update-form-submission/{id}', [ApplicationForEmploymentWeeklyController::class, 'update'])->name('admin.application-for-employment-weekly.update');
+    });
+
+    //NATIONAL HOUSING CORPORATION APPLICATION FOR EMPLOYMENT (MONTHLY) - ADMIN
+    Route::prefix('/admin/application-for-employment-monthly')->group(function () {
+        //page information
+        Route::get('/', [MonthlyWorkApplicationController::class, 'index'])->name('admin.application-for-employment-monthly.index');
+
+        // Edit
+        Route::get('/edit/{id}', [MonthlyWorkApplicationController::class, 'edit'])->name('admin.application-for-employment-monthly.edit');
+
+        ///Update
+        Route::put('/update-form-submission/{id}', [MonthlyWorkApplicationController::class, 'update'])->name('admin.application-for-employment-monthly.update');
+    });
+
+
+    //APPLICATION FORM FOR THE PURCHASE OF LAND OR PROPERTY - ADMIN
+    Route::prefix('/admin/application-for-the-purchase')->group(function () {
+        //page information
+        Route::get('/', [ApplicationForThePurchaseController::class, 'index'])->name('admin.application-for-the-the-purchase.index');
+
+        // Edit
+        Route::get('/edit/{id}', [ApplicationForThePurchaseController::class, 'edit'])->name('admin.application-for-the-the-purchase.edit');
+
+        ///Update
+        Route::put('/update-form-submission/{id}', [ApplicationForThePurchaseController::class, 'update'])->name('admin.application-for-the-the-purchase.update');
     });
 });
 

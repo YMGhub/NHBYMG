@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ApplicationForThePurchaseMail;
+use App\Mail\ApplicationForThePurchaseStatusMail;
 use App\Models\ApplicationForThePurchase;
 use App\Mail\ApplicationRentalMail;
 use Illuminate\Support\Facades\Mail;
@@ -10,7 +11,21 @@ use Illuminate\Http\Request;
 
 class ApplicationForThePurchaseController extends Controller
 {
-    //
+    //admin Panel
+    public function index()
+    {
+        $data = ApplicationForThePurchase::all();
+        return view('admin.application-for-the-purchase.index', compact('data'));
+    }
+
+    public function edit($id)
+    {
+
+        $submission = ApplicationForThePurchase::find($id);
+        return view('admin.application-for-the-purchase.edit', compact('submission'));
+    }
+
+    //Frontend
     public function submitApplication(Request $request)
     {
 
@@ -76,7 +91,7 @@ class ApplicationForThePurchaseController extends Controller
             'mortgage_or_loan' =>  $request->mortgage_or_loan,
             'the_amount_of_deposit' =>  $request->the_amount_of_deposit,
             'land_or_property' =>  $request->land_or_property,
-            'signature_applican' =>  $request->signature_applican,
+            'signature_applican' =>  $request->signature_applicant,
             'signature_coapplicant' =>  $request->signature_coapplicant,
             'dateend' =>  $request->dateend,
             'recommended_by' => $request->recommended_by,
@@ -150,7 +165,7 @@ class ApplicationForThePurchaseController extends Controller
             'mortgage_or_loan' =>  $request->mortgage_or_loan,
             'the_amount_of_deposit' =>  $request->the_amount_of_deposit,
             'land_or_property' =>  $request->land_or_property,
-            'signature_applican' =>  $request->signature_applican,
+            'signature_applican' =>  $request->signature_applicant,
             'signature_coapplicant' =>  $request->signature_coapplicant,
             'dateend' =>  $request->dateend,
             'recommended_by' => $request->recommended_by,
@@ -166,6 +181,53 @@ class ApplicationForThePurchaseController extends Controller
             return redirect()->back()->with('success', 'Application submitted successfully!');
         } catch (\Exception $e) {
             return back()->with('error', 'Please try again.');
+        }
+    }
+
+
+    function update(Request $request, ApplicationForThePurchase  $applicationForThePurchase)
+    {
+
+        $id = $_POST['id_submission_for_the_purchase'];
+
+        $applicationForThePurchase = ApplicationForThePurchase::find($id);
+
+
+        $applicationForThePurchase->recommended_by = $request->has('recommended_by');
+        $applicationForThePurchase->approved = $request->has('approved');
+        $applicationForThePurchase->date_official = $request->has('date_official');
+        $applicationForThePurchase->remarks_official = $request->has('remarks_official');
+        $applicationForThePurchase->qualifying_amount_official = $request->has('qualifying_amount_official');
+
+
+        $update = $applicationForThePurchase->update();
+
+        //send notification client make request by status request
+        if ($request->has('approved') == 1 || $request->has('approved') == 0) {
+
+
+            // Redirect back with success message and send email
+            $details = [
+                'recommended_by' => $request->recommended_by,
+                'approved' =>  $request->approved,
+                'date_official' =>  $request->date_official,
+                'remarks_official' =>  $request->remarks_official,
+                'qualifying_amount_official' =>  $request->qualifying_amount_official,
+            ];
+
+            Mail::to('jonathan.motta@yellomg.com')->send(new ApplicationForThePurchaseStatusMail($details));
+
+            try {
+                return redirect()->back()->with('success', 'Application update successfully!');
+            } catch (\Exception $e) {
+                return back()->with('error', 'Please try again.');
+            }
+        }
+
+
+
+        if ($update) {
+            return  redirect()->route('admin.application-for-the-the-purchase.index')->with('success', 'Submission updated successfully!');
         }
     }
 }

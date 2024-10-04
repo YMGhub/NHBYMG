@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('application_for_the_purchase', function (Blueprint $table) {
+        Schema::create('application_for_the_purchases', function (Blueprint $table) {
             $table->id();
             $table->string('salutation', 190)->nullable();
             $table->string('applicant_surname', 190)->nullable();;
@@ -91,6 +91,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('application_for_the_purchase');
+        Schema::dropIfExists('application_for_the_purchases');
     }
 };

@@ -116,7 +116,7 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <input name="applicant_maiden_name" type="text"
-                                                        id="applicant_maiden_name" placeholder="Middle"
+                                                        id="applicant_maiden_name" placeholder="Maiden Name"
                                                         required="required" />
                                                 </div>
                                             </div>
@@ -384,7 +384,7 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <input name="coapplicant_maiden_name" type="text"
-                                                        id="coapplicant_maiden_name" placeholder="Middle" />
+                                                        id="coapplicant_maiden_name" placeholder="Maiden Name" />
                                                 </div>
                                             </div>
                                         </div>

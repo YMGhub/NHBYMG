@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class MonthlyWorkApplicationMail extends Mailable
+class ApplicationForThePurchaseStatusMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -24,11 +24,8 @@ class MonthlyWorkApplicationMail extends Mailable
     {
 
 
-
-        $email = $this->subject('New Contact Monthly Work Application')
-            ->view('emails.monthlyworkapplication');
-
-
+        $email = $this->subject('Your Application For The Purchase Status')
+            ->view('emails.applicationforthepurchasestatus');
 
 
 

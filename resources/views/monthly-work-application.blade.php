@@ -59,7 +59,7 @@
                     <form method="post" enctype="multipart/form-data"
                         action="{{ route('monthly-work-application.apply') }}" name="monthlyworkapp" id="monthlyworkapp"
                         autocomplete="on">
-
+                        @csrf
                         <div class="row">
 
                             <div class="col-md-12">

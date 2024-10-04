@@ -38,6 +38,9 @@ class MonthlyWorkApplication extends Model
         'name_testimonial_2',
         'address_testimonial_2',
         'occupation_testimonial_2',
-        'signature'
+        'signature',
+        'any_other_information',
+        'date'
+
     ];
 }

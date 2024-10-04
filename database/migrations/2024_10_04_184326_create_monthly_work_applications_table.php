@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('national_registration_no', 255)->nullable();
             $table->string('national_insurance_no', 255)->nullable();
             $table->json('addmore1')->nullable();
-            $table->json('addmor2')->nullable();
+            $table->json('addmore2')->nullable();
             $table->json('addmore3')->nullable();
             $table->json('addmore4')->nullable();
             $table->json('addmore5')->nullable();
@@ -44,6 +44,7 @@ return new class extends Migration
             $table->string('signature', 255)->nullable();
             $table->string('any_other_information', 255)->nullable();
             $table->string('date', 255)->nullable();
+            $table->string('status', 255)->nullable();
 
             $table->timestamps();
         });
