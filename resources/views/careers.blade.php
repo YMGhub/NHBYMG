@@ -138,10 +138,10 @@
 
                 <div class="row">
                     <div class="col-md-6 text-center"><a href="/monthly-work-application" class="button">The Application
-                            Forms for Employment (Weekly)</a>
+                            Forms for Employment (Monthly)</a>
                     </div>
                     <div class="col-md-6 text-center"><a href="/application-for-employment-weekly" class="button">The
-                            Application Forms for Employment (Monthly)</a>
+                            Application Forms for Employment (Weekly)</a>
                     </div>
                 </div>
             </div>
