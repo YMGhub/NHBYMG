@@ -171,6 +171,6 @@ class OurServiceController extends Controller
         $data = OurServices::with('imagesOurServices')->get();
 
 
-        return view('welcome', compact('data'));
+        return $data;
     }
 }

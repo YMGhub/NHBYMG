@@ -65,7 +65,18 @@
                                     placeholder="Confirm Password">
                             </div>
                         </div>
-                        <div class="mb-6">
+                        <?php
+                        $user = Auth::user(); // Obtiene el usuario autenticado
+                        $roles = $user->getRoleNames(); // Devuelve una colección con los nombres de los roles
+                        // Si el usuario tiene un solo rol y quieres obtenerlo como string
+                        $currentRole = $roles->first();
+                        ?>
+                        <?php
+                        if ($currentRole == 'Admin') {
+                            $hideSection = 'hidden ';
+                        }
+                        ?>
+                        <div class="mb-6 <?php echo $hideSection; ?>">
                             <div class="form-group">
                                 <label
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Role:</label>

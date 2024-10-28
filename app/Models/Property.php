@@ -20,11 +20,19 @@ class Property extends Model
         'featured',
         'status',
         'price_or_rent_type',
-        'property_category_id'
+        'category',
+        'google_map_propertie',
+        'author'
     ];
+
+
+    public function images()
+    {
+        return $this->hasMany(PropertyImage::class);
+    }
 
     public function category()
     {
-        return $this->belongsTo(PropertyCategory::class, 'property_category_id');
+        return $this->belongsTo(PropertyCategory::class);
     }
 }

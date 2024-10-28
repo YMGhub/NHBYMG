@@ -12,6 +12,7 @@ use App\Http\Controllers\CommercialEndeavorsInformationController;
 //use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqsController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ListFormController;
 use App\Http\Controllers\MonthlyWorkApplicationController;
 use App\Http\Controllers\OurDepartmentsController;
@@ -34,7 +35,8 @@ use App\Models\OurExecutives;
 use App\Models\OurServices;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [OurServiceController::class, 'ourservices_info2'])->name('welcome');
+//Route::get('/', [OurServiceController::class, 'ourservices_info2'])->name('welcome');
+Route::get('/', [HomeController::class, 'index'])->name('welcome');
 
 Route::get('/about-us', [AboutUsController::class, 'aboutus_info'])->name('about-us');
 
@@ -236,7 +238,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::delete('/{id}/delete', [OurProjectsController::class, 'destroy'])->name('admin.our-projects.destroy');
     });
 
-    //OurProjects
+    //OurServices
     Route::prefix('/admin/our-services')->group(function () {
         Route::get('/', [OurServiceController::class, 'index'])->name('admin.our-services.index');
 
@@ -298,6 +300,20 @@ Route::middleware(['auth:sanctum'])->group(function () {
         ///Update
         Route::put('/update-form-submission/{id}', [ApplicationForThePurchaseController::class, 'update'])->name('admin.application-for-the-the-purchase.update');
     });
+
+    //Admin properties
+    Route::prefix('/admin/properties')->group(function () {
+        Route::get('/', [PropertyController::class, 'index'])->name('admin.properties.index');
+        Route::get('/create', [PropertyController::class, 'create'])->name('admin.properties.create');
+
+        Route::post('/', [PropertyController::class, 'store'])->name('admin.properties.store');
+
+        Route::get('/edit/{id}', [PropertyController::class, 'edit'])->name('admin.properties.edit');
+
+        Route::put('/update/{id}', [PropertyController::class, 'update'])->name('admin.properties.update');
+
+        Route::delete('/{id}/delete', [PropertyController::class, 'destroy'])->name('admin.properties.destroy');
+    });
 });
 
 
@@ -309,7 +325,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('/admin/roles', RoleController::class);
     Route::resource('/admin/users', UserController::class);
 
-    Route::resource('/admin/properties', PropertyController::class);
     Route::resource('/admin/property-categories', PropertyCategoryController::class);
 });
 

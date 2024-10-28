@@ -20,6 +20,7 @@ class UserController extends Controller
             abort(403, 'Unauthorized');
         } else {
             $data = User::latest()->paginate(5);
+
             return view('admin.users.index', compact('data'));
         }
     }

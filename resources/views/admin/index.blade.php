@@ -166,6 +166,23 @@
                         </tr>
                         <!--Our Properties -->
 
+                        <!--Our Properties -->
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center">
+                            <td class="px-6 py-5">Our Properties Categories </td>
+                            <td class="px-6 py-5">
+
+
+                                <a href="{{ url('/admin/property-categories') }}"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                    View
+                                </a>
+
+
+                            </td>
+                        </tr>
+                        <!--Our Properties -->
+
+
                         <!--Application For Employment Weekly - Submission -->
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center">
                             <td class="px-6 py-5">Application For Employment Weekly - Submission </td>
