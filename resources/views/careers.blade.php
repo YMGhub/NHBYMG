@@ -63,7 +63,7 @@ z-index: 99;    background-repeat: no-repeat;">
             <!-- Contact Form -->
             <div class="col-md-12 col-sm-12">
 
-                <section id="contact">
+                <section id="contact" style="    margin-bottom: 50px;">
 
                     <p>
                         At the National Housing Corporation, we are always on the lookout for passionate, skilled
