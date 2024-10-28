@@ -5,6 +5,8 @@
         .list-layout .listing-img-container:after {
             background: linear-gradient(to bottom, transparent 55%, transparent);
         }
+
+        .bannerOurDeparment {}
     </style>
     <div class="parallax bannerOurDeparment" data-background="images/Project-Hero.jpg" data-color="#" data-color-opacity="0.1"
         data-img-width="1000" data-img-height="1200"

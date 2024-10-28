@@ -20,12 +20,25 @@
             /* Adjust spacing between radio button and label */
         }
 
-        .bannerOurDeparment {
+        .bannerOurDeparment1 {
             background: url("https://nhc.ymgweb.com/images/headOffice.jpeg") !important;
+            background-position: 50% 50% !important;
+            background-size: cover !important;
+
+        }
+
+        .parallax-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 101;
+            background-color: #333;
         }
     </style>
 
-    <div class="parallax bannerOurDeparment" data-background="images/Project-Hero.jpg" data-color="#" data-color-opacity="0.1"
+    <div class="parallax bannerOurDeparment1" data-background="images/Project-Hero.jpg" data-color="#" data-color-opacity="0.1"
         data-img-width="1000" data-img-height="1200"
         style="background-position: 0 !important;background-size:100% !important;    position: relative;
 z-index: 99;    background-repeat: no-repeat;">
