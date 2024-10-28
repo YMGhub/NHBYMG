@@ -21,17 +21,21 @@
         }
     </style>
 
-    <!-- Map Container -->
-    <div class="contact-map margin-bottom-55">
-
-        <!-- Google Maps -->
-
-        <!-- Google Maps / End -->
-
-        <!-- Office -->
-
-        <!-- Office / End -->
-
+    <div class="parallax bannerOurDeparment" data-background="images/Project-Hero.jpg" data-color="#" data-color-opacity="0.1"
+        data-img-width="1000" data-img-height="1200"
+        style="background-position: 0 !important;background-size:100% !important;    position: relative;
+z-index: 99;    background-repeat: no-repeat;">
+        <div class="parallax-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="main-search-container">
+                            <h2>CAREERS</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="clearfix"></div>
     <!-- Map Container / End -->
