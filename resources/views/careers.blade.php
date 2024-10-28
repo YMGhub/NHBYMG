@@ -19,6 +19,10 @@
             margin-right: 5px;
             /* Adjust spacing between radio button and label */
         }
+
+        .bannerOurDeparment {
+            background: url("https://nhc.ymgweb.com/images/headOffice.jpeg") !important;
+        }
     </style>
 
     <div class="parallax bannerOurDeparment" data-background="images/Project-Hero.jpg" data-color="#" data-color-opacity="0.1"
@@ -47,7 +51,6 @@ z-index: 99;    background-repeat: no-repeat;">
             <div class="col-md-12 col-sm-12">
 
                 <section id="contact">
-                    <h4 class="headline margin-bottom-35">Careers</h4>
 
                     <p>
                         At the National Housing Corporation, we are always on the lookout for passionate, skilled
