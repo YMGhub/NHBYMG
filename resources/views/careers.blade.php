@@ -24,7 +24,7 @@
             background: url("https://nhc.ymgweb.com/images/headOffice.jpeg") !important;
             background-position: 50% 50% !important;
             background-size: cover !important;
-
+            margin-bottom: 40px
         }
 
         .parallax-overlay {
