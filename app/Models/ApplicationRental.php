@@ -24,6 +24,7 @@ class ApplicationRental extends Model
         'occupation',
         'citizenship',
         'income',
+        'telephone',
         'size_of_family',
         'adults',
         'children',

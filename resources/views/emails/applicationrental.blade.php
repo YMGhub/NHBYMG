@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Message from Application Rental</title>
 </head>
+
 <body>
     <h2>NATIONAL HOUSING CORPORATION <br>
         APPLICATION FOR RENTAL UNIT/ LOT<br>
         TO BE RETURNED BY APPLICANT(S)</h2>
     <p>
-        <h3>APPLICANT: Mr. Miss. Mrs.</h3>
-        <strong>Surname:</strong> {{ $details['applicant_surname'] }}<br>
-        <strong>First:</strong> {{ $details['applicant_first'] }}<br>
-        <strong>Middle:</strong> {{ $details['applicant_middle'] }}<br>
-        <strong>Address:</strong> {{ $details['applicant_address'] }}
+    <h3>APPLICANT: Mr. Miss. Mrs.</h3>
+    <strong>Surname:</strong> {{ $details['applicant_surname'] }}<br>
+    <strong>First:</strong> {{ $details['applicant_first'] }}<br>
+    <strong>Middle:</strong> {{ $details['applicant_middle'] }}<br>
+    <strong>Address:</strong> {{ $details['applicant_address'] }}
     </p>
 
     <p>
-        <h3>CO-APPLICANT: Mr. Miss. Mrs.</h3>
-        <strong>Surname:</strong> {{ $details['co_applicant_surname'] }}<br>
-        <strong>First:</strong> {{ $details['co_applicant_name'] }}<br>
-        <strong>Middle:</strong> {{ $details['co_applicant_middle'] }}<br>
-        <strong>Address:</strong> {{ $details['co_applicant_address'] }}
+    <h3>CO-APPLICANT: Mr. Miss. Mrs.</h3>
+    <strong>Surname:</strong> {{ $details['co_applicant_surname'] }}<br>
+    <strong>First:</strong> {{ $details['co_applicant_name'] }}<br>
+    <strong>Middle:</strong> {{ $details['co_applicant_middle'] }}<br>
+    <strong>Address:</strong> {{ $details['co_applicant_address'] }}
     </p>
 
     <p>
@@ -96,27 +98,27 @@
 
     <p>
         <strong>INFORMATION ON INTENDED OCCUPANTS:</strong><br>
-        <table>
-            <thead>
-                <th>NAME</th>
-                <th>RELATION</th>
-                <th>AGE</th>
-                <th>OCCUPATION/ SCHOOL</th>
-                <th>INCOME</th>
-            </thead>
+    <table>
+        <thead>
+            <th>NAME</th>
+            <th>RELATION</th>
+            <th>AGE</th>
+            <th>OCCUPATION/ SCHOOL</th>
+            <th>INCOME</th>
+        </thead>
 
-            <tbody>
-                @foreach(json_decode($details['addmore']) as $item )
+        <tbody>
+            @foreach (json_decode($details['addmore']) as $item)
                 <tr>
-                   <td>{{ $item->name_occupant }}</td>
-                   <td>{{ $item->relation_occupant }}</td>
-                   <td>{{ $item->age_accupant }}</td>
-                   <td>{{ $item->occupation_school_occupant }}</td>
-                   <td>{{ $item->income_occupant }}</td>
+                    <td>{{ $item->name_occupant }}</td>
+                    <td>{{ $item->relation_occupant }}</td>
+                    <td>{{ $item->age_accupant }}</td>
+                    <td>{{ $item->occupation_school_occupant }}</td>
+                    <td>{{ $item->income_occupant }}</td>
                 </tr>
-                @endforeach
-            </tbody>
-        </table>
+            @endforeach
+        </tbody>
+    </table>
     </p>
 
     <h2>FOR OFFICIAL USE</h2>
@@ -164,15 +166,18 @@
     </p>
 
     <p>
-        <b>ACKNOWLEDGED THIS</b> {{ $details['acknowledged'] }} <b>DAY OF</b> {{ $details['dayof'] }} {{ $details['year'] }} <b>BY_</b> {{ $details['by'] }}
+        <b>ACKNOWLEDGED THIS</b> {{ $details['acknowledged'] }} <b>DAY OF</b> {{ $details['dayof'] }}
+        {{ $details['year'] }} <b>BY_</b> {{ $details['by'] }}
     </p>
 
     <p>
-        <b>KEYS RECEIVED BY</b> {{ $details['keysreceived'] }} <b>THIS</b> {{ $details['thiskeys'] }} <b>DAY OF</b> {{ $details['dayofkeys'] }}  {{ $details['yearkeys'] }}
+        <b>KEYS RECEIVED BY</b> {{ $details['keysreceived'] }} <b>THIS</b> {{ $details['thiskeys'] }} <b>DAY OF</b>
+        {{ $details['dayofkeys'] }} {{ $details['yearkeys'] }}
     </p>
 
     <p>
-        <b>WITNESSED BY</b> {{ $details['whitnessed'] }} <b>THIS</b> {{ $details['thiswhitnessed'] }} <b>DAY OF</b> {{ $details['dayofwhitnessed'] }}  {{ $details['yearwhitnessed'] }}
+        <b>WITNESSED BY</b> {{ $details['whitnessed'] }} <b>THIS</b> {{ $details['thiswhitnessed'] }} <b>DAY OF</b>
+        {{ $details['dayofwhitnessed'] }} {{ $details['yearwhitnessed'] }}
     </p>
 
     <p>
@@ -186,7 +191,8 @@
     </p>
 
     <p>
-        <b>DATED THIS</b> {{ $details['datedthis'] }} <b>DAY OF</b> {{ $details['dayofdatedthis'] }}  {{ $details['yeardatedthis'] }}
+        <b>DATED THIS</b> {{ $details['datedthis'] }} <b>DAY OF</b> {{ $details['dayofdatedthis'] }}
+        {{ $details['yeardatedthis'] }}
     </p>
 
     <p><b>Note:The photograph is attached to the email.</b></p>
@@ -194,4 +200,5 @@
 
 
 </body>
+
 </html>
