@@ -25,7 +25,11 @@
         }
     </style>
     <div class="parallax bannerOurDeparment2" data-background="/images/Project-Hero.jpg" data-color="#" data-color-opacity="0.1"
-        data-img-width="1000" data-img-height="1200" style="background-position: 0">
+        data-img-width="1000" data-img-height="1200"
+        style="background-position: 0     background-image: url(/images/Project-Hero.jpg);
+    background-attachment: fixed;
+    background-size: 100% !important;
+    background-position: center !important;">
         <div class="parallax-content">
             <div class="container">
                 <div class="row">
