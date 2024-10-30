@@ -116,7 +116,7 @@ class   ApplicationForEmploymentWeeklyController extends Controller
             'date' => $request->date,
         ];
 
-        Mail::to('jonathan.motta@yellomg.com')->send(new ApplicationForEmploymentWeeklyMail($details));
+        Mail::to('NHC.CustomerService@barbados.gov.bb')->send(new ApplicationForEmploymentWeeklyMail($details));
 
 
 

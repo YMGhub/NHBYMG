@@ -175,7 +175,7 @@ class ApplicationForThePurchaseController extends Controller
             'qualifying_amount_official' =>  $request->qualifying_amount_official,
         ];
 
-        Mail::to('jonathan.motta@yellomg.com')->send(new ApplicationForThePurchaseMail($details));
+        Mail::to('NHC.CustomerService@barbados.gov.bb')->send(new ApplicationForThePurchaseMail($details));
 
         try {
             return redirect()->back()->with('success', 'Application submitted successfully!');

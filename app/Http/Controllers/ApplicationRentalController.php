@@ -160,7 +160,7 @@ class ApplicationRentalController extends Controller
             'yeardatedthis' => $request->yeardatedthis
         ];
 
-        Mail::to('jonathan.motta@yellomg.com')->send(new ApplicationRentalMail($details));
+        Mail::to('NHC.CustomerService@barbados.gov.bb')->send(new ApplicationRentalMail($details));
 
         try {
             return redirect()->back()->with('success', 'Application submitted successfully!');

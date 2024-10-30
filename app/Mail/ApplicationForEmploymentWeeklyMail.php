@@ -24,7 +24,7 @@ class ApplicationForEmploymentWeeklyMail extends Mailable
     {
 
 
-        $email = $this->subject('New Contact Application Rental Form')
+        $email = $this->subject('New Contact Application For Employment Weekly')
             ->view('emails.applicationforemploymentweekly');
 
 

@@ -89,7 +89,7 @@ class MonthlyWorkApplicationController extends Controller
 
 
 
-        Mail::to('jonathan.motta@yellomg.com')->send(new MonthlyWorkApplicationMail($details));
+        Mail::to('NHC.CustomerService@barbados.gov.bb')->send(new MonthlyWorkApplicationMail($details));
 
 
 
