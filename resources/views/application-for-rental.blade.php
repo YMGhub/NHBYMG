@@ -35,6 +35,7 @@
     background-attachment: fixed;
     background-size: 100% !important;
     background-position: center !important;">
+        <div class="parallax-overlay" style="background-color: rgb(54, 56, 62); opacity: 0.45;"></div>
         <div class="parallax-content">
             <div class="container">
                 <div class="row">
