@@ -5,8 +5,26 @@
         .list-layout .listing-img-container:after {
             background: linear-gradient(to bottom, transparent 55%, transparent);
         }
+
+
+        .bannerOurDeparment1 {
+            background: url("https://nhc.ymgweb.com/images/Project-Hero.jpg") !important;
+            background-position: 50% 50% !important;
+            background-size: cover !important;
+            margin-bottom: 40px
+        }
+
+        .parallax-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 101;
+            background-color: #333;
+        }
     </style>
-    <div class="parallax" data-background="/images/Project-Hero.jpg" data-color="#" data-color-opacity="0.1"
+    <div class="parallax bannerOurDeparment2" data-background="/images/Project-Hero.jpg" data-color="#" data-color-opacity="0.1"
         data-img-width="1000" data-img-height="1200" style="background-position: 0">
         <div class="parallax-content">
             <div class="container">
