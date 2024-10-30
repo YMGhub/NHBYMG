@@ -15,337 +15,89 @@
     <!--slider--->
 
     <!-- Content
-                                                                                                                                                                                                                                                                                                                                                                                                    ================================================== -->
-    <div class="container">
-        <div class="row">
+                                                                                                                                                                                                                                                                                                                                                                                                                ================================================== -->
+    <!--div class="container">
+                <div class="row">
 
-            <div class="col-md-12">
-                <h3 class="headline margin-bottom-25 margin-top-65">Featured Opportunities</h3>
-            </div>
+                    <div class="col-md-12">
+                        <h3 class="headline margin-bottom-25 margin-top-65">Featured Opportunities</h3>
+                    </div>
 
 
 
-            <!-- Carousel -->
-            <div class="col-md-12">
-                <div class="carousel">
 
-                    @foreach ($dataproperties as $content)
-                        <!-- Listing Item -->
-                        <div class="carousel-item">
-                            <div class="listing-item">
+                    <div class="col-md-12">
+                        <div class="carousel">
 
-                                <a href="javascript:void(0);" class="listing-img-container">
+                            @foreach ($dataproperties as $content)
+    <div class="carousel-item">
+                                    <div class="listing-item">
 
-                                    @if ($content->featured == 1)
-                                        <div class="listing-badges">
-                                            <span class="featured">Featured</span>
-                                            <span>{{ $content->category }}</span>
-                                        </div>
-                                    @endif
+                                        <a href="javascript:void(0);" class="listing-img-container">
 
-                                    <div class="listing-img-content">
-                                        <span
-                                            class="listing-price">${{ number_format($content->price_or_rent_type, 2, '.', ',') }}
-                                            <i></i></span>
-                                        <span class="like-icon with-tip" data-tip-content="Add to Bookmarks"></span>
-                                        <span class="compare-button with-tip" data-tip-content="Add to Compare"></span>
-                                    </div>
+                                            @if ($content->featured == 1)
+    <div class="listing-badges">
+                                                    <span class="featured">Featured</span>
+                                                    <span>{{ $content->category }}</span>
+                                                </div>
+    @endif
 
-                                    <div class="listing-carousel">
-                                        @foreach (json_decode($content->images) as $images)
-                                            <div><img src="{{ url('images/properties/' . $images->image_path) }}"
-                                                    style="width:100%" /></div>
-                                        @endforeach
-                                    </div>
+                                            <div class="listing-img-content">
+                                                <span
+                                                    class="listing-price">${{ number_format($content->price_or_rent_type, 2, '.', ',') }}
+                                                    <i></i></span>
+                                                <span class="like-icon with-tip" data-tip-content="Add to Bookmarks"></span>
+                                                <span class="compare-button with-tip" data-tip-content="Add to Compare"></span>
+                                            </div>
 
-                                </a>
+                                            <div class="listing-carousel">
+                                                @foreach (json_decode($content->images) as $images)
+    <div><img src="{{ url('images/properties/' . $images->image_path) }}"
+                                                            style="width:100%" /></div>
+    @endforeach
+                                            </div>
 
-                                <div class="listing-content">
-
-                                    <div class="listing-title">
-                                        <h4><a href="javascript:void(0);">{{ $content->title }}</a></h4>
-                                        <a href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&hl=en&t=v&hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom"
-                                            class="listing-address popup-gmaps">
-                                            <i class="fa fa-map-marker"></i>
-                                            {{ $content->address }}
                                         </a>
+
+                                        <div class="listing-content">
+
+                                            <div class="listing-title">
+                                                <h4><a href="javascript:void(0);">{{ $content->title }}</a></h4>
+                                                <a href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&hl=en&t=v&hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom"
+                                                    class="listing-address popup-gmaps">
+                                                    <i class="fa fa-map-marker"></i>
+                                                    {{ $content->address }}
+                                                </a>
+                                            </div>
+
+                                            <ul class="listing-features">
+                                                <li>Area <span>{{ $content->area }} sq ft</span></li>
+                                                <li>Bedrooms <span>{{ $content->bedrooms }}</span></li>
+                                                <li>Bathrooms <span>{{ $content->bathrooms }}</span></li>
+                                            </ul>
+
+                                            <div class="listing-footer">
+                                                <a href="#"><i class="fa fa-user"></i> {{ $content->author }}</a>
+                                                <span><i class="fa fa-calendar-o"></i>
+                                                    {{ $content->created_at->diffForHumans() }}</span>
+                                            </div>
+
+                                        </div>
+
                                     </div>
-
-                                    <ul class="listing-features">
-                                        <li>Area <span>{{ $content->area }} sq ft</span></li>
-                                        <li>Bedrooms <span>{{ $content->bedrooms }}</span></li>
-                                        <li>Bathrooms <span>{{ $content->bathrooms }}</span></li>
-                                    </ul>
-
-                                    <div class="listing-footer">
-                                        <a href="#"><i class="fa fa-user"></i> {{ $content->author }}</a>
-                                        <span><i class="fa fa-calendar-o"></i>
-                                            {{ $content->created_at->diffForHumans() }}</span>
-                                    </div>
-
                                 </div>
+    @endforeach
 
-                            </div>
+
+
+
+
                         </div>
-                        <!-- Listing Item / End -->
-                    @endforeach
-
-                    <!-- Listing Item -->
-                    <!--div class="carousel-item">
-                                        <div class="listing-item">
-
-                                            <a href="javascript:void(0);" class="listing-img-container">
-
-                                                <div class="listing-badges">
-                                                    <span class="featured">Featured</span>
-                                                    <span>For Sale</span>
-                                                </div>
-
-                                                <div class="listing-img-content">
-                                                    <span class="listing-price">$275,000 <i>$520 / sq ft</i></span>
-                                                    <span class="like-icon with-tip" data-tip-content="Add to Bookmarks"></span>
-                                                    <span class="compare-button with-tip" data-tip-content="Add to Compare"></span>
-                                                </div>
-
-                                                <div class="listing-carousel">
-                                                    <div><img src="images/project/21.jpg" alt=""></div>
-                                                    <div><img src="images/project/22.jpg" alt=""></div>
-                                                </div>
-
-                                            </a>
-
-                                            <div class="listing-content">
-
-                                                <div class="listing-title">
-                                                    <h4><a href="javascript:void(0);">Eagle Apartments</a></h4>
-                                                    <a href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&hl=en&t=v&hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom"
-                                                        class="listing-address popup-gmaps">
-                                                        <i class="fa fa-map-marker"></i>
-                                                        9364 School St. Lynchburg, NY
-                                                    </a>
-                                                </div>
-
-                                                <ul class="listing-features">
-                                                    <li>Area <span>530 sq ft</span></li>
-                                                    <li>Bedrooms <span>2</span></li>
-                                                    <li>Bathrooms <span>1</span></li>
-                                                </ul>
-
-                                                <div class="listing-footer">
-                                                    <a href="#"><i class="fa fa-user"></i> David Strozier</a>
-                                                    <span><i class="fa fa-calendar-o"></i> 1 day ago</span>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="carousel-item">
-                                        <div class="listing-item">
-
-                                            <a href="javascript:void(0);" class="listing-img-container">
-
-                                                <div class="listing-badges">
-                                                    <span>For Rent</span>
-                                                </div>
-
-                                                <div class="listing-img-content">
-                                                    <span class="listing-price">$900 <i>monthly</i></span>
-                                                    <span class="like-icon with-tip" data-tip-content="Add to Bookmarks"></span>
-                                                    <span class="compare-button with-tip" data-tip-content="Add to Compare"></span>
-                                                </div>
-
-                                                <div class="listing-carousel">
-                                                    <div><img src="images/project/23.jpg" alt=""></div>
-                                                    <div><img src="images/project/24.jpg" alt=""></div>
-                                                </div>
-
-                                            </a>
-
-                                            <div class="listing-content">
-
-                                                <div class="listing-title">
-                                                    <h4><a href="javascript:void(0);">Serene Uptown</a></h4>
-                                                    <a href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&hl=en&t=v&hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom"
-                                                        class="listing-address popup-gmaps">
-                                                        <i class="fa fa-map-marker"></i>
-                                                        6 Bishop Ave. Perkasie, PA
-                                                    </a>
-                                                </div>
-
-                                                <ul class="listing-features">
-                                                    <li>Area <span>440 sq ft</span></li>
-                                                    <li>Bedrooms <span>2</span></li>
-                                                    <li>Bathrooms <span>1</span></li>
-                                                </ul>
-
-                                                <div class="listing-footer">
-                                                    <a href="#"><i class="fa fa-user"></i> Harriette Clark</a>
-                                                    <span><i class="fa fa-calendar-o"></i> 2 days ago</span>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="carousel-item">
-                                        <div class="listing-item">
-
-                                            <a href="javascript:void(0);" class="listing-img-container">
-
-                                                <div class="listing-badges">
-                                                    <span class="featured">Featured</span>
-                                                    <span>For Rent</span>
-                                                </div>
-
-                                                <div class="listing-img-content">
-                                                    <span class="listing-price">$1700 <i>monthly</i></span>
-                                                    <span class="like-icon with-tip" data-tip-content="Add to Bookmarks"></span>
-                                                    <span class="compare-button with-tip" data-tip-content="Add to Compare"></span>
-                                                </div>
-
-                                                <div class="listing-carousel">
-                                                    <div><img src="images/project/27.jpg" alt=""></div>
-                                                </div>
-
-                                            </a>
-
-                                            <div class="listing-content">
-
-                                                <div class="listing-title">
-                                                    <h4><a href="javascript:void(0);">Meridian Villas</a></h4>
-                                                    <a href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&hl=en&t=v&hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom"
-                                                        class="listing-address popup-gmaps">
-                                                        <i class="fa fa-map-marker"></i>
-                                                        778 Country St. Panama City, FL
-                                                    </a>
-                                                </div>
-
-                                                <ul class="listing-features">
-                                                    <li>Area <span>1450 sq ft</span></li>
-                                                    <li>Bedrooms <span>2</span></li>
-                                                    <li>Bathrooms <span>3</span></li>
-                                                </ul>
-
-                                                <div class="listing-footer">
-                                                    <a href="#"><i class="fa fa-user"></i> Chester Miller</a>
-                                                    <span><i class="fa fa-calendar-o"></i> 4 days ago</span>
-                                                </div>
-
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-
-                                    <div class="carousel-item">
-                                        <div class="listing-item">
-
-
-                                            <a href="javascript:void(0);" class="listing-img-container">
-
-                                                <div class="listing-badges">
-                                                    <span>For Sale</span>
-                                                </div>
-
-                                                <div class="listing-img-content">
-                                                    <span class="listing-price">$420,000 <i>$770 / sq ft</i></span>
-                                                    <span class="like-icon with-tip" data-tip-content="Add to Bookmarks"></span>
-                                                    <span class="compare-button with-tip" data-tip-content="Add to Compare"></span>
-                                                </div>
-
-                                                <div class="listing-carousel">
-                                                    <div><img src="images/project/28.jpg" alt=""></div>
-                                                </div>
-
-                                            </a>
-
-                                            <div class="listing-content">
-
-                                                <div class="listing-title">
-                                                    <h4><a href="javascript:void(0);">Selway Apartments</a></h4>
-                                                    <a href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&hl=en&t=v&hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom"
-                                                        class="listing-address popup-gmaps">
-                                                        <i class="fa fa-map-marker"></i>
-                                                        33 William St. Northbrook, IL
-                                                    </a>
-                                                </div>
-
-                                                <ul class="listing-features">
-                                                    <li>Area <span>540 sq ft</span></li>
-                                                    <li>Bedrooms <span>2</span></li>
-                                                    <li>Bathrooms <span>2</span></li>
-                                                </ul>
-
-                                                <div class="listing-footer">
-                                                    <a href="#"><i class="fa fa-user"></i> Kristen Berry</a>
-                                                    <span><i class="fa fa-calendar-o"></i> 3 days ago</span>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="carousel-item">
-                                        <div class="listing-item">
-
-
-                                            <a href="javascript:void(0);" class="listing-img-container">
-                                                <div class="listing-badges">
-                                                    <span>For Sale</span>
-                                                </div>
-
-                                                <div class="listing-img-content">
-                                                    <span class="listing-price">$535,000 <i>$640 / sq ft</i></span>
-                                                    <span class="like-icon with-tip" data-tip-content="Add to Bookmarks"></span>
-                                                    <span class="compare-button with-tip" data-tip-content="Add to Compare"></span>
-                                                </div>
-
-                                                <div class="listing-carousel">
-                                                    <div><img src="images/project/29.jpg" alt=""></div>
-                                                </div>
-                                            </a>
-
-                                            <div class="listing-content">
-
-                                                <div class="listing-title">
-                                                    <h4><a href="javascript:void(0);">Oak Tree Villas</a></h4>
-                                                    <a href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&hl=en&t=v&hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom"
-                                                        class="listing-address popup-gmaps">
-                                                        <i class="fa fa-map-marker"></i>
-                                                        71 Lower River Dr. Bronx, NY
-                                                    </a>
-                                                </div>
-
-                                                <ul class="listing-features">
-                                                    <li>Area <span>350 sq ft</span></li>
-                                                    <li>Bedrooms <span>2</span></li>
-                                                    <li>Bathrooms <span>1</span></li>
-                                                </ul>
-
-                                                <div class="listing-footer">
-                                                    <a href="#"><i class="fa fa-user"></i> Mabel Gagnon</a>
-                                                    <span><i class="fa fa-calendar-o"></i> 4 days ago</span>
-                                                </div>
-
-                                            </div>
-
-
-                                        </div>
-                                    </div-->
-
-
+                    </div>
 
 
                 </div>
-            </div>
-            <!-- Carousel / End -->
-
-        </div>
-    </div>
+            </div-->
 
     <!--services-->
     <!-- Fullwidth Section -->
@@ -368,8 +120,7 @@
                                 <div class="iconImg">
 
                                     @foreach (json_decode($row->imagesOurServices) as $images)
-                                        <img src="{{ url('storage/our_services/' . $images->path) }}"
-                                            style="width:50%" />
+                                        <img src="{{ url('storage/our_services/' . $images->path) }}" style="width:50%" />
                                     @endforeach
 
                                 </div>
@@ -488,43 +239,43 @@
                     <!--div class="col-md-3">
 
 
-                                                                                                                                                                                                                                                <div class="main-search-container">
-                                                                                                                                                                                                                                                    <div class="text-center">
-                                                                                                                                                                                                                                                        <a href="/our-services">
-                                                                                                                                                                                                                                                            <div class="iconImg">
-                                                                                                                                                                                                                                                                <?xml version="1.0" encoding="UTF-8"?>
-                                                                                                                                                                                                                                                                <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg"
-                                                                                                                                                                                                                                                                    viewBox="0 0 464.44 417.3">
-                                                                                                                                                                                                                                                                    <defs>
-                                                                                                                                                                                                                                                                        <style>
-                                                                                                                                                                                                                                                                            .cls-1 {
-                                                                                                                                                                                                                                                                                fill: #2e2d31;
-                                                                                                                                                                                                                                                                                stroke-width: 0px;
-                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                        </style>
-                                                                                                                                                                                                                                                                    </defs>
-                                                                                                                                                                                                                                                                    <g id="Layer_1-2" data-name="Layer 1">
-                                                                                                                                                                                                                                                                        <g>
-                                                                                                                                                                                                                                                                            <path class="cls-1"
-                                                                                                                                                                                                                                                                                d="m224.31,3.91c-6.14,4.74-21.07,17.16-22.89,19.26-.69.84-7.67,6.84-15.35,13.25-7.67,6.42-16.47,13.96-19.54,16.75-3.07,2.79-10.05,8.79-15.49,13.26-5.44,4.6-13.54,11.45-18.14,15.35-4.46,4.05-13.53,11.72-19.96,17.17-6.42,5.58-12.42,10.75-13.4,11.72-.98.98-11.02,9.49-22.47,19.12-11.3,9.63-23.86,20.37-27.91,24-3.91,3.77-7.82,6.7-8.65,6.7s-2.65,1.39-4.05,3.21c-1.39,1.81-6.84,6.98-12.28,11.44-5.3,4.6-13.12,11.59-17.3,15.49-7.12,6.7-7.39,7.4-6.56,12.14.84,4.32,1.54,5.16,5.72,6,4.33.7,5.72.14,13.68-6.28,4.88-3.91,9.77-7.95,10.75-9.21.98-1.11,2.23-2.09,2.93-2.09s1.39,49.54,1.54,110.25c.42,108.01.42,110.24,3.21,112.89,2.79,2.79,4.88,2.79,194.54,2.93,174.16.14,191.88,0,193.97-2.09,1.96-1.95,2.23-13.53,2.65-113.03.14-60.98.7-110.94.98-110.94.42,0,5.58,4.05,11.58,9.07,11.45,9.63,15.21,10.88,19.82,6.28,6.14-6.14,3.21-10.32-20.93-30.84-5.02-4.32-10.89-9.35-13.26-11.44-2.24-2.09-9.63-8.51-16.33-14.37l-12.14-10.6-.42-64.2-.42-64.19-3.35-2.65c-3.21-2.65-5.3-2.79-34.47-2.37-27.77.42-31.4.7-33.63,2.93-2.23,2.23-2.51,5.86-2.93,33.07-.28,20.65-.98,30.7-1.95,30.7-.84,0-3.77-2.09-6.56-4.6-2.79-2.37-8.51-7.25-12.7-10.74-4.05-3.49-8.09-6.98-8.93-7.68-.84-.84-5.58-4.89-10.61-9.07-5.02-4.19-14.51-12.42-21.07-18.28C245.52,7.68,235.2,0,231.99,0c-1.4,0-4.88,1.82-7.68,3.91h0Zm16.19,23.44c3.07,2.65,10.89,9.49,17.44,14.93,6.56,5.58,14.37,12.28,17.44,15.07,3.07,2.93,12.14,10.75,20.24,17.45,22.61,18.98,22.75,19.12,27.21,23.72,2.23,2.38,5.16,4.89,6.42,5.58,1.26.7,6,4.46,10.47,8.37,31.54,27.49,40.47,35.3,45.63,39.63,3.21,2.65,10.47,8.79,16.05,13.68l10.05,8.93v110.66c0,60.84-.42,111.64-.84,112.9-.84,1.95-17.86,2.23-178.48,2.23s-177.65-.28-178.49-2.23c-.42-1.26-.84-52.05-.84-112.9v-110.8l10.88-9.49c6-5.16,14.23-12.28,18.42-15.77,4.05-3.49,10.33-8.79,13.82-12,3.49-3.07,10.89-9.35,16.19-13.82,5.44-4.61,10.05-8.65,10.46-9.07.42-.42,7.26-6.28,15.21-12.98,7.96-6.7,18.28-15.63,23.03-19.68,4.61-4.19,13.54-11.86,19.68-17.16,25.68-22.05,42.29-36.29,45.77-39.63,4.19-3.91,7.96-3.21,14.23,2.37h0Zm139.55,45.08c0,30.98-.56,48.28-1.39,48.56-1.26.42-6-3.49-28.19-23.03l-8.79-7.68v-31.12c0-17.03.42-32.1.84-33.21.84-1.95,3.49-2.23,19.26-1.95l18.28.42v48.01Z" />
-                                                                                                                                                                                                                                                                            <path class="cls-1"
-                                                                                                                                                                                                                                                                                d="m216.08,147.51c-6.14.7-20.09,5.02-26.52,8.09-8.09,3.77-16.61,9.21-23.72,15.07-5.86,4.88-20.93,22.05-20.93,23.86,0,.7-.84,2.37-1.95,3.49-4.18,4.89-10.75,24.7-12.28,37.26-8.93,70.75,51.91,127.69,121.97,114.29,6-1.12,12-2.65,13.26-3.21,1.39-.7,5.58-2.65,9.49-4.47,40.33-18,63.78-60.84,58.2-106.48-1.53-12.84-8.09-32.38-12.28-37.4-1.12-1.12-1.95-2.79-1.95-3.49,0-1.81-12.14-15.77-18.84-21.63-7.67-6.84-17.86-13.82-23.03-15.91-1.11-.56-3.21-1.53-4.61-2.23-7.81-4.18-20.79-6.98-35.86-7.4-8.79-.28-18.28-.28-20.93.14h0Zm39.21,19.95c12.14,3.91,17.45,6.42,26.38,13.12,8.93,6.56,12.56,10.19,19.4,19.68,6.84,9.49,7.95,11.72,11.58,21.91,4.32,12,4.47,42.56.28,53.44-5.3,13.82-12.84,25.26-23.31,35.03-13.95,13.12-25.12,18.56-44.93,22.05-25.4,4.46-51.63-3.91-70.89-22.61-11.31-11.02-17.03-19.81-22.33-34.47-4.33-12.14-4.33-40.89,0-53.03,6.7-18.56,15.49-30.56,31.26-42.14,8.65-6.42,13.95-9.07,25.68-12.84,11.86-3.91,34.75-3.91,46.89-.14h0Z" />
-                                                                                                                                                                                                                                                                            <path class="cls-1"
-                                                                                                                                                                                                                                                                                d="m228.64,182.39c-3.63,1.25-5.58,4.88-5.58,10.33,0,4.6-.7,5.58-5.86,8.65-10.33,6.14-15.07,14.37-15.07,25.96,0,16.61,9.35,26.93,27.49,30.84,10.05,2.09,14.51,5.86,14.65,12.56.14,5.44-6.7,12.56-12,12.56-4.74,0-11.58-6.28-12.7-11.58-1.39-6-4.6-9.35-9.07-9.35-14.79,0-8.93,25.54,8.09,35.58,3.77,2.23,4.47,3.49,4.47,7.68,0,5.72,4.6,11.16,9.21,11.16s8.93-5.72,8.93-11.58c0-4.47.69-5.58,5.3-8.51,6.84-4.33,10.33-8.65,13.26-16.19,3.07-8.09,2.93-11.59-.14-19.96-4.6-11.86-14.37-19.26-28.46-21.21-4.89-.56-7.12-1.68-8.93-4.6-3.35-5.16-3.07-10.75.98-15.07,2.93-3.21,4.19-3.49,10.05-2.93,7.68.7,10.05,3.07,11.72,11.45.98,4.61,1.95,5.72,5.58,6.84,6.84,1.96,11.59-1.67,11.59-8.93,0-5.58-3.07-13.82-6.98-18.56-1.12-1.4-4.74-4.19-7.95-6.14-5.31-3.07-6-4.05-6-8.65,0-2.79-.84-6.28-1.68-7.53-1.95-2.52-7.68-4.05-10.88-2.79h0Z" />
-                                                                                                                                                                                                                                                                        </g>
-                                                                                                                                                                                                                                                                    </g>
-                                                                                                                                                                                                                                                                </svg>
+                                                                                                                                                                                                                                                            <div class="main-search-container">
+                                                                                                                                                                                                                                                                <div class="text-center">
+                                                                                                                                                                                                                                                                    <a href="/our-services">
+                                                                                                                                                                                                                                                                        <div class="iconImg">
+                                                                                                                                                                                                                                                                            <?xml version="1.0" encoding="UTF-8"?>
+                                                                                                                                                                                                                                                                            <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg"
+                                                                                                                                                                                                                                                                                viewBox="0 0 464.44 417.3">
+                                                                                                                                                                                                                                                                                <defs>
+                                                                                                                                                                                                                                                                                    <style>
+                                                                                                                                                                                                                                                                                        .cls-1 {
+                                                                                                                                                                                                                                                                                            fill: #2e2d31;
+                                                                                                                                                                                                                                                                                            stroke-width: 0px;
+                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                    </style>
+                                                                                                                                                                                                                                                                                </defs>
+                                                                                                                                                                                                                                                                                <g id="Layer_1-2" data-name="Layer 1">
+                                                                                                                                                                                                                                                                                    <g>
+                                                                                                                                                                                                                                                                                        <path class="cls-1"
+                                                                                                                                                                                                                                                                                            d="m224.31,3.91c-6.14,4.74-21.07,17.16-22.89,19.26-.69.84-7.67,6.84-15.35,13.25-7.67,6.42-16.47,13.96-19.54,16.75-3.07,2.79-10.05,8.79-15.49,13.26-5.44,4.6-13.54,11.45-18.14,15.35-4.46,4.05-13.53,11.72-19.96,17.17-6.42,5.58-12.42,10.75-13.4,11.72-.98.98-11.02,9.49-22.47,19.12-11.3,9.63-23.86,20.37-27.91,24-3.91,3.77-7.82,6.7-8.65,6.7s-2.65,1.39-4.05,3.21c-1.39,1.81-6.84,6.98-12.28,11.44-5.3,4.6-13.12,11.59-17.3,15.49-7.12,6.7-7.39,7.4-6.56,12.14.84,4.32,1.54,5.16,5.72,6,4.33.7,5.72.14,13.68-6.28,4.88-3.91,9.77-7.95,10.75-9.21.98-1.11,2.23-2.09,2.93-2.09s1.39,49.54,1.54,110.25c.42,108.01.42,110.24,3.21,112.89,2.79,2.79,4.88,2.79,194.54,2.93,174.16.14,191.88,0,193.97-2.09,1.96-1.95,2.23-13.53,2.65-113.03.14-60.98.7-110.94.98-110.94.42,0,5.58,4.05,11.58,9.07,11.45,9.63,15.21,10.88,19.82,6.28,6.14-6.14,3.21-10.32-20.93-30.84-5.02-4.32-10.89-9.35-13.26-11.44-2.24-2.09-9.63-8.51-16.33-14.37l-12.14-10.6-.42-64.2-.42-64.19-3.35-2.65c-3.21-2.65-5.3-2.79-34.47-2.37-27.77.42-31.4.7-33.63,2.93-2.23,2.23-2.51,5.86-2.93,33.07-.28,20.65-.98,30.7-1.95,30.7-.84,0-3.77-2.09-6.56-4.6-2.79-2.37-8.51-7.25-12.7-10.74-4.05-3.49-8.09-6.98-8.93-7.68-.84-.84-5.58-4.89-10.61-9.07-5.02-4.19-14.51-12.42-21.07-18.28C245.52,7.68,235.2,0,231.99,0c-1.4,0-4.88,1.82-7.68,3.91h0Zm16.19,23.44c3.07,2.65,10.89,9.49,17.44,14.93,6.56,5.58,14.37,12.28,17.44,15.07,3.07,2.93,12.14,10.75,20.24,17.45,22.61,18.98,22.75,19.12,27.21,23.72,2.23,2.38,5.16,4.89,6.42,5.58,1.26.7,6,4.46,10.47,8.37,31.54,27.49,40.47,35.3,45.63,39.63,3.21,2.65,10.47,8.79,16.05,13.68l10.05,8.93v110.66c0,60.84-.42,111.64-.84,112.9-.84,1.95-17.86,2.23-178.48,2.23s-177.65-.28-178.49-2.23c-.42-1.26-.84-52.05-.84-112.9v-110.8l10.88-9.49c6-5.16,14.23-12.28,18.42-15.77,4.05-3.49,10.33-8.79,13.82-12,3.49-3.07,10.89-9.35,16.19-13.82,5.44-4.61,10.05-8.65,10.46-9.07.42-.42,7.26-6.28,15.21-12.98,7.96-6.7,18.28-15.63,23.03-19.68,4.61-4.19,13.54-11.86,19.68-17.16,25.68-22.05,42.29-36.29,45.77-39.63,4.19-3.91,7.96-3.21,14.23,2.37h0Zm139.55,45.08c0,30.98-.56,48.28-1.39,48.56-1.26.42-6-3.49-28.19-23.03l-8.79-7.68v-31.12c0-17.03.42-32.1.84-33.21.84-1.95,3.49-2.23,19.26-1.95l18.28.42v48.01Z" />
+                                                                                                                                                                                                                                                                                        <path class="cls-1"
+                                                                                                                                                                                                                                                                                            d="m216.08,147.51c-6.14.7-20.09,5.02-26.52,8.09-8.09,3.77-16.61,9.21-23.72,15.07-5.86,4.88-20.93,22.05-20.93,23.86,0,.7-.84,2.37-1.95,3.49-4.18,4.89-10.75,24.7-12.28,37.26-8.93,70.75,51.91,127.69,121.97,114.29,6-1.12,12-2.65,13.26-3.21,1.39-.7,5.58-2.65,9.49-4.47,40.33-18,63.78-60.84,58.2-106.48-1.53-12.84-8.09-32.38-12.28-37.4-1.12-1.12-1.95-2.79-1.95-3.49,0-1.81-12.14-15.77-18.84-21.63-7.67-6.84-17.86-13.82-23.03-15.91-1.11-.56-3.21-1.53-4.61-2.23-7.81-4.18-20.79-6.98-35.86-7.4-8.79-.28-18.28-.28-20.93.14h0Zm39.21,19.95c12.14,3.91,17.45,6.42,26.38,13.12,8.93,6.56,12.56,10.19,19.4,19.68,6.84,9.49,7.95,11.72,11.58,21.91,4.32,12,4.47,42.56.28,53.44-5.3,13.82-12.84,25.26-23.31,35.03-13.95,13.12-25.12,18.56-44.93,22.05-25.4,4.46-51.63-3.91-70.89-22.61-11.31-11.02-17.03-19.81-22.33-34.47-4.33-12.14-4.33-40.89,0-53.03,6.7-18.56,15.49-30.56,31.26-42.14,8.65-6.42,13.95-9.07,25.68-12.84,11.86-3.91,34.75-3.91,46.89-.14h0Z" />
+                                                                                                                                                                                                                                                                                        <path class="cls-1"
+                                                                                                                                                                                                                                                                                            d="m228.64,182.39c-3.63,1.25-5.58,4.88-5.58,10.33,0,4.6-.7,5.58-5.86,8.65-10.33,6.14-15.07,14.37-15.07,25.96,0,16.61,9.35,26.93,27.49,30.84,10.05,2.09,14.51,5.86,14.65,12.56.14,5.44-6.7,12.56-12,12.56-4.74,0-11.58-6.28-12.7-11.58-1.39-6-4.6-9.35-9.07-9.35-14.79,0-8.93,25.54,8.09,35.58,3.77,2.23,4.47,3.49,4.47,7.68,0,5.72,4.6,11.16,9.21,11.16s8.93-5.72,8.93-11.58c0-4.47.69-5.58,5.3-8.51,6.84-4.33,10.33-8.65,13.26-16.19,3.07-8.09,2.93-11.59-.14-19.96-4.6-11.86-14.37-19.26-28.46-21.21-4.89-.56-7.12-1.68-8.93-4.6-3.35-5.16-3.07-10.75.98-15.07,2.93-3.21,4.19-3.49,10.05-2.93,7.68.7,10.05,3.07,11.72,11.45.98,4.61,1.95,5.72,5.58,6.84,6.84,1.96,11.59-1.67,11.59-8.93,0-5.58-3.07-13.82-6.98-18.56-1.12-1.4-4.74-4.19-7.95-6.14-5.31-3.07-6-4.05-6-8.65,0-2.79-.84-6.28-1.68-7.53-1.95-2.52-7.68-4.05-10.88-2.79h0Z" />
+                                                                                                                                                                                                                                                                                    </g>
+                                                                                                                                                                                                                                                                                </g>
+                                                                                                                                                                                                                                                                            </svg>
+                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                        <span class="numberCounter" style="color: white">89</span>
+                                                                                                                                                                                                                                                                        <h5 style="color: white"> Issuance of Loans</h5>
+                                                                                                                                                                                                                                                                    </a>
+                                                                                                                                                                                                                                                                </div>
+
+
                                                                                                                                                                                                                                                             </div>
-                                                                                                                                                                                                                                                            <span class="numberCounter" style="color: white">89</span>
-                                                                                                                                                                                                                                                            <h5 style="color: white"> Issuance of Loans</h5>
-                                                                                                                                                                                                                                                        </a>
-                                                                                                                                                                                                                                                    </div>
 
 
-                                                                                                                                                                                                                                                </div>
-
-
-                                                                                                                                                                                                                                            </div-->
+                                                                                                                                                                                                                                                        </div-->
                     <div class="col-md-4">
 
                         <!-- Main Search Container -->
