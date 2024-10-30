@@ -17,7 +17,7 @@
 
                 <table class="table">
                     <thead>
-                        <tr>
+                        <tr class="text-gray">
                             <th>#</th>
                             <th>About Us</th>
                             <th>Mission</th>
