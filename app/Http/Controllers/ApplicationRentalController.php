@@ -14,6 +14,21 @@ use Illuminate\Support\Facades\Validator;
 
 class ApplicationRentalController extends Controller
 {
+
+    //admin Panel
+    public function index()
+    {
+        $data = ApplicationRental::all();
+        return view('admin.application-for-rental.index', compact('data'));
+    }
+
+    public function edit($id)
+    {
+
+        $submission = ApplicationRental::find($id);
+        return view('admin.application-for-rental.edit', compact('submission'));
+    }
+
     //
     public function submitApplication(Request $request)
     {

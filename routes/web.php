@@ -301,6 +301,19 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::put('/update-form-submission/{id}', [ApplicationForThePurchaseController::class, 'update'])->name('admin.application-for-the-the-purchase.update');
     });
 
+    //application-for-rental admin
+    Route::prefix('/admin/application-for-rental')->group(function () {
+        //page information
+        Route::get('/', [ApplicationRentalController::class, 'index'])->name('admin.application-for-rental.index');
+
+        // Edit
+        Route::get('/edit/{id}', [ApplicationRentalController::class, 'edit'])->name('admin.application-for-rental.edit');
+
+        ///Update
+        Route::put('/update-form-submission/{id}', [ApplicationRentalController::class, 'update'])->name('admin.application-for-rental.update');
+    });
+
+
     //Admin properties
     Route::prefix('/admin/properties')->group(function () {
         Route::get('/', [PropertyController::class, 'index'])->name('admin.properties.index');

@@ -233,6 +233,22 @@
                         </tr>
                         <!--Application For Employment Weekly - Submission -->
 
+                        <!--Application-for-rental - Submission -->
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center">
+                            <td class="px-6 py-5">Application for Rental - Submission </td>
+                            <td class="px-6 py-5">
+
+
+                                <a href="{{ url('/admin/application-for-rental') }}"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                    View
+                                </a>
+
+
+                            </td>
+                        </tr>
+                        <!--Application-for-rental - Submission -->
+
                     </tbody>
                 </table>
 
