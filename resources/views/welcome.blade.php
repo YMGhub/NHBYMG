@@ -6,7 +6,8 @@
         <div class="row">
             <div class="sliderHome">
                 <div><img class="" src="{{ url('/images/slider/slider1.jpg') }}" alt=""></div>
-                <div><img class="" src="{{ url('/images/slider/slider3.jpg') }}" alt=""></div>
+                <div><img class="" src="{{ url('/images/slider/slider2.png') }}" alt=""></div>
+
             </div>
 
         </div>
