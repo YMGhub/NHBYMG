@@ -370,7 +370,8 @@
                                                                     @foreach (json_decode($row->images) as $images)
                                                                         <a href="images/our_deparment/{{ $images->path }}"
                                                                             data-background-image="images/our_deparment/{{ $images->path }}"
-                                                                            class="item mfp-gallery"></a>
+                                                                            class="item mfp-gallery"
+                                                                            style="background-position: inherit !important"></a>
                                                                     @endforeach
                                                                 </div>
 
