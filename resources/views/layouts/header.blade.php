@@ -133,7 +133,7 @@
                                         <li><a class="{{ Request::is('our-department') ? 'current' : '' }}"
                                                 href="our-department">Our Departments</a></li>
                                         <li><a class="{{ Request::is('commercial-endeavors') ? 'current' : '' }}"
-                                                href="commercial-endeavors">Commercial Endeavors</a></li>
+                                                href="commercial-endeavors">Commercial Endeavours</a></li>
                                         <li><a class="{{ Request::is('careers') ? 'current' : '' }}"
                                                 href="careers">Careers</a></li>
                                         <li><a class="{{ Request::is('faq') ? 'current' : '' }}"
