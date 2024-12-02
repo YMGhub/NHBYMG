@@ -136,9 +136,7 @@
                                                 href="commercial-endeavors">Commercial Endeavours</a></li>
                                         <li><a class="{{ Request::is('careers') ? 'current' : '' }}"
                                                 href="careers">Careers</a></li>
-                                        <li><a class="{{ Request::is('faq') ? 'current' : '' }}"
-                                                href="faq">FAQS</a>
-                                        </li>
+
 
                                     </ul>
                                 </li>
@@ -146,10 +144,11 @@
                                         href="/our-services">Our
                                         Services</a>
                                 <li><a class="{{ Request::is('projects') ? 'current' : '' }}" href="/projects">Our
-                                        Projects</a>
+                                        Projects</a></li>
 
-                                    {{-- <li><a class="{{ Request::is('mission-and-vision') ? 'current' : '' }}" style="width: 102px;" href="/mission-and-vision">Mission & Vision</a> --}}
-
+                                {{-- <li><a class="{{ Request::is('mission-and-vision') ? 'current' : '' }}" style="width: 102px;" href="/mission-and-vision">Mission & Vision</a> --}}
+                                <li><a class="{{ Request::is('faq') ? 'current' : '' }}" href="faq">FAQS</a>
+                                </li>
                                 <li><a class="{{ Request::is('contact') ? 'current' : '' }}" href="contact">Contact
                                         Us</a>
                                 </li>
