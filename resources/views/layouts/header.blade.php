@@ -147,7 +147,7 @@
                                         Projects</a></li>
 
                                 {{-- <li><a class="{{ Request::is('mission-and-vision') ? 'current' : '' }}" style="width: 102px;" href="/mission-and-vision">Mission & Vision</a> --}}
-                                <li><a class="{{ Request::is('faq') ? 'current' : '' }}" href="faq">FAQS</a>
+                                <li><a class="{{ Request::is('faq') ? 'current' : '' }}" href="faq">FAQ</a>
                                 </li>
                                 <li><a class="{{ Request::is('contact') ? 'current' : '' }}" href="contact">Contact
                                         Us</a>
