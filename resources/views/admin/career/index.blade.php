@@ -14,7 +14,29 @@
                     </div>
                 @endif
 
+
+
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg" style="    overflow-x: auto;">
+
+                    <div class="container">
+
+                    </div>
+
+                    <div class="container">
+                        @if ($info_page)
+                            <a href={{ route('admin.career.admin-email.edit', '1') }} style="float: left;"
+                                class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                                Administrative e-mail address of the form </a>
+                        @else
+                            | <a href={{ route('admin.career.admin-email.create') }} style="float: right;"
+                                class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                                Administrative e-mail address of the form </a>
+                        @endif
+
+
+
+                    </div>
+
                     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                         <thead
                             class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 text-center">

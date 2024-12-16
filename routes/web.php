@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ApplicationForEmploymentWeeklyController;
 use App\Http\Controllers\ApplicationForThePurchaseController;
 use App\Http\Controllers\ApplicationRentalController;
+use App\Http\Controllers\CareerAdminEmail;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommercialEndeavorsController;
@@ -191,7 +192,30 @@ Route::middleware(['auth:sanctum'])->group(function () {
     });
 
     //Career Admin
-    Route::prefix('/admin/career')->group(function () {
+    Route::prefix('/admin/career/admin-email')->group(function () {
+        //page information
+        Route::get('/', [CareerAdminEmail::class, 'index'])->name('admin.career.admin-email.index');
+
+        //page information
+        Route::get('/', [CareerAdminEmail::class, 'index'])->name('admin.career.admin-email.index');
+
+        //Show the form for creating new front-end content.
+        Route::get('/create', [CareerAdminEmail::class, 'create'])->name('admin.career.admin-email.create');
+
+        Route::post('/', [CareerAdminEmail::class, 'store'])->name('admin.career.admin-email.store');
+
+        // Edit
+        Route::get('/edit-career-admin-email/{id}', [CareerAdminEmail::class, 'edit'])->name('admin.career.admin-email.edit');
+
+        ///Update
+        Route::put('/update-career-admin-email/{id}', [CareerAdminEmail::class, 'update'])->name('admin.career.admin-email.update');
+
+        ///delete
+        Route::delete('/delete-career-admin-email/{id}/delete', [CareerAdminEmail::class, 'destroy'])->name('admin.career.admin-email.destroy');
+    });
+
+    //Career Admin email form
+    Route::prefix('/admin/career/')->group(function () {
         //page information
         Route::get('/', [CareerController::class, 'index'])->name('admin.career.index');
     });

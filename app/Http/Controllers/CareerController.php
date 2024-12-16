@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Career;
+use App\Models\CareerAdminEmail;
 use App\Mail\CareersMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -69,7 +70,7 @@ class CareerController extends Controller
             'cover_letter' => $coverLetterPath, // Assuming $coverLetterUrl is the URL of the stored cover letter file
         ];
 
-        Mail::to('jonathan.motta@yellomg.com')->send(new CareersMail($details));
+        Mail::to('NHC.Recruitment@barbados.gov.bb')->send(new CareersMail($details));
 
         // Redirect back with success message
         try {
@@ -84,6 +85,7 @@ class CareerController extends Controller
     public function index()
     {
         $data = Career::all();
-        return view('admin.career.index', compact('data'));
+        $info_page = CareerAdminEmail::where('id', 1)->exists();
+        return view('admin.career.index', compact('data', 'info_page'));
     }
 }
