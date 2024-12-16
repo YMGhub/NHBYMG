@@ -70,7 +70,11 @@ class CareerController extends Controller
             'cover_letter' => $coverLetterPath, // Assuming $coverLetterUrl is the URL of the stored cover letter file
         ];
 
-        Mail::to('NHC.Recruitment@barbados.gov.bb')->send(new CareersMail($details));
+        $adminEmail = CareerAdminEmail::find(1);
+        // Obtener el correo del solicitante
+        $email = $adminEmail->admin_email_form_career;
+
+        Mail::to($email)->send(new CareersMail($details));
 
         // Redirect back with success message
         try {
