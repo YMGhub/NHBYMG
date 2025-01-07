@@ -203,8 +203,11 @@
                                         <p>{{ strip_tags(html_entity_decode($row->description)) }}</p>
                                     </div>
 
-                                    <p>
-                                        <a href="{{ $row->url_form }}" class="button border">Apply Now</a>
+                                    @if (!empty($row->url_form))
+                                        <p>
+                                            <a href="{{ $row->url_form }}" class="button border">Apply Now</a>
+                                        </p>
+                                    @endif
 
                                 </div>
                             </div>
