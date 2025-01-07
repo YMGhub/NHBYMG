@@ -25,7 +25,7 @@ class OurServiceController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'url_form' => 'required',
+            //'url_form' => '',
             'image_path.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -86,7 +86,7 @@ class OurServiceController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'url_form' => 'required',
+            //'url_form' => 'required',
             'image_path.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048',
         ]);
 
