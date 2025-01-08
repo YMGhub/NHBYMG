@@ -103,7 +103,7 @@
 
                         <!-- Mobile Navigation -->
                         <div class="mmenu-trigger">
-                            <button class="hamburger hamburger--collapse" type="button">
+                            <button class="hamburger hamburger--collapse" style="    height: 35px;" type="button">
                                 <span class="hamburger-box">
                                     <span class="hamburger-inner"></span>
                                 </span>
