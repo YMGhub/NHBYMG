@@ -321,7 +321,7 @@
                             <!---ARE YOU INDEBTED TO THE N.H.C. OR ANY OTHER FINANCIAL INSITUTION?--->
                             <div class="col-md-12">
                                 <div>
-                                    <label><b>ARE YOU INDEBTED TO THE N.H.C. OR ANY OTHER FINANCIAL INSITUTION?</b></label>
+                                    <label><b>ARE YOU INDEBTED TO THE N.H.C. OR ANY OTHER FINANCIAL INSTITUTION</b></label>
                                     <div class="row">
 
                                         <div class="col-md-6">
@@ -424,115 +424,115 @@
                             <!---INFORMATION ON INTENDED OCCUPANTS --->
 
                             <!--h4 class="text-center headline margin-top-35 margin-bottom-35">
-                                            FOR OFFICIAL USE</h4-->
+                                                FOR OFFICIAL USE</h4-->
 
                             <!---IS APPLICANT A TENANT OR LODGER?--->
                             <!--div class="col-md-12">
-                                    <div>
-                                        <label><b>IS APPLICANT A TENANT OR LODGER?</b></label>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input name="tenantorlodger" type="text" id="tenantorlodger"
-                                                    placeholder="Is Applicant a Tenant or Lodger" required="required" />
+                                        <div>
+                                            <label><b>IS APPLICANT A TENANT OR LODGER?</b></label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <input name="tenantorlodger" type="text" id="tenantorlodger"
+                                                        placeholder="Is Applicant a Tenant or Lodger" required="required" />
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div-->
+                                    </div-->
                             <!---IS APPLICANT A TENANT OR LODGER?--->
 
 
                             <!---NAME AND ADDRESS OF LANDLORD:--->
                             <!--div class="col-md-12">
-                                    <div>
-                                        <label><b>NAME AND ADDRESS OF LANDLORD:</b></label>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input name="addressoflandlord" type="text" id="addressoflandlord"
-                                                    placeholder="Name and Address of Landlord" required="required" />
+                                        <div>
+                                            <label><b>NAME AND ADDRESS OF LANDLORD:</b></label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <input name="addressoflandlord" type="text" id="addressoflandlord"
+                                                        placeholder="Name and Address of Landlord" required="required" />
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div-->
+                                    </div-->
                             <!---NAME AND ADDRESS OF LANDLORD:--->
 
 
                             <!---DATE OF OCCUPATION OF PRESENT ACCOMMODATION--->
                             <!--div class="col-md-12">
-                                    <div>
-                                        <label><b>DATE OF OCCUPATION OF PRESENT ACCOMMODATION</b></label>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input name="present_accommodation" type="date" id="present_accommodation"
-                                                    placeholder="Date of Occupation of Present Accommodation"
-                                                    required="required" />
+                                        <div>
+                                            <label><b>DATE OF OCCUPATION OF PRESENT ACCOMMODATION</b></label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <input name="present_accommodation" type="date" id="present_accommodation"
+                                                        placeholder="Date of Occupation of Present Accommodation"
+                                                        required="required" />
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div-->
+                                    </div-->
                             <!--DATE OF OCCUPATION OF PRESENT ACCOMMODATION--->
 
 
                             <!--STRUCTURE OF HOUSE / RENTAL RATE--->
                             <!--div class="col-md-12">
-                                    <div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label><b>STRUCTURE OF HOUSE:</b></label>
-                                                <input name="structureofhouse" type="text" id="structureofhouse"
-                                                    placeholder="Structure of House" required="required" />
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label><b>RENTAL RATE:</b></label>
-                                                <input name="rental_date" type="date" id="rental_date"
-                                                    placeholder="Rental Date" required="required" />
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div-->
-                            <!--STRUCTURE OF HOUSE / RENTAL RATE--->
-
-
-                            <!--TYPE OF SANITARY FACILITIES / WATER SUPPLY--->
-                            <!--div class="col-md-12">
                                         <div>
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <label><b>TYPE OF SANITARY FACILITIES:</b></label>
-                                                    <input name="typeofsanityfacilities" type="text"
-                                                        id="typeofsanityfacilities"
-                                                        placeholder="Type of Sanitary Facilities of House" required="required" />
+                                                    <label><b>STRUCTURE OF HOUSE:</b></label>
+                                                    <input name="structureofhouse" type="text" id="structureofhouse"
+                                                        placeholder="Structure of House" required="required" />
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label><b>WATER SUPPLY:</b></label>
-                                                    <input name="water_supply" type="text" id="water_supply"
-                                                        placeholder="Water Supply" required="required" />
+                                                    <label><b>RENTAL RATE:</b></label>
+                                                    <input name="rental_date" type="date" id="rental_date"
+                                                        placeholder="Rental Date" required="required" />
                                                 </div>
 
                                             </div>
 
                                         </div>
                                     </div-->
-                            <!--STRUCTURE OF HOUSE / WATER SUPPLY--->
+                            <!--STRUCTURE OF HOUSE / RENTAL RATE--->
 
 
-                            <!--h4 class="text-center headline margin-top-35 margin-bottom-35">
-                                            HOUSING OFFICER’S COMMENTS</h4-->
-
-                            <!-- HOUSING OFFICER’S COMMENTS--->
+                            <!--TYPE OF SANITARY FACILITIES / WATER SUPPLY--->
                             <!--div class="col-md-12">
                                             <div>
                                                 <div class="row">
-                                                    <div class="col-md-12">
-
-                                                        <textarea style="field-sizing:content" name="housingofficercomments" id="housingofficercomments"
-                                                            placeholder="Housing Officer´s Comments" required="required"></textarea>
+                                                    <div class="col-md-6">
+                                                        <label><b>TYPE OF SANITARY FACILITIES:</b></label>
+                                                        <input name="typeofsanityfacilities" type="text"
+                                                            id="typeofsanityfacilities"
+                                                            placeholder="Type of Sanitary Facilities of House" required="required" />
                                                     </div>
+                                                    <div class="col-md-6">
+                                                        <label><b>WATER SUPPLY:</b></label>
+                                                        <input name="water_supply" type="text" id="water_supply"
+                                                            placeholder="Water Supply" required="required" />
+                                                    </div>
+
                                                 </div>
 
                                             </div>
                                         </div-->
+                            <!--STRUCTURE OF HOUSE / WATER SUPPLY--->
+
+
+                            <!--h4 class="text-center headline margin-top-35 margin-bottom-35">
+                                                HOUSING OFFICER’S COMMENTS</h4-->
+
+                            <!-- HOUSING OFFICER’S COMMENTS--->
+                            <!--div class="col-md-12">
+                                                <div>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+
+                                                            <textarea style="field-sizing:content" name="housingofficercomments" id="housingofficercomments"
+                                                                placeholder="Housing Officer´s Comments" required="required"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div-->
                             <!-- HOUSING OFFICER’S COMMENTS--->
 
                             <!--ACKNOWLEDGED THIS--->
