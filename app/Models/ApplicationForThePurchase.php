@@ -71,6 +71,7 @@ class ApplicationForThePurchase extends Model
         'mortgage_or_loan',
         'the_amount_of_deposit',
         'land_or_property',
+        'qualifyngamount',
         'signature_applican',
         'signature_coapplicant',
         'dateend',

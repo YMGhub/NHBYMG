@@ -1025,88 +1025,103 @@
 
                         <!--APPLICATION FOR HOUSING EVERY LAST PERSON (H.E.L.P):-->
                         <!--div class="col-md-12" style="margin-bottom:20px">
-                                    <div>
-                                        <h2 style="text-align: center;margin-bottom:0px"><b>APPLICATION FOR HOUSING EVERY LAST
-                                                PERSON (H.E.L.P)</b>
-                                        </h2>
-                                        <h3 style="text-align: center;margin-bottom:0px"><b>PREFERRED LOCATION OF LAND/PROPERTY</b>
-                                        </h3>
-                                        <h4 style="text-align: center;margin-bottom:0px"><b>Tick one only</b></h4>
-                                    </div>
-                                </div-->
+                                                    <div>
+                                                        <h2 style="text-align: center;margin-bottom:0px"><b>APPLICATION FOR HOUSING EVERY LAST
+                                                                PERSON (H.E.L.P)</b>
+                                                        </h2>
+                                                        <h3 style="text-align: center;margin-bottom:0px"><b>PREFERRED LOCATION OF LAND/PROPERTY</b>
+                                                        </h3>
+                                                        <h4 style="text-align: center;margin-bottom:0px"><b>Tick one only</b></h4>
+                                                    </div>
+                                                </div-->
                         <!--APPLICATION FOR HOUSING EVERY LAST PERSON (H.E.L.P):-->
 
 
                         <!--PREFERRED LOCATION OF LAND/PROPERT:-->
                         <!--div class="col-md-12 mt-5">
-                                <div>
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">(HOUSE & LAND)
-                                                    PROPERTY (STEEL FRAME ONLY)</th>
-                                                <th scope="col">HOUSE & LAND)
-                                                    MIXED PROPERTIES
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div style="display:flex;align-items: center;"><input
-                                                            name="land_or_property" value="BULLENS, ST. JAMES" type="radio"
-                                                            style="margin:0;" />BULLENS, ST. JAMES
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div style="display:flex;align-items: center;"><input
-                                                            name="land_or_property" value="LOWER BURNEY, ST. MICHAEL"
-                                                            type="radio" style="margin:0;" />LOWER BURNEY, ST. MICHAEL
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>
-                                                    <div style="display:flex;align-items: center;"><input
-                                                            name="land_or_property" value="BRIGHTON, ST. GEORGE"
-                                                            type="radio" style="margin:0;" />BRIGHTON, ST. GEORGE
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                                <div>
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">(HOUSE & LAND)
+                                                                    PROPERTY (STEEL FRAME ONLY)</th>
+                                                                <th scope="col">HOUSE & LAND)
+                                                                    MIXED PROPERTIES
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div style="display:flex;align-items: center;"><input
+                                                                            name="land_or_property" value="BULLENS, ST. JAMES" type="radio"
+                                                                            style="margin:0;" />BULLENS, ST. JAMES
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div style="display:flex;align-items: center;"><input
+                                                                            name="land_or_property" value="LOWER BURNEY, ST. MICHAEL"
+                                                                            type="radio" style="margin:0;" />LOWER BURNEY, ST. MICHAEL
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>
+                                                                    <div style="display:flex;align-items: center;"><input
+                                                                            name="land_or_property" value="BRIGHTON, ST. GEORGE"
+                                                                            type="radio" style="margin:0;" />BRIGHTON, ST. GEORGE
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
 
-                                            <tr>
-                                                <td></td>
-                                                <td>
-                                                    <div style="display:flex;align-items: center;"><input
-                                                            name="land_or_property" value="COCONUT HALL, ST. LUCY"
-                                                            type="radio" style="margin:0;" />COCONUT HALL, ST. LUCY
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>
-                                                    <div style="display:flex;align-items: center;"><input
-                                                            name="land_or_property" value="RIVER CRESCENT, ST. PHILIP"
-                                                            type="radio" style="margin:0;" />RIVER CRESCENT, ST. PHILIP
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>
-                                                    <div style="display:flex;align-items: center;"><input
-                                                            name="land_or_property" value="CONCORDIA GARDENS, ST. PHILIP"
-                                                            type="radio" style="margin:0;" />CONCORDIA GARDENS, ST. PHILIP
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div-->
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>
+                                                                    <div style="display:flex;align-items: center;"><input
+                                                                            name="land_or_property" value="COCONUT HALL, ST. LUCY"
+                                                                            type="radio" style="margin:0;" />COCONUT HALL, ST. LUCY
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>
+                                                                    <div style="display:flex;align-items: center;"><input
+                                                                            name="land_or_property" value="RIVER CRESCENT, ST. PHILIP"
+                                                                            type="radio" style="margin:0;" />RIVER CRESCENT, ST. PHILIP
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>
+                                                                    <div style="display:flex;align-items: center;"><input
+                                                                            name="land_or_property" value="CONCORDIA GARDENS, ST. PHILIP"
+                                                                            type="radio" style="margin:0;" />CONCORDIA GARDENS, ST. PHILIP
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div-->
                         <!--PREFERRED LOCATION OF LAND/PROPERT:-->
+
+                        <!--Qualifying Amount -->
+                        <div class="col-md-12">
+                            <div>
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <label><b>Qualifying Amount :</b></label>
+                                        <input name="qualifyngamount" type="text" placeholder="" />
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
 
 
                         <!--Are you a tenant of the land on which you wish to build your Housing solution?-->
