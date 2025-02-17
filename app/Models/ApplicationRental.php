@@ -11,6 +11,10 @@ class ApplicationRental extends Model
 
 
     protected $fillable = [
+        'passport',
+        'job_letter',
+        'id_card',
+        'payslips',
         'applicant_surname',
         'applicant_first',
         'applicant_middle',

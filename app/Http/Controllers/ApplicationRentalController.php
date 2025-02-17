@@ -41,6 +41,47 @@ class ApplicationRentalController extends Controller
 
 
 
+        $payslipsBase64 = [];
+        if ($request->hasFile('payslips')) {
+
+
+            foreach ($request->file('payslips') as $file) {
+                if ($file->isValid()) {
+                    $payslipsBase64[] = base64_encode(file_get_contents($file->getRealPath()));
+                }
+            }
+
+            $payslipsBase64 = (json_encode($payslipsBase64));
+        }
+
+
+        //ID Card:
+        // Verifica si hay un archivo antes de llamar a getRealPath()
+        if ($request->hasFile('id_card')) {
+            $idcardBase64 = base64_encode(file_get_contents($request->file('id_card')->getRealPath()));
+        } else {
+            $idCardBase64 = null; // O manejar el error de otro modo
+        }
+
+
+        //Job letter:
+        if ($request->hasFile('job_letter')) {
+            $job_letterBase64 = base64_encode(file_get_contents($request->file('job_letter')->getRealPath()));
+        } else {
+            $job_letterBase64 = null; // O manejar el error de otro modo
+        }
+
+        //Passport:
+        if ($request->hasFile('passport')) {
+            $passportBase64 = base64_encode(file_get_contents($request->file('passport')->getRealPath()));
+        } else {
+            $passportBase64 = null; // O manejar el error de otro modo
+        }
+
+
+
+
+
 
         // Store the uploaded file
 
@@ -49,10 +90,17 @@ class ApplicationRentalController extends Controller
             $photographName = time() . "-" . $request->photograph->getClientOriginalName();
             $photographPath = $request->file('photograph')->storeAs('photograph', $photographName, 'public');
             $validatedData['photograph'] = $photographPath;
-        }
+        };
+
+
+        //documents
 
 
         ApplicationRental::create([
+            'passport' => $passportBase64,
+            'job_letter' => $job_letterBase64,
+            'id_card' => $idcardBase64,
+            'payslips' => $payslipsBase64,
             'applicant_surname' => $request->applicant_surname,
             'applicant_first' => $request->applicant_first,
             'applicant_middle' => $request->applicant_middle,
@@ -109,6 +157,7 @@ class ApplicationRentalController extends Controller
         //return redirect("/application-for-rental")->with('success', 'Message received successfully!');
 
         $details = [
+            'payslips' => $payslipsBase64,
             'applicant_surname' => $request->applicant_surname,
             'applicant_first' => $request->applicant_first,
             'applicant_middle' => $request->applicant_middle,
@@ -160,7 +209,7 @@ class ApplicationRentalController extends Controller
             'yeardatedthis' => $request->yeardatedthis
         ];
 
-        Mail::to('NHC.CustomerService@barbados.gov.bb')->send(new ApplicationRentalMail($details));
+        //Mail::to('NHC.CustomerService@barbados.gov.bb')->send(new ApplicationRentalMail($details));
 
         try {
             return redirect()->back()->with('success', 'Application submitted successfully!');
