@@ -139,37 +139,6 @@
                 </div>
             @endforeach
         </div>
-        <div class="container">
-            @foreach ($data->chunk(3) as $chunk)
-                <div class="row">
-                    @foreach ($chunk as $row)
-                        <div class="col-md-4 col-sm-12">
-                            <div class="icon-box-1">
-                                <div class="icon-container">
-                                    <div class="iconImg">
-                                        @foreach (json_decode($row->imagesOurServices) as $images)
-                                            <img src="{{ url('storage/our_services/' . $images->path) }}"
-                                                style="width:50%" />
-                                        @endforeach
-                                    </div>
-                                </div>
-
-                                <h4>{{ $row->title }}</h4>
-                                <div class="input">
-                                    <p>{{ strip_tags(html_entity_decode($row->description)) }}</p>
-                                </div>
-
-                                @if (!empty($row->url_form))
-                                    <p>
-                                        <a href="{{ $row->url_form }}" class="button border">Apply Now</a>
-                                    </p>
-                                @endif
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            @endforeach
-        </div>
 
     </section>
     <!-- Fullwidth Section / End -->
