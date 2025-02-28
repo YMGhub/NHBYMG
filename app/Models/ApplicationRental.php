@@ -53,7 +53,6 @@ class ApplicationRental extends Model
         'co_salary',
         'co_pay_period',
         'co_employment_status',
-
         'national_registration_number',
         'employer',
         'occupation',
