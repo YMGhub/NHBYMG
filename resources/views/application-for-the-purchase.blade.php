@@ -694,7 +694,7 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <input name="coapplicant_email" type="email" id="coapplicant_email"
-                                                        placeholder="Address" />
+                                                        placeholder="" />
                                                 </div>
                                             </div>
                                         </div>
@@ -954,186 +954,186 @@
 
                             <!--PERIOD OF EMPLOYMENT-->
                             <!--div class="col-md-6">
-                                                                        <div>
-                                                                            <label><b>PERIOD OF EMPLOYMENT</b></label>
-                                                                            <div class="row">
+                                                                            <div>
+                                                                                <label><b>PERIOD OF EMPLOYMENT</b></label>
+                                                                                <div class="row">
 
-                                                                                <div class="col-md-12">
-                                                                                    <label><b>Applicant:</b></label>
-                                                                                    <input name="applicant_period" type="text" id="applicant_period"
-                                                                                        placeholder="Applicant" />
+                                                                                    <div class="col-md-12">
+                                                                                        <label><b>Applicant:</b></label>
+                                                                                        <input name="applicant_period" type="text" id="applicant_period"
+                                                                                            placeholder="Applicant" />
+                                                                                    </div>
+                                                                                    <div class="col-md-12">
+                                                                                        <label><b>Co-Applicant:</b></label>
+                                                                                        <input name="co_applicant_period" type="text" id="co_applicant"
+                                                                                            placeholder="Co-Applicant" required="required" />
+                                                                                    </div>
                                                                                 </div>
-                                                                                <div class="col-md-12">
-                                                                                    <label><b>Co-Applicant:</b></label>
-                                                                                    <input name="co_applicant_period" type="text" id="co_applicant"
-                                                                                        placeholder="Co-Applicant" required="required" />
-                                                                                </div>
+
                                                                             </div>
-
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div>
-                                                                            <label><b>OCCUPATION</b></label>
-                                                                            <div class="row">
+                                                                        <div class="col-md-6">
+                                                                            <div>
+                                                                                <label><b>OCCUPATION</b></label>
+                                                                                <div class="row">
 
-                                                                                <div class="col-md-12">
-                                                                                    <label><b>Applicant:</b></label>
-                                                                                    <input name="applicant_occup" type="text" id="applicant_occup"
-                                                                                        placeholder="Applicant" />
+                                                                                    <div class="col-md-12">
+                                                                                        <label><b>Applicant:</b></label>
+                                                                                        <input name="applicant_occup" type="text" id="applicant_occup"
+                                                                                            placeholder="Applicant" />
+                                                                                    </div>
+                                                                                    <div class="col-md-12">
+                                                                                        <label><b>Co-Applicant:</b></label>
+                                                                                        <input name="co_applicant_occup" type="text" id="co_applicant_occup"
+                                                                                            placeholder="Co-Applicant" required="required" />
+                                                                                    </div>
                                                                                 </div>
-                                                                                <div class="col-md-12">
-                                                                                    <label><b>Co-Applicant:</b></label>
-                                                                                    <input name="co_applicant_occup" type="text" id="co_applicant_occup"
-                                                                                        placeholder="Co-Applicant" required="required" />
-                                                                                </div>
+
                                                                             </div>
-
                                                                         </div>
-                                                                    </div>
-                                                                    <!--------------->
+                                                                        <!--------------->
 
                             <!--EMPLOYER:-->
                             <!--div class="col-md-6">
-                                                                        <div>
-                                                                            <label><b>EMPLOYER:</b></label>
-                                                                            <div class="row">
+                                                                            <div>
+                                                                                <label><b>EMPLOYER:</b></label>
+                                                                                <div class="row">
 
-                                                                                <div class="col-md-12">
-                                                                                    <label><b>Applicant:</b></label>
-                                                                                    <input name="applicant_employer" type="text" id="applicant_employer"
-                                                                                        placeholder="Applicant" />
+                                                                                    <div class="col-md-12">
+                                                                                        <label><b>Applicant:</b></label>
+                                                                                        <input name="applicant_employer" type="text" id="applicant_employer"
+                                                                                            placeholder="Applicant" />
+                                                                                    </div>
+                                                                                    <div class="col-md-12">
+                                                                                        <label><b>Co-Applicant:</b></label>
+                                                                                        <input name="co_applicant_employer" type="text" id="co_applicant_employer"
+                                                                                            placeholder="Co-Applicant" required="required" />
+                                                                                    </div>
                                                                                 </div>
-                                                                                <div class="col-md-12">
-                                                                                    <label><b>Co-Applicant:</b></label>
-                                                                                    <input name="co_applicant_employer" type="text" id="co_applicant_employer"
-                                                                                        placeholder="Co-Applicant" required="required" />
-                                                                                </div>
+
                                                                             </div>
-
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div>
-                                                                            <label><b>SALARY::</b></label>
-                                                                            <div class="row">
+                                                                        <div class="col-md-6">
+                                                                            <div>
+                                                                                <label><b>SALARY::</b></label>
+                                                                                <div class="row">
 
-                                                                                <div class="col-md-12">
-                                                                                    <label><b>Applicant:</b></label>
-                                                                                    <input name="applicant_salary" type="text" id="applicant_salary"
-                                                                                        placeholder="Applicant" />
+                                                                                    <div class="col-md-12">
+                                                                                        <label><b>Applicant:</b></label>
+                                                                                        <input name="applicant_salary" type="text" id="applicant_salary"
+                                                                                            placeholder="Applicant" />
+                                                                                    </div>
+                                                                                    <div class="col-md-12">
+                                                                                        <label><b>Co-Applicant:</b></label>
+                                                                                        <input name="co_applicant_salary" type="text" id="co_applicant_salary"
+                                                                                            placeholder="Co-Applicant" required="required" />
+                                                                                    </div>
                                                                                 </div>
-                                                                                <div class="col-md-12">
-                                                                                    <label><b>Co-Applicant:</b></label>
-                                                                                    <input name="co_applicant_salary" type="text" id="co_applicant_salary"
-                                                                                        placeholder="Co-Applicant" required="required" />
-                                                                                </div>
+
                                                                             </div>
-
                                                                         </div>
-                                                                    </div>
-                                                                    <!--------------->
+                                                                        <!--------------->
 
                             <!--GOVERNMENT:-->
                             <!--div class="col-md-6">
-                                                                        <div class="row row-cols-3">
-                                                                            <div class="col-md-12">
-                                                                                <div class="row">
-                                                                                    <div class="col-md-4">
-                                                                                        <label><b>GOVERNMENT:</b></label>
-                                                                                    </div>
-                                                                                    <div class="col-md-4">
-                                                                                        <input name="government" value="applicant_government" type="radio"
-                                                                                            id="government" />
-                                                                                    </div>
-                                                                                    <div class="col-md-4">
-                                                                                        <input name="government" value="coapplicant_government" type="radio"
-                                                                                            id="government" />
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-md-12">
-                                                                                <div class="row">
-                                                                                    <div class="col-md-4">
-                                                                                        <label><b>PRIVATE:</b></label>
-                                                                                    </div>
-                                                                                    <div class="col-md-4">
-                                                                                        <input name="private" value="applicant_private" type="radio"
-                                                                                            id="private" />
-                                                                                    </div>
-                                                                                    <div class="col-md-4">
-                                                                                        <input name="private" value="coapplicant_private" type="radio"
-                                                                                            id="private" />
+                                                                            <div class="row row-cols-3">
+                                                                                <div class="col-md-12">
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-4">
+                                                                                            <label><b>GOVERNMENT:</b></label>
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                            <input name="government" value="applicant_government" type="radio"
+                                                                                                id="government" />
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                            <input name="government" value="coapplicant_government" type="radio"
+                                                                                                id="government" />
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
-                                                                            </div>
-                                                                            <div class="col-md-12">
-                                                                                <div class="row">
-                                                                                    <div class="col-md-4">
-                                                                                        <label><b>SELF:</b></label>
+                                                                                <div class="col-md-12">
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-4">
+                                                                                            <label><b>PRIVATE:</b></label>
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                            <input name="private" value="applicant_private" type="radio"
+                                                                                                id="private" />
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                            <input name="private" value="coapplicant_private" type="radio"
+                                                                                                id="private" />
+                                                                                        </div>
                                                                                     </div>
-                                                                                    <div class="col-md-4">
-                                                                                        <input name="self" value="applicant_self" type="radio"
-                                                                                            id="self" />
-                                                                                    </div>
-                                                                                    <div class="col-md-4">
-                                                                                        <input name="self" value="coapplicant_selfe" type="radio"
-                                                                                            id="self" />
+                                                                                </div>
+                                                                                <div class="col-md-12">
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-4">
+                                                                                            <label><b>SELF:</b></label>
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                            <input name="self" value="applicant_self" type="radio"
+                                                                                                id="self" />
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                            <input name="self" value="coapplicant_selfe" type="radio"
+                                                                                                id="self" />
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
 
-                                                                    <div class="col-md-6">
-                                                                        <div class="row row-cols-3">
-                                                                            <div class="col-md-12">
-                                                                                <div class="row">
-                                                                                    <div class="col-md-4">
-                                                                                        <label><b>MONTHLY:</b></label>
+                                                                        <div class="col-md-6">
+                                                                            <div class="row row-cols-3">
+                                                                                <div class="col-md-12">
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-4">
+                                                                                            <label><b>MONTHLY:</b></label>
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                            <input name="monthly" value="applicant_monthly" type="radio"
+                                                                                                id="monthly" />
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                            <input name="monthly" value="coapplicant_monthly" type="radio"
+                                                                                                id="monthly" />
+                                                                                        </div>
                                                                                     </div>
-                                                                                    <div class="col-md-4">
-                                                                                        <input name="monthly" value="applicant_monthly" type="radio"
-                                                                                            id="monthly" />
+                                                                                </div>
+                                                                                <div class="col-md-12">
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-4">
+                                                                                            <label><b>WEEKLY:</b></label>
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                            <input name="weekly" value="applicant_weekly" type="radio"
+                                                                                                id="weekly" />
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                            <input name="weekly" value="coapplicant_weekly" type="radio"
+                                                                                                id="weekly" />
+                                                                                        </div>
                                                                                     </div>
-                                                                                    <div class="col-md-4">
-                                                                                        <input name="monthly" value="coapplicant_monthly" type="radio"
-                                                                                            id="monthly" />
+                                                                                </div>
+                                                                                <div class="col-md-12">
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-4">
+                                                                                            <label><b>FORT-NIGHTLY:</b></label>
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                            <input name="forth_nightly" value="applicant_forth_nightly"
+                                                                                                type="radio" id="forth_nightly" />
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                            <input name="forth_nightly" value="coapplicant_forth_nightly"
+                                                                                                type="radio" id="forth_nightly" />
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="col-md-12">
-                                                                                <div class="row">
-                                                                                    <div class="col-md-4">
-                                                                                        <label><b>WEEKLY:</b></label>
-                                                                                    </div>
-                                                                                    <div class="col-md-4">
-                                                                                        <input name="weekly" value="applicant_weekly" type="radio"
-                                                                                            id="weekly" />
-                                                                                    </div>
-                                                                                    <div class="col-md-4">
-                                                                                        <input name="weekly" value="coapplicant_weekly" type="radio"
-                                                                                            id="weekly" />
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-md-12">
-                                                                                <div class="row">
-                                                                                    <div class="col-md-4">
-                                                                                        <label><b>FORT-NIGHTLY:</b></label>
-                                                                                    </div>
-                                                                                    <div class="col-md-4">
-                                                                                        <input name="forth_nightly" value="applicant_forth_nightly"
-                                                                                            type="radio" id="forth_nightly" />
-                                                                                    </div>
-                                                                                    <div class="col-md-4">
-                                                                                        <input name="forth_nightly" value="coapplicant_forth_nightly"
-                                                                                            type="radio" id="forth_nightly" />
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div-->
+                                                                        </div-->
                             <!------------>
 
                             <!---------------------->
@@ -1181,37 +1181,37 @@
 
                             <!--PURCHASING OPTIONS:-->
                             <!--div class="col-md-12">
-                                                    <div>
-                                                        <label><b>PURCHASING OPTIONS:</b></label>
-                                                        <div class="row">
+                                                        <div>
+                                                            <label><b>PURCHASING OPTIONS:</b></label>
+                                                            <div class="row">
 
-                                                            <div class="col-md-4">
-                                                                <label><b>LAND:</b></label>
-                                                                <input name="purchasing_options" value="Land" type="radio"
-                                                                    id="timber" />
+                                                                <div class="col-md-4">
+                                                                    <label><b>LAND:</b></label>
+                                                                    <input name="purchasing_options" value="Land" type="radio"
+                                                                        id="timber" />
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <label><b>PROPERTY:</b></label>
+                                                                    <input name="purchasing_options" value="PROPERTY" type="radio"
+                                                                        id="Wall" />
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <label><b>RENT TO OWN:</b></label>
+                                                                    <input name="purchasing_options" value="RENT TO OWN" type="radio"
+                                                                        id="Steel_Frame" />
+                                                                </div>
                                                             </div>
-                                                            <div class="col-md-4">
-                                                                <label><b>PROPERTY:</b></label>
-                                                                <input name="purchasing_options" value="PROPERTY" type="radio"
-                                                                    id="Wall" />
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <label><b>RENT TO OWN:</b></label>
-                                                                <input name="purchasing_options" value="RENT TO OWN" type="radio"
-                                                                    id="Steel_Frame" />
-                                                            </div>
+
                                                         </div>
-
-                                                    </div>
-                                                </div-->
+                                                    </div-->
                             <!--PURCHASING OPTIONS:-->
 
                             <!--PREFERRED HOUSE TYPE:-->
                             <!--div class="col-md-12">
-                                                <div>
-                                                    <label><b>IF YOU INTEND TO PURCHASE PROPERTY, FILL OUT THIS SECTION:</b></label>
-                                                </div>
-                                            </div-->
+                                                    <div>
+                                                        <label><b>IF YOU INTEND TO PURCHASE PROPERTY, FILL OUT THIS SECTION:</b></label>
+                                                    </div>
+                                                </div-->
                             <!--PREFERRED HOUSE TYPE:-->
 
 
@@ -1494,87 +1494,87 @@
 
                         <!--APPLICATION FOR HOUSING EVERY LAST PERSON (H.E.L.P):-->
                         <!--div class="col-md-12" style="margin-bottom:20px">
-                                                                                                                                                                                                            <div>
-                                                                                                                                                                                                                <h2 style="text-align: center;margin-bottom:0px"><b>APPLICATION FOR HOUSING EVERY LAST
-                                                                                                                                                                                                                        PERSON (H.E.L.P)</b>
-                                                                                                                                                                                                                </h2>
-                                                                                                                                                                                                                <h3 style="text-align: center;margin-bottom:0px"><b>PREFERRED LOCATION OF LAND/PROPERTY</b>
-                                                                                                                                                                                                                </h3>
-                                                                                                                                                                                                                <h4 style="text-align: center;margin-bottom:0px"><b>Tick one only</b></h4>
-                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                        </div-->
+                                                                                                                                                                                                                <div>
+                                                                                                                                                                                                                    <h2 style="text-align: center;margin-bottom:0px"><b>APPLICATION FOR HOUSING EVERY LAST
+                                                                                                                                                                                                                            PERSON (H.E.L.P)</b>
+                                                                                                                                                                                                                    </h2>
+                                                                                                                                                                                                                    <h3 style="text-align: center;margin-bottom:0px"><b>PREFERRED LOCATION OF LAND/PROPERTY</b>
+                                                                                                                                                                                                                    </h3>
+                                                                                                                                                                                                                    <h4 style="text-align: center;margin-bottom:0px"><b>Tick one only</b></h4>
+                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                            </div-->
                         <!--APPLICATION FOR HOUSING EVERY LAST PERSON (H.E.L.P):-->
 
 
                         <!--PREFERRED LOCATION OF LAND/PROPERT:-->
                         <!--div class="col-md-12 mt-5">
-                                                                                                                                                                                                        <div>
-                                                                                                                                                                                                            <table class="table">
-                                                                                                                                                                                                                <thead>
-                                                                                                                                                                                                                    <tr>
-                                                                                                                                                                                                                        <th scope="col">(HOUSE & LAND)
-                                                                                                                                                                                                                            PROPERTY (STEEL FRAME ONLY)</th>
-                                                                                                                                                                                                                        <th scope="col">HOUSE & LAND)
-                                                                                                                                                                                                                            MIXED PROPERTIES
-                                                                                                                                                                                                                        </th>
-                                                                                                                                                                                                                    </tr>
-                                                                                                                                                                                                                </thead>
-                                                                                                                                                                                                                <tbody>
-                                                                                                                                                                                                                    <tr>
-                                                                                                                                                                                                                        <td>
-                                                                                                                                                                                                                            <div style="display:flex;align-items: center;"><input
-                                                                                                                                                                                                                                    name="land_or_property" value="BULLENS, ST. JAMES" type="radio"
-                                                                                                                                                                                                                                    style="margin:0;" />BULLENS, ST. JAMES
-                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                        </td>
-                                                                                                                                                                                                                        <td>
-                                                                                                                                                                                                                            <div style="display:flex;align-items: center;"><input
-                                                                                                                                                                                                                                    name="land_or_property" value="LOWER BURNEY, ST. MICHAEL"
-                                                                                                                                                                                                                                    type="radio" style="margin:0;" />LOWER BURNEY, ST. MICHAEL
-                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                        </td>
-                                                                                                                                                                                                                    </tr>
-                                                                                                                                                                                                                    <tr>
-                                                                                                                                                                                                                        <td></td>
-                                                                                                                                                                                                                        <td>
-                                                                                                                                                                                                                            <div style="display:flex;align-items: center;"><input
-                                                                                                                                                                                                                                    name="land_or_property" value="BRIGHTON, ST. GEORGE"
-                                                                                                                                                                                                                                    type="radio" style="margin:0;" />BRIGHTON, ST. GEORGE
-                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                        </td>
-                                                                                                                                                                                                                    </tr>
+                                                                                                                                                                                                            <div>
+                                                                                                                                                                                                                <table class="table">
+                                                                                                                                                                                                                    <thead>
+                                                                                                                                                                                                                        <tr>
+                                                                                                                                                                                                                            <th scope="col">(HOUSE & LAND)
+                                                                                                                                                                                                                                PROPERTY (STEEL FRAME ONLY)</th>
+                                                                                                                                                                                                                            <th scope="col">HOUSE & LAND)
+                                                                                                                                                                                                                                MIXED PROPERTIES
+                                                                                                                                                                                                                            </th>
+                                                                                                                                                                                                                        </tr>
+                                                                                                                                                                                                                    </thead>
+                                                                                                                                                                                                                    <tbody>
+                                                                                                                                                                                                                        <tr>
+                                                                                                                                                                                                                            <td>
+                                                                                                                                                                                                                                <div style="display:flex;align-items: center;"><input
+                                                                                                                                                                                                                                        name="land_or_property" value="BULLENS, ST. JAMES" type="radio"
+                                                                                                                                                                                                                                        style="margin:0;" />BULLENS, ST. JAMES
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                            </td>
+                                                                                                                                                                                                                            <td>
+                                                                                                                                                                                                                                <div style="display:flex;align-items: center;"><input
+                                                                                                                                                                                                                                        name="land_or_property" value="LOWER BURNEY, ST. MICHAEL"
+                                                                                                                                                                                                                                        type="radio" style="margin:0;" />LOWER BURNEY, ST. MICHAEL
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                            </td>
+                                                                                                                                                                                                                        </tr>
+                                                                                                                                                                                                                        <tr>
+                                                                                                                                                                                                                            <td></td>
+                                                                                                                                                                                                                            <td>
+                                                                                                                                                                                                                                <div style="display:flex;align-items: center;"><input
+                                                                                                                                                                                                                                        name="land_or_property" value="BRIGHTON, ST. GEORGE"
+                                                                                                                                                                                                                                        type="radio" style="margin:0;" />BRIGHTON, ST. GEORGE
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                            </td>
+                                                                                                                                                                                                                        </tr>
 
-                                                                                                                                                                                                                    <tr>
-                                                                                                                                                                                                                        <td></td>
-                                                                                                                                                                                                                        <td>
-                                                                                                                                                                                                                            <div style="display:flex;align-items: center;"><input
-                                                                                                                                                                                                                                    name="land_or_property" value="COCONUT HALL, ST. LUCY"
-                                                                                                                                                                                                                                    type="radio" style="margin:0;" />COCONUT HALL, ST. LUCY
-                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                        </td>
-                                                                                                                                                                                                                    </tr>
-                                                                                                                                                                                                                    <tr>
-                                                                                                                                                                                                                        <td></td>
-                                                                                                                                                                                                                        <td>
-                                                                                                                                                                                                                            <div style="display:flex;align-items: center;"><input
-                                                                                                                                                                                                                                    name="land_or_property" value="RIVER CRESCENT, ST. PHILIP"
-                                                                                                                                                                                                                                    type="radio" style="margin:0;" />RIVER CRESCENT, ST. PHILIP
-                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                        </td>
-                                                                                                                                                                                                                    </tr>
-                                                                                                                                                                                                                    <tr>
-                                                                                                                                                                                                                        <td></td>
-                                                                                                                                                                                                                        <td>
-                                                                                                                                                                                                                            <div style="display:flex;align-items: center;"><input
-                                                                                                                                                                                                                                    name="land_or_property" value="CONCORDIA GARDENS, ST. PHILIP"
-                                                                                                                                                                                                                                    type="radio" style="margin:0;" />CONCORDIA GARDENS, ST. PHILIP
-                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                        </td>
-                                                                                                                                                                                                                    </tr>
-                                                                                                                                                                                                                </tbody>
-                                                                                                                                                                                                            </table>
-                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                    </div-->
+                                                                                                                                                                                                                        <tr>
+                                                                                                                                                                                                                            <td></td>
+                                                                                                                                                                                                                            <td>
+                                                                                                                                                                                                                                <div style="display:flex;align-items: center;"><input
+                                                                                                                                                                                                                                        name="land_or_property" value="COCONUT HALL, ST. LUCY"
+                                                                                                                                                                                                                                        type="radio" style="margin:0;" />COCONUT HALL, ST. LUCY
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                            </td>
+                                                                                                                                                                                                                        </tr>
+                                                                                                                                                                                                                        <tr>
+                                                                                                                                                                                                                            <td></td>
+                                                                                                                                                                                                                            <td>
+                                                                                                                                                                                                                                <div style="display:flex;align-items: center;"><input
+                                                                                                                                                                                                                                        name="land_or_property" value="RIVER CRESCENT, ST. PHILIP"
+                                                                                                                                                                                                                                        type="radio" style="margin:0;" />RIVER CRESCENT, ST. PHILIP
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                            </td>
+                                                                                                                                                                                                                        </tr>
+                                                                                                                                                                                                                        <tr>
+                                                                                                                                                                                                                            <td></td>
+                                                                                                                                                                                                                            <td>
+                                                                                                                                                                                                                                <div style="display:flex;align-items: center;"><input
+                                                                                                                                                                                                                                        name="land_or_property" value="CONCORDIA GARDENS, ST. PHILIP"
+                                                                                                                                                                                                                                        type="radio" style="margin:0;" />CONCORDIA GARDENS, ST. PHILIP
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                            </td>
+                                                                                                                                                                                                                        </tr>
+                                                                                                                                                                                                                    </tbody>
+                                                                                                                                                                                                                </table>
+                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                        </div-->
                         <!--PREFERRED LOCATION OF LAND/PROPERT:-->
 
                         <!--Qualifying Amount -->
