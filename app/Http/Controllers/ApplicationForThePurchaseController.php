@@ -99,6 +99,22 @@ class ApplicationForThePurchaseController extends Controller
             'date_official' =>  $request->date_official,
             'remarks_official' =>  $request->remarks_official,
             'qualifying_amount_official' =>  $request->qualifying_amount_official,
+
+            'app_employer_field'  => $request->app_employer_field,
+            'app_occupation_field'  => $request->app_occupation_field,
+            'app_period_of_employment'=> $request->app_period_of_employment,
+            'app_salary' => $request->app_salary,
+            'app_employment_status' => $request->qualifying_amount_official,
+            'coapplicant_email' => $request->coapplicant_email,
+            'co_marital_status' => $request->co_marital_status,
+            'co_applicant_citizenship' => $request->co_applicant_citizenship,
+            'co_applicant_country_of_residence' => $request->co_applicant_country_of_residence,
+            'co_app_employer_field' => $request->co_app_employer_field,
+            'co_app_occupation_field' => $request->co_app_occupation_field,
+            'co_app_period_of_employment'=> $request->co_app_period_of_employment,
+            'co_app_salary'=> $request->co_app_salary,
+            'co_app_pay_period'=> $request->co_app_pay_period,
+            'co_app_employment_status'=> $request->co_app_employment_status,
         ]);
 
 
@@ -173,6 +189,22 @@ class ApplicationForThePurchaseController extends Controller
             'date_official' =>  $request->date_official,
             'remarks_official' =>  $request->remarks_official,
             'qualifying_amount_official' =>  $request->qualifying_amount_official,
+
+            'app_employer_field'  => $request->app_employer_field,
+            'app_occupation_field'  => $request->app_occupation_field,
+            'app_period_of_employment'=> $request->app_period_of_employment,
+            'app_salary' => $request->app_salary,
+            'app_employment_status' => $request->qualifying_amount_official,
+            'coapplicant_email' => $request->coapplicant_email,
+            'co_marital_status' => $request->co_marital_status,
+            'co_applicant_citizenship' => $request->co_applicant_citizenship,
+            'co_applicant_country_of_residence' => $request->co_applicant_country_of_residence,
+            'co_app_employer_field' => $request->co_app_employer_field,
+            'co_app_occupation_field' => $request->co_app_occupation_field,
+            'co_app_period_of_employment'=> $request->co_app_period_of_employment,
+            'co_app_salary'=> $request->co_app_salary,
+            'co_app_pay_period'=> $request->co_app_pay_period,
+            'co_app_employment_status'=> $request->co_app_employment_status,
         ];
 
         Mail::to('NHC.CustomerService@barbados.gov.bb')->send(new ApplicationForThePurchaseMail($details));
