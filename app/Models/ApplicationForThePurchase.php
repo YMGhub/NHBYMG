@@ -95,5 +95,14 @@ class ApplicationForThePurchase extends Model
         'date_official',
         'remarks_official',
         'qualifying_amount_official',
+        'applicant_address2',
+        'applicant_address3',
+        'applicant_parish',
+        'coapplicant_address2',
+        'coapplicant_address3',
+        'coapplicant_parish',
+        'addmore',
+        'land_or_lot',
+        'bankstatements'
     ];
 }

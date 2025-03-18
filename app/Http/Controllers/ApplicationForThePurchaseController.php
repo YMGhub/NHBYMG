@@ -115,6 +115,16 @@ class ApplicationForThePurchaseController extends Controller
             'co_app_salary'=> $request->co_app_salary,
             'co_app_pay_period'=> $request->co_app_pay_period,
             'co_app_employment_status'=> $request->co_app_employment_status,
+
+            'applicant_address2'=> $request->applicant_address2,
+        'applicant_address3'=> $request->applicant_address3,
+        'applicant_parish'=> $request->applicant_parish,
+        'coapplicant_address2'=> $request->coapplicant_address2,
+        'coapplicant_address3'=> $request->coapplicant_address3,
+        'coapplicant_parish'=> $request->coapplicant_parish,
+        'addmore'=> $request->addmore,
+        'land_or_lot'=> $request->land_or_lot,
+        'bankstatements'=> $request->bankstatements
         ]);
 
 
@@ -205,6 +215,16 @@ class ApplicationForThePurchaseController extends Controller
             'co_app_salary'=> $request->co_app_salary,
             'co_app_pay_period'=> $request->co_app_pay_period,
             'co_app_employment_status'=> $request->co_app_employment_status,
+
+            'applicant_address2'=> $request->applicant_address2,
+            'applicant_address3'=> $request->applicant_address3,
+            'applicant_parish'=> $request->applicant_parish,
+            'coapplicant_address2'=> $request->coapplicant_address2,
+            'coapplicant_address3'=> $request->coapplicant_address3,
+            'coapplicant_parish'=> $request->coapplicant_parish,
+            'addmore'=> $request->addmore,
+            'land_or_lot'=> $request->land_or_lot,
+            'bankstatements'=> $request->bankstatements
         ];
 
         Mail::to('NHC.CustomerService@barbados.gov.bb')->send(new ApplicationForThePurchaseMail($details));
