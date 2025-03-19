@@ -181,7 +181,11 @@ class ApplicationRentalController extends Controller
             'signatures' => $request->signatures,
             'datedthis' => $request->datedthis,
             'dayofdatedthis' => $request->dayofdatedthis,
-            'yeardatedthis' => $request->yeardatedthis
+            'yeardatedthis' => $request->yeardatedthis,
+            'applicant_address2' => $request->applicant_address2,
+            'co_applicant_address2' => $request->co_applicant_address2,
+            'applicant_parish' => $request->applicant_parish,
+            'co_applicant_parish' => $request->co_applicant_parish,
 
         ]);
 
@@ -269,7 +273,12 @@ class ApplicationRentalController extends Controller
             'signatures' => $request->signatures,
             'datedthis' => $request->datedthis,
             'dayofdatedthis' => $request->dayofdatedthis,
-            'yeardatedthis' => $request->yeardatedthis
+            'yeardatedthis' => $request->yeardatedthis,
+            'applicant_address2' => $request->applicant_address2,
+'co_applicant_address2' => $request->co_applicant_address2,
+'applicant_parish' => $request->applicant_parish,
+'co_applicant_parish' => $request->co_applicant_parish,
+
         ];
 
         //Mail::to('NHC.CustomerService@barbados.gov.bb')->send(new ApplicationRentalMail($details));

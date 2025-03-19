@@ -93,6 +93,11 @@ class ApplicationRental extends Model
         'signatures',
         'datedthis',
         'dayofdatedthis',
-        'yeardatedthis'
+        'yeardatedthis',
+        'applicant_address2',
+'co_applicant_address2',
+'applicant_parish',
+'co_applicant_parish'
+
     ];
 }
