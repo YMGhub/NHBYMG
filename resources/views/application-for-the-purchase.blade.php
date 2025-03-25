@@ -2256,7 +2256,7 @@
                                 },
                                 body: JSON.stringify({
                                     number_national: number,
-                                    type_form: "purchase"
+                                    type_form: "Purchase"
 
                                 })
                             })
@@ -2313,7 +2313,8 @@
                                     "X-CSRF-TOKEN": "{{ csrf_token() }}"
                                 },
                                 body: JSON.stringify({
-                                    number_national: number
+                                    number_national: number,
+                                    type_form: "Purchase"
                                 })
                             })
                             .then(response => response.json())
