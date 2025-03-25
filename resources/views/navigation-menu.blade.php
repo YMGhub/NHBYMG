@@ -39,6 +39,12 @@
                         </x-nav-link>
                     @endcan
 
+                    @can('site-settings-list')
+                        <x-nav-link href="{{ route('admin.api-settings') }}" :active="request()->routeIs('admin.settings.api')">
+                            {{ __('API Settings') }}
+                        </x-nav-link>
+                    @endcan
+
 
 
                 </div>

@@ -36,6 +36,9 @@ use App\Models\OurExecutives;
 use App\Models\OurServices;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ApiSettingController;
+use App\Http\Controllers\ApiValidationController;
+
 //Route::get('/', [OurServiceController::class, 'ourservices_info2'])->name('welcome');
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
 
@@ -109,6 +112,14 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+//validate number
+Route::get('/admin/api-settings', [ApiSettingController::class, 'index'])->name('admin.api-settings');
+Route::put('/admin/api-settings', [ApiSettingController::class, 'update'])->name('admin.api-settings.update');
+
+Route::post('/validate-number', [ApiValidationController::class, 'validateNumber'])->name('validate.number');
+
+///
 
 Route::middleware(['auth:sanctum'])->group(function () {
 
@@ -336,6 +347,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
         ///Update
         Route::put('/update-form-submission/{id}', [ApplicationRentalController::class, 'update'])->name('admin.application-for-rental.update');
     });
+
+
 
 
     //Admin properties
