@@ -2242,6 +2242,33 @@
 
                 let number = this.value;
                 let validationResult = document.getElementById("validation-result");
+
+
+                jQuery("#applicant_first").val("").css({
+                            'pointer-events': '',
+                            'background-color': '',
+                            'cursor': ''
+                        });
+
+                        jQuery("#applicant_middle").val("").css({
+                            'pointer-events': '',
+                            'background-color': '',
+                            'cursor': ''
+                        });
+
+                        jQuery("#applicant_maiden_name").val("").css({
+                            'pointer-events': '',
+                            'background-color': '',
+                            'cursor': ''
+                        });
+
+                        jQuery("#applicant_date_birth").val("").css({
+                            'pointer-events': '',
+                            'background-color': '',
+                            'cursor': ''
+                        });
+
+                        
                 if (number.length == 10) { // Solo consulta si hay al menos 5 dígitos
 
                     validationResult.textContent = "Validating wait a moment...";
@@ -2271,9 +2298,74 @@
                                     validationResult.style.color =
                                         "red"; // Mensaje de error en rojo
                                 } else {
-                                    validationResult.textContent = "Valid number";
-                                    validationResult.style.color =
-                                        "green"; // Mensaje de éxito en verde
+                                    
+
+                                    const parsedData = typeof data === 'string' ?
+                                            JSON.parse(data) : data;
+
+                                        function isDataEmpty3(response) {
+                                            const data = response.data;
+
+                                            if (!Array.isArray(data)) {
+                                                console.error(
+                                                    "La propiedad 'data' no es un arreglo:",
+                                                    data);
+                                                return true;
+                                            }
+
+                                            return data.length === 0 || data.every(
+                                                obj =>
+                                                Object.values(obj).every(value =>
+                                                    value === null || value === '')
+                                            );
+                                        }
+
+                                        if (isDataEmpty3(parsedData)) {
+                                            //desbloquea los campos par que la persona pueda escribri su informacion
+                                            console.log("La información está vacía.");
+
+                                            validationResult.textContent = data
+                                            .errorMessage;
+                                        validationResult.style.color =
+                                            "red"; // Mensaje de error en rojo
+
+                                           
+
+                                        } else {
+                                            //bloquea los campos nombre y fecha de nac para que la persona no pueda escribri su informacion
+                                            //FirstName,MiddleName,LastName,DOB FechaNac
+                                            var FirstName = parsedData.data[0]
+                                                .FirstName;
+                                            var LastName = parsedData.data[0].LastName;
+                                            var MiddleName = parsedData.data[0]
+                                                .MiddleName;
+                                            var DOB = parsedData.data[0].DOB;
+                                            var Gender = parsedData.data[0].Gender;
+
+                                            console.log(parsedData.data[0]);
+                                             
+
+                                            //field First Name
+                                            jQuery("#applicant_first").val(FirstName);
+                                            jQuery("#applicant_first").css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
+                                            //field LastName
+                                            jQuery("#applicant_middle").val(LastName).css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
+                                            //field MiddleName
+                                            jQuery("#applicant_maiden_name").val(MiddleName).css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
+                                            //field DOB
+                                            jQuery("#applicant_date_birth").val(DOB).css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
+                                            //field Gender
+                                            //jQuery("#applicant_first").val(FirstName).css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
+
+                                            validationResult.textContent = "Valid number";
+                                        validationResult.style.color =
+                                            "green"; // Mensaje de éxito en verde
+
+
+
+                                        }
+
+
                                 }
 
 
@@ -2306,6 +2398,31 @@
                 inputFields2.disabled = true; // Disable input
                 //inputFields2.style.cursor = "wait"; // Change cursor
 
+
+                jQuery("#coapplicant_first").val("").css({
+                            'pointer-events': '',
+                            'background-color': '',
+                            'cursor': ''
+                        });
+
+                        jQuery("#coapplicant_middle").val("").css({
+                            'pointer-events': '',
+                            'background-color': '',
+                            'cursor': ''
+                        });
+
+                        jQuery("#coapplicant_maiden_name").val("").css({
+                            'pointer-events': '',
+                            'background-color': '',
+                            'cursor': ''
+                        });
+
+                        jQuery("#coapplicant_date_birth").val("").css({
+                            'pointer-events': '',
+                            'background-color': '',
+                            'cursor': ''
+                        });
+
                 if (number.length == 10) { // Solo consulta si hay al menos 5 dígitos
                     typingTimer2 = setTimeout(() => { // Espera antes de ejecutar el fetch
                         fetch("{{ route('validate.number') }}", {
@@ -2328,9 +2445,72 @@
                                     validationResult2.style.color =
                                         "red"; // Mensaje de error en rojo
                                 } else {
-                                    validationResult2.textContent = "Número válido";
-                                    validationResult2.style.color =
-                                        "green"; // Mensaje de éxito en verde
+                                   
+
+                                        /*REFILL FIELDS*/ 
+                                        const parsedData = typeof data === 'string' ?
+                                            JSON.parse(data) : data;
+
+                                        function isDataEmpty2(response) {
+                                            const data = response.data;
+
+                                            if (!Array.isArray(data)) {
+                                                console.error(
+                                                    "La propiedad 'data' no es un arreglo:",
+                                                    data);
+                                                return true;
+                                            }
+
+                                            return data.length === 0 || data.every(
+                                                obj =>
+                                                Object.values(obj).every(value =>
+                                                    value === null || value === '')
+                                            );
+                                        }
+
+                                        if (isDataEmpty2(parsedData)) {
+                                            //desbloquea los campos par que la persona pueda escribri su informacion
+                                            console.log("La información está vacía.");
+
+                                            validationResult2.textContent = data
+                                            .errorMessage;
+                                        validationResult2.style.color =
+                                            "red"; // Mensaje de error en rojo
+                                           
+
+                                        } else {
+                                            //bloquea los campos nombre y fecha de nac para que la persona no pueda escribri su informacion
+                                            //FirstName,MiddleName,LastName,DOB FechaNac
+                                            var FirstName = parsedData.data[0]
+                                                .FirstName;
+                                            var LastName = parsedData.data[0].LastName;
+                                            var MiddleName = parsedData.data[0]
+                                                .MiddleName;
+                                            var DOB = parsedData.data[0].DOB;
+                                            var Gender = parsedData.data[0].Gender;
+
+                                             
+
+                                            //field First Name
+                                            jQuery("#coapplicant_first").val(FirstName);
+                                            jQuery("#coapplicant_first").css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
+                                            //field LastName
+                                            jQuery("#coapplicant_middle").val(LastName).css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
+                                            //field MiddleName
+                                            jQuery("#coapplicant_maiden_name").val(MiddleName).css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
+                                            //field DOB
+                                            jQuery("#coapplicant_date_birth").val(DOB ).css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
+                                            //field Gender
+                                            //jQuery("#applicant_first").val(FirstName).css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
+
+                                            validationResult2.textContent = "Valid number";
+                                            validationResult2.style.color =
+                                            "green"; // Mensaje de éxito en verde
+
+
+
+                                        }
+
                                 }
 
 

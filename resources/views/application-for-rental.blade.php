@@ -2244,6 +2244,33 @@
                     inputFields2.disabled = true; // Disable input
                     //inputFields2.style.cursor = "wait"; // Change cursor
 
+                      //Limpiar campos cada vez que se vuelve a escribir
+                      jQuery("#co_applicant_name").val("").css({
+                            'pointer-events': '',
+                            'background-color': '',
+                            'cursor': ''
+                        });
+
+                        jQuery("#co_applicant_middle").val("").css({
+                            'pointer-events': '',
+                            'background-color': '',
+                            'cursor': ''
+                        });
+
+                        jQuery("#co_maiden_name").val("").css({
+                            'pointer-events': '',
+                            'background-color': '',
+                            'cursor': ''
+                        });
+
+                        jQuery("#co_date_of_birth").val("").css({
+                            'pointer-events': '',
+                            'background-color': '',
+                            'cursor': ''
+                        });
+
+                      
+
                     if (number.length == 10) { // Solo consulta si hay al menos 5 dígitos
                         typingTimer2 = setTimeout(() => { // Espera antes de ejecutar el fetch
                             fetch("{{ route('validate.number') }}", {
