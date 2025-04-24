@@ -116,7 +116,7 @@
                                             </div>
 
                                         </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -2268,7 +2268,7 @@
                             'cursor': ''
                         });
 
-                        
+
                 if (number.length == 10) { // Solo consulta si hay al menos 5 dígitos
 
                     validationResult.textContent = "Validating wait a moment...";
@@ -2298,7 +2298,7 @@
                                     validationResult.style.color =
                                         "red"; // Mensaje de error en rojo
                                 } else {
-                                    
+
 
                                     const parsedData = typeof data === 'string' ?
                                             JSON.parse(data) : data;
@@ -2329,7 +2329,7 @@
                                         validationResult.style.color =
                                             "red"; // Mensaje de error en rojo
 
-                                           
+
 
                                         } else {
                                             //bloquea los campos nombre y fecha de nac para que la persona no pueda escribri su informacion
@@ -2343,11 +2343,12 @@
                                             var Gender = parsedData.data[0].Gender;
 
                                             console.log(parsedData.data[0]);
-                                             
+
 
                                             //field First Name
                                             jQuery("#applicant_first").val(FirstName);
-                                            jQuery("#applicant_first").css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
+                                            jQuery("#applicant_first").css({'pointe
+                                            r-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
                                             //field LastName
                                             jQuery("#applicant_middle").val(LastName).css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
                                             //field MiddleName
@@ -2445,9 +2446,9 @@
                                     validationResult2.style.color =
                                         "red"; // Mensaje de error en rojo
                                 } else {
-                                   
 
-                                        /*REFILL FIELDS*/ 
+
+                                        /*REFILL FIELDS*/
                                         const parsedData = typeof data === 'string' ?
                                             JSON.parse(data) : data;
 
@@ -2476,7 +2477,7 @@
                                             .errorMessage;
                                         validationResult2.style.color =
                                             "red"; // Mensaje de error en rojo
-                                           
+
 
                                         } else {
                                             //bloquea los campos nombre y fecha de nac para que la persona no pueda escribri su informacion
@@ -2489,7 +2490,7 @@
                                             var DOB = parsedData.data[0].DOB;
                                             var Gender = parsedData.data[0].Gender;
 
-                                             
+
 
                                             //field First Name
                                             jQuery("#coapplicant_first").val(FirstName);

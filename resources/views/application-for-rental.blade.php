@@ -28,6 +28,19 @@
             z-index: 101;
             background-color: #333;
         }
+
+        #GroupFields{
+            opacity: 0;
+            visibility: hidden;
+            display: none;
+        }
+
+        .mostrar {
+
+            opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important
+    }
     </style>
     <div class="parallax1 bannerOurDeparment2" data-background="/images/Project-Hero.jpg" data-color="#"
         data-color-opacity="0.1" data-img-width="1000" data-img-height="1200"
@@ -98,6 +111,8 @@
 
                         <div class="row">
 
+
+
                             <!--Email-->
                             <div class="col-md-12">
                                 <div>
@@ -136,7 +151,7 @@
                                 <div>
                                     <label><b>APPLICANT: Mr. Miss. Mrs.</b></label>
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
 
                                             <select name="applicant_surname" id="applicant_surname" placeholder="Surname"
                                                 required="required">
@@ -146,22 +161,76 @@
                                                 <option value="Ms.">Ms.</option>
                                             </select>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <input name="applicant_first" type="text" id="applicant_first"
                                                 placeholder="First" required="required" />
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <input name="applicant_middle" type="text" id="applicant_middle"
                                                 placeholder="Middle" required="required" />
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 hide">
                                             <input name="maiden_name" type="text" id="maiden_name"
-                                                placeholder="Maiden Name" required="required" />
+                                                placeholder="Maiden Name" />
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
+
+                            <!--date Birth Appplicant -->
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div>
+                                            <label><b>Date of Birth:</b></label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <input name="date_of_birth" type="text" id="date_of_birth"
+                                                        placeholder="yyyy-mm-dd" required="required" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div>
+                                            <label><b>Gender:</b></label>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <input name="applicant_gender" type="text" id="applicant_gender"
+                                                         />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div>
+                                            <p style="color:red;margin: 0;font-size: 12px;line-height: 17px;margin-top: -14px;margin-bottom: 14px;">These fields cannot be edited. If this information is incorrect, please contact NHC.<br>
+                                                Phone: 1-246-536-5300  Email:  NHC.CustomerService@barbados.gov.bb</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!--Creation button Continnue -->
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div>
+                                           <button class="button text-center" id="ButtonNext" style="margin: 0 auto;display: block;">Continue</button>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--Creation button Continnue -->
 
                             <!-- date and photograph-->
                             <!--div class="col-md-12">
@@ -196,7 +265,7 @@
                                                                                                                                                                                                 </div>
                                                                                                                                                                                             </div-->
                             <!-- date and photograph-->
-
+                             <div id="GroupFields">
                             <!--TAMIS-->
                             <div class="col-md-12">
                                 <div>
@@ -204,7 +273,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <input name="tamis_number" type="text" maxlength="13" id="tamis_number"
-                                                placeholder="" required="required" />
+                                                placeholder="" />
                                         </div>
                                     </div>
                                 </div>
@@ -218,7 +287,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <input name="applicant_address" type="text" id="applicant_address"
-                                                placeholder="Address" required="required" />
+                                                placeholder="Address"  />
                                         </div>
                                     </div>
                                 </div>
@@ -232,7 +301,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <input name="applicant_address2" type="text" id="applicant_address2"
-                                                placeholder="Address" required="required" />
+                                                placeholder="Address"  />
                                         </div>
                                     </div>
                                 </div>
@@ -276,15 +345,15 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <input type="tel" id="phone_home" name="phone_home" pattern="[0-9]{10}"
-                                            placeholder="Home" required>
+                                            placeholder="Telephone" >
                                     </div>
                                     <div class="col-md-4">
                                         <input type="tel" id="phone_work" name="phone_work" pattern="[0-9]{10}"
-                                            placeholder="Work" required>
+                                            placeholder="Work" >
                                     </div>
                                     <div class="col-md-4">
                                         <input type="tel" id="phone_cell" name="phone_cell" pattern="[0-9]{10}"
-                                            placeholder="Cell" required>
+                                            placeholder="Cell" >
                                     </div>
 
                                 </div>
@@ -553,7 +622,7 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <input name="employer_field" type="text" id="employer_field"
-                                                            placeholder="" required="required" />
+                                                            placeholder=""  />
                                                     </div>
                                                 </div>
                                             </div>
@@ -564,7 +633,7 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <input name="occupation_field" type="text"
-                                                            id="occupation_field" placeholder="" required="required" />
+                                                            id="occupation_field" placeholder="" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -605,7 +674,7 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <input name="salary" type="text" id="salary"
-                                                            placeholder="" />
+                                                            placeholder="" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -703,6 +772,8 @@
                                 </div>
                             </div>
                             <!----------->
+                             </div>
+                             <!--END GROUPED FIELDS-->
 
 
 
@@ -1906,6 +1977,12 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
+
+            document.getElementById('ButtonNext').addEventListener('click', function (e) {
+                e.preventDefault();
+  document.getElementById('GroupFields').classList.toggle('mostrar');
+});
+
             // Enable submit button only when checkbox is checked
             document.getElementById("confirm_info").addEventListener("change", function() {
                 document.getElementById("submit").disabled = !this.checked;
@@ -2076,7 +2153,7 @@
                 input.addEventListener("input", function() {
                     clearTimeout(typingTimer); // Reinicia el temporizador
 
-                   
+
 
                     let number = this.value;
                     let validationResult = document.getElementById("validation-result");
@@ -2103,19 +2180,19 @@
                     if (number.length == 10) { // Solo consulta si hay al menos 5 dígitos
 
 
-                        
+
 
                         validationResult.textContent = "Validating wait a moment...";
                         validationResult.style.color = "blue"; // Loading color
                         inputFields.disabled = true; // Disable input
                         //inputFields.style.cursor = "wait"; // Change cursor
 
-                       
+
 
 
                         typingTimer = setTimeout(() => { // Espera antes de ejecutar el fetch
 
-                         
+
 
 
 
@@ -2134,7 +2211,7 @@
                                 .then(response => response.json())
                                 .then(data => {
 
-                       
+
 
 
                                     if (data.errorMessage) {
@@ -2174,7 +2251,7 @@
                                         validationResult.style.color =
                                             "red"; // Mensaje de error en rojo
 
-                                           
+
 
                                         } else {
                                             //bloquea los campos nombre y fecha de nac para que la persona no pueda escribri su informacion
@@ -2187,7 +2264,7 @@
                                             var DOB = parsedData.data[0].DOB;
                                             var Gender = parsedData.data[0].Gender;
 
-                                             
+
 
                                             //field First Name
                                             jQuery("#applicant_first").val(FirstName);
@@ -2211,7 +2288,7 @@
 
 
 
-                                      
+
                                     }
 
 
@@ -2269,7 +2346,18 @@
                             'cursor': ''
                         });
 
-                      
+                        //applicant
+                        jQuery("#date_of_birth").val("").css({
+                            'pointer-events': '',
+                            'background-color': '',
+                            'cursor': ''
+                        });
+                        jQuery("#applicant_gender").val("").css({
+                            'pointer-events': '',
+                            'background-color': '',
+                            'cursor': ''
+                        });
+
 
                     if (number.length == 10) { // Solo consulta si hay al menos 5 dígitos
                         typingTimer2 = setTimeout(() => { // Espera antes de ejecutar el fetch
@@ -2295,7 +2383,7 @@
                                     } else {
 
 
-                                        /*REFILL FIELDS*/ 
+                                        /*REFILL FIELDS*/
                                         const parsedData = typeof data === 'string' ?
                                             JSON.parse(data) : data;
 
@@ -2324,7 +2412,7 @@
                                             .errorMessage;
                                         validationResult2.style.color =
                                             "red"; // Mensaje de error en rojo
-                                           
+
 
                                         } else {
                                             //bloquea los campos nombre y fecha de nac para que la persona no pueda escribri su informacion
@@ -2337,7 +2425,7 @@
                                             var DOB = parsedData.data[0].DOB;
                                             var Gender = parsedData.data[0].Gender;
 
-                                             
+
 
                                             //field First Name
                                             jQuery("#co_applicant_name").val(FirstName);
@@ -2348,6 +2436,14 @@
                                             jQuery("#co_maiden_name").val(MiddleName).css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
                                             //field DOB
                                             jQuery("#co_date_of_birth").val(DOB ).css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
+
+                                             //applicant
+                        jQuery("#date_of_birth").val(DOB).css({
+                           'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'
+                        });
+                        jQuery("#applicant_gender").val(Gender).css({
+                           'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'
+                        });
                                             //field Gender
                                             //jQuery("#applicant_first").val(FirstName).css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
 
