@@ -1,0 +1,72 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use App\Models\LinkRequest;
+use Illuminate\Support\Facades\Mail;
+
+class LinkRequestController extends Controller
+{
+    //
+
+    public function send(Request $request)
+
+    {
+
+        $request->validate(['email_field2' => 'required|email']);
+
+        $hash = Str::uuid()->toString(); // genera un hash único
+
+        $linkRequest = LinkRequest::create([
+            'email' => $request->email_field2,
+            'hash' => $hash,
+            'type_forms' => $request->type_form,
+        ]);
+
+
+        if($request->type_form == "rental"){
+
+            $link = route('application-for-rental.hash', ['hash' => $hash]);
+
+
+
+        $htmlMessage = "
+    <p>Hello!</p>
+    <p>Click the button below to open your rental application form:</p>
+    <p><a href='$link' style='padding: 10px 20px; background-color: #274abb; color: white; text-decoration: none; border-radius: 5px;'>Open Form</a></p>
+";
+
+        // Enviar email
+        Mail::html($htmlMessage, function ($message) use ($request) {
+            $message->to($request->email_field2)
+                    ->subject('Rental Form Link');
+        });
+
+        }else{
+            //Purchase
+            $link = route('application-for-the-purchase.hash', ['hash' => $hash]);
+
+
+
+            $htmlMessage = "
+        <p>Hello!</p>
+        <p>Click the button below to open your purchases application form:</p>
+        <p><a href='$link' style='padding: 10px 20px; background-color: #274abb; color: white; text-decoration: none; border-radius: 5px;'>Open Form</a></p>
+    ";
+
+            // Enviar email
+            Mail::html($htmlMessage, function ($message) use ($request) {
+                $message->to($request->email_field2)
+                        ->subject('Purchases Form Link');
+            });
+        }
+
+
+
+
+
+        return back()->with('success', 'Email sent successfully');
+    }
+}

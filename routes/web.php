@@ -38,6 +38,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ApiSettingController;
 use App\Http\Controllers\ApiValidationController;
+use App\Http\Controllers\LinkRequestController;
+use App\Http\Controllers\LinkRequestRentalController;
+use App\Models\LinkRequest;
 
 //Route::get('/', [OurServiceController::class, 'ourservices_info2'])->name('welcome');
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
@@ -72,10 +75,34 @@ Route::get('/contact', function () {
 
 Route::post('/contact/apply', [ContactController::class, 'submitApplication'])->name('contact.apply');
 
-//application for rental Form
+//application for rental Form -  Ruta sin hash:
 Route::get('/application-for-rental', function () {
-    return view('application-for-rental');
+    return view('application-for-rental', ['showSecondForm' => false]);
 })->name('application-for-rental');
+
+
+//quien envia la data a la tabla link Request y gaurda datos de cualquier form rental or purchase
+
+Route::post('/application-for-rental/send', [LinkRequestController::class, 'send'])->name('link-request.send');
+
+//el hash en de cada url en  la tabla link Request y gaurda datos de cualquier form rental or purchase
+// Ruta con hash: segundo formulario solo si hash es válido
+Route::get('/application-for-rental/{hash}', function ($hash) {
+
+    $linkRequest = LinkRequest::where('hash', $hash)->first();
+
+    $exists = LinkRequest::where('hash', $hash)->exists();
+
+    if (! $exists) {
+        abort(403, 'Hash inválido o no autorizado.');
+    }
+
+    return view('application-for-rental', [
+        'showSecondForm' => true,
+        'hash' => $hash,
+        'email' => $linkRequest->email
+    ]);
+})->name('application-for-rental.hash');
 
 Route::post('/application-for-rental/apply', [ApplicationRentalController::class, 'submitApplication'])->name('application-for-rental.apply');
 
@@ -96,8 +123,36 @@ Route::post('/application-for-employment-weekly/apply', [ApplicationForEmploymen
 
 //Form Application for the purchase
 Route::get('/application-for-the-purchase', function () {
-    return view('application-for-the-purchase');
+    return view('application-for-the-purchase', ['showSecondForm' => false]);
 })->name('application-for-the-purchase');
+
+
+//quien envia la data a la tabla link Request y gaurda datos de cualquier form  purchase
+
+Route::post('/application-for-the-purchase/send', [LinkRequestController::class, 'send'])->name('link-request.send-purchase');
+
+//el hash en de cada url en  la tabla link Request y gaurda datos de cualquier form  purchase
+// Ruta con hash: segundo formulario solo si hash es válido
+Route::get('/application-for-the-purchase/{hash}', function ($hash) {
+
+    $linkRequest = LinkRequest::where('hash', $hash)->first();
+
+    $exists = LinkRequest::where('hash', $hash)->exists();
+
+    if (! $exists) {
+        abort(403, 'Hash inválido o no autorizado.');
+    }
+
+    return view('application-for-the-purchase', [
+        'showSecondForm' => true,
+        'hash' => $hash,
+        'email' => $linkRequest->email
+    ]);
+})->name('application-for-the-purchase.hash');
+
+
+
+
 
 Route::post('/application-for-the-purchase/apply', [ApplicationForThePurchaseController::class, 'submitApplication'])->name('application-for-the-purchase.apply');
 
@@ -118,6 +173,9 @@ Route::get('/admin/api-settings', [ApiSettingController::class, 'index'])->name(
 Route::put('/admin/api-settings', [ApiSettingController::class, 'update'])->name('admin.api-settings.update');
 
 Route::post('/validate-number', [ApiValidationController::class, 'validateNumber'])->name('validate.number');
+
+//validate email form rental - /application-for-rental
+Route::post('/validate-email', [ApiValidationController::class, 'validateEmail'])->name('validate.email');
 
 ///
 

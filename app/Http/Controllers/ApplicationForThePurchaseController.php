@@ -39,6 +39,8 @@ class ApplicationForThePurchaseController extends Controller
             'applicant_tamis_no' => $request->applicant_tamis_no,
             'applicant_address' => $request->applicant_address,
             'applicant_date_birth' => $request->applicant_date_birth,
+            'applicant_gender' => $request->applicant_gender,
+
             'applicant_phone_home' => $request->applicant_phone_home,
             'applicant_phone_work' => $request->applicant_phone_work,
             'applicant_phone_cell' => $request->applicant_phone_cell,
@@ -139,6 +141,7 @@ class ApplicationForThePurchaseController extends Controller
             'applicant_tamis_no' => $request->applicant_tamis_no,
             'applicant_address' => $request->applicant_address,
             'applicant_date_birth' => $request->applicant_date_birth,
+            'applicant_gender' => $request->applicant_gender,
             'applicant_phone_home' => $request->applicant_phone_home,
             'applicant_phone_work' => $request->applicant_phone_work,
             'applicant_phone_cell' => $request->applicant_phone_cell,

@@ -12,8 +12,11 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
+
+
 class ApplicationRentalController extends Controller
 {
+
 
     //admin Panel
     public function index()

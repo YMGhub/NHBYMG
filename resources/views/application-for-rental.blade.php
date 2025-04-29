@@ -41,6 +41,26 @@
     visibility: visible !important;
     display: block !important
     }
+
+    /*CoApplicant Fields*/
+    #DataCoApplicant{
+            opacity: 0;
+            visibility: hidden;
+            display: none;
+        }
+
+        .mostrarCoApp {
+
+            opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important
+    }
+    /*CoApplicant Fields*/
+
+    .buttonRed{
+        background:red !important;
+    }
+
     </style>
     <div class="parallax1 bannerOurDeparment2" data-background="/images/Project-Hero.jpg" data-color="#"
         data-color-opacity="0.1" data-img-width="1000" data-img-height="1200"
@@ -75,6 +95,72 @@
             <div class="col-md-12 col-sm-12">
 
                 <section id="contact">
+
+                    @if (!$showSecondForm)
+                    <!--formulario send email -->
+
+                    <div class="margin-top-35 margin-bottom-10" style="overflow:hidden !important">
+                            <!--div id="contact-message"></div-->
+                    @if (Session::has('success'))
+                    <div class="alert alert-success alert-custom alert-success-custom">
+                        {{ Session::get('success') }}
+                        @php
+                            Session::forget('success');
+                        @endphp
+                    </div>
+                @endif
+                <!-- Form Validation Error Messages -->
+                @if ($errors->any())
+                    <div class="alert alert-danger alert-custom alert-danger-custom">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                    <form action="{{ route('link-request.send') }}" method="POST">
+                        @csrf
+                        <div class="col-md-12">
+                            <div>
+                                <label><b>Enter your email address to start the application process. A verification link will be sent to your inbox.</b></label>
+
+                            </div>
+                        </div>
+                          <!--Email-->
+                          <div class="col-md-12">
+                            <div>
+                                <label><b>Email:</b></label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input name="email_field2" type="email" id="email_field2" placeholder="Email"
+                                            required="required" />
+                                            <div id="validation-result-email"
+                                            style="font-weight: bold;padding: 0;margin: 0;margin-top: -21px;display: block;font-size: 11px;">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 text-center">
+                                        <input name="type_form" type="hidden" id="type_form" value="rental" />
+                                        <button class="submit button margin-top-10" type="submit">Verify/ Submit</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!----------->
+                        <!-- campos del primer formulario -->
+
+                    </form>
+                    </div>
+                    @endif
+                    <!-------------------------->
+
+
+                    @if ($showSecondForm)
+
+                    <div class="MainGroup">
+
                     <h4 class="text-center headline margin-top-35 margin-bottom-35">
                         APPLICATION FOR RENTAL UNIT/ LOT <br>
                         USE BLOCK LETTERS</h4>
@@ -105,6 +191,8 @@
                         </div>
                     @endif
 
+
+
                     <form method="post" enctype="multipart/form-data" action="{{ route('application-for-rental.apply') }}"
                         name="applicationrental" id="applicationrental" autocomplete="on">
                         @csrf
@@ -112,20 +200,25 @@
                         <div class="row">
 
 
-
-                            <!--Email-->
-                            <div class="col-md-12">
-                                <div>
-                                    <label><b>Email:</b></label>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <input name="email_field" type="email" id="email_field" placeholder="Email"
-                                                required="required" />
+                                 <!--Email-->
+                          <div class="col-md-12">
+                            <div>
+                                <label><b>Email:</b></label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input name="email_field" type="email" id="email_field" placeholder="Email"
+                                        value="{{ $email ?? '' }}" required="required" readonly />
+                                            <div id="validation-result-email"
+                                            style="font-weight: bold;padding: 0;margin: 0;margin-top: -21px;display: block;font-size: 11px;">
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
-                            <!----------->
+                        </div>
+                        <!----------->
+
+
 
                             <!---NATIONAL REGISTRATION NUMBER--->
                             <div class="col-md-12">
@@ -153,13 +246,16 @@
                                     <div class="row">
                                         <div class="col-md-4">
 
-                                            <select name="applicant_surname" id="applicant_surname" placeholder="Surname"
+                                            <!--select name="applicant_surname" id="applicant_surname" placeholder="Surname"
                                                 required="required">
                                                 <option value="" disabled selected>Select Surname</option>
                                                 <option value="Mr.">Mr.</option>
                                                 <option value="Mrs.">Mrs.</option>
                                                 <option value="Ms.">Ms.</option>
-                                            </select>
+                                            </select-->
+
+                                            <input name="applicant_surname" type="text" id="applicant_surname"
+                                            placeholder="Surname" required="required" />
                                         </div>
                                         <div class="col-md-4">
                                             <input name="applicant_first" type="text" id="applicant_first"
@@ -205,7 +301,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12" id="MessageInformation" style="display: none">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div>
@@ -223,8 +319,9 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div>
-                                           <button class="button text-center" id="ButtonNext" style="margin: 0 auto;display: block;">Continue</button>
-
+                                        <div style="width: 100%;text-align:center;margin-bottom:10px">
+                                           <button class="button text-center" id="ButtonNext" style="margin: 0 auto;display: none;">Continue</button>
+                                        </div>
                                         </div>
                                     </div>
 
@@ -776,6 +873,302 @@
                              <!--END GROUPED FIELDS-->
 
 
+
+
+                            <!---EMPLOYER:--->
+                            <!--div class="col-md-12">
+                                                                                                                                                                                                                                                                                                                                                                                                                            <div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                <label><b>EMPLOYER:</b></label>
+                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="row">
+                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="col-md-12">
+                                                                                                                                                                                                                                                                                                                                                                                                                                        <input name="employer" type="text" id="employer" placeholder="Employer"
+                                                                                                                                                                                                                                                                                                                                                                                                                                            required="required" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                        </div-->
+                            <!---EMPLOYER:--->
+
+                            <!---OCCUPATION::--->
+                            <!--div class="col-md-12">
+                                                                                                                                                                                                                                                                                                                                                                                                                            <div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                <label><b>OCCUPATION:</b></label>
+                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="row">
+                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="col-md-12">
+                                                                                                                                                                                                                                                                                                                                                                                                                                        <input name="occupation" type="text" id="occupation"
+                                                                                                                                                                                                                                                                                                                                                                                                                                            placeholder="Occupation" required="required" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                        </div-->
+                            <!---OCCUPATION::--->
+
+                            <!---CITIZENSHIP:::--->
+                            <!--div class="col-md-12">
+                                                                                                                                                                                                                                                                                                                                                                                                                        <div>
+                                                                                                                                                                                                                                                                                                                                                                                                                            <label><b>CITIZENSHIP:</b></label>
+                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="row">
+                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="col-md-12">
+                                                                                                                                                                                                                                                                                                                                                                                                                                    <input name="citizenship" type="text" id="citizenship"
+                                                                                                                                                                                                                                                                                                                                                                                                                                        placeholder="Citizenship" required="required" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                    </div-->
+                            <!---CITIZENSHIP:::--->
+
+                            <!---TELEPHONE:::--->
+                            <!--div class="col-md-12">
+                                                                                                                                                                                                                                                                                                                                                                                                                        <div>
+                                                                                                                                                                                                                                                                                                                                                                                                                            <label><b>TELEPHONE:</b></label>
+                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="row">
+                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="col-md-12">
+                                                                                                                                                                                                                                                                                                                                                                                                                                    <input name="telephone" type="tel" id="telephone"
+                                                                                                                                                                                                                                                                                                                                                                                                                                        placeholder="Telephone" required="required" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                    </div-->
+                            <!---TELEPHONE:::--->
+
+                            <!---INCOME--->
+                            <!--div class="col-md-12">
+                                                                                                                                                                                                                                                                                                                                                                                                                        <div>
+                                                                                                                                                                                                                                                                                                                                                                                                                            <label><b>INCOME:</b></label>
+                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="row">
+                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="col-md-12">
+                                                                                                                                                                                                                                                                                                                                                                                                                                    <input name="income" type="text" id="income" placeholder="Income"
+                                                                                                                                                                                                                                                                                                                                                                                                                                        required="required" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                    </div-->
+                            <!---INCOME--->
+
+                            <!--div class="col-md-12 mt-3" style="margin-top:30px">
+                                                                                                                                                                                                                                            <div>
+                                                                                                                                                                                                                                                <div class="row">
+                                                                                                                                                                                                                                                    <div class="col-md-4">
+                                                                                                                                                                                                                                                        <label><b>SIZE OF FAMILY:</b></label>
+                                                                                                                                                                                                                                                        <input name="size_of_family" type="number" id="size_of_family"
+                                                                                                                                                                                                                                                            placeholder="Size of Family" required="required" />
+                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                    <div class="col-md-4">
+                                                                                                                                                                                                                                                        <label><b>ADULT:</b></label>
+                                                                                                                                                                                                                                                        <input name="adults" type="number" id="adults" placeholder="Adults"
+                                                                                                                                                                                                                                                            required="required" />
+                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                    <div class="col-md-4">
+                                                                                                                                                                                                                                                        <label><b>CHILDREN:</b></label>
+                                                                                                                                                                                                                                                        <input name="children" type="number" id="children" placeholder="Children"
+                                                                                                                                                                                                                                                            required="required" />
+                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                </div>
+
+                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                        </div-->
+
+                            <!---DO YOU OR YOUR SPOUSE OWN LAND/ PROPERTY?--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>DO YOU OR YOUR SPOUSE OWN LAND/ PROPERTY?</b></label>
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <div class="btn-group" data-toggle="buttons">
+                                                <label class="btn btn-primary radio-inline">
+                                                    <input class="own_landorproperty" type="radio" value="yes"
+                                                        name="own_landorproperty">Yes
+                                                </label>
+                                                <label class="btn btn-primary radio-inline">
+                                                    <input class="own_landorproperty" type="radio" value="no"
+                                                        name="own_landorproperty"> No
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---DO YOU OR YOUR SPOUSE OWN LAND/ PROPERTY?--->
+
+                            <!---IF YES, PLEASE STATE ADDRESS--->
+                            <div class="col-md-12 boxStateAddress" style="display:none">
+                                <div>
+                                    <label><b>IF YES, PLEASE STATE ADDRESS:</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input name="state_address" type="text" id="state_address"
+                                                placeholder="If Yes, Please State Address" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---INIF YES, PLEASE STATE ADDRESSCOME--->
+
+
+                            <!---ARE YOU INDEBTED TO THE N.H.C. OR ANY OTHER FINANCIAL INSITUTION?--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>ARE YOU INDEBTED TO THE N.H.C. OR ANY OTHER FINANCIAL INSTITUTION</b></label>
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <div class="btn-group" data-toggle="buttons">
+                                                <label class="btn btn-primary ">
+                                                    <input class="financial_institution" type="radio" value="yes"
+                                                        name="financial_institution">Yes
+                                                </label>
+                                                <label class="btn btn-primary">
+                                                    <input class="financial_institution" type="radio" value="no"
+                                                        name="financial_institution">
+                                                    No
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---ARE YOU INDEBTED TO THE N.H.C. OR ANY OTHER FINANCIAL INSITUTION?--->
+
+
+                            <!---IF YES, PLEASE GIVE DETAILS--->
+                            <div class="col-md-12 giveDetailBox" style="display: none">
+                                <div>
+                                    <label><b>IF YES, PLEASE GIVE DETAILS:</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input name="give_details" type="text" id="give_details"
+                                                placeholder="If Yes, Please Give Details" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---IF YES, PLEASE GIVE DETAILS--->
+
+
+                            <!---HAVE YOU EVER OCCUPIED A UNIT? IF YES, WHERE?--->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>HAVE YOU EVER OCCUPIED A UNIT? IF YES, WHERE?</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input name="occupedaunit" type="text" id="occupedaunit"
+                                                placeholder="Have you ever occupied a unit? If Yes, Where?"
+                                                required="required" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---HAVE YOU EVER OCCUPIED A UNIT? IF YES, WHERE?--->
+
+                            <!---Photograph--->
+                            <!--div class="col-md-12">
+                                                                                                                                                                                                <div>
+                                                                                                                                                                                                    <label><b>PHOTOGRAPH</b></label>
+                                                                                                                                                                                                    <div class="row">
+                                                                                                                                                                                                        <div class="col-md-12">
+                                                                                                                                                                                                            <input type="file" name="photograph"
+                                                                                                                                                                                                                accept="image/jpg, image/jpeg, image/png">
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                </div>
+                                                                                                                                                                                            </div-->
+                            <!--Photograph--->
+
+                            <!---INFORMATION ON INTENDED OCCUPANTS --->
+                            <div class="col-md-12">
+                                <div>
+                                    <label><b>INFORMATION ON INTENDED OCCUPANTS:</b></label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table table-bordered" id="dynamicTable">
+                                                <tr>
+                                                    <th>NAME</th>
+                                                    <th>RELATION</th>
+                                                    <th>AGE</th>
+                                                    <th>OCCUPATION / SCHOOL</th>
+                                                    <th>INCOME</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="text" name="addmore[0][name_occupant]"
+                                                            placeholder="Enter Name" class="form-control" /></td>
+                                                    <td><input type="text" name="addmore[0][relation_occupant]"
+                                                            placeholder="Enter Relation" class="form-control" /></td>
+                                                    <td><input type="number" name="addmore[0][age_accupant]"
+                                                            placeholder="Enter Age" class="form-control" /></td>
+                                                    <td><input type="text"
+                                                            name="addmore[0][occupation_school_occupant]"
+                                                            placeholder="Enter Occupation / School"
+                                                            class="form-control" /></td>
+                                                    <td><input type="text" name="addmore[0][income_occupant]"
+                                                            placeholder="Enter Income" class="form-control" /></td>
+                                                    <td><button type="button" name="add" id="add"
+                                                            class="btn btn-success addMore">+</button></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---INFORMATION ON INTENDED OCCUPANTS --->
+
+                            <!---DOCUMENTS --->
+                            <div class="col-md-12">
+                                <div class="ContainerDocuments">
+                                    <label><b>DOCUMENTS:</b></label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label><b>Pay Slips:</b></label>
+                                            <input style="margin-bottom: 0px;" type="file" id="payslips"
+                                                name="payslips[]" multiple />
+                                            <p id="ErrorPayslips" style="color: red;margin-bottom: 25px;"></p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label><b>ID Card (Back & Front):</b></label>
+                                            <input style="margin-bottom: 0px;" type="file" id="id_card"
+                                                name="id_card" accept=".jpg, .jpeg" />
+                                            <p id="ErrorIdCard " style="color: red;margin-bottom: 25px;"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label><b>Job Letter:</b></label>
+                                            <input style="margin-bottom: 0px;" type="file" id="job_letter"
+                                                name="job_letter" />
+                                            <p id="ErrorJobLetter " style="color: red;margin-bottom: 25px;"></p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label><b>Passport Size Photo:</b></label>
+                                            <input style="margin-bottom: 0px;" type="file" id="passport"
+                                                name="passport" accept=".png, .jpg, .jpeg" />
+                                            <p id="ErrorPassport " style="color: red;margin-bottom: 25px;"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!---DOCUMENTS --->
+
+                            <!--NUEVA POSICION DE COAPPLICANT-->
+                             <!--Creation button Continnue -->
+   <div class="col-md-12">
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+            <div style="width: 100%;text-align:center">
+               <button class="button text-center" id="ButtonAddCoApp" style="margin: 0 auto;;">Add Co-Appliant</button>
+            </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--Creation button Continnue -->
+                             <!--GROUP COAPPLICANT-->
+                             <div id="DataCoApplicant">
 
                             <!--Coapplicant-->
                             <div class="col-md-12">
@@ -1378,285 +1771,9 @@
                             </div>
                             <!----------->
 
-
-
-
-                            <!---EMPLOYER:--->
-                            <!--div class="col-md-12">
-                                                                                                                                                                                                                                                                                                                                                                                                                            <div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                <label><b>EMPLOYER:</b></label>
-                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="row">
-                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="col-md-12">
-                                                                                                                                                                                                                                                                                                                                                                                                                                        <input name="employer" type="text" id="employer" placeholder="Employer"
-                                                                                                                                                                                                                                                                                                                                                                                                                                            required="required" />
-                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                        </div-->
-                            <!---EMPLOYER:--->
-
-                            <!---OCCUPATION::--->
-                            <!--div class="col-md-12">
-                                                                                                                                                                                                                                                                                                                                                                                                                            <div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                <label><b>OCCUPATION:</b></label>
-                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="row">
-                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="col-md-12">
-                                                                                                                                                                                                                                                                                                                                                                                                                                        <input name="occupation" type="text" id="occupation"
-                                                                                                                                                                                                                                                                                                                                                                                                                                            placeholder="Occupation" required="required" />
-                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                        </div-->
-                            <!---OCCUPATION::--->
-
-                            <!---CITIZENSHIP:::--->
-                            <!--div class="col-md-12">
-                                                                                                                                                                                                                                                                                                                                                                                                                        <div>
-                                                                                                                                                                                                                                                                                                                                                                                                                            <label><b>CITIZENSHIP:</b></label>
-                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="row">
-                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="col-md-12">
-                                                                                                                                                                                                                                                                                                                                                                                                                                    <input name="citizenship" type="text" id="citizenship"
-                                                                                                                                                                                                                                                                                                                                                                                                                                        placeholder="Citizenship" required="required" />
-                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                    </div-->
-                            <!---CITIZENSHIP:::--->
-
-                            <!---TELEPHONE:::--->
-                            <!--div class="col-md-12">
-                                                                                                                                                                                                                                                                                                                                                                                                                        <div>
-                                                                                                                                                                                                                                                                                                                                                                                                                            <label><b>TELEPHONE:</b></label>
-                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="row">
-                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="col-md-12">
-                                                                                                                                                                                                                                                                                                                                                                                                                                    <input name="telephone" type="tel" id="telephone"
-                                                                                                                                                                                                                                                                                                                                                                                                                                        placeholder="Telephone" required="required" />
-                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                    </div-->
-                            <!---TELEPHONE:::--->
-
-                            <!---INCOME--->
-                            <!--div class="col-md-12">
-                                                                                                                                                                                                                                                                                                                                                                                                                        <div>
-                                                                                                                                                                                                                                                                                                                                                                                                                            <label><b>INCOME:</b></label>
-                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="row">
-                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="col-md-12">
-                                                                                                                                                                                                                                                                                                                                                                                                                                    <input name="income" type="text" id="income" placeholder="Income"
-                                                                                                                                                                                                                                                                                                                                                                                                                                        required="required" />
-                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                    </div-->
-                            <!---INCOME--->
-
-                            <!--div class="col-md-12 mt-3" style="margin-top:30px">
-                                                                                                                                                                                                                                            <div>
-                                                                                                                                                                                                                                                <div class="row">
-                                                                                                                                                                                                                                                    <div class="col-md-4">
-                                                                                                                                                                                                                                                        <label><b>SIZE OF FAMILY:</b></label>
-                                                                                                                                                                                                                                                        <input name="size_of_family" type="number" id="size_of_family"
-                                                                                                                                                                                                                                                            placeholder="Size of Family" required="required" />
-                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                    <div class="col-md-4">
-                                                                                                                                                                                                                                                        <label><b>ADULT:</b></label>
-                                                                                                                                                                                                                                                        <input name="adults" type="number" id="adults" placeholder="Adults"
-                                                                                                                                                                                                                                                            required="required" />
-                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                    <div class="col-md-4">
-                                                                                                                                                                                                                                                        <label><b>CHILDREN:</b></label>
-                                                                                                                                                                                                                                                        <input name="children" type="number" id="children" placeholder="Children"
-                                                                                                                                                                                                                                                            required="required" />
-                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                </div>
-
-                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                        </div-->
-
-                            <!---DO YOU OR YOUR SPOUSE OWN LAND/ PROPERTY?--->
-                            <div class="col-md-12">
-                                <div>
-                                    <label><b>DO YOU OR YOUR SPOUSE OWN LAND/ PROPERTY?</b></label>
-                                    <div class="row">
-
-                                        <div class="col-md-6">
-                                            <div class="btn-group" data-toggle="buttons">
-                                                <label class="btn btn-primary radio-inline">
-                                                    <input class="own_landorproperty" type="radio" value="yes"
-                                                        name="own_landorproperty">Yes
-                                                </label>
-                                                <label class="btn btn-primary radio-inline">
-                                                    <input class="own_landorproperty" type="radio" value="no"
-                                                        name="own_landorproperty"> No
-                                                </label>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!---DO YOU OR YOUR SPOUSE OWN LAND/ PROPERTY?--->
-
-                            <!---IF YES, PLEASE STATE ADDRESS--->
-                            <div class="col-md-12 boxStateAddress" style="display:none">
-                                <div>
-                                    <label><b>IF YES, PLEASE STATE ADDRESS:</b></label>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <input name="state_address" type="text" id="state_address"
-                                                placeholder="If Yes, Please State Address" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!---INIF YES, PLEASE STATE ADDRESSCOME--->
-
-
-                            <!---ARE YOU INDEBTED TO THE N.H.C. OR ANY OTHER FINANCIAL INSITUTION?--->
-                            <div class="col-md-12">
-                                <div>
-                                    <label><b>ARE YOU INDEBTED TO THE N.H.C. OR ANY OTHER FINANCIAL INSTITUTION</b></label>
-                                    <div class="row">
-
-                                        <div class="col-md-6">
-                                            <div class="btn-group" data-toggle="buttons">
-                                                <label class="btn btn-primary ">
-                                                    <input class="financial_institution" type="radio" value="yes"
-                                                        name="financial_institution">Yes
-                                                </label>
-                                                <label class="btn btn-primary">
-                                                    <input class="financial_institution" type="radio" value="no"
-                                                        name="financial_institution">
-                                                    No
-                                                </label>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!---ARE YOU INDEBTED TO THE N.H.C. OR ANY OTHER FINANCIAL INSITUTION?--->
-
-
-                            <!---IF YES, PLEASE GIVE DETAILS--->
-                            <div class="col-md-12 giveDetailBox" style="display: none">
-                                <div>
-                                    <label><b>IF YES, PLEASE GIVE DETAILS:</b></label>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <input name="give_details" type="text" id="give_details"
-                                                placeholder="If Yes, Please Give Details" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!---IF YES, PLEASE GIVE DETAILS--->
-
-
-                            <!---HAVE YOU EVER OCCUPIED A UNIT? IF YES, WHERE?--->
-                            <div class="col-md-12">
-                                <div>
-                                    <label><b>HAVE YOU EVER OCCUPIED A UNIT? IF YES, WHERE?</b></label>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <input name="occupedaunit" type="text" id="occupedaunit"
-                                                placeholder="Have you ever occupied a unit? If Yes, Where?"
-                                                required="required" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!---HAVE YOU EVER OCCUPIED A UNIT? IF YES, WHERE?--->
-
-                            <!---Photograph--->
-                            <!--div class="col-md-12">
-                                                                                                                                                                                                <div>
-                                                                                                                                                                                                    <label><b>PHOTOGRAPH</b></label>
-                                                                                                                                                                                                    <div class="row">
-                                                                                                                                                                                                        <div class="col-md-12">
-                                                                                                                                                                                                            <input type="file" name="photograph"
-                                                                                                                                                                                                                accept="image/jpg, image/jpeg, image/png">
-                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                </div>
-                                                                                                                                                                                            </div-->
-                            <!--Photograph--->
-
-                            <!---INFORMATION ON INTENDED OCCUPANTS --->
-                            <div class="col-md-12">
-                                <div>
-                                    <label><b>INFORMATION ON INTENDED OCCUPANTS:</b></label>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <table class="table table-bordered" id="dynamicTable">
-                                                <tr>
-                                                    <th>NAME</th>
-                                                    <th>RELATION</th>
-                                                    <th>AGE</th>
-                                                    <th>OCCUPATION / SCHOOL</th>
-                                                    <th>INCOME</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                                <tr>
-                                                    <td><input type="text" name="addmore[0][name_occupant]"
-                                                            placeholder="Enter Name" class="form-control" /></td>
-                                                    <td><input type="text" name="addmore[0][relation_occupant]"
-                                                            placeholder="Enter Relation" class="form-control" /></td>
-                                                    <td><input type="number" name="addmore[0][age_accupant]"
-                                                            placeholder="Enter Age" class="form-control" /></td>
-                                                    <td><input type="text"
-                                                            name="addmore[0][occupation_school_occupant]"
-                                                            placeholder="Enter Occupation / School"
-                                                            class="form-control" /></td>
-                                                    <td><input type="text" name="addmore[0][income_occupant]"
-                                                            placeholder="Enter Income" class="form-control" /></td>
-                                                    <td><button type="button" name="add" id="add"
-                                                            class="btn btn-success addMore">+</button></td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!---INFORMATION ON INTENDED OCCUPANTS --->
-
-                            <!---DOCUMENTS --->
-                            <div class="col-md-12">
-                                <div class="ContainerDocuments">
-                                    <label><b>DOCUMENTS:</b></label>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label><b>Pay Slips:</b></label>
-                                            <input style="margin-bottom: 0px;" type="file" id="payslips"
-                                                name="payslips[]" multiple />
-                                            <p id="ErrorPayslips" style="color: red;margin-bottom: 25px;"></p>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label><b>ID Card (Back & Front):</b></label>
-                                            <input style="margin-bottom: 0px;" type="file" id="id_card"
-                                                name="id_card" accept=".jpg, .jpeg" />
-                                            <p id="ErrorIdCard " style="color: red;margin-bottom: 25px;"></p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label><b>Job Letter:</b></label>
-                                            <input style="margin-bottom: 0px;" type="file" id="job_letter"
-                                                name="job_letter" />
-                                            <p id="ErrorJobLetter " style="color: red;margin-bottom: 25px;"></p>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label><b>Passport Size Photo:</b></label>
-                                            <input style="margin-bottom: 0px;" type="file" id="passport"
-                                                name="passport" accept=".png, .jpg, .jpeg" />
-                                            <p id="ErrorPassport " style="color: red;margin-bottom: 25px;"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!---DOCUMENTS --->
+                             </div>
+                            <!--CLOSE GROUP DataCoApplicant COAPPLICANT-->
+                            <!--NUEVA POSICION DE COAPPLICANT-->
 
                             <!--h4 class="text-center headline margin-top-35 margin-bottom-35">
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 FOR OFFICIAL USE</h4-->
@@ -1961,6 +2078,12 @@
                         <input type="submit" class="submit button" id="submit" value="Submit" />
 
                     </form>
+
+                    </div>
+                    @endif
+                    <!--close div MainGroup group allFields without hash -->
+
+
                 </section>
             </div>
             <!-- Contact Form / End -->
@@ -1977,11 +2100,30 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
-
+            //campos appllicant
             document.getElementById('ButtonNext').addEventListener('click', function (e) {
                 e.preventDefault();
   document.getElementById('GroupFields').classList.toggle('mostrar');
 });
+
+            //campos Co Appllicant
+            document.getElementById('ButtonAddCoApp').addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const coAppSection = document.getElementById('DataCoApplicant');
+                const button = document.getElementById('ButtonAddCoApp');
+
+                coAppSection.classList.toggle('mostrarCoApp');
+
+                if (coAppSection.classList.contains('mostrarCoApp')) {
+                    button.textContent = 'Remove Co-Applicant';
+                    button.classList.add('buttonRed');
+
+                } else {
+                    button.classList.remove('buttonRed');
+                    button.textContent = 'Add Co-Applicant';
+                }
+            });
 
             // Enable submit button only when checkbox is checked
             document.getElementById("confirm_info").addEventListener("change", function() {
@@ -2142,6 +2284,118 @@
                 }
             });
 
+            /*VALIDATE EMAIL */
+            /*const emailInput = document.getElementById("email_field");
+            const validationResultEmail = document.getElementById("validation-result-email");
+            let typingTimerEmail;
+            const doneTypingIntervalEmail = 1000;
+
+
+            emailInput.addEventListener("input", () => {
+                clearTimeout(typingTimerEmail);
+
+                const emailValue = emailInput.value.trim();
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+                if (emailRegex.test(emailValue)) {
+
+                    validationResultEmail.textContent = "Validating, wait a moment...";
+                    validationResultEmail.style.color = "blue";
+
+                    fetch("{{ route('validate.email') }}", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-CSRF-TOKEN": "{{ csrf_token() }}"
+                    },
+                    body: JSON.stringify({ email_user: emailValue })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+
+
+                    var hashGenerate = data.hash;
+
+                    if (data.valido) {
+                        validationResultEmail.textContent = "Valid Email ✅";
+                        validationResultEmail.style.color = "green";
+                        // Mostrar campos extra o continuar
+                    } else {
+                        validationResultEmail.textContent = "Invalid Email ❌";
+                        validationResultEmail.style.color = "red";
+                    }
+
+                    inputFields.forEach(el => el.disabled = false);
+                }).catch(error => {
+                    validationResultEmail.textContent = "Validation Error";
+                    validationResultEmail.style.color = "red";
+
+
+                });
+
+
+                }
+
+
+            });*/
+
+            /*inputFieldEmail.forEach(input => {
+                input.addEventListener("input", function() {
+                    clearTimeout(typingTimerEmail); // Reinicia el temporizador
+
+                    let emailValue = this.value;
+
+                    let validationResultEmail = document.getElementById("validation-result-email");
+
+                    if (emailValue.length > 0) {
+
+
+                        validationResultEmail.textContent = "Validating wait a moment...";
+                        validationResultEmail.style.color = "blue"; // Loading color
+                        inputFields.disabled = true; // Disable input
+
+                        typingTimerEmail = setTimeout(() => { // Espera antes de ejecutar el fetch
+
+                            fetch("{{ route('validate.email') }}", {
+                                    method: "POST",
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                        "X-CSRF-TOKEN": "{{ csrf_token() }}"
+                                    },
+                                    body: JSON.stringify({
+                                        email_user: emailValue,
+
+
+                                    })
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log(data);
+                                })
+                                .catch(error => {
+                                    document.getElementById("validation-result")
+                                        .textContent = "Validation error";
+                                    console.error("Error:", error);
+                                });
+                        }, doneTypingIntervalEmail);
+
+
+
+
+
+
+
+
+
+                    }
+
+
+                });
+
+            });*/
+            /*VALIDATE EMAIL */
+
 
             //number national 1
             const inputFields = document.querySelectorAll("#national_registration_number");
@@ -2177,6 +2431,29 @@
                             'cursor': ''
                         });
 
+                        jQuery("#date_of_birth").val("").css({
+                            'pointer-events': '',
+                            'background-color': '',
+                            'cursor': ''
+                        });
+
+                        jQuery("#applicant_gender").val("").css({
+                            'pointer-events': '',
+                            'background-color': '',
+                            'cursor': ''
+                        });
+
+
+
+
+                        jQuery("#applicant_surname").val("").css({
+                            'pointer-events': '',
+                            'background-color': '',
+                            'cursor': ''
+                        });
+
+
+
                     if (number.length == 10) { // Solo consulta si hay al menos 5 dígitos
 
 
@@ -2205,7 +2482,8 @@
                                     },
                                     body: JSON.stringify({
                                         number_national: number,
-                                        type_form: "Rental"
+                                        type_form: "Rental",
+                                        co_app: 0
                                     })
                                 })
                                 .then(response => response.json())
@@ -2246,14 +2524,19 @@
                                             //desbloquea los campos par que la persona pueda escribri su informacion
                                             console.log("La información está vacía.");
 
-                                            validationResult.textContent = data
-                                            .errorMessage;
+
+                                            validationResult.textContent = "Invalid Number";
                                         validationResult.style.color =
                                             "red"; // Mensaje de error en rojo
 
 
+                                            jQuery("#MessageInformation").hide();
+                                            jQuery("#ButtonNext").hide();
+
 
                                         } else {
+                                            jQuery("#MessageInformation").show();
+                                            jQuery("#ButtonNext").show();
                                             //bloquea los campos nombre y fecha de nac para que la persona no pueda escribri su informacion
                                             //FirstName,MiddleName,LastName,DOB FechaNac
                                             var FirstName = parsedData.data[0]
@@ -2263,6 +2546,7 @@
                                                 .MiddleName;
                                             var DOB = parsedData.data[0].DOB;
                                             var Gender = parsedData.data[0].Gender;
+                                            var Surname = parsedData.data[0].Salutation;
 
 
 
@@ -2274,9 +2558,12 @@
                                             //field MiddleName
                                             jQuery("#maiden_name").val(MiddleName).css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
                                             //field DOB
-                                            //jQuery("#maiden_name").val(FirstName).css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
+                                            jQuery("#date_of_birth").val(DOB).css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
                                             //field Gender
-                                            //jQuery("#applicant_first").val(FirstName).css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
+                                            jQuery("#applicant_gender").val(Gender).css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
+
+                                            //field Saludation
+                                            jQuery("#applicant_surname").val(Surname).css({'pointer-events': 'none','background-color': '#f5f5f5','cursor': 'not-allowed'});;
 
                                             validationResult.textContent = "Valid number";
                                         validationResult.style.color =

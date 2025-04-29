@@ -19,6 +19,7 @@ class ApplicationForThePurchase extends Model
         'applicant_tamis_no',
         'applicant_address',
         'applicant_date_birth',
+        'applicant_gender',
         'applicant_phone_home',
         'applicant_phone_work',
         'applicant_phone_cell',
