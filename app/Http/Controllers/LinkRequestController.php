@@ -39,10 +39,27 @@ class LinkRequestController extends Controller
 ";
 
         // Enviar email
-        Mail::html($htmlMessage, function ($message) use ($request) {
+        /*Mail::html($htmlMessage, function ($message) use ($request) {
             $message->to($request->email_field2)
                     ->subject('Rental Form Link');
-        });
+        });*/
+
+        try {
+            Mail::html($htmlMessage, function ($message) use ($request) {
+                $message->to($request->email_field2)
+                        ->subject('Rental Form Link');
+            });
+
+            // Opcional: mensaje de éxito para debugging
+            Log::info('Mail successfully sent to: ' . $request->email_field2);
+
+        } catch (Exception $e) {
+            // Registrar el error
+            Log::error('Error sending the mail: ' . $e->getMessage());
+
+            // Si deseas, puedes también devolver un error al usuario
+            return back()->with('error', 'The mail could not be sent. Please try again.');
+        }
 
         }else{
             //Purchase
