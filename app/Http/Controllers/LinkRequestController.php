@@ -55,6 +55,8 @@ class LinkRequestController extends Controller
             // Opcional: mensaje de éxito para debugging
             Log::info('Mail successfully sent to: ' . $request->email_field2);
 
+            return back()->with('success', 'Email sent successfully');
+
         } catch (Exception $e) {
             // Registrar el error
             Log::error('Error sending the mail: ' . $e->getMessage());
@@ -80,12 +82,14 @@ class LinkRequestController extends Controller
                 $message->to($request->email_field2)
                         ->subject('Purchases Form Link');
             });
+
+             return back()->with('success', 'Email sent successfully');
         }
 
 
 
 
 
-        return back()->with('success', 'Email sent successfully');
+
     }
 }
