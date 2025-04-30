@@ -14,8 +14,8 @@ class ApiValidationController extends Controller {
         if (!$apiSetting || !$apiSetting->api_url || !$apiSetting->auth_key || !$apiSetting->auth_value) {
             return response()->json(['error' => 'Configuración de API no encontrada.'], 400);
         }
-        
-        
+
+
 
         //ApplicationType 2=rental and 3 purchase
         $typeApplication = 2;
@@ -31,8 +31,11 @@ class ApiValidationController extends Controller {
                 $apiSetting->auth_key => $apiSetting->auth_value
             ])->post($apiSetting->api_url, [
                 'NRN' => $request->number_national,
-                'Applicationtype' => $typeApplication
+                'Applicationtype' => $typeApplication,
+                'CoApp' => 0
             ]);
+
+
 
             return response()->json($response->json());
         } catch (\Exception $e) {
