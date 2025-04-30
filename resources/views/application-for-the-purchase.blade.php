@@ -32,6 +32,14 @@
         background:red !important;
     }
    /*CoApplicant Fields*/
+
+
+   .hideArea{
+        display: none;
+    }
+    .hideArea2{
+        display: none;
+    }
 </style>
 <div class="parallax bannerOurDeparment" data-background="images/Project-Hero.jpg" data-color="#" data-color-opacity="0.1"
    data-img-width="1000" data-img-height="1200"
@@ -62,8 +70,17 @@
    <div class="margin-top-35 margin-bottom-10" style="overflow:hidden !important">
       <!--div id="contact-message"></div-->
       @if (Session::has('success'))
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+           const form = document.getElementById("FormRequestPurchase");
+           if (form) {
+              form.style.display = "none";
+           }
+        });
+     </script>
       <div class="alert alert-success alert-custom alert-success-custom">
          {{ Session::get('success') }}
+
          @php
          Session::forget('success');
          @endphp
@@ -79,7 +96,7 @@
          </ul>
       </div>
       @endif
-      <form action="{{ route('link-request.send-purchase') }}" method="POST">
+      <form action="{{ route('link-request.send-purchase') }}" method="POST" id="FormRequestPurchase">
          @csrf
          <div class="col-md-12">
             <div>
@@ -191,7 +208,7 @@
                      </div>
                   </div>
                   <!----------->
-                  <div class="col-md-12">
+                  <div class="col-md-12 hideArea">
                      <div>
                         <div class="row">
                            <div class="col-md-4">
@@ -251,7 +268,7 @@
                      </div-->
                   <!----------->
                   <!----------->
-                  <div class="col-md-12">
+                  <div class="col-md-12 hideArea">
                      <div>
                         <div class="row">
                            <div class="col-md-6">
@@ -290,7 +307,7 @@
                   </div>
                   <!----------->
                   <!--Creation button Continnue -->
-                  <div class="col-md-12">
+                  <div class="col-md-12 hideArea">
                      <div class="row">
                         <div class="col-md-12">
                            <div>
@@ -1015,14 +1032,14 @@
                         </div-->
                      <!------------>
                      <!---------------------->
-                     <div class="col-md-12" style="margin-top:30px;display:block">
+                     <div class="col-md-12 hideArea" style="margin-top:30px">
                         <div>
                            <label><b>APPLICATION TYPE:</b></label>
                         </div>
                      </div>
                      <!--------------->
                      <!--HOUSE TYPE-->
-                     <div class="col-md-12">
+                     <div class="col-md-12 hideArea">
                         <div>
                            <label><b>HOUSE TYPE:</b></label>
                            <div class="row">
@@ -1084,7 +1101,7 @@
                         </div-->
                      <!--PREFERRED HOUSE TYPE:-->
                      <!--PREFERRED HOUSE TYPE:-->
-                     <div class="col-md-12">
+                     <div class="col-md-12 hideArea">
                         <div>
                            <label><b>PREFERRED HOUSE TYPE:</b></label>
                            <div class="row">
@@ -1103,7 +1120,7 @@
                      </div>
                      <!--PREFERRED HOUSE TYPE:-->
                      <!---INFORMATION ON INTENDED OCCUPANTS --->
-                     <div class="col-md-12">
+                     <div class="col-md-12 hideArea">
                         <div>
                            <label><b>INFORMATION ON INTENDED OCCUPANTS:</b></label>
                            <div class="row">
@@ -1171,7 +1188,7 @@
                         </div-->
                      <!----------->
                      <!--ARE THERE ANY PERSONS WITH DISABILITIES WITHIN THE HOUSEHOLD?-->
-                     <div class="col-md-12">
+                     <div class="col-md-12 hideArea">
                         <div>
                            <label><b>ARE THERE ANY PERSONS WITH DISABILITIES WITHIN THE
                            HOUSEHOLD?:</b></label>
@@ -1191,7 +1208,7 @@
                      </div>
                      <!--ARE THERE ANY PERSONS WITH DISABILITIES WITHIN THE HOUSEHOLD?-->
                      <!---ALTERNATIVE SOURCES--->
-                     <div class="col-md-12">
+                     <div class="col-md-12 hideArea">
                         <div>
                            <label><b>ALTERNATIVE SOURCES OF INCOME IN HOUSEHOLD: (Maintenance, Alimony,
                            Second Job,
@@ -1225,7 +1242,7 @@
                   </div>
                   <!---ALTERNATIVE SOURCES --->
                   <!--Are you currently renting?-->
-                  <div class="col-md-12">
+                  <div class="col-md-12 hideArea">
                      <div>
                         <label><b>Are you currently renting?</b></label>
                         <div class="row">
@@ -1255,7 +1272,7 @@
                   </div>
                   <!--Are you currently renting?-->
                   <!--Do you have your own land and wish us to provide you with a Housing solution?-->
-                  <div class="col-md-12">
+                  <div class="col-md-12 hideArea">
                      <div>
                         <label><b>Do you wish us to provide a housing solution on land you own?</b></label>
                         <div class="row">
@@ -1286,7 +1303,7 @@
                   </div>
                   <!--prompt the applicant to provide the location of the land lot.-->
                   <!--Are you a tenant of the land on which you wish to build your Housing solution?-->
-                  <div class="col-md-12">
+                  <div class="col-md-12 hideArea">
                      <div>
                         <label><b>Do you wish the NHC to provide a housing solution on land you do not own
                         (and not
@@ -1321,14 +1338,14 @@
                   </div>
                   <!--Are you currently renting?-->
                   <!--FINANCING OF PROPERTY/LAND:-->
-                  <div class="col-md-12" style="margin-top:20px">
+                  <div class="col-md-12 hideArea" style="margin-top:20px">
                      <div>
                         <label style="text-align: center"><b>FINANCING OF PROPERTY/LAND:</b></label>
                      </div>
                   </div>
                   <!--FINANCING OF PROPERTY/LAND:-->
                   <!--How will you finance the purchase of property / land?-->
-                  <div class="col-md-12">
+                  <div class="col-md-12 hideArea">
                      <div>
                         <label><b>How will you finance the purchase of property / land?</b></label>
                         <div class="row">
@@ -1461,7 +1478,7 @@
                   <!--dateend-->
                   <!--ES NUEVA POSICION DEL COAPPLICANT FIELDS-->
                        <!--Creation button Continnue -->
-                       <div class="col-md-12">
+                       <div class="col-md-12 hideArea">
                         <div class="row">
                            <div class="col-md-12">
                               <div>
@@ -1476,7 +1493,29 @@
                      <!--CoApplicant-->
                      <!--GROUP COAPPLICANT-->
                      <div id="DataCoApplicant">
-                        <div class="col-md-12" style="margin-top:20px;display:block">
+
+                        <div class="col-md-12">
+                            <div>
+                               <div class="row">
+                                  <div class="col-md-12">
+                                     <label><b>NATIONAL REGISTRATION NUMBER:</b></label>
+                                     <div class="row">
+                                        <div class="col-md-12">
+                                           <input maxlength="10" pattern="\d{10}"
+                                              name="coapplicant_national_registration_number" type="text"
+                                              id="coapplicant_national_registration_number"
+                                              placeholder="National Registration Number" />
+                                           <div id="validation-result2"
+                                              style="font-weight: bold;padding: 0;margin: 0;margin-top: -21px;display: block;font-size: 11px;">
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 hideArea2" style="margin-top:20px;">
                            <label><b>CO-APPLICANT (Optional)</b></label>
                            <div>
                               <div class="row">
@@ -1504,7 +1543,7 @@
                            </div>
                         </div>
                         <!----------->
-                        <div class="col-md-12">
+                        <div class="col-md-12 hideArea2">
                            <div>
                               <div class="row">
                                  <div class="col-md-6">
@@ -1530,29 +1569,10 @@
                         </div>
                         <!----------->
                         <!----------->
-                        <div class="col-md-12">
-                           <div>
-                              <div class="row">
-                                 <div class="col-md-12">
-                                    <label><b>NATIONAL REGISTRATION NUMBER:</b></label>
-                                    <div class="row">
-                                       <div class="col-md-12">
-                                          <input maxlength="10" pattern="\d{10}"
-                                             name="coapplicant_national_registration_number" type="text"
-                                             id="coapplicant_national_registration_number"
-                                             placeholder="National Registration Number" />
-                                          <div id="validation-result2"
-                                             style="font-weight: bold;padding: 0;margin: 0;margin-top: -21px;display: block;font-size: 11px;">
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                       </div>
+
                            <!----------->
                            <!----------->
-                           <div class="col-md-12">
+                           <div class="col-md-12 hideArea2">
                               <div>
                                  <div class="row">
                                     <div class="col-md-12">
@@ -1569,7 +1589,7 @@
                            </div>
                            <!----------->
                            <!----------->
-                           <div class="col-md-12">
+                           <div class="col-md-12 hideArea2">
                               <div>
                                  <div class="row">
                                     <div class="col-md-12">
@@ -1586,7 +1606,7 @@
                            </div>
                            <!----------->
                            <!----------->
-                           <div class="col-md-12">
+                           <div class="col-md-12 hideArea2">
                               <div>
                                  <div class="row">
                                     <div class="col-md-12">
@@ -1603,7 +1623,7 @@
                            </div>
                            <!----------->
                            <!----------->
-                           <div class="col-md-12">
+                           <div class="col-md-12 hideArea2">
                               <div>
                                  <div class="row">
                                     <div class="col-md-12">
@@ -1620,7 +1640,7 @@
                            </div>
                            <!----------->
                            <!----------->
-                           <div class="col-md-12">
+                           <div class="col-md-12 hideArea2">
                               <div>
                                  <div class="row">
                                     <div class="col-md-12">
@@ -1637,7 +1657,7 @@
                            </div>
                            <!----------->
                            <!----------->
-                           <div class="col-md-12" style="    margin-bottom: 20px;">
+                           <div class="col-md-12 hideArea2" style="    margin-bottom: 20px;">
                               <div>
                                  <div class="row">
                                     <div class="col-md-12">
@@ -1668,7 +1688,7 @@
                            </div>
                            <!----------->
                            <!----------->
-                           <div class="col-md-12">
+                           <div class="col-md-12 hideArea2">
                               <div>
                                  <label for="">TELEPHONE NUMBER:</label>
                                  <div class="row">
@@ -1705,7 +1725,7 @@
                            <!----------->
                            <!--email co Applicant -->
                            <!----------->
-                           <div class="col-md-12">
+                           <div class="col-md-12 hideArea2">
                               <div>
                                  <div class="row">
                                     <div class="col-md-12">
@@ -1722,7 +1742,7 @@
                            </div>
                            <!----------->
                            <!--Marital Status / Co applicant-->
-                           <div class="col-md-12">
+                           <div class="col-md-12 hideArea2">
                               <div>
                                  <label><b>Marital Status:</b></label>
                                  <div class="row">
@@ -1781,7 +1801,7 @@
                            <!----------->
                            <!--nuevos campos co applicant 2025--->
                            <!----------->
-                           <div class="col-md-12">
+                           <div class="col-md-12 hideArea2">
                               <div>
                                  <div class="row">
                                     <div class="col-md-6" style="    margin-bottom: 20px;">
@@ -1969,7 +1989,7 @@
                            </div>
                            <!----------->
                            <!---Employer and Occupation--->
-                           <div class="col-md-12">
+                           <div class="col-md-12 hideArea2">
                               <div>
                                  <div class="row">
                                     <div class="col-md-6">
@@ -1999,7 +2019,7 @@
                            </div>
                            <!---Employer and Occupation--->
                            <!---Period of Employment  and Salary--->
-                           <div class="col-md-12">
+                           <div class="col-md-12 hideArea2">
                               <div>
                                  <div class="row">
                                     <div class="col-md-6">
@@ -2038,7 +2058,7 @@
                            </div>
                            <!---Period of Employment  and Salary--->
                            <!--Pay Period-->
-                           <div class="col-md-12">
+                           <div class="col-md-12 hideArea2">
                               <div>
                                  <label><b>Pay Period:</b></label>
                                  <div class="row">
@@ -2079,7 +2099,7 @@
                            </div>
                            <!----------->
                            <!--Employment status-->
-                           <div class="col-md-12">
+                           <div class="col-md-12 hideArea2">
                               <div>
                                  <label><b>Employment Status:</b></label>
                                  <div class="row">
@@ -2124,7 +2144,7 @@
 
                   <!--NOTE-->
 
-                  <div class="col-md-12">
+                  <div class="col-md-12 hideArea">
                      <div>
                         <div class="row">
                            <div class="col-md-12">
@@ -2146,7 +2166,7 @@
                   </div>
                   <!--NOTE-->
                   <!--dateend-->
-                  <div class="col-md-12">
+                  <div class="col-md-12 hideArea">
                      <div>
                         <div class="row">
                            <div class="col-md-12">
@@ -2313,10 +2333,12 @@
 
                                            jQuery("#MessageInformation").hide();
                                            jQuery("#ButtonNext").hide();
+                                           jQuery(".HideArea").hide();
 
 
 
                                        } else {
+                                           jQuery(".HideArea").show();
                                            jQuery("#MessageInformation").show();
                                            jQuery("#ButtonNext").show();
                                            //bloquea los campos nombre y fecha de nac para que la persona no pueda escribri su informacion
@@ -2470,8 +2492,16 @@
                                        validationResult2.style.color =
                                            "red"; // Mensaje de error en rojo
 
+                                           jQuery(".hideArea2").hide();
+                                            jQuery("#MessageInformation").hide();
+                                            jQuery("#ButtonNext").hide();
+
 
                                        } else {
+
+                                            jQuery(".hideArea2").show();
+                                            jQuery("#MessageInformation").show();
+                                            jQuery("#ButtonNext").show();
                                            //bloquea los campos nombre y fecha de nac para que la persona no pueda escribri su informacion
                                            //FirstName,MiddleName,LastName,DOB FechaNac
                                            var FirstName = parsedData.data[0]

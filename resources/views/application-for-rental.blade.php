@@ -110,6 +110,14 @@
                         <div class="margin-top-35 margin-bottom-10" style="overflow:hidden !important">
                             <!--div id="contact-message"></div-->
                             @if (Session::has('success'))
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function() {
+                                   const form = document.getElementById("FormRequestRental");
+                                   if (form) {
+                                      form.style.display = "none";
+                                   }
+                                });
+                             </script>
                                 <div class="alert alert-success alert-custom alert-success-custom">
                                     {{ Session::get('success') }}
                                     @php
@@ -128,7 +136,7 @@
                                 </div>
                             @endif
 
-                            <form action="{{ route('link-request.send') }}" method="POST">
+                            <form action="{{ route('link-request.send') }}" method="POST" id="FormRequestRental">
                                 @csrf
                                 <div class="col-md-12">
                                     <div>
