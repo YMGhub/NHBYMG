@@ -914,8 +914,7 @@
                                             </div>
                                         </div>
                                         <!----------->
-                                    </div>
-                                    <!--END GROUPED FIELDS-->
+
 
 
 
@@ -1074,7 +1073,7 @@
                                                                     placeholder="Enter Occupation / School"
                                                                     class="form-control" /></td>
                                                             <td><input type="text" name="addmore[0][income_occupant]"
-                                                                    placeholder="Enter Income" class="form-control" />
+                                                                    placeholder="Enter Income" class="form-control incomeField" />
                                                             </td>
                                                             <td><button type="button" name="add" id="add"
                                                                     class="btn btn-success addMore">+</button></td>
@@ -1170,14 +1169,10 @@
 
                                                     <div class="col-md-3">
 
-                                                        <select name="co_applicant_surname" id="co_applicant_surname"
-                                                            placeholder="Surname" required="required">
-                                                            <option value="" disabled selected>Select Surname
-                                                            </option>
-                                                            <option value="Mr.">Mr.</option>
-                                                            <option value="Mrs.">Mrs.</option>
-                                                            <option value="Ms.">Ms.</option>
-                                                        </select>
+
+                                                        <input name="co_applicant_surname" type="text"
+                                                        id="co_applicant_surname" placeholder="SurName"
+                                                         />
                                                     </div>
                                                     <div class="col-md-3">
                                                         <input name="co_applicant_name" type="text"
@@ -1823,6 +1818,8 @@
                                     <div class="col-md-12 hideArea">
                                         <input type="submit" class="submit button" id="submit" value="Submit" />
                                     </div>
+                                </div>
+                                <!--END GROUPED FIELDS-->
 
                                 </div>
 
@@ -2120,6 +2117,20 @@
                     }
                 });
             });
+
+              //Age field
+
+              document.querySelectorAll('.incomeField').forEach(function(input) {
+                input.addEventListener('input', function(e) {
+                    const value = e.target.value;
+
+                    // Si el valor es menor que 0, lo corrige automáticamente a 0
+                    if (value !== '' && parseInt(value) < 0) {
+                        e.target.value = 0;
+                    }
+                });
+            });
+
 
 
             //salary
@@ -2454,7 +2465,7 @@
             <td><input type="text" name="addmore[${i}][relation_occupant]" placeholder="Enter Relation" class="form-control" /></td>
             <td><input type="number " name="addmore[${i}][age_accupant]" placeholder="Enter Age" class="form-control ageField" /></td>
             <td><input type="text" name="addmore[${i}][occupation_school_occupant]" placeholder="Enter Occupation / School" class="form-control" /></td>
-            <td><input type="text" name="addmore[${i}][income_occupant]" placeholder="Enter Income" class="form-control" /></td>
+            <td><input type="text" name="addmore[${i}][income_occupant]" placeholder="Enter Income" class="form-control incomeField" /></td>
             <td><button type="button" class="btn btn-danger remove-tr">delete</button></td>
         `;
 
@@ -2467,6 +2478,15 @@
             // Validar cualquier input con clase .ageField (incluso los que se agregan luego)
             document.addEventListener('input', function(e) {
                 if (e.target.classList.contains('ageField')) {
+                    let value = e.target.value;
+                    value = value.replace(/[^0-9]/g, ''); // Solo números
+                    e.target.value = value !== '' ? Math.max(0, parseInt(value)) : '';
+                }
+            });
+
+            //income field
+            document.addEventListener('input', function(e) {
+                if (e.target.classList.contains('incomeField')) {
                     let value = e.target.value;
                     value = value.replace(/[^0-9]/g, ''); // Solo números
                     e.target.value = value !== '' ? Math.max(0, parseInt(value)) : '';
@@ -2834,6 +2854,11 @@
                     //inputFields2.style.cursor = "wait"; // Change cursor
 
                     //Limpiar campos cada vez que se vuelve a escribir
+                    jQuery("#co_applicant_surname").val("").css({
+                        'pointer-events': '',
+                        'background-color': '',
+                        'cursor': ''
+                    });
                     jQuery("#co_applicant_name").val("").css({
                         'pointer-events': '',
                         'background-color': '',
@@ -2941,10 +2966,17 @@
                                                 .MiddleName;
                                             var DOB = parsedData.data[0].DOB;
                                             var Gender = parsedData.data[0].Gender;
+                                            var Salutation = parsedData.data[0].Salutation;
 
 
 
                                             //field First Name
+                                            jQuery("#co_applicant_surname").val(Salutation);
+                                            jQuery("#co_applicant_surname").css({
+                                                'pointer-events': 'none',
+                                                'background-color': '#f5f5f5',
+                                                'cursor': 'not-allowed'
+                                            });;
                                             jQuery("#co_applicant_name").val(FirstName);
                                             jQuery("#co_applicant_name").css({
                                                 'pointer-events': 'none',
