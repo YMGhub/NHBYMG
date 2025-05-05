@@ -62,11 +62,11 @@
             background: red !important;
         }
 
-        .hideArea{
+        .hideArea {
             display: none;
         }
 
-        .hideArea2{
+        .hideArea2 {
             display: none;
         }
     </style>
@@ -110,14 +110,14 @@
                         <div class="margin-top-35 margin-bottom-10" style="overflow:hidden !important">
                             <!--div id="contact-message"></div-->
                             @if (Session::has('success'))
-                            <script>
-                                document.addEventListener("DOMContentLoaded", function() {
-                                   const form = document.getElementById("FormRequestRental");
-                                   if (form) {
-                                      form.style.display = "none";
-                                   }
-                                });
-                             </script>
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function() {
+                                        const form = document.getElementById("FormRequestRental");
+                                        if (form) {
+                                            form.style.display = "none";
+                                        }
+                                    });
+                                </script>
                                 <div class="alert alert-success alert-custom alert-success-custom">
                                     {{ Session::get('success') }}
                                     @php
@@ -254,6 +254,7 @@
                                                             id="national_registration_number"
                                                             placeholder="National Registration Number"
                                                             required="required" />
+                                                        <div id="mensaje"></div>
                                                         <div id="validation-result"
                                                             style="font-weight: bold;padding: 0;margin: 0;margin-top: -21px;display: block;font-size: 11px;">
                                                         </div>
@@ -267,7 +268,7 @@
 
                                     <div class="col-md-12 hideArea">
                                         <div>
-                                            <label><b>APPLICANT: Mr. Miss. Mrs.</b></label>
+                                            <label><b>APPLICANT:</b></label>
                                             <div class="row">
                                                 <div class="col-md-4">
 
@@ -434,15 +435,15 @@
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <input type="tel" id="phone_home" name="phone_home"
-                                                        pattern="[0-9]{10}" placeholder="Telephone">
+                                                        placeholder="Home" pattern="^\(\d{3}\) - \d{3}-\d{4}$">
                                                 </div>
                                                 <div class="col-md-4">
                                                     <input type="tel" id="phone_work" name="phone_work"
-                                                        pattern="[0-9]{10}" placeholder="Work">
+                                                        pattern="^\(\d{3}\) - \d{3}-\d{4}$" placeholder="Work">
                                                 </div>
                                                 <div class="col-md-4">
                                                     <input type="tel" id="phone_cell" name="phone_cell"
-                                                        pattern="[0-9]{10}" placeholder="Cell">
+                                                        pattern="^\(\d{3}\) - \d{3}-\d{4}$" placeholder="Cell">
                                                 </div>
 
                                             </div>
@@ -800,8 +801,8 @@
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <input name="salary" type="text" id="salary"
-                                                                        placeholder=""
-                                                                        oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                                                                        placeholder="" inputmode="decimal">
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1001,10 +1002,35 @@
                                     <!---IF YES, PLEASE GIVE DETAILS--->
 
 
-                                    <!---HAVE YOU EVER OCCUPIED A UNIT? IF YES, WHERE?--->
-                                    <div class="col-md-12 hideArea">
+                                    <!---IF YES, OCCUPIED A UNIT--->
+                                    <div class="col-md-12 hideArea ">
                                         <div>
                                             <label><b>HAVE YOU EVER OCCUPIED A UNIT? IF YES, WHERE?</b></label>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="btn-group" data-toggle="buttons">
+                                                        <label class="btn btn-primary ">
+                                                            <input class="occuppiedUnit" type="radio" value="yes"
+                                                                name="occuppiedUnit">Yes
+                                                        </label>
+                                                        <label class="btn btn-primary">
+                                                            <input class="occuppiedUnit" type="radio" value="no"
+                                                                name="occuppiedUnit">
+                                                            No
+                                                        </label>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!---IF YES, OCCUPIED A UNIT--->
+
+
+                                    <!---HAVE YOU EVER OCCUPIED A UNIT? IF YES, WHERE?--->
+                                    <div class="col-md-12 occuppiedUnitArea" style="display: none">
+                                        <div>
+                                            <label><b>IF YES, PLEASE GIVE DETAILS YOU EVER OCCUPIED A UNIT</b></label>
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <input name="occupedaunit" type="text" id="occupedaunit"
@@ -1015,6 +1041,7 @@
                                         </div>
                                     </div>
                                     <!---HAVE YOU EVER OCCUPIED A UNIT? IF YES, WHERE?--->
+
 
 
 
@@ -1040,7 +1067,8 @@
                                                                     placeholder="Enter Relation" class="form-control" />
                                                             </td>
                                                             <td><input type="number" name="addmore[0][age_accupant]"
-                                                                    placeholder="Enter Age" class="form-control" /></td>
+                                                                    placeholder="Enter Age"
+                                                                    class="form-control ageField" /></td>
                                                             <td><input type="text"
                                                                     name="addmore[0][occupation_school_occupant]"
                                                                     placeholder="Enter Occupation / School"
@@ -1072,7 +1100,7 @@
                                                 <div class="col-md-6">
                                                     <label><b>ID Card (Back & Front):</b></label>
                                                     <input style="margin-bottom: 0px;" type="file" id="id_card"
-                                                        name="id_card" accept=".jpg, .jpeg" />
+                                                        name="id_card" accept=".png,.jpg, .jpeg" />
                                                     <p id="ErrorIdCard " style="color: red;margin-bottom: 25px;"></p>
                                                 </div>
                                             </div>
@@ -1114,24 +1142,24 @@
                                     <!--GROUP COAPPLICANT-->
                                     <div id="DataCoApplicant">
 
-                                            <!---NATIONAL REGISTRATION NUMBE Co applicant--->
-                                            <div class="col-md-12">
-                                                <div>
-                                                    <label><b>NATIONAL REGISTRATION NUMBER</b></label>
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <input name="co_national_registration_number" type="text"
-                                                                id="co_national_registration_number" maxlength="10"
-                                                                placeholder="National Registration Number"
-                                                                required="required" />
-                                                            <div id="validation-result2"
-                                                                style="font-weight: bold;padding: 0;margin: 0;margin-top: -21px;display: block;font-size: 11px;">
-                                                            </div>
+                                        <!---NATIONAL REGISTRATION NUMBE Co applicant--->
+                                        <div class="col-md-12">
+                                            <div>
+                                                <label><b>NATIONAL REGISTRATION NUMBER</b></label>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input name="co_national_registration_number" type="text"
+                                                            id="co_national_registration_number" maxlength="10"
+                                                            placeholder="National Registration Number"
+                                                            required="required" />
+                                                        <div id="validation-result2"
+                                                            style="font-weight: bold;padding: 0;margin: 0;margin-top: -21px;display: block;font-size: 11px;">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!---NATIONAL REGISTRATION NUMBER CoApplicant--->
+                                        </div>
+                                        <!---NATIONAL REGISTRATION NUMBER CoApplicant--->
 
 
                                         <!--Coapplicant-->
@@ -1280,15 +1308,15 @@
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <input type="tel" id="co_phone_home" name="co_phone_home"
-                                                        pattern="[0-9]{10}" placeholder="Home">
+                                                        pattern="^\(\d{3}\) - \d{3}-\d{4}$" placeholder="Home">
                                                 </div>
                                                 <div class="col-md-4">
                                                     <input type="tel" id="co_phone_work" name="co_phone_work"
-                                                        pattern="[0-9]{10}" placeholder="Work">
+                                                        pattern="^\(\d{3}\) - \d{3}-\d{4}$" placeholder="Work">
                                                 </div>
                                                 <div class="col-md-4">
                                                     <input type="tel" id="co_phone_cell" name="co_phone_cell"
-                                                        pattern="[0-9]{10}" placeholder="Cell">
+                                                        pattern="^\(\d{3}\) - \d{3}-\d{4}$" placeholder="Cell">
                                                 </div>
 
                                             </div>
@@ -1648,8 +1676,8 @@
                                                             <label><b>Salary:</b></label>
                                                             <div class="row">
                                                                 <div class="col-md-12">
-                                                                    <input name="co_salary" type="text" id="co_salary"
-                                                                        placeholder="" />
+                                                                    <input name="co_salary" type="text"
+                                                                        id="co_salary" placeholder="" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1822,6 +1850,421 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
+
+            //NRN - sin consultar el api
+            document.getElementById('national_registration_number').addEventListener('input', function() {
+                const input = this.value;
+                const mensaje = document.getElementById('validation-result');
+
+                if (input.length >= 2) {
+                    const anio = parseInt(input.slice(0, 2), 10);
+                    const currentYear = new Date().getFullYear();
+                    const fullAnio = anio <= currentYear % 100 ? 2000 + anio : 1900 + anio;
+
+                    const nacimiento = new Date(fullAnio, 0, 1); // Usamos 1 de enero como día base
+                    const hoy = new Date();
+                    const edad = hoy.getFullYear() - nacimiento.getFullYear();
+                    const esMayorEdad = (edad > 18) || (edad === 18 && hoy >= new Date(hoy.getFullYear(), 0,
+                        1));
+
+                    if (!esMayorEdad) {
+                        mensaje.textContent = 'You are NOT of legal age.';
+                        mensaje.style.color = "red"; // Loading color
+
+
+                        jQuery(".hideArea").hide();
+                                            jQuery("#MessageInformation").hide();
+                                            jQuery("#ButtonNext").hide();
+
+                        return;
+                    } else {
+                        mensaje.textContent = '';
+                    }
+                } else {
+                    mensaje.textContent = '';
+                }
+
+                if (input.length >= 4) {
+                    const mes = parseInt(input.slice(2, 4), 10);
+                    if (mes < 1 || mes > 12) {
+                        mensaje.textContent = 'Invalid month (01-12).';
+                        mensaje.style.color = "red"; // Loading color
+
+                        jQuery(".hideArea").hide();
+                                            jQuery("#MessageInformation").hide();
+                                            jQuery("#ButtonNext").hide();
+
+                        return;
+                    }
+                }
+
+                if (input.length >= 6) {
+                    const anio = parseInt(input.slice(0, 2), 10);
+                    const mes = parseInt(input.slice(2, 4), 10);
+                    const dia = parseInt(input.slice(4, 6), 10);
+                    const currentYear = new Date().getFullYear();
+                    const fullAnio = anio <= currentYear % 100 ? 2000 + anio : 1900 + anio;
+                    const diasMes = new Date(fullAnio, mes, 0).getDate();
+
+                    if (dia < 1 || dia > diasMes) {
+                        mensaje.textContent = `Invalid day for the month ${mes}.`;
+                        mensaje.style.color = "red"; // Loading color
+
+                        jQuery(".hideArea").hide();
+                                            jQuery("#MessageInformation").hide();
+                                            jQuery("#ButtonNext").hide();
+                        return;
+                    }
+                }
+
+                //limpia los campos
+                   //Limpiar campos cada vez que se vuelve a escribir
+                   jQuery("#applicant_first").val("").css({
+                        'pointer-events': '',
+                        'background-color': '',
+                        'cursor': ''
+                    });
+
+                    jQuery("#applicant_middle").val("").css({
+                        'pointer-events': '',
+                        'background-color': '',
+                        'cursor': ''
+                    });
+
+                    jQuery("#maiden_name").val("").css({
+                        'pointer-events': '',
+                        'background-color': '',
+                        'cursor': ''
+                    });
+
+                    jQuery("#date_of_birth").val("").css({
+                        'pointer-events': '',
+                        'background-color': '',
+                        'cursor': ''
+                    });
+
+                    jQuery("#applicant_gender").val("").css({
+                        'pointer-events': '',
+                        'background-color': '',
+                        'cursor': ''
+                    });
+
+
+
+                    jQuery("#applicant_surname").val("").css({
+                        'pointer-events': '',
+                        'background-color': '',
+                        'cursor': ''
+                    });
+                /******************/
+
+                let number = this.value;
+
+                if (input.length === 10) {
+                    mensaje.textContent = 'Full valid code.';
+                    mensaje.style.color = "green"; // Loading color
+
+                    //aqui hara la consulta al api
+
+                    fetch("{{ route('validate.number') }}", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "X-CSRF-TOKEN": "{{ csrf_token() }}"
+                        },
+                        body: JSON.stringify({
+                            number_national: number,
+                            type_form: "Rental",
+                            co_app: 0
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+
+                        if (data.errorMessage) {
+                            mensaje.textContent = data
+                                .errorMessage;
+                                mensaje.style.color =
+                                "red"; // Mensaje de error en rojo
+                        } else {
+
+                            const parsedData = typeof data === 'string' ?
+                                            JSON.parse(data) : data;
+
+                                        function isDataEmpty(response) {
+                                            const data = response.data;
+
+                                            if (!Array.isArray(data)) {
+                                                console.error(
+                                                    "La propiedad 'data' no es un arreglo:",
+                                                    data);
+                                                return true;
+                                            }
+
+                                            return data.length === 0 || data.every(
+                                                obj =>
+                                                Object.values(obj).every(value =>
+                                                    value === null || value === '')
+                                            );
+                                        }
+
+                                        if (isDataEmpty(parsedData)) {
+                                            //desbloquea los campos par que la persona pueda escribri su informacion
+
+                                            mensaje.textContent =
+                                                "Invalid Number";
+                                                mensaje.style.color =
+                                                "red"; // Mensaje de error en rojo
+
+
+                                            jQuery(".hideArea").hide();
+                                            jQuery("#MessageInformation").hide();
+                                            jQuery("#ButtonNext").hide();
+
+
+                                        } else {
+                                            jQuery(".hideArea").show();
+                                            jQuery("#MessageInformation").show();
+                                            jQuery("#ButtonNext").show();
+                                            //bloquea los campos nombre y fecha de nac para que la persona no pueda escribri su informacion
+                                            //FirstName,MiddleName,LastName,DOB FechaNac
+                                            var FirstName = parsedData.data[0]
+                                                .FirstName;
+                                            var LastName = parsedData.data[0].LastName;
+                                            var MiddleName = parsedData.data[0]
+                                                .MiddleName;
+                                            var DOB = parsedData.data[0].DOB;
+                                            var Gender = parsedData.data[0].Gender;
+                                            var Surname = parsedData.data[0].Salutation;
+
+
+
+                                            //field First Name
+                                            jQuery("#applicant_first").val(FirstName);
+                                            jQuery("#applicant_first").css({
+                                                'pointer-events': 'none',
+                                                'background-color': '#f5f5f5',
+                                                'cursor': 'not-allowed'
+                                            });;
+                                            //field LastName
+                                            jQuery("#applicant_middle").val(LastName)
+                                                .css({
+                                                    'pointer-events': 'none',
+                                                    'background-color': '#f5f5f5',
+                                                    'cursor': 'not-allowed'
+                                                });;
+                                            //field MiddleName
+                                            jQuery("#maiden_name").val(MiddleName).css({
+                                                'pointer-events': 'none',
+                                                'background-color': '#f5f5f5',
+                                                'cursor': 'not-allowed'
+                                            });;
+                                            //field DOB
+                                            jQuery("#date_of_birth").val(DOB).css({
+                                                'pointer-events': 'none',
+                                                'background-color': '#f5f5f5',
+                                                'cursor': 'not-allowed'
+                                            });;
+                                            //field Gender
+                                            jQuery("#applicant_gender").val(Gender)
+                                                .css({
+                                                    'pointer-events': 'none',
+                                                    'background-color': '#f5f5f5',
+                                                    'cursor': 'not-allowed'
+                                                });;
+
+                                            //field Saludation
+                                            jQuery("#applicant_surname").val(Surname)
+                                                .css({
+                                                    'pointer-events': 'none',
+                                                    'background-color': '#f5f5f5',
+                                                    'cursor': 'not-allowed'
+                                                });;
+
+                                                mensaje.textContent =
+                                                "Valid number";
+                                                mensaje.style.color =
+                                                "green"; // Mensaje de éxito en verde
+
+
+
+                                        }
+
+                        }/*end else*/
+
+
+                    })
+                    .catch(error => {
+                                    document.getElementById("validation-result")
+                                        .textContent = "Validation error";
+                                    console.error("Error:", error);
+                                });
+
+                    //termina el consumo del api
+
+
+
+                }/*finaliza el input length*/
+            });
+            /////////////////////
+
+            //Age field
+
+            document.querySelectorAll('.ageField').forEach(function(input) {
+                input.addEventListener('input', function(e) {
+                    const value = e.target.value;
+
+                    // Si el valor es menor que 0, lo corrige automáticamente a 0
+                    if (value !== '' && parseInt(value) < 0) {
+                        e.target.value = 0;
+                    }
+                });
+            });
+
+
+            //salary
+
+            const salaryInput = document.getElementById('salary');
+
+            salaryInput.addEventListener('input', function(e) {
+                const input = e.target;
+
+                // Obtener solo números y punto
+                let value = input.value.replace(/[^0-9.]/g, '');
+
+                // Separar entero y decimal
+                let [intPart, decimalPart] = value.split('.');
+
+                // Formatear parte entera con comas
+                if (intPart) {
+                    intPart = intPart.replace(/^0+/, ''); // eliminar ceros iniciales
+                    intPart = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                } else {
+                    intPart = '0';
+                }
+
+                // Limitar decimales a 2
+                if (decimalPart !== undefined) {
+                    decimalPart = decimalPart.substring(0, 2);
+                    value = `${intPart}.${decimalPart}`;
+                } else {
+                    value = `${intPart}`;
+                }
+
+                input.value = value;
+            });
+
+
+
+            //phone applicant
+
+
+            document.getElementById('phone_home').addEventListener('input', function(e) {
+                let input = e.target.value.replace(/\D/g, '').substring(0,
+                    10); // solo números, máx 10 dígitos
+                let formatted = '';
+
+                if (input.length > 6) {
+                    formatted =
+                        `(${input.substring(0, 3)}) - ${input.substring(3, 6)}-${input.substring(6, 10)}`;
+                } else if (input.length > 3) {
+                    formatted = `(${input.substring(0, 3)}) - ${input.substring(3, 6)}`;
+                } else if (input.length > 0) {
+                    formatted = `(${input}`;
+                }
+
+                e.target.value = formatted;
+            });
+
+            document.getElementById('phone_work').addEventListener('input', function(e) {
+                let input = e.target.value.replace(/\D/g, '').substring(0,
+                    10); // solo números, máx 10 dígitos
+                let formatted = '';
+
+                if (input.length > 6) {
+                    formatted =
+                        `(${input.substring(0, 3)}) - ${input.substring(3, 6)}-${input.substring(6, 10)}`;
+                } else if (input.length > 3) {
+                    formatted = `(${input.substring(0, 3)}) - ${input.substring(3, 6)}`;
+                } else if (input.length > 0) {
+                    formatted = `(${input}`;
+                }
+
+                e.target.value = formatted;
+            });
+
+            document.getElementById('phone_cell').addEventListener('input', function(e) {
+                let input = e.target.value.replace(/\D/g, '').substring(0,
+                    10); // solo números, máx 10 dígitos
+                let formatted = '';
+
+                if (input.length > 6) {
+                    formatted =
+                        `(${input.substring(0, 3)}) - ${input.substring(3, 6)}-${input.substring(6, 10)}`;
+                } else if (input.length > 3) {
+                    formatted = `(${input.substring(0, 3)}) - ${input.substring(3, 6)}`;
+                } else if (input.length > 0) {
+                    formatted = `(${input}`;
+                }
+
+                e.target.value = formatted;
+            });
+
+            //field coapp phone
+            document.getElementById('co_phone_home').addEventListener('input', function(e) {
+                let input = e.target.value.replace(/\D/g, '').substring(0,
+                    10); // solo números, máx 10 dígitos
+                let formatted = '';
+
+                if (input.length > 6) {
+                    formatted =
+                        `(${input.substring(0, 3)}) - ${input.substring(3, 6)}-${input.substring(6, 10)}`;
+                } else if (input.length > 3) {
+                    formatted = `(${input.substring(0, 3)}) - ${input.substring(3, 6)}`;
+                } else if (input.length > 0) {
+                    formatted = `(${input}`;
+                }
+
+                e.target.value = formatted;
+            });
+
+            document.getElementById('co_phone_work').addEventListener('input', function(e) {
+                let input = e.target.value.replace(/\D/g, '').substring(0,
+                    10); // solo números, máx 10 dígitos
+                let formatted = '';
+
+                if (input.length > 6) {
+                    formatted =
+                        `(${input.substring(0, 3)}) - ${input.substring(3, 6)}-${input.substring(6, 10)}`;
+                } else if (input.length > 3) {
+                    formatted = `(${input.substring(0, 3)}) - ${input.substring(3, 6)}`;
+                } else if (input.length > 0) {
+                    formatted = `(${input}`;
+                }
+
+                e.target.value = formatted;
+            });
+
+            document.getElementById('co_phone_cell').addEventListener('input', function(e) {
+                let input = e.target.value.replace(/\D/g, '').substring(0,
+                    10); // solo números, máx 10 dígitos
+                let formatted = '';
+
+                if (input.length > 6) {
+                    formatted =
+                        `(${input.substring(0, 3)}) - ${input.substring(3, 6)}-${input.substring(6, 10)}`;
+                } else if (input.length > 3) {
+                    formatted = `(${input.substring(0, 3)}) - ${input.substring(3, 6)}`;
+                } else if (input.length > 0) {
+                    formatted = `(${input}`;
+                }
+
+                e.target.value = formatted;
+            });
+            ////////////////////
+
+
+
             //campos appllicant
             document.getElementById('ButtonNext').addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1935,6 +2378,25 @@
             });
 
 
+            /*OCCUPIED A UNIT*/
+            const $occupiedUnit = $(".occuppiedUnit");
+            const $occuppiedUnitArea = $(".occuppiedUnitArea"); // Asegúrate que el selector es correcto
+
+            if ($occuppiedUnitArea.length === 0) {
+                console.error("❌ Error: No se encontró el elemento con clase 'giveDetailBox'");
+                return;
+            }
+
+            $occupiedUnit.change(function() {
+                if ($(this).val() === "yes") {
+                    $occuppiedUnitArea.show(); // Mostrar el div
+                } else {
+                    $occuppiedUnitArea.hide(); // Ocultar el div
+                }
+            });
+            /*OCCUPIED A UNIT*/
+
+
 
             //subida de documentos
 
@@ -1990,13 +2452,25 @@
                 row.innerHTML = `
             <td><input type="text" name="addmore[${i}][name_occupant]" placeholder="Enter Name" class="form-control" /></td>
             <td><input type="text" name="addmore[${i}][relation_occupant]" placeholder="Enter Relation" class="form-control" /></td>
-            <td><input type="text" name="addmore[${i}][age_accupant]" placeholder="Enter Age" class="form-control" /></td>
+            <td><input type="number " name="addmore[${i}][age_accupant]" placeholder="Enter Age" class="form-control ageField" /></td>
             <td><input type="text" name="addmore[${i}][occupation_school_occupant]" placeholder="Enter Occupation / School" class="form-control" /></td>
             <td><input type="text" name="addmore[${i}][income_occupant]" placeholder="Enter Income" class="form-control" /></td>
             <td><button type="button" class="btn btn-danger remove-tr">delete</button></td>
         `;
 
                 table.querySelector('tbody').appendChild(row);
+
+
+
+            });
+
+            // Validar cualquier input con clase .ageField (incluso los que se agregan luego)
+            document.addEventListener('input', function(e) {
+                if (e.target.classList.contains('ageField')) {
+                    let value = e.target.value;
+                    value = value.replace(/[^0-9]/g, ''); // Solo números
+                    e.target.value = value !== '' ? Math.max(0, parseInt(value)) : '';
+                }
             });
 
             document.addEventListener('click', function(event) {
@@ -2120,7 +2594,7 @@
 
 
             //number national 1
-            const inputFields = document.querySelectorAll("#national_registration_number");
+            const inputFields = document.querySelectorAll("#national_registration_number11");
             let typingTimer; // Variable para el temporizador
             const doneTypingInterval = 500; // Tiempo de espera después de la última pulsación (en ms)
 
@@ -2181,8 +2655,8 @@
 
 
 
-                        validationResult.textContent = "Validating wait a moment...";
-                        validationResult.style.color = "blue"; // Loading color
+                        //validationResult.textContent = "Validating wait a moment...";
+                        //validationResult.style.color = "blue"; // Loading color
                         inputFields.disabled = true; // Disable input
                         //inputFields.style.cursor = "wait"; // Change cursor
 

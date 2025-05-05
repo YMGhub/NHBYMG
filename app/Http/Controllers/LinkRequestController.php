@@ -49,7 +49,7 @@ class LinkRequestController extends Controller
         try {
             Mail::html($htmlMessage, function ($message) use ($request) {
                 $message->to($request->email_field2)
-                        ->subject('Rental Form Link');
+                        ->subject('NHC Verification Link');
             });
 
             // Opcional: mensaje de éxito para debugging
@@ -80,7 +80,7 @@ class LinkRequestController extends Controller
             // Enviar email
             Mail::html($htmlMessage, function ($message) use ($request) {
                 $message->to($request->email_field2)
-                        ->subject('Purchases Form Link');
+                        ->subject('NHC Verification Link');
             });
 
              return back()->with('success', 'Email sent successfully');
