@@ -343,6 +343,21 @@ class ApplicationRentalController extends Controller
         $phone_work = substr($p = preg_replace('/\D+/', '', $request->phone_work), 0, 3) . '-' . substr($p, 3, 3) . '-' . substr($p, 6);
         $phone_cell = substr($p = preg_replace('/\D+/', '', $request->phone_cell), 0, 3) . '-' . substr($p, 3, 3) . '-' . substr($p, 6);
 
+        //OwnLandOrProperty
+        $own_landorproperty = 0;
+        $state_address = "";
+        if($request->own_landorproperty == "no"){
+            $own_landorproperty = 0;
+            $state_address = "N/A";
+        }
+
+        if($request->own_landorproperty == "yes"){
+            $own_landorproperty = 1;
+            $state_address = $request->state_address;
+
+        }
+
+
 
         //CoApplicant
          //marital_status
@@ -446,8 +461,8 @@ class ApplicationRentalController extends Controller
             "CoSalary" => $co_salary,
             "CoPayPeriod" => $co_pay_period,
             "CoEmploymentStatus" => $co_employment_status,
-            "OwnLandOrProperty" => 0,
-            "StatedPropertyAddress" => "N/A",
+            "OwnLandOrProperty" =>  $own_landorproperty,
+            "StatedPropertyAddress" => $state_address ,
             "InDepted" => 0,
             "DebtDetails" => "None",
             "OccupiedUnitDetails" => "N/A",
@@ -478,13 +493,6 @@ class ApplicationRentalController extends Controller
         ),
         ));
 
-        /*$response = curl_exec($curl);
-
-
-
-        curl_close($curl);*/
-
-
 
 
             try {
@@ -497,7 +505,8 @@ class ApplicationRentalController extends Controller
                     $body = json_decode($responseData['body'], true);
 
                     if (isset($body['message']) && $body['message'] === 'Stored procedure executed successfully.') {
-                        return redirect()->back()->with('success', 'Application submitted successfully!');
+                        return redirect()->back()->with('success', 'Application submitted successfully!')
+                        ->with('clear_localstorage', true); // <- esto activa el JS en la vista;
 
                     } else {
                         return back()->with('error', 'Unexpected response from server.');
