@@ -125,11 +125,7 @@
                                     @endphp
                                 </div>
 
-                                @if(session('clear_localstorage'))
-    <script>
-        localStorage.clear(); // O elimina claves específicas
-    </script>
-@endif 
+
                             @endif
                             <!-- Form Validation Error Messages -->
                             @if ($errors->any())
@@ -205,6 +201,12 @@
                                         Session::forget('success');
                                     @endphp
                                 </div>
+
+                                @if(session('clear_localstorage'))
+                                <script>
+                                    localStorage.clear(); // O elimina claves específicas
+                                </script>
+                            @endif
                             @endif
                             <!-- Form Validation Error Messages -->
                             @if ($errors->any())
@@ -445,15 +447,15 @@
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <input type="tel" id="phone_home" name="phone_home"
-                                                        placeholder="Home" pattern="^\(\d{3}\) - \d{3}-\d{4}$">
+                                                        placeholder="Home">
                                                 </div>
                                                 <div class="col-md-4">
                                                     <input type="tel" id="phone_work" name="phone_work"
-                                                        pattern="^\(\d{3}\) - \d{3}-\d{4}$" placeholder="Work">
+                                                        placeholder="Work" autocomplete="off">
                                                 </div>
                                                 <div class="col-md-4">
                                                     <input type="tel" id="phone_cell" name="phone_cell"
-                                                        pattern="^\(\d{3}\) - \d{3}-\d{4}$" placeholder="Cell">
+                                                        placeholder="Cell" autocomplete="off">
                                                 </div>
 
                                             </div>
@@ -1348,15 +1350,15 @@
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <input type="tel" id="co_phone_home" name="co_phone_home"
-                                                            pattern="^\(\d{3}\) - \d{3}-\d{4}$" placeholder="Home">
+                                                        placeholder="Home" autocomplete="off">
                                                     </div>
                                                     <div class="col-md-4">
                                                         <input type="tel" id="co_phone_work" name="co_phone_work"
-                                                            pattern="^\(\d{3}\) - \d{3}-\d{4}$" placeholder="Work">
+                                                        placeholder="Work" autocomplete="off">
                                                     </div>
                                                     <div class="col-md-4">
                                                         <input type="tel" id="co_phone_cell" name="co_phone_cell"
-                                                            pattern="^\(\d{3}\) - \d{3}-\d{4}$" placeholder="Cell">
+                                                         placeholder="Cell" autocomplete="off">
                                                     </div>
 
                                                 </div>
@@ -2640,20 +2642,26 @@
 
 
             document.getElementById('phone_home').addEventListener('input', function(e) {
-                let input = e.target.value.replace(/\D/g, '').substring(0,
-                    10); // solo números, máx 10 dígitos
+                let input = e.target.value.replace(/\D/g, '').substring(0, 10);
                 let formatted = '';
 
                 if (input.length > 6) {
-                    formatted =
-                        `(${input.substring(0, 3)}) - ${input.substring(3, 6)}-${input.substring(6, 10)}`;
+                    formatted = `(${input.substring(0, 3)}) - ${input.substring(3, 6)} - ${input.substring(6, 10)}`;
                 } else if (input.length > 3) {
-                    formatted = `(${input.substring(0, 3)}) - ${input.substring(3, 6)}`;
+                    formatted = `(${input.substring(0, 3)}) - ${input.substring(3)}`;
                 } else if (input.length > 0) {
                     formatted = `(${input}`;
                 }
 
                 e.target.value = formatted;
+
+
+                // Validación personalizada
+                if (e.target.validity.patternMismatch) {
+                    e.target.setCustomValidity("Por favor, ingresa el número en el formato (123) - 456 - 7890.");
+                } else {
+                    e.target.setCustomValidity("");
+                }
             });
 
             document.getElementById('phone_work').addEventListener('input', function(e) {
