@@ -385,6 +385,11 @@ class ApplicationRentalController extends Controller
 
         }
 
+        $occupedaunit = "N/A";
+        if($request->occuppiedUnit == "yes"){
+            $occupedaunit = $request->occupedaunit;
+        }
+
 
 
 
@@ -494,9 +499,7 @@ class ApplicationRentalController extends Controller
             "StatedPropertyAddress" => $state_address ,
             "InDepted" => $financial_institution,
             "DebtDetails" => $give_details,
-            "OccupiedUnitDetails" => "N/A",
-
-
+            "OccupiedUnitDetails" => $occupedaunit,
             "imgPayslips" =>  $payslipsBase64 ?? '',
             "imgIDCard" => $idCardBase64 ?? '',
             "imgJobLetter" => $job_letterBase64 ?? '',
