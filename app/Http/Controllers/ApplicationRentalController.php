@@ -338,6 +338,8 @@ class ApplicationRentalController extends Controller
         }
 
         $salary = str_replace(',', '', $request->salary);
+        $salary = number_format(floatval($salary), 2, '.', '');
+
 
         $phone_home = substr($p = preg_replace('/\D+/', '', $request->phone_home), 0, 3) . '-' . substr($p, 3, 3) . '-' . substr($p, 6);
         $phone_work = substr($p = preg_replace('/\D+/', '', $request->phone_work), 0, 3) . '-' . substr($p, 3, 3) . '-' . substr($p, 6);
@@ -441,6 +443,7 @@ class ApplicationRentalController extends Controller
          $co_phone_cell = substr($p = preg_replace('/\D+/', '', $request->co_phone_cell), 0, 3) . '-' . substr($p, 3, 3) . '-' . substr($p, 6);
 
          $co_salary = str_replace(',', '', $request->co_salary);
+         $co_salary = number_format(floatval($co_salary), 2, '.', '');
 
          $IPAddress =  $_SERVER['REMOTE_ADDR'];
 
@@ -451,7 +454,7 @@ class ApplicationRentalController extends Controller
             "ApplicantSurname" => $request->applicant_surname,
             "ApplicantFirst" => $request->applicant_first,
             "ApplicantMiddle" => $request->applicant_middle,
-            "MaidenName" => $request->maiden_name ?: "N/A",
+            "MaidenName" => $request->maiden_name,
             "DateOfBirth" => $request->date_of_birth,
             "TamisNumber" => $request->tamis_number,
             "ApplicantAddress1" => $request->applicant_address,
@@ -476,7 +479,7 @@ class ApplicationRentalController extends Controller
             "CoApplicantSurname" => $request->co_applicant_surname,
             "CoApplicantFirst" => $request->co_applicant_name,
             "CoApplicantMiddle" => $request->co_applicant_middle,
-            "CoMaidenName" => $request->co_maiden_name ?: 'N/A',
+            "CoMaidenName" => $request->co_maiden_name,
             "CoDateOfBirth" => $request->co_date_of_birth,
             "CoTamisNumber" => $request->co_tamis_number,
             "CoApplicantAddress1" => $request->co_applicant_address,
@@ -531,7 +534,11 @@ class ApplicationRentalController extends Controller
                 $response = curl_exec($curl);
                 curl_close($curl);
 
+
+
                 $responseData = json_decode($response, true);
+
+                dd($responseData);
 
                 if ($responseData && $responseData['statusCode'] == 200) {
                     $body = json_decode($responseData['body'], true);
