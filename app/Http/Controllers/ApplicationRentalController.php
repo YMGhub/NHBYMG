@@ -527,8 +527,6 @@ class ApplicationRentalController extends Controller
         ),
         ));
 
-
-
             try {
                 $response = curl_exec($curl);
                 curl_close($curl);
