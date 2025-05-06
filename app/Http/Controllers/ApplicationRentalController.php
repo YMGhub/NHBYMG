@@ -357,6 +357,35 @@ class ApplicationRentalController extends Controller
 
         }
 
+        //INDEBTED
+        $financial_institution = 0;
+        $give_details = "None";
+        if($request->financial_institution == "no"){
+            $financial_institution = 0;
+            $give_details = "None";
+        }
+
+        if($request->financial_institution == "yes"){
+            $financial_institution = 1;
+            $give_details = $request->give_details;
+
+        }
+
+        //INDEBTED
+        $financial_institution = 0;
+        $give_details = "None";
+        if($request->financial_institution == "no"){
+            $financial_institution = 0;
+            $give_details = "None";
+        }
+
+        if($request->financial_institution == "yes"){
+            $financial_institution = 1;
+            $give_details = $request->give_details;
+
+        }
+
+
 
 
         //CoApplicant
@@ -463,9 +492,11 @@ class ApplicationRentalController extends Controller
             "CoEmploymentStatus" => $co_employment_status,
             "OwnLandOrProperty" =>  $own_landorproperty,
             "StatedPropertyAddress" => $state_address ,
-            "InDepted" => 0,
-            "DebtDetails" => "None",
+            "InDepted" => $financial_institution,
+            "DebtDetails" => $give_details,
             "OccupiedUnitDetails" => "N/A",
+
+
             "imgPayslips" =>  $payslipsBase64 ?? '',
             "imgIDCard" => $idCardBase64 ?? '',
             "imgJobLetter" => $job_letterBase64 ?? '',
@@ -504,8 +535,10 @@ class ApplicationRentalController extends Controller
                 if ($responseData && $responseData['statusCode'] == 200) {
                     $body = json_decode($responseData['body'], true);
 
+                    $statusCode = $responseData['statusCode'];
+
                     if (isset($body['message']) && $body['message'] === 'Stored procedure executed successfully.') {
-                        return redirect()->back()->with('success', 'Application submitted successfully!')
+                        return redirect()->back()->with('success', 'Application submitted successfully! - Code '. $statusCode)
                         ->with('clear_localstorage', true); // <- esto activa el JS en la vista;
 
                     } else {
