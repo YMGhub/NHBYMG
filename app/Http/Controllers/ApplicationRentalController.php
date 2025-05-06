@@ -534,8 +534,6 @@ class ApplicationRentalController extends Controller
                 $response = curl_exec($curl);
                 curl_close($curl);
 
-
-
                 $responseData = json_decode($response, true);
 
                 dd($responseData);
