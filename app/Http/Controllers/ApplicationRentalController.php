@@ -103,7 +103,7 @@ class ApplicationRentalController extends Controller
         //documents
 
 
-       /* ApplicationRental::create([
+        ApplicationRental::create([
             'passport' => $passportBase64,
             'job_letter' => $job_letterBase64,
             'id_card' => $idcardBase64,
@@ -146,8 +146,6 @@ class ApplicationRentalController extends Controller
             'co_salary' => $request->co_salary,
             'co_pay_period' => $request->co_pay_period,
             'co_employment_status' => $request->co_employment_status,
-
-
             'national_registration_number' => $request->national_registration_number,
             'employer' => $request->employer,
             'occupation' => $request->occupation,
@@ -162,7 +160,6 @@ class ApplicationRentalController extends Controller
             'financial_institution' => $request->financial_institution,
             'give_details' => $request->give_details,
             'occupedaunit' => $request->occupedaunit,
-            'photograph' => $photographPath,
             'addmore' => json_encode($request->addmore),
             'tenantorlodger' => $request->tenantorlodger,
             'addressoflandlord' => $request->addressoflandlord,
@@ -254,7 +251,7 @@ class ApplicationRentalController extends Controller
             'financial_institution' => $request->financial_institution,
             'give_details' => $request->give_details,
             'occupedaunit' => $request->occupedaunit,
-            'photograph' => $photographPath,
+            'occuppiedUnit' => $request->occuppiedUnit,
             'addmore' => json_encode($request->addmore),
             'tenantorlodger' => $request->tenantorlodger,
             'addressoflandlord' => $request->addressoflandlord,
@@ -286,10 +283,22 @@ class ApplicationRentalController extends Controller
             'applicant_parish' => $request->applicant_parish,
             'co_applicant_parish' => $request->co_applicant_parish,
 
-        ];*/
+        ];
 
         //
+
         //Mail::to('NHC.CustomerService@barbados.gov.bb')->send(new ApplicationRentalMail($details));
+
+        $documentsSend = [
+            ['base64' => $payslipsBase64], // solo base64, sin filename ni mime
+            ['base64' => $idcardBase64],
+            ['base64' => $job_letterBase64],
+            ['base64' => $passportBase64],
+        ];
+        Mail::to($request->email_field)->send(new ApplicationRentalMail($details,$documentsSend));
+
+
+
 
 
         //API ENVIO DE DATOS

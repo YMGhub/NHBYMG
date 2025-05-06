@@ -202,11 +202,11 @@
                                     @endphp
                                 </div>
 
-                                @if(session('clear_localstorage'))
+
                                 <script>
                                     localStorage.clear(); // O elimina claves específicas
                                 </script>
-                            @endif
+
                             @endif
                             <!-- Form Validation Error Messages -->
                             @if ($errors->any())

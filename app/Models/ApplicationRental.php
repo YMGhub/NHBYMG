@@ -10,6 +10,7 @@ class ApplicationRental extends Model
     use HasFactory;
 
 
+
     protected $fillable = [
         'passport',
         'job_letter',
@@ -67,6 +68,7 @@ class ApplicationRental extends Model
         'financial_institution',
         'give_details',
         'occupedaunit',
+        'occuppiedUnit',
         'photograph',
         'addmore',
         'tenantorlodger',
