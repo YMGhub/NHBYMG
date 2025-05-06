@@ -97,7 +97,10 @@ class ApplicationRental extends Model
         'applicant_address2',
 'co_applicant_address2',
 'applicant_parish',
-'co_applicant_parish'
+'co_applicant_parish',
+'co_email_field',
+'co_client_id',
+'client_id'
 
     ];
 }
