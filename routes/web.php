@@ -104,6 +104,10 @@ Route::get('/application-for-rental/{hash}', function ($hash) {
     ]);
 })->name('application-for-rental.hash');
 
+Route::get('/thank-you', function () {
+    return view('thankyou')->with('statusCode', session('statusCode'));
+})->name('thankyou');
+
 Route::post('/application-for-rental/apply', [ApplicationRentalController::class, 'submitApplication'])->name('application-for-rental.apply');
 
 //form application APPLICATION FOR EMPLOYMENT - Monthly
@@ -167,6 +171,8 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
 
 //validate number
 Route::get('/admin/api-settings', [ApiSettingController::class, 'index'])->name('admin.api-settings');

@@ -553,8 +553,8 @@ class ApplicationRentalController extends Controller
                     $statusCode = $responseData['statusCode'];
 
                     if (isset($body['message']) && $body['message'] === 'Stored procedure executed successfully.') {
-                        return redirect()->back()->with('success', 'Application submitted successfully! - Code '. $statusCode)
-                        ->with('clear_localstorage', true); // <- esto activa el JS en la vista;
+                        //return redirect()->back()->with('success', 'Application submitted successfully! - Code '. $statusCode)->with('clear_localstorage', true); // <- esto activa el JS en la vista;
+                        return redirect()->route('thankyou')->with('statusCode', $statusCode)->with('success', 'Application submitted successfully!')->with('clear_localstorage', true);
 
                     } else {
                         return back()->with('error', 'Unexpected response from server.');
