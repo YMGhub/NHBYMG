@@ -543,6 +543,8 @@ class ApplicationRentalController extends Controller
                 $response = curl_exec($curl);
                 curl_close($curl);
 
+
+
                 $responseData = json_decode($response, true);
 
                 //dd($responseData);
@@ -552,7 +554,7 @@ class ApplicationRentalController extends Controller
 
                     $statusCode = $responseData['statusCode'];
 
-                    if (isset($body['message']) && $body['message'] === 'Stored procedure executed successfully.') {
+                    if ($responseData['statusCode'] == 200) {
                         //return redirect()->back()->with('success', 'Application submitted successfully! - Code '. $statusCode)->with('clear_localstorage', true); // <- esto activa el JS en la vista;
                         return redirect()->route('thankyou')->with('statusCode', $statusCode)->with('success', 'Application submitted successfully!')->with('clear_localstorage', true);
 
