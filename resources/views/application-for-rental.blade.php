@@ -1934,7 +1934,7 @@
         document.addEventListener('DOMContentLoaded', function() {
 
             //prevent submit
-
+const form = document.getElementById('applicationrental');
                 /*const form = document.getElementById('applicationrental');
 
             form.addEventListener('submit', function (e) {
@@ -3001,8 +3001,17 @@
             $own_landorproperty.change(function() {
                 if ($(this).val() === "yes") {
                     $boxStateAddress.show(); // Mostrar el div
+                    const stateAddress = document.getElementById('state_address');
+                    if (stateAddress) {
+                        stateAddress.setAttribute('required', 'required');
+                    }
                 } else {
                     $boxStateAddress.hide(); // Ocultar el div
+
+                     const stateAddress = document.getElementById('state_address');
+                    if (stateAddress) {
+                          stateAddress.removeAttribute('required');
+                    }
                 }
             });
 
@@ -3019,8 +3028,17 @@
             $financial_institution.change(function() {
                 if ($(this).val() === "yes") {
                     $giveDetailBox.show(); // Mostrar el div
+                     const give_details = document.getElementById('give_details');
+                    if (give_details) {
+                        give_details.setAttribute('required', 'required');
+                    }
                 } else {
                     $giveDetailBox.hide(); // Ocultar el div
+
+                   const give_details = document.getElementById('give_details');
+                    if (give_details) {
+                        give_details.removeAttribute('required', 'required');
+                    }
                 }
             });
 
@@ -3037,8 +3055,16 @@
             $occupiedUnit.change(function() {
                 if ($(this).val() === "yes") {
                     $occuppiedUnitArea.show(); // Mostrar el div
+                      const occupedaunitInput = document.getElementById('occupedaunit');
+                    if (occupedaunitInput) {
+                        occupedaunitInput.setAttribute('required', 'required');
+                    }
                 } else {
                     $occuppiedUnitArea.hide(); // Ocultar el div
+                      const occupedaunitInput = document.getElementById('occupedaunit');
+                    if (occupedaunitInput) {
+                        occupedaunitInput.removeAttribute('required', 'required');
+                    }
                 }
             });
             /*OCCUPIED A UNIT*/
