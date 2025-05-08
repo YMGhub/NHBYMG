@@ -69,6 +69,11 @@
         .hideArea2 {
             display: none;
         }
+
+        /* Estilo visual para campos con error */
+.campo-error {
+    border: 2px solid red;
+}
     </style>
     <div class="parallax1 bannerOurDeparment2" data-background="/images/Project-Hero.jpg" data-color="#"
         data-color-opacity="0.1" data-img-width="1000" data-img-height="1200"
@@ -326,7 +331,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <input name="applicant_gender" type="text"
-                                                                id="applicant_gender" />
+                                                                id="applicant_gender" required  />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -374,7 +379,7 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <input name="tamis_number" type="text" maxlength="13"
-                                                            id="tamis_number" placeholder="" />
+                                                            id="tamis_number" placeholder="" required />
                                                     </div>
                                                 </div>
                                             </div>
@@ -388,7 +393,7 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <input name="applicant_address" type="text"
-                                                            id="applicant_address" placeholder="Address" />
+                                                            id="applicant_address" placeholder="Address" required />
                                                     </div>
                                                 </div>
                                             </div>
@@ -402,7 +407,7 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <input name="applicant_address2" type="text"
-                                                            id="applicant_address2" placeholder="Address" />
+                                                            id="applicant_address2" placeholder="Address" required />
                                                     </div>
                                                 </div>
                                             </div>
@@ -418,7 +423,7 @@
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <select id="applicant_parish" name="applicant_parish"
-                                                                    class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300">
+                                                                    class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300" required>
                                                                     <option value="" selected disabled>Select a
                                                                         Parish</option>
                                                                     <option value="Christ Church">Christ Church</option>
@@ -447,15 +452,15 @@
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <input type="tel" id="phone_home" name="phone_home"
-                                                        placeholder="Home">
+                                                        placeholder="Home" required>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <input type="tel" id="phone_work" name="phone_work"
-                                                        placeholder="Work" autocomplete="off">
+                                                        placeholder="Work" required >
                                                 </div>
                                                 <div class="col-md-4">
                                                     <input type="tel" id="phone_cell" name="phone_cell"
-                                                        placeholder="Cell" autocomplete="off">
+                                                        placeholder="Cell"  required >
                                                 </div>
 
                                             </div>
@@ -477,7 +482,7 @@
                                                                 class="form-check form-check-inline">
                                                                 <input style="margin-bottom:0px" class="form-check-input"
                                                                     type="radio" name="marital_status" id="Single"
-                                                                    value="Single">
+                                                                    value="Single" required>
                                                                 <label
                                                                     style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                     class="form-check-label" for="Single">Single</label>
@@ -486,7 +491,7 @@
                                                                 class="form-check form-check-inline">
                                                                 <input style="margin-bottom:0px" class="form-check-input"
                                                                     type="radio" name="marital_status" id="Married"
-                                                                    value="Married">
+                                                                    value="Married" required>
                                                                 <label
                                                                     style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                     class="form-check-label"
@@ -496,7 +501,7 @@
                                                                 class="form-check form-check-inline">
                                                                 <input style="margin-bottom:0px" class="form-check-input"
                                                                     type="radio" name="marital_status" id="Widowed"
-                                                                    value="Widowed">
+                                                                    value="Widowed" required>
                                                                 <label
                                                                     style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                     class="form-check-label"
@@ -506,7 +511,7 @@
                                                                 class="form-check form-check-inline">
                                                                 <input style="margin-bottom:0px" class="form-check-input"
                                                                     type="radio" name="marital_status" id="Divorced"
-                                                                    value="Divorced">
+                                                                    value="Divorced" required>
                                                                 <label
                                                                     style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                     class="form-check-label"
@@ -516,7 +521,7 @@
                                                                 class="form-check form-check-inline">
                                                                 <input style="margin-bottom:0px" class="form-check-input"
                                                                     type="radio" name="marital_status" id="Separated"
-                                                                    value="Separated">
+                                                                    value="Separated" required>
                                                                 <label
                                                                     style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                     class="form-check-label"
@@ -545,7 +550,7 @@
                                                                 <div class="col-md-12">
 
                                                                     <select name="citizenship_field"
-                                                                        id="citizenship_field">
+                                                                        id="citizenship_field" required>
                                                                         <option value="">Select a country</option>
                                                                         <option value="Afghanistan">Afghanistan</option>
                                                                         <option value="Albania">Albania</option>
@@ -647,7 +652,7 @@
                                                                 <div class="col-md-12">
 
                                                                     <select name="country_of_residence"
-                                                                        id="country_of_residence">
+                                                                        id="country_of_residence" required>
                                                                         <option value="">Select a country</option>
                                                                         <option value="Afghanistan">Afghanistan</option>
                                                                         <option value="Albania">Albania</option>
@@ -760,7 +765,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <input name="employer_field" type="text"
-                                                                        id="employer_field" placeholder="" />
+                                                                        id="employer_field" placeholder="" required />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -771,7 +776,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <input name="occupation_field" type="text"
-                                                                        id="occupation_field" placeholder="" />
+                                                                        id="occupation_field" placeholder="" required />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -813,7 +818,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <input name="salary" type="text" id="salary"
-                                                                        placeholder="" inputmode="decimal">
+                                                                        placeholder="" inputmode="decimal" required>
 
                                                                 </div>
                                                             </div>
@@ -838,7 +843,7 @@
                                                                 class="form-check form-check-inline">
                                                                 <input style="margin-bottom:0px" class="form-check-input"
                                                                     type="radio" name="pay_period" id="Weekly"
-                                                                    value="Weekly">
+                                                                    value="Weekly" required>
                                                                 <label
                                                                     style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                     class="form-check-label" for="Weekly">Weekly</label>
@@ -847,7 +852,7 @@
                                                                 class="form-check form-check-inline">
                                                                 <input style="margin-bottom:0px" class="form-check-input"
                                                                     type="radio" name="pay_period" id="Bi-Monthly"
-                                                                    value="Bi-Monthly">
+                                                                    value="Bi-Monthly" required>
                                                                 <label
                                                                     style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                     class="form-check-label"
@@ -857,7 +862,7 @@
                                                                 class="form-check form-check-inline">
                                                                 <input style="margin-bottom:0px" class="form-check-input"
                                                                     type="radio" name="pay_period" id="Monthly"
-                                                                    value="Monthly">
+                                                                    value="Monthly" required>
                                                                 <label
                                                                     style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                     class="form-check-label"
@@ -889,7 +894,7 @@
                                                                 class="form-check form-check-inline">
                                                                 <input style="margin-bottom:0px" class="form-check-input"
                                                                     type="radio" name="employment_status"
-                                                                    id="Government" value="Government">
+                                                                    id="Government" value="Government" required>
                                                                 <label
                                                                     style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                     class="form-check-label"
@@ -899,7 +904,7 @@
                                                                 class="form-check form-check-inline">
                                                                 <input style="margin-bottom:0px" class="form-check-input"
                                                                     type="radio" name="employment_status"
-                                                                    id="Private" value="Private">
+                                                                    id="Private" value="Private" required>
                                                                 <label
                                                                     style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                     class="form-check-label"
@@ -909,7 +914,7 @@
                                                                 class="form-check form-check-inline">
                                                                 <input style="margin-bottom:0px" class="form-check-input"
                                                                     type="radio" name="employment_status"
-                                                                    id="Self" value="Self">
+                                                                    id="Self" value="Self" required>
                                                                 <label
                                                                     style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                     class="form-check-label" for="Self">Self </label>
@@ -942,11 +947,11 @@
                                                         <div class="btn-group" data-toggle="buttons">
                                                             <label class="btn btn-primary radio-inline">
                                                                 <input class="own_landorproperty" type="radio"
-                                                                    value="yes" name="own_landorproperty">Yes
+                                                                    value="yes" name="own_landorproperty" required>Yes
                                                             </label>
                                                             <label class="btn btn-primary radio-inline">
                                                                 <input class="own_landorproperty" type="radio"
-                                                                    value="no" name="own_landorproperty"> No
+                                                                    value="no" name="own_landorproperty" required> No
                                                             </label>
 
                                                         </div>
@@ -982,11 +987,11 @@
                                                         <div class="btn-group" data-toggle="buttons">
                                                             <label class="btn btn-primary ">
                                                                 <input class="financial_institution" type="radio"
-                                                                    value="yes" name="financial_institution">Yes
+                                                                    value="yes" name="financial_institution" required>Yes
                                                             </label>
                                                             <label class="btn btn-primary">
                                                                 <input class="financial_institution" type="radio"
-                                                                    value="no" name="financial_institution">
+                                                                    value="no" name="financial_institution" required>
                                                                 No
                                                             </label>
 
@@ -1022,11 +1027,11 @@
                                                         <div class="btn-group" data-toggle="buttons">
                                                             <label class="btn btn-primary ">
                                                                 <input class="occuppiedUnit" type="radio"
-                                                                    value="yes" name="occuppiedUnit">Yes
+                                                                    value="yes" name="occuppiedUnit" required>Yes
                                                             </label>
                                                             <label class="btn btn-primary">
                                                                 <input class="occuppiedUnit" type="radio"
-                                                                    value="no" name="occuppiedUnit">
+                                                                    value="no" name="occuppiedUnit" required>
                                                                 No
                                                             </label>
 
@@ -1078,19 +1083,19 @@
                                                                 <td><input type="text"
                                                                         name="addmore[0][relation_occupant]"
                                                                         placeholder="Enter Relation"
-                                                                        class="form-control" />
+                                                                        class="form-control" required />
                                                                 </td>
                                                                 <td><input type="number" name="addmore[0][age_accupant]"
                                                                         placeholder="Enter Age"
-                                                                        class="form-control ageField" /></td>
+                                                                        class="form-control ageField" required /></td>
                                                                 <td><input type="text"
                                                                         name="addmore[0][occupation_school_occupant]"
                                                                         placeholder="Enter Occupation / School"
-                                                                        class="form-control" /></td>
+                                                                        class="form-control" required /></td>
                                                                 <td><input type="text"
                                                                         name="addmore[0][income_occupant]"
                                                                         placeholder="Enter Income"
-                                                                        class="form-control incomeField" />
+                                                                        class="form-control incomeField" required />
                                                                 </td>
                                                                 <td><button type="button" name="add" id="add"
                                                                         class="btn btn-success addMore">+</button></td>
@@ -1112,7 +1117,7 @@
                                                     <div class="col-md-6">
                                                         <label><b>Pay Slips:</b></label>
                                                         <input style="margin-bottom: 0px;" type="file" id="payslips"
-                                                            name="payslips[]" multiple />
+                                                            name="payslips[]" multiple required />
                                                             <p>You can only upload a maximum of 2 files.</p>
                                                         <p id="ErrorPayslips" style="color: red;margin-bottom: 25px;"></p>
 
@@ -1120,7 +1125,7 @@
                                                     <div class="col-md-6">
                                                         <label><b>ID Card (Back & Front):</b></label>
                                                         <input style="margin-bottom: 0px;" type="file" id="id_card"
-                                                            name="id_card" accept=".png,.jpg, .jpeg" />
+                                                            name="id_card" accept=".png,.jpg, .jpeg" required />
                                                             <p>Only PNG, JPG, or JPEG files are allowed.</p>
                                                         <p id="ErrorIdCard " style="color: red;margin-bottom: 25px;"></p>
                                                     </div>
@@ -1129,7 +1134,7 @@
                                                     <div class="col-md-6">
                                                         <label><b>Job Letter:</b></label>
                                                         <input style="margin-bottom: 0px;" type="file" id="job_letter"
-                                                            name="job_letter" accept=".pdf" />
+                                                            name="job_letter" accept=".pdf" required />
                                                             <p>Only PDF file are allowed.</p>
                                                         <p id="ErrorJobLetter " style="color: red;margin-bottom: 25px;">
                                                         </p>
@@ -1137,7 +1142,7 @@
                                                     <div class="col-md-6">
                                                         <label><b>Passport Size Photo:</b></label>
                                                         <input style="margin-bottom: 0px;" type="file" id="passport"
-                                                            name="passport" accept=".png, .jpg, .jpeg" />
+                                                            name="passport" accept=".png, .jpg, .jpeg" required />
                                                             <p>Only PNG, JPG, or JPEG files are allowed.</p>
                                                         <p id="ErrorPassport " style="color: red;margin-bottom: 25px;">
                                                         </p>
@@ -1927,6 +1932,92 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+
+            //prevent submit
+               const form = document.getElementById('applicationrental');
+
+
+            form.addEventListener('submit', function(e) {
+                const campos = form.querySelectorAll('[required]');
+                let hayErrores = false;
+                const radiosAgrupados = {};
+                const botonRedActivo = document.querySelector('.buttonRed') !== null;
+
+                // Campos co_ especiales
+                const camposCo = form.querySelectorAll('[name^="co_"]');
+
+                camposCo.forEach(campo => {
+                    campo.classList.remove('campo-error');
+
+                    if (!botonRedActivo) {
+                        campo.value = ''; // Limpia el campo si no está activa la validación
+                    } else {
+                        // Validación normal solo si hay botón .buttonRed
+                        if (!campo.value.trim()) {
+                            hayErrores = true;
+                            campo.classList.add('campo-error');
+                        }
+                    }
+                });
+
+                campos.forEach(campo => {
+                    campo.classList.remove('campo-error');
+
+                    // Saltar campos que empiezan con co_ (ya fueron validados)
+                    if (campo.name.startsWith('co_')) return;
+
+                    if (campo.type === 'file') {
+                        if (campo.files.length === 0) {
+                            hayErrores = true;
+                            campo.classList.add('campo-error');
+                        }
+                    } else if (campo.type === 'radio') {
+                        if (!radiosAgrupados[campo.name]) {
+                            radiosAgrupados[campo.name] = form.querySelectorAll(`input[type="radio"][name="${campo.name}"]`);
+                        }
+                    } else if (campo.tagName === 'SELECT') {
+                        if (!campo.value.trim()) {
+                            hayErrores = true;
+                            campo.classList.add('campo-error');
+                        }
+                    } else {
+                        if (!campo.value.trim()) {
+                            hayErrores = true;
+                            campo.classList.add('campo-error');
+                        }
+                    }
+                });
+
+                for (const nombre in radiosAgrupados) {
+                    const grupo = radiosAgrupados[nombre];
+                    const seleccionado = Array.from(grupo).some(radio => radio.checked);
+                    grupo.forEach(radio => radio.classList.remove('radio-error'));
+                    if (!seleccionado) {
+                        hayErrores = true;
+                        grupo.forEach(radio => radio.classList.add('radio-error'));
+                    }
+                }
+
+                if (hayErrores) {
+                    e.preventDefault();
+                    alert('Por favor, completa todos los campos requeridos.');
+                }
+            });
+
+            // Eliminar errores al corregir
+            form.querySelectorAll('input, textarea, select').forEach(campo => {
+                campo.addEventListener('input', () => {
+                    campo.classList.remove('campo-error');
+                });
+                campo.addEventListener('change', () => {
+                    campo.classList.remove('campo-error');
+                    if (campo.type === 'radio') {
+                        const radios = form.querySelectorAll(`input[type="radio"][name="${campo.name}"]`);
+                        radios.forEach(r => r.classList.remove('radio-error'));
+                    }
+                });
+            });
+            //end prevent submit
 
             //LocalStora para guardar el status actual del form
 
@@ -2772,9 +2863,81 @@
                     button.textContent = 'Remove Co-Applicant';
                     button.classList.add('buttonRed');
 
+
+                    //añade attribute required
+                        const camposCo = form.querySelectorAll('[name^="co_"]');
+
+                        camposCo.forEach(campo => {
+                        campo.classList.remove('campo-error');
+
+
+                            campo.setAttribute('required', 'required');
+                            if (!campo.value.trim()) {
+                                hayErrores = true;
+                                campo.classList.add('campo-error');
+                            }
+
+                    });
+
+
+
                 } else {
                     button.classList.remove('buttonRed');
                     button.textContent = 'Add Co-Applicant';
+
+                       const camposCo = form.querySelectorAll('[name^="co_"]');
+
+                        camposCo.forEach(campo => {
+
+                            campo.removeAttribute('required');
+                            campo.value = ''; // Limpiar valor si no hay AddCoapplicant
+
+                        });
+
+
+                    //remueve los localstorage de los campos de coapplicant
+                     const fieldsToRemove = [
+                        'co_national_registration_number',
+                        'co_email_field',
+                        'co_applicant_surname',
+                        'co_applicant_name',
+                        'co_applicant_middle',
+                        'co_maiden_name',
+                        'co_date_of_birth',
+                        'co_tamis_number',
+                        'co_applicant_address',
+                        'co_applicant_address2',
+                        'co_applicant_parish',
+                        'co_phone_home',
+                        'co_phone_work',
+                        'co_phone_cell',
+                        'co_marital_status',
+                        'co_citizenship_field',
+                        'co_country_of_residence',
+                        'co_employer_field',
+                        'co_occupation_field',
+                        'co_period_of_employment',
+                        'co_salary',
+                        'co_pay_period',
+                        'co_employment_status'
+                    ];
+
+                    fieldsToRemove.forEach(name => {
+                        // Limpia del localStorage
+                        localStorage.removeItem(name);
+
+                        // Limpia los campos del formulario
+                        const field = document.querySelector(`[name="${name}"]`);
+                        if (field) {
+                            if (field.type === 'checkbox' || field.type === 'radio') {
+                                field.checked = false;
+                            } else {
+                                field.value = '';
+                            }
+                        }
+                    });
+    /*end localstorage CoApplicant*/
+
                 }
             });
 

@@ -197,10 +197,10 @@ class ApplicationRentalController extends Controller
         //return redirect("/application-for-rental")->with('success', 'Message received successfully!');
 
 
-        $salaryApp = str_replace(',', '', $request->salary);
-        $salaryAp = number_format(floatval($salaryApp), 2, '.', '');
-        $cosalaryCo = str_replace(',', '', $request->co_salary);
-        $cosalary = number_format(floatval($cosalaryCo), 2, '.', '');
+        $salaryApp =  $request->salary;
+
+        $cosalaryCo = $request->co_salary;
+
 
 
         $details = [
@@ -292,8 +292,8 @@ class ApplicationRentalController extends Controller
 
             'client_id' => $request->client_id,
             'co_client_id' => $request->co_client_id,
-            'salary' => $salaryAp,
-            'co_salary' => $cosalary,
+            'salary' => $salaryApp,
+            'co_salary' => $cosalaryCo,
 
 
 

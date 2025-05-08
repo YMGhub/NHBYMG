@@ -91,6 +91,7 @@
         <strong>Salary:</strong> {{ $details['salary'] }}<br>
         @endif
 
+
         @if (!empty($details['pay_period']))
         <strong>Pay Period:</strong> {{ $details['pay_period'] }}<br>
         @endif
