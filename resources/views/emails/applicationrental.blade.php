@@ -14,6 +14,10 @@
     @if (!empty($details['applicant_surname']) || !empty($details['applicant_first']) || !empty($details['applicant_middle']) || !empty($details['applicant_address']))
     <p>
         <h3>APPLICANT:</h3>
+
+        @if (!empty($details['client_id']))
+            <strong>Client ID:</strong> {{ $details['client_id'] }}<br>
+        @endif
         @if (!empty($details['email_field']))
             <strong>Email:</strong> {{ $details['email_field'] }}<br>
         @endif
@@ -88,7 +92,7 @@
         @endif
 
         @if (!empty($details['pay_period']))
-        <strong>>Pay Period:</strong> {{ $details['pay_period'] }}<br>
+        <strong>Pay Period:</strong> {{ $details['pay_period'] }}<br>
         @endif
 
         @if (!empty($details['employment_status']))
@@ -164,6 +168,10 @@
     @if (!empty($details['co_applicant_surname']) || !empty($details['co_applicant_name']) || !empty($details['co_applicant_middle']) || !empty($details['co_applicant_address']))
     <p>
         <h3>CO-APPLICANT:</h3>
+
+        @if (!empty($details['co_client_id']))
+            <strong>Co Client ID:</strong> {{ $details['co_client_id'] }}<br>
+        @endif
 
         @if (!empty($details['co_national_registration_number']))
         <strong>NATIONAL REGISTRATION NUMBER:</strong> {{ $details['co_national_registration_number'] }}<br>
