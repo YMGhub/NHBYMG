@@ -156,7 +156,7 @@
         @endif
 
 
-        <strong>The documents are attached to the email</strong><br>
+
 
 
 
@@ -261,7 +261,7 @@
     </p>
     @endif
 
-
+ <strong>The documents are attached to the email</strong><br>
 
 
 

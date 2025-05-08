@@ -196,6 +196,13 @@ class ApplicationRentalController extends Controller
         // Redirect back with success message
         //return redirect("/application-for-rental")->with('success', 'Message received successfully!');
 
+
+        $salaryApp = str_replace(',', '', $request->salary);
+        $salaryAp = number_format(floatval($salaryApp), 2, '.', '');
+        $cosalaryCo = str_replace(',', '', $request->co_salary);
+        $cosalary = number_format(floatval($cosalaryCo), 2, '.', '');
+
+
         $details = [
             'payslips' => $payslipsBase64,
             'applicant_surname' => $request->applicant_surname,
@@ -282,6 +289,13 @@ class ApplicationRentalController extends Controller
             'co_applicant_address2' => $request->co_applicant_address2,
             'applicant_parish' => $request->applicant_parish,
             'co_applicant_parish' => $request->co_applicant_parish,
+
+            'client_id' => $request->client_id,
+            'co_client_id' => $request->co_client_id,
+            'salary' => $salaryAp,
+            'co_salary' => $cosalary,
+
+
 
         ];
 

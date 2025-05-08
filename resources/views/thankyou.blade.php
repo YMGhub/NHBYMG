@@ -110,6 +110,7 @@
 
                 <p style="margin-bottom:0px">Your application has been submitted successfully.</p>
                 <p style="margin-bottom:0px">Application Number: {{ session('ApplicationNumber') }}</p>
+                <p  style="margin-bottom:0px">Please note this number so you can use it as reference</p>
                 <p style="margin-bottom:0px">A summary of your application has also been sent to your email address for reference.</p>
 
             </div>
