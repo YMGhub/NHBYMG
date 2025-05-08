@@ -1934,67 +1934,63 @@
         document.addEventListener('DOMContentLoaded', function() {
 
             //prevent submit
-               const form = document.getElementById('applicationrental');
 
+                /*const form = document.getElementById('applicationrental');
 
-            form.addEventListener('submit', function(e) {
+            form.addEventListener('submit', function (e) {
                 const campos = form.querySelectorAll('[required]');
                 let hayErrores = false;
                 const radiosAgrupados = {};
-                const botonRedActivo = document.querySelector('.buttonRed') !== null;
-
-                // Campos co_ especiales
-                const camposCo = form.querySelectorAll('[name^="co_"]');
-
-                camposCo.forEach(campo => {
-                    campo.classList.remove('campo-error');
-
-                    if (!botonRedActivo) {
-                        campo.value = ''; // Limpia el campo si no está activa la validación
-                    } else {
-                        // Validación normal solo si hay botón .buttonRed
-                        if (!campo.value.trim()) {
-                            hayErrores = true;
-                            campo.classList.add('campo-error');
-                        }
-                    }
-                });
 
                 campos.forEach(campo => {
                     campo.classList.remove('campo-error');
 
-                    // Saltar campos que empiezan con co_ (ya fueron validados)
-                    if (campo.name.startsWith('co_')) return;
+                    const tag = campo.tagName.toLowerCase();
+                    const tipo = campo.type;
 
-                    if (campo.type === 'file') {
+                    // Agrupar radios
+                    if (tipo === 'radio') {
+                        if (!radiosAgrupados[campo.name]) {
+                            radiosAgrupados[campo.name] = form.querySelectorAll(`input[type="radio"][name="${campo.name}"]`);
+                        }
+                        return;
+                    }
+
+                    // Validar campos de tipo select
+                    if (tag === 'select') {
+                        if (!campo.value.trim()) {
+                            hayErrores = true;
+                            campo.classList.add('campo-error');
+                        }
+                    }
+
+                    // Validar campos de tipo file
+                    else if (tipo === 'file') {
                         if (campo.files.length === 0) {
                             hayErrores = true;
                             campo.classList.add('campo-error');
                         }
-                    } else if (campo.type === 'radio') {
-                        if (!radiosAgrupados[campo.name]) {
-                            radiosAgrupados[campo.name] = form.querySelectorAll(`input[type="radio"][name="${campo.name}"]`);
-                        }
-                    } else if (campo.tagName === 'SELECT') {
-                        if (!campo.value.trim()) {
-                            hayErrores = true;
-                            campo.classList.add('campo-error');
-                        }
-                    } else {
-                        if (!campo.value.trim()) {
+                    }
+
+                    // Validar input text, email, tel, number
+                    else if (tag === 'input' || tag === 'textarea') {
+                        const tiposPermitidos = ['text', 'email', 'tel', 'number'];
+                        if (tiposPermitidos.includes(tipo) && !campo.value.trim()) {
                             hayErrores = true;
                             campo.classList.add('campo-error');
                         }
                     }
                 });
 
+                // Validar grupos de radio
                 for (const nombre in radiosAgrupados) {
                     const grupo = radiosAgrupados[nombre];
-                    const seleccionado = Array.from(grupo).some(radio => radio.checked);
-                    grupo.forEach(radio => radio.classList.remove('radio-error'));
-                    if (!seleccionado) {
+                    const algunoSeleccionado = Array.from(grupo).some(radio => radio.checked);
+                    grupo.forEach(r => r.classList.remove('radio-error'));
+
+                    if (!algunoSeleccionado) {
                         hayErrores = true;
-                        grupo.forEach(radio => radio.classList.add('radio-error'));
+                        grupo.forEach(r => r.classList.add('radio-error'));
                     }
                 }
 
@@ -2016,7 +2012,7 @@
                         radios.forEach(r => r.classList.remove('radio-error'));
                     }
                 });
-            });
+            });*/
             //end prevent submit
 
             //LocalStora para guardar el status actual del form
