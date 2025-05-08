@@ -96,14 +96,22 @@
 
     <div class="row">
 
+
+
         <h4 class="text-center headline margin-top-35 margin-bottom-35">
             APPLICATION FOR RENTAL UNIT/ LOT</h4>
                 <!--div id="contact-message"></div-->
 
 
+
             @if(session('statusCode'))
+
             <div class="alert alert-success alert-custom alert-success-custom">
-                <p>Application submitted successfully! - Code  {{ session('statusCode') }}</p>
+
+                <p style="margin-bottom:0px">Your application has been submitted successfully.</p>
+                <p style="margin-bottom:0px">Application Number: {{ session('ApplicationNumber') }}</p>
+                <p style="margin-bottom:0px">A summary of your application has also been sent to your email address for reference.</p>
+
             </div>
 
                 <script>

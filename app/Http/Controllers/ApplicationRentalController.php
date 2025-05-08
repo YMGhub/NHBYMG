@@ -556,7 +556,7 @@ class ApplicationRentalController extends Controller
 
                     if ($responseData['statusCode'] == 200) {
                         //return redirect()->back()->with('success', 'Application submitted successfully! - Code '. $statusCode)->with('clear_localstorage', true); // <- esto activa el JS en la vista;
-                        return redirect()->route('thankyou')->with('statusCode', $statusCode)->with('success', 'Application submitted successfully!')->with('clear_localstorage', true);
+                        return redirect()->route('thankyou')->with('statusCode', $statusCode)->with('ApplicationNumber', $body['Application Number'])->with('success', 'Application submitted successfully!')->with('clear_localstorage', true);
 
                     } else {
                         return back()->with('error', 'Unexpected response from server.');
