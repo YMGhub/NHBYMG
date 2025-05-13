@@ -2610,6 +2610,21 @@
                     .then(response => response.json())
                     .then(data => {
 
+
+                        const listResponse = typeof data === 'string' ?
+                                JSON.parse(data) : data;
+
+                        var ClientIDValid = listResponse.data[0].ClientID;
+
+                        if(ClientIDValid == 0){
+
+                            mensaje.textContent = "Already has an application, Please contact NHC. Phone: 1-246-536-5300 Email: NHC.CustomerService@barbados.gov.bb";
+                            mensaje.style.color =
+                                "red"; // Mensaje de error en rojo
+                        }else{
+
+
+
                         if (data.errorMessage) {
                             mensaje.textContent = data
                                 .errorMessage;
@@ -2722,6 +2737,8 @@
                             }
 
                         } /*end else*/
+
+                         }/*end validation client id */
 
 
                     })
