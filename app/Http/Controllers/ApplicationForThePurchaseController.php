@@ -428,6 +428,12 @@ class ApplicationForThePurchaseController extends Controller
 
 
 
+             $OtherIncome2 = str_replace(',', '', $request->alternative1);
+        $OtherIncome2 = number_format(floatval($OtherIncome2), 2, '.', '');
+
+         $Income2Amt = str_replace(',', '', $request->alternative_amount2);
+        $Income2Amt = number_format(floatval($Income2Amt), 2, '.', '');
+
          $IPAddress =  $_SERVER['REMOTE_ADDR'];
         /**************/
         /*send to curl*/
@@ -490,8 +496,8 @@ class ApplicationForThePurchaseController extends Controller
             "DisabledPersons" => (int)$disabilitieswithinthehousehold,
             "OtherIncome1" => $request->alternative,
             "Income1Amt" => $request->alternative_amount,
-            "OtherIncome2" => $request->alternative1,
-            "Income2Amt" => $request->alternative_amount2,
+            "OtherIncome2" => $OtherIncome2,
+            "Income2Amt" => $Income2Amt,
 
             "CurrentlyRenting" => $areyourenting,
             "OwnedLandSolution" => $yourownland ,
