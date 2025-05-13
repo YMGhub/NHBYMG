@@ -344,7 +344,7 @@
                                                                 <label><b>TAMIS NO:</b></label>
                                                                 <div class="row">
                                                                     <div class="col-md-12">
-                                                                        <input maxlength="13" pattern="\d{10}"
+                                                                        <input maxlength="13
                                                                             name="applicant_tamis_no" type="text"
                                                                             id="applicant_tamis_no"
                                                                             placeholder="Tamis No." required="required" />
@@ -490,53 +490,66 @@
                                                             <div class="col-md-12">
                                                                 <label><b>MARITAL STATUS:</b></label>
                                                                 <div class="row">
-                                                                    <div class="col-md-3">
-                                                                        <div>
-                                                                            <label>
-                                                                                <input type="radio"
-                                                                                    name="marital_status" value="SINGLE"
-                                                                                    checked required> SINGLE
-                                                                            </label>
-                                                                        </div>
+                                                                    <div
+                                                                    style="display: flex;width: 100%;justify-content: space-between;">
+                                                                    <div style="width:20%;display:flex;align-items: center;"
+                                                                        class="form-check form-check-inline">
+                                                                        <input style="margin-bottom:0px"
+                                                                            class="form-check-input" type="radio"
+                                                                            name="marital_status" id="Single"
+                                                                            value="Single">
+                                                                        <label
+                                                                            style="margin-bottom: 0;display: block;margin-left: 10px;"
+                                                                            class="form-check-label"
+                                                                            for="Single">Single</label>
                                                                     </div>
-                                                                    <div class="col-md-3">
-                                                                        <div>
-                                                                            <label>
-                                                                                <input type="radio"
-                                                                                    name="marital_status" value="MARRIED" required>
-                                                                                MARRIED
-                                                                            </label>
-                                                                        </div>
+                                                                    <div style="width:20%;display:flex;align-items: center;"
+                                                                        class="form-check form-check-inline">
+                                                                        <input style="margin-bottom:0px"
+                                                                            class="form-check-input" type="radio"
+                                                                            name="marital_status" id="Married"
+                                                                            value="Married">
+                                                                        <label
+                                                                            style="margin-bottom: 0;display: block;margin-left: 10px;"
+                                                                            class="form-check-label"
+                                                                            for="Married">Married</label>
                                                                     </div>
-                                                                    <div class="col-md-3">
-                                                                        <div>
-                                                                            <label>
-                                                                                <input type="radio"
-                                                                                    name="marital_status" value="WIDOWED" required>
-                                                                                WIDOWED
-                                                                            </label>
-                                                                        </div>
+                                                                    <div style="width:20%;display:flex;align-items: center;"
+                                                                        class="form-check form-check-inline">
+                                                                        <input style="margin-bottom:0px"
+                                                                            class="form-check-input" type="radio"
+                                                                            name="marital_status" id="Widowed"
+                                                                            value="Widowed">
+                                                                        <label
+                                                                            style="margin-bottom: 0;display: block;margin-left: 10px;"
+                                                                            class="form-check-label"
+                                                                            for="Widowed">Widowed</label>
                                                                     </div>
-                                                                    <div class="col-md-3">
-                                                                        <div>
-                                                                            <label>
-                                                                                <input type="radio"
-                                                                                    name="marital_status" required
-                                                                                    value="DIVORCED">
-                                                                                DIVORCED
-                                                                            </label>
-                                                                        </div>
+                                                                    <div style="width:20%;display:flex;align-items: center;"
+                                                                        class="form-check form-check-inline">
+                                                                        <input style="margin-bottom:0px"
+                                                                            class="form-check-input" type="radio"
+                                                                            name="marital_status" id="Divorced"
+                                                                            value="Divorced">
+                                                                        <label
+                                                                            style="margin-bottom: 0;display: block;margin-left: 10px;"
+                                                                            class="form-check-label"
+                                                                            for="Divorced">Divorced</label>
                                                                     </div>
-                                                                    <div class="col-md-3">
-                                                                        <div>
-                                                                            <label>
-                                                                                <input type="radio"
-                                                                                    name="marital_status" required
-                                                                                    value="SEPARATED">
-                                                                                SEPARATED
-                                                                            </label>
-                                                                        </div>
+                                                                    <div style="width:20%;display:flex;align-items: center;"
+                                                                        class="form-check form-check-inline">
+                                                                        <input style="margin-bottom:0px"
+                                                                            class="form-check-input" type="radio"
+                                                                            name="marital_status" id="Separated"
+                                                                            value="Separated">
+                                                                        <label
+                                                                            style="margin-bottom: 0;display: block;margin-left: 10px;"
+                                                                            class="form-check-label"
+                                                                            for="Separated">Separated</label>
                                                                     </div>
+                                                                </div>
+
+
                                                                 </div>
                                                             </div>
                                                         </div>
