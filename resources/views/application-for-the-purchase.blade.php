@@ -2616,7 +2616,7 @@
 
                         var ClientIDValid = listResponse.data[0].ClientID;
 
-                         ClientIDValid = 0;
+
 
                         if(ClientIDValid == 0){
 
