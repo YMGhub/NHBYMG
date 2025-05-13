@@ -418,6 +418,14 @@ class ApplicationForThePurchaseController extends Controller
             $bankStatement = null; // O manejar el error de otro modo
         }
 
+           $land_or_agent = null;
+        if ($request->hasFile('land_or_agent')) {
+            $bankStateland_or_agentment = base64_encode(file_get_contents($request->file('land_or_agent')->getRealPath()));
+        } else {
+            $land_or_agent = null; // O manejar el error de otro modo
+        }
+
+
 
 
          $IPAddress =  $_SERVER['REMOTE_ADDR'];
@@ -491,7 +499,7 @@ class ApplicationForThePurchaseController extends Controller
             "Lender" => $request->mortgage_or_loan,
             "DepositAmt" => $the_amount_of_deposit,
 
-            "imgLandLordLetter" => NULL ,
+            "imgLandLordLetter" => $land_or_agent ,
             "imgMortgageCertificate" => NULL ,
             "imgBankStatement" => $bankStatement ,
 

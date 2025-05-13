@@ -12,12 +12,8 @@
 
 
     <p>
-    <h3>NAME</h3>
-    <strong>Saludation:</strong> {{ $details['salutation'] }}<br>
-    <strong>Surname:</strong> {{ $details['applicant_surname'] }}<br>
-    <strong>First:</strong> {{ $details['applicant_first'] }}<br>
-    <strong>Middle:</strong> {{ $details['applicant_middle'] }}<br>
-    <strong>Maiden name:</strong> {{ $details['applicant_maiden_name'] }}
+        <strong>EMAIL:</strong><br>
+        {{ $details['applicant_email'] }}
     </p>
 
     <p>
@@ -26,19 +22,34 @@
     </p>
 
     <p>
+    <h3>NAME</h3>
+    <strong>Saludation:</strong> {{ $details['salutation'] }}<br>
+    <strong>First:</strong> {{ $details['applicant_first'] }}<br>
+    <strong>Middle:</strong> {{ $details['applicant_middle'] }}<br>
+    <strong>DATE OF BIRTH:</strong> {{ $details['applicant_date_birth'] }}<br>
+    <strong>Gender:</strong> {{ $details['applicant_gender'] }}<br>
+    </p>
+
+
+
+
+
+    <p>
         <strong>TAMIS NO:</strong><br>
         {{ $details['applicant_tamis_no'] }}
     </p>
 
     <p>
-        <strong>ADDRESS:</strong><br>
-        {{ $details['applicant_address'] }}
+        <strong>ADDRESS:</strong><br>{{ $details['applicant_address'] }}<br>
+        <strong>ADDRESS 2:</strong><br>{{ $details['applicant_address2'] }}<br>
+        <strong>ADDRESS 3:</strong><br>{{ $details['applicant_address3'] }}<br>
     </p>
 
     <p>
-        <strong>DATE OF BIRTH:</strong><br>
-        {{ $details['applicant_date_birth'] }}
+        <strong>PARISH:</strong><br>{{ $details['applicant_parish'] }}
     </p>
+
+
 
     <p>
         <strong>TELEPHONE NUMBER:</strong><br>
@@ -48,10 +59,7 @@
     </p>
 
 
-    <p>
-        <strong>EMAIL:</strong><br>
-        {{ $details['applicant_email'] }}
-    </p>
+
 
     <p>
         <strong>MARITAL STATUS:</strong><br>
@@ -67,6 +75,82 @@
         <strong>COUNTRY OF RESIDENCE:</strong><br>
         {{ $details['applicant_country_of_residence'] }}
     </p>
+
+    <p>
+        <strong>Employer:</strong><br>
+        {{ $details['employer_field'] }}
+    </p>
+
+    <p>
+        <strong>Occupation:</strong><br>
+        {{ $details['occupation_field'] }}
+    </p>
+
+
+    @if (!empty($details['app_period_of_employment']))
+        <strong>Period of Employment:</strong> {{ $details['app_period_of_employment'] }}<br>
+    @endif
+
+    @if (!empty($details['app_salary']))
+        <strong>Salary:</strong> {{ $details['app_salary'] }}<br>
+    @endif
+
+
+    @if (!empty($details['app_pay_period']))
+        <strong>Pay Period:</strong> {{ $details['app_pay_period'] }}<br>
+    @endif
+
+    @if (!empty($details['app_employment_status']))
+        <strong>Employment Status:</strong> {{ $details['app_employment_status'] }}<br>
+    @endif
+
+    @if (!empty($details['addmore[0][adult_person]']))
+        <strong>INFORMATION ON INTENDED OCCUPANTS:</strong><br>
+        <strong>Adults:</strong>{{ $details['addmore[0][adult_person]'] }}</br>
+        <strong>Children:</strong>{{ $details['addmore[0][children_person]'] }}</br>
+    @endif
+
+    @if (!empty($details['disabilitieswithinthehousehold']))
+        <strong>ARE THERE ANY PERSONS WITH DISABILITIES WITHIN THE HOUSEHOLD?::</strong>
+        {{ $details['disabilitieswithinthehousehold'] }}<br>
+    @endif
+
+    @if (!empty($details['disabilitieswithinthehousehold']))
+        <strong>AALTERNATIVE SOURCES OF INCOME IN HOUSEHOLD: (Maintenance, Alimony, Second Job, Adults working but not
+            listed on this application etc…):</strong><br>
+        <strong>Alternative:</strong>{{ $details['alternative'] }}</br>
+        <strong>Amount:</strong>{{ $details['alternative_amount'] }}</br>
+        <strong>Alternative:</strong>{{ $details['alternative1'] }}</br>
+        <strong>Amount:</strong>{{ $details['alternative_amount2'] }}</br>
+    @endif
+
+    @if (!empty($details['areyourenting']))
+        <strong>Are you currently renting?:</strong> {{ $details['areyourenting'] }}<br>
+    @endif
+
+    @if ($details['areyourenting'] == 'Yes')
+        <strong>If yes, how much is your rent?:</strong> {{ $details['ifyeshowmuch'] }}<br>
+    @endif
+
+    @if (!empty($details['yourownland']))
+        <strong>Do you wish us to provide a housing solution on land you own?</strong>
+        {{ $details['yourownland'] }}<br>
+    @endif
+
+    @if ($details['yourownland'] == "Yes")
+        <strong>Prompt the applicant to provide the location of the Land Lot</strong>
+        {{ $details['land_or_lot'] }}<br>
+    @endif
+
+    @if (!empty($details['tenant']))
+        <strong>Do you wish the NHC to provide a housing solution on land you do not own (and not owned by the NHC)?:</strong> {{ $details['tenant'] }}<br>
+    @endif
+
+     @if ($details['tenant'] == "Yes")
+        <strong>The Letter of permission from the landlord/agent was attached in email.</strong><br>
+    @endif
+
+
 
     <p>
         <b>CO-APPLICANT</b><br>

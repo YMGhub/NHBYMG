@@ -1193,12 +1193,14 @@
                                                         <label><b>What is the amount of deposit available?</b></label>
                                                         <div class="row">
                                                             <div class="col-md-12">
-                                                                <input name="the_amount_of_deposit" type="text"
+                                                                <input name="the_amount_of_deposit" id="the_amount_of_deposit" type="text"
                                                                     placeholder="$" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+
+
 
                                                 <!--PREFERRED LOCATION OF LAND/PROPERT:-->
                                                 <!--Applicant to submit bank statement(s) -->
@@ -1221,7 +1223,7 @@
                                                             <div class="col-md-12">
                                                                 <label><b>Qualifying Amount :</b></label>
                                                                 <input required name="qualifyngamount" type="text"
-                                                                    placeholder="" />
+                                                                    placeholder="" id="qualifyngamount" />
                                                                 <p>For personally financed purchases, a BANK STATEMENT is
                                                                     required. For
                                                                     mortgages/loans, a MORTGAGE CERTIFICATE is required.
@@ -2139,6 +2141,69 @@
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+
+        //
+            //the_amount_of_deposit
+            const the_amount_of_deposit = document.getElementById('the_amount_of_deposit');
+
+            the_amount_of_deposit.addEventListener('input', function(e) {
+                const input = e.target;
+
+                // Obtener solo números y punto
+                let value = input.value.replace(/[^0-9.]/g, '');
+
+                // Separar entero y decimal
+                let [intPart, decimalPart] = value.split('.');
+
+                // Formatear parte entera con comas
+                if (intPart) {
+                    intPart = intPart.replace(/^0+/, ''); // eliminar ceros iniciales
+                    intPart = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                } else {
+                    intPart = '0';
+                }
+
+                // Limitar decimales a 2
+                if (decimalPart !== undefined) {
+                    decimalPart = decimalPart.substring(0, 2);
+                    value = `${intPart}.${decimalPart}`;
+                } else {
+                    value = `${intPart}`;
+                }
+
+                input.value = value;
+            });
+
+             //qualifyngamount
+            const qualifyngamount = document.getElementById('qualifyngamount');
+
+            qualifyngamount.addEventListener('input', function(e) {
+                const input = e.target;
+
+                // Obtener solo números y punto
+                let value = input.value.replace(/[^0-9.]/g, '');
+
+                // Separar entero y decimal
+                let [intPart, decimalPart] = value.split('.');
+
+                // Formatear parte entera con comas
+                if (intPart) {
+                    intPart = intPart.replace(/^0+/, ''); // eliminar ceros iniciales
+                    intPart = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                } else {
+                    intPart = '0';
+                }
+
+                // Limitar decimales a 2
+                if (decimalPart !== undefined) {
+                    decimalPart = decimalPart.substring(0, 2);
+                    value = `${intPart}.${decimalPart}`;
+                } else {
+                    value = `${intPart}`;
+                }
+
+                input.value = value;
+            });
 
 
         const form = document.getElementById('applicationpurchase');
