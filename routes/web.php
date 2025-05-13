@@ -133,6 +133,12 @@ Route::get('/application-for-the-purchase', function () {
     return view('application-for-the-purchase', ['showSecondForm' => false]);
 })->name('application-for-the-purchase');
 
+Route::get('/thank-you-purchase', function () {
+    return view('thankyoupurchase', [
+        'statusCode' => session('statusCode'),
+        'ApplicationNumber' => session('ApplicationNumber'),
+    ]);
+})->name('thankyoupurchase');
 
 //quien envia la data a la tabla link Request y gaurda datos de cualquier form  purchase
 

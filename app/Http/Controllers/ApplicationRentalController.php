@@ -338,25 +338,25 @@ class ApplicationRentalController extends Controller
 
         //pay_period
         $pay_period = 1;
-        if($request->marital_status == "Weekly"){
+        if($request->pay_period == "Weekly"){
             $pay_period = 1;
         }
-        if($request->marital_status == "Bi-Monthly"){
+        if($request->pay_period == "Bi-Monthly"){
             $pay_period = 2;
         }
-        if($request->marital_status == "Monthly"){
+        if($request->pay_period == "Monthly"){
             $pay_period = 3;
         }
 
         //employment_status
         $employment_status = 1;
-        if($request->marital_status == "Government"){
+        if($request->employment_status == "Government"){
             $employment_status = 1;
         }
-        if($request->marital_status == "Private"){
+        if($request->employment_status == "Private"){
             $employment_status = 2;
         }
-        if($request->marital_status == "Self"){
+        if($request->employment_status == "Self"){
             $employment_status = 3;
         }
 

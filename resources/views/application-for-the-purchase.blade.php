@@ -252,10 +252,10 @@
                                                             </div>
                                                         </div>
                                                         <!--div class="col-md-3">
-                                                                                                                        <label style="color:#fff"><b>.</b></label>
-                                                                                                                        <input name="applicant_surname" type="text" id="applicant_surname"
-                                                                                                                            placeholder="Surname" required="required" />
-                                                                                                                        </div-->
+                                                                                                                                    <label style="color:#fff"><b>.</b></label>
+                                                                                                                                    <input name="applicant_surname" type="text" id="applicant_surname"
+                                                                                                                                        placeholder="Surname" required="required" />
+                                                                                                                                    </div-->
                                                         <div class="col-md-4">
                                                             <label style="color:#fff"><b>.</b></label>
                                                             <input name="applicant_first" type="text"
@@ -1901,34 +1901,34 @@
                                                                         class="form-check form-check-inline">
                                                                         <input style="margin-bottom:0px"
                                                                             class="form-check-input" type="radio"
-                                                                            name="co_app_pay_period" id="Weekly"
+                                                                            name="co_app_pay_period" id="Weekly1"
                                                                             value="Weekly">
                                                                         <label
                                                                             style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                             class="form-check-label"
-                                                                            for="Weekly">Weekly</label>
+                                                                            for="Weekly1">Weekly</label>
                                                                     </div>
                                                                     <div style="width:40%;display:flex;align-items: center;"
                                                                         class="form-check form-check-inline">
                                                                         <input style="margin-bottom:0px"
                                                                             class="form-check-input" type="radio"
-                                                                            name="co_app_pay_period" id="Bi-Monthly"
+                                                                            name="co_app_pay_period" id="Bi-Monthly1"
                                                                             value="Bi-Monthly">
                                                                         <label
                                                                             style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                             class="form-check-label"
-                                                                            for="Bi-Monthly">Bi-Monthly</label>
+                                                                            for="Bi-Monthly1">Bi-Monthly</label>
                                                                     </div>
                                                                     <div style="width:40%;display:flex;align-items: center;"
                                                                         class="form-check form-check-inline">
                                                                         <input style="margin-bottom:0px"
                                                                             class="form-check-input" type="radio"
-                                                                            name="co_app_pay_period" id="Monthly"
+                                                                            name="co_app_pay_period" id="Monthly1"
                                                                             value="Monthly">
                                                                         <label
                                                                             style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                             class="form-check-label"
-                                                                            for="Monthly">Monthly</label>
+                                                                            for="Monthly1">Monthly</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1949,32 +1949,32 @@
                                                                         <input style="margin-bottom:0px"
                                                                             class="form-check-input" type="radio"
                                                                             name="co_app_employment_status"
-                                                                            id="Government" value="Government">
+                                                                            id="Government1" value="Government">
                                                                         <label
                                                                             style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                             class="form-check-label"
-                                                                            for="Government">Government</label>
+                                                                            for="Government1">Government</label>
                                                                     </div>
                                                                     <div style="width:40%;display:flex;align-items: center;"
                                                                         class="form-check form-check-inline">
                                                                         <input style="margin-bottom:0px"
                                                                             class="form-check-input" type="radio"
                                                                             name="co_app_employment_status"
-                                                                            id="Private" value="Private">
+                                                                            id="Private1" value="Private">
                                                                         <label
                                                                             style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                             class="form-check-label"
-                                                                            for="Private">Private</label>
+                                                                            for="Private1">Private</label>
                                                                     </div>
                                                                     <div style="width:40%;display:flex;align-items: center;"
                                                                         class="form-check form-check-inline">
                                                                         <input style="margin-bottom:0px"
                                                                             class="form-check-input" type="radio"
                                                                             name="co_app_employment_status"
-                                                                            id="Self" value="Self">
+                                                                            id="Self1" value="Self">
                                                                         <label
                                                                             style="margin-bottom: 0;display: block;margin-left: 10px;"
-                                                                            class="form-check-label" for="Self">Self
+                                                                            class="form-check-label" for="Self1">Self
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -1982,6 +1982,99 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                <div class="col-md-12 hideArea2" >
+                                                    <div>
+                                                        <label><b>APPLICATION TYPE:</b></label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 hideArea2">
+                                                    <div>
+                                                        <label><b>Timber:</b></label>
+                                                        <input name="co_house_type" value="Timber" type="radio"
+                                                            id="Timber" />
+                                                    </div>
+                                                    <div>
+                                                        <label><b>Wall:</b></label>
+                                                        <input name="co_house_type" value="Wall" type="radio"
+                                                            id="Wall" />
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label><b>Timber / Wall:</b></label>
+                                                        <input name="co_house_type" value="Timber / Wall" type="radio"
+                                                            id="timber_wall" />
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label><b>Steel Frame:</b></label>
+                                                        <input name="co_house_type" value="Steel Frame" type="radio"
+                                                            id="Steel_Frame" />
+                                                    </div>
+                                                </div>
+
+                                                  <div class="col-md-12 hideArea2">
+                                                    <div>
+                                                        <label><b>PREFERRED HOUSE TYPE:</b></label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 hideArea2">
+                                                    <div>
+                                                        <label><b>2 Bedroom:</b></label>
+                                                        <input name="co_bedrooms" value="2" type="radio"
+                                                            />
+                                                    </div>
+                                                    <div>
+                                                        <label><b>3 Bedroom:</b></label>
+                                                        <input name="co_bedrooms" value="3" type="radio"
+                                                             />
+                                                    </div>
+                                                </div>
+
+                                                   <div class="col-md-12 hideArea2">
+                                                    <div>
+                                                        <label><b>NO OF OCCUPANTS:</b></label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 hideArea2">
+                                                    <div>
+                                                        <label><b>Adults:</b></label>
+                                                        <input name="co_no_occupants_adult" value="2" type="number"
+                                                         />
+                                                    </div>
+                                                    <div>
+                                                        <label><b>Children:</b></label>
+                                                        <input name="co_no_occupants_children" value="3" type="number"
+                                                             />
+                                                    </div>
+                                                </div>
+
+                                                  <!---co_children_agen--->
+                                                <div class="col-md-12 hideArea2">
+                                                    <div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div>
+                                                                    <label><b>CHILDREN’S AGES::</b></label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <input name="co_children_age"
+                                                                                type="text"
+                                                                                id="co_children_age"
+                                                                                placeholder="" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+
                                             </div>
                                             <!--Cierra DataCoApplicant-->
                                             <!--ES NUEVA POSICION DEL COAPPLICANT FIELDS-->
@@ -2052,7 +2145,7 @@
 
 
         /**cookies**/
-        const fieldNames = [
+        const fieldNamesCookie = [
             "client_id",
             "applicant_email",
             "applicant_national_registration_number",
@@ -2123,6 +2216,72 @@
             "co_app_pay_period",
             "co_app_employment_status"
         ];
+
+        // Guardar valor en localStorage cuando cambia
+        function saveByName(name) {
+            const elements = document.getElementsByName(name);
+            if (elements.length > 0) {
+                const input = elements[0]; // asumimos que solo hay uno por name
+
+                if (input.type !== 'file') {
+                    input.addEventListener('input', () => {
+                        localStorage.setItem(name, input.value);
+                    });
+                }
+            }
+        }
+
+        // Al cargar: recuperar valores y aplicar listeners
+
+        fieldNamesCookie.forEach(name => {
+            const elements = document.getElementsByName(name);
+            if (elements.length > 0) {
+                const input = elements[0];
+                const savedValue = localStorage.getItem(name);
+                if (savedValue !== null) {
+                    input.value = savedValue;
+                }
+                saveByName(name);
+            }
+        });
+
+
+        //para radio buton
+
+        // 👇 Lista de radios por name
+        const radioGroups = [
+            'marital_status',
+            'app_pay_period',
+            'app_employment_status',
+            'disabilitieswithinthehousehold ',
+            'areyourenting',
+            'tenant',
+            'financethepurchsaseproporty',
+            'co_marital_status',
+            'co_app_pay_period',
+            'co_app_employment_status'
+        ];
+
+        radioGroups.forEach(name => {
+            const radios = Array.from(document.getElementsByName(name));
+            const saved = localStorage.getItem(name);
+
+            radios.forEach(radio => {
+                // Cargar valor guardado
+                if (saved && radio.value === saved) {
+                    radio.checked = true;
+                }
+
+                // Guardar nuevo valor al cambiar
+                radio.addEventListener('change', () => {
+                    if (radio.checked) {
+                        localStorage.setItem(name, radio.value);
+                        console.log(
+                            `Guardado en localStorage: ${name} = ${radio.value}`);
+                    }
+                });
+            });
+        });
         /***********/
 
 
@@ -3571,7 +3730,7 @@
 
 
 
-        document.getElementById('applicationpurchase').addEventListener('submit', function(event) {
+        /*document.getElementById('applicationpurchase').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the form from submitting normally
 
             // Assuming you have included SweetAlert library script tag
@@ -3608,6 +3767,6 @@
 
             document.getElementById('applicationpurchase').reset();
 
-        });
+        });*/
     });
 </script>

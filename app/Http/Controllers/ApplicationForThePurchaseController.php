@@ -29,6 +29,9 @@ class ApplicationForThePurchaseController extends Controller
     public function submitApplication(Request $request)
     {
 
+
+
+
         ApplicationForThePurchase::create([
             'salutation' => $request->salutation,
             'applicant_surname' => $request->applicant_surname,
@@ -124,7 +127,7 @@ class ApplicationForThePurchaseController extends Controller
         'coapplicant_address2'=> $request->coapplicant_address2,
         'coapplicant_address3'=> $request->coapplicant_address3,
         'coapplicant_parish'=> $request->coapplicant_parish,
-        'addmore'=> $request->addmore,
+        'addmore'=> json_encode($request->addmore),
         'land_or_lot'=> $request->land_or_lot,
         'bankstatements'=> $request->bankstatements
         ]);
@@ -225,12 +228,332 @@ class ApplicationForThePurchaseController extends Controller
             'coapplicant_address2'=> $request->coapplicant_address2,
             'coapplicant_address3'=> $request->coapplicant_address3,
             'coapplicant_parish'=> $request->coapplicant_parish,
-            'addmore'=> $request->addmore,
+            'addmore'=> json_encode($request->addmore),
             'land_or_lot'=> $request->land_or_lot,
             'bankstatements'=> $request->bankstatements
         ];
 
-        Mail::to('NHC.CustomerService@barbados.gov.bb')->send(new ApplicationForThePurchaseMail($details));
+        //Mail::to('NHC.CustomerService@barbados.gov.bb')->send(new ApplicationForThePurchaseMail($details));
+
+
+
+        //API ENVIO DE DATOS
+
+                ///Applicant
+        //marital_status
+        $marital_status = 1;
+        if($request->marital_status == "Single"){
+            $marital_status = 1;
+        }
+        if($request->marital_status == "Married"){
+            $marital_status = 2;
+        }
+        if($request->marital_status == "Widowed"){
+            $marital_status = 3;
+        }
+        if($request->marital_status == "Divorced"){
+            $marital_status = 4;
+        }
+        if($request->marital_status == "Separated"){
+            $marital_status = 5;
+        }
+
+        //pay_period
+        $pay_period = 1;
+        if($request->app_pay_period == "Weekly"){
+            $pay_period = 1;
+        }
+        if($request->app_pay_period == "Bi-Monthly"){
+            $pay_period = 2;
+        }
+        if($request->app_pay_period == "Monthly"){
+            $pay_period = 3;
+        }
+
+        //employment_status
+        $employment_status = 1;
+        if($request->app_employment_status == "Government"){
+            $employment_status = 1;
+        }
+        if($request->app_employment_status == "Private"){
+            $employment_status = 2;
+        }
+        if($request->app_employment_status == "Self"){
+            $employment_status = 3;
+        }
+
+        $salary = str_replace(',', '', $request->app_salary);
+        $salary = number_format(floatval($salary), 2, '.', '');
+
+
+        $phone_home = substr($p = preg_replace('/\D+/', '', $request->applicant_phone_home), 0, 3) . '-' . substr($p, 3, 3) . '-' . substr($p, 6);
+        $phone_work = substr($p = preg_replace('/\D+/', '', $request->applicant_phone_work), 0, 3) . '-' . substr($p, 3, 3) . '-' . substr($p, 6);
+        $phone_cell = substr($p = preg_replace('/\D+/', '', $request->applicant_phone_cell), 0, 3) . '-' . substr($p, 3, 3) . '-' . substr($p, 6);
+
+        /*end applicant*/
+
+        /*Coapplicant */
+         $co_phone_home = substr($p = preg_replace('/\D+/', '', $request->coapplicant_phone_home), 0, 3) . '-' . substr($p, 3, 3) . '-' . substr($p, 6);
+         $co_phone_work = substr($p = preg_replace('/\D+/', '', $request->coapplicant_phone_work), 0, 3) . '-' . substr($p, 3, 3) . '-' . substr($p, 6);
+         $co_phone_cell = substr($p = preg_replace('/\D+/', '', $request->coapplicant_phone_cell), 0, 3) . '-' . substr($p, 3, 3) . '-' . substr($p, 6);
+
+
+
+         $co_salary = str_replace(',', '', $request->co_app_salary);
+         $co_salary = number_format(floatval($co_salary), 2, '.', '');
+
+          //marital_status
+        $comarital_status = 1;
+        if($request->co_marital_status == "Single"){
+            $comarital_status = 1;
+        }
+        if($request->co_marital_status == "Married"){
+            $comarital_status = 2;
+        }
+        if($request->co_marital_status == "Widowed"){
+            $comarital_status = 3;
+        }
+        if($request->co_marital_status == "Divorced"){
+            $comarital_status = 4;
+        }
+        if($request->co_marital_status == "Separated"){
+            $comarital_status = 5;
+        }
+
+        //pay_period
+        $copay_period = 1;
+        if($request->app_pay_period == "Weekly"){
+            $copay_period = 1;
+        }
+        if($request->app_pay_period == "Bi-Monthly"){
+            $copay_period = 2;
+        }
+        if($request->app_pay_period == "Monthly"){
+            $copay_period = 3;
+        }
+
+        //employment_status
+        $coemployment_status = 1;
+        if($request->app_employment_status == "Government"){
+            $coemployment_status = 1;
+        }
+        if($request->app_employment_status == "Private"){
+            $coemployment_status = 2;
+        }
+        if($request->app_employment_status == "Self"){
+            $coemployment_status = 3;
+        }
+
+        //co_house_type
+          $co_house_type = 1;
+        if($request->co_house_type == "Timber"){
+            $co_house_type = 1;
+        }
+        if($request->co_house_type == "Wall"){
+            $co_house_type = 2;
+        }
+        if($request->co_house_type == "Timber / Wall"){
+            $co_house_type = 3;
+        }
+         if($request->co_house_type == "Steel Frame"){
+            $co_house_type = 4;
+        }
+
+        //disabilitieswithinthehousehold
+        $disabilitieswithinthehousehold = 0;
+        if($request->co_house_type == "No"){
+            $disabilitieswithinthehousehold = 0;
+        }
+
+        if($request->co_house_type == "Yes"){
+            $disabilitieswithinthehousehold = 1;
+        }
+
+        //areyourenting
+        $areyourenting = 0;
+        if($request->areyourenting == "No"){
+            $areyourenting = 0;
+        }
+        if($request->areyourenting == "Yes"){
+            $areyourenting = 1;
+        }
+
+
+        //yourownland
+           $yourownland = 0;
+        if($request->yourownland == "No"){
+            $yourownland = 0;
+        }
+        if($request->yourownland == "Yes"){
+            $yourownland = 1;
+        }
+
+        //financethepurchsaseproporty
+        $financethepurchsaseproporty = 1;
+
+        if($request->financethepurchsaseproporty == "Mortgage"){
+            $financethepurchsaseproporty = 1;
+        }
+
+        if($request->financethepurchsaseproporty == "Loan"){
+            $financethepurchsaseproporty =2;
+        }
+
+        if($request->financethepurchsaseproporty == "Full Cash Payment"){
+            $financethepurchsaseproporty = 3;
+        }
+
+        //the_amount_of_deposit
+
+         $the_amount_of_deposit = str_replace(',', '', $request->the_amount_of_deposit);
+         $the_amount_of_deposit = number_format(floatval($the_amount_of_deposit), 2, '.', '');
+
+
+           //bankStatement:
+        $bankStatement = null;
+        if ($request->hasFile('bankstatements')) {
+            $bankStatement = base64_encode(file_get_contents($request->file('bankstatements')->getRealPath()));
+        } else {
+            $bankStatement = null; // O manejar el error de otro modo
+        }
+
+
+
+         $IPAddress =  $_SERVER['REMOTE_ADDR'];
+        /**************/
+        /*send to curl*/
+        $postFields = [
+            "ClientID" => $request->client_id,
+            "NRN" => $request->applicant_national_registration_number,
+            "Salutation" => $request->salutation,
+            "ApplicantSurname" => $request->salutation,
+            "ApplicantFirst" => $request->applicant_first,
+            "DateOfBirth" => $request->applicant_date_birth,
+            "Gender" => $request->applicant_gender,
+            "TamisNumber" => $request->applicant_tamis_no,
+            "ApplicantAddress1" => $request->applicant_address,
+            "ApplicantAddress2" => $request->applicant_address2,
+            "ApplicantAddress3" => $request->applicant_address3,
+            "ApplicantParish" => $request->applicant_parish,
+            "PhoneHome" => $phone_home ,
+            "PhoneWork" => $phone_work ,
+            "PhoneCell" => $phone_cell ,
+            "Email" => $request->applicant_email,
+            "MaritalStatus" => $marital_status ,
+            "Citizenship" => $request->applicant_citizenship,
+            "CountryOfResidence" => $request->applicant_country_of_residence,
+            "Employer" => $request->app_employer_field,
+            "Occupation" => $request->app_occupation_field,
+            "PeriodOfEmployment" => $request->app_period_of_employment,
+            "Salary" => $salary,
+            "PayPeriod" => $request->pay_period,
+            "EmploymentStatus" => $request->employment_status,
+
+            "CoNRN" => $request->coapplicant_national_registration_number,
+            "CoSalutation" => $request->coapplicant_surname ,
+            "CoApplicantSurname" => $request->coapplicant_surname ,
+            "CoApplicantFirst" => $request->coapplicant_first,
+            "CoDateOfBirth" => $request->coapplicant_date_birth,
+            "CoGender" => NULL ,
+            "CoTamisNumber" => $request->coapplicant_tamis_no ,
+            "CoApplicantAddress1" => $request->coapplicant_address,
+            "CoApplicantAddress2" => $request->coapplicant_address2,
+            "CoApplicantAddress3" => $request->coapplicant_address3,
+            "CoApplicantParish" => $request->coapplicant_parish,
+            "CoPhoneHome" => $co_phone_home ,
+            "CoPhoneWork" => $co_phone_work ,
+            "CoPhoneCell" => $co_phone_cell,
+            "CoEmail" => $request->coapplicant_email,
+            "CoMaritalStatus" => $comarital_status ,
+            "CoCitizenship" => $request->co_applicant_citizenship,
+            "CoCountryOfResidence" => $request->co_applicant_country_of_residence ,
+            "CoEmployer" => $request->co_app_employer_field ,
+            "CoOccupation" => $request->co_app_occupation_field ,
+            "CoPeriodOfEmployment" => $request->co_app_occupation_field ,
+            "CoSalary" => $request->co_salary ,
+            "CoPayPeriod" => $copay_period ,
+            "CoEmploymentStatus" => $coemployment_status ,
+
+             "HouseType" => $co_house_type ,
+            "PrefBedrooms" => (int)$request->co_bedrooms ,
+            "NoAdults" =>(int)$request->co_no_occupants_adult ,
+            "NoChildren" => (int)$request->co_no_occupants_children ,
+            "DisabledPersons" => (int)$disabilitieswithinthehousehold,
+            "OtherIncome1" => $request->alternative,
+            "Income1Amt" => $request->alternative_amount,
+            "OtherIncome2" => $request->alternative1,
+            "Income2Amt" => $request->alternative_amount2,
+
+            "CurrentlyRenting" => $areyourenting,
+            "OwnedLandSolution" => $yourownland ,
+            "FinanceSource" => $financethepurchsaseproporty ,
+            "Lender" => $request->mortgage_or_loan,
+            "DepositAmt" => $the_amount_of_deposit,
+
+            "imgLandLordLetter" => NULL ,
+            "imgMortgageCertificate" => NULL ,
+            "imgBankStatement" => $bankStatement ,
+
+            "IPAddress" =>$IPAddress,
+        ];
+
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://1tsomf6sx9.execute-api.us-east-1.amazonaws.com/prod/application-sales',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => json_encode($postFields),
+        CURLOPT_HTTPHEADER => array(
+            'Content-Type: application/json',
+            'x-api-key: LkOr0jcaKH1VMPVwMYNNW3nlPDkHTYoY9k09fJ3F'
+        ),
+        ));
+
+            try {
+                $response = curl_exec($curl);
+                curl_close($curl);
+
+
+
+                $responseData = json_decode($response, true);
+
+
+
+                if ($responseData && $responseData['statusCode'] == 200) {
+                    $body = json_decode($responseData['body'], true);
+
+                    $statusCode = $responseData['statusCode'];
+
+                    if ($responseData['statusCode'] == 200) {
+                        //return redirect()->back()->with('success', 'Application submitted successfully! - Code '. $statusCode)->with('clear_localstorage', true); // <- esto activa el JS en la vista;
+                        return redirect()->route('thankyoupurchase')->with('statusCode', $statusCode)->with('ApplicationNumber', $body['Application Number'])->with('success', 'Application submitted successfully!')->with('clear_localstorage', true);
+
+                    } else {
+                        return back()->with('error', 'Unexpected response from server.');
+                    }
+                } else {
+                    return back()->with('error', 'Failed to submit application.');
+                }
+
+            } catch (\Exception $e) {
+                return back()->with('error', 'Please try again. ' . $e->getMessage());
+            }
+
+        /*end to curl*/
+
+        //finaliza envio de datos
+
+
+
+
+
 
         try {
             return redirect()->back()->with('success', 'Application submitted successfully!');

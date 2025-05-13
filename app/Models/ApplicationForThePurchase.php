@@ -104,6 +104,10 @@ class ApplicationForThePurchase extends Model
         'coapplicant_parish',
         'addmore',
         'land_or_lot',
-        'bankstatements'
+        'bankstatements',
+        'co_house_type',
+        'co_bedrooms',
+        'co_no_occupants_adult',
+        'co_children_age'
     ];
 }

@@ -1214,7 +1214,7 @@
                                             <!--Coapplicant-->
                                             <div class="col-md-12 hideArea2">
                                                 <div>
-                                                    <label><b>CO-APPLICANT: Mr. Miss. Mrs.</b></label>
+                                                    <label><b>CO-APPLICANT:</b></label>
                                                     <div class="row">
 
                                                         <div class="col-md-3">
