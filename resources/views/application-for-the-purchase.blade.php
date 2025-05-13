@@ -206,7 +206,7 @@
                                                                 <div class="col-md-12">
                                                                     <input name="applicant_email" type="email"
                                                                         id="applicant_email" placeholder="Email"
-                                                                        value="{{ $email ?? '' }}" required="required" />
+                                                                        value="{{ $email ?? '' }}" required />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -365,7 +365,7 @@
                                                                     <div class="col-md-12">
                                                                         <input name="applicant_address" type="text"
                                                                             id="applicant_address"
-                                                                            placeholder="Address" />
+                                                                            placeholder="Address" required />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -383,7 +383,7 @@
                                                                     <div class="col-md-12">
                                                                         <input name="applicant_address2" type="text"
                                                                             id="applicant_address2"
-                                                                            placeholder="Address" />
+                                                                            placeholder="Address" required />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -401,7 +401,7 @@
                                                                     <div class="col-md-12">
                                                                         <input name="applicant_address3" type="text"
                                                                             id="applicant_address3"
-                                                                            placeholder="Address" />
+                                                                            placeholder="Address" required />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -417,7 +417,7 @@
                                                                 <label><b>PARISH: </b></label>
                                                                 <div class="row">
                                                                     <div class="col-md-12">
-                                                                        <select id="applicant_parish"
+                                                                        <select required id="applicant_parish"
                                                                             name="applicant_parish"
                                                                             class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300">
                                                                             <option value="" selected disabled>Select
@@ -495,7 +495,7 @@
                                                                             <label>
                                                                                 <input type="radio"
                                                                                     name="marital_status" value="SINGLE"
-                                                                                    checked> SINGLE
+                                                                                    checked required> SINGLE
                                                                             </label>
                                                                         </div>
                                                                     </div>
@@ -503,7 +503,7 @@
                                                                         <div>
                                                                             <label>
                                                                                 <input type="radio"
-                                                                                    name="marital_status" value="MARRIED">
+                                                                                    name="marital_status" value="MARRIED" required>
                                                                                 MARRIED
                                                                             </label>
                                                                         </div>
@@ -512,7 +512,7 @@
                                                                         <div>
                                                                             <label>
                                                                                 <input type="radio"
-                                                                                    name="marital_status" value="WIDOWED">
+                                                                                    name="marital_status" value="WIDOWED" required>
                                                                                 WIDOWED
                                                                             </label>
                                                                         </div>
@@ -521,7 +521,7 @@
                                                                         <div>
                                                                             <label>
                                                                                 <input type="radio"
-                                                                                    name="marital_status"
+                                                                                    name="marital_status" required
                                                                                     value="DIVORCED">
                                                                                 DIVORCED
                                                                             </label>
@@ -531,7 +531,7 @@
                                                                         <div>
                                                                             <label>
                                                                                 <input type="radio"
-                                                                                    name="marital_status"
+                                                                                    name="marital_status" required
                                                                                     value="SEPARATED">
                                                                                 SEPARATED
                                                                             </label>
@@ -551,7 +551,7 @@
                                                                 <label><b>CITIZENSHIP:</b></label>
                                                                 <div class="row">
                                                                     <div class="col-md-12">
-                                                                        <select name="applicant_citizenship"
+                                                                        <select required name="applicant_citizenship"
                                                                             id="applicant_citizenship">
                                                                             <option value="">Select a country
                                                                             </option>
@@ -659,7 +659,7 @@
                                                                 <label><b>COUNTRY OF RESIDENCE:</b></label>
                                                                 <div class="row">
                                                                     <div class="col-md-12">
-                                                                        <select name="applicant_country_of_residence"
+                                                                        <select required name="applicant_country_of_residence"
                                                                             id="applicant_country_of_residence">
                                                                             <option value="">Select a country
                                                                             </option>
@@ -809,7 +809,7 @@
                                                                     <label><b>Period of Employment:</b></label>
                                                                     <div class="row">
                                                                         <div class="col-md-12">
-                                                                            <select name="app_period_of_employment"
+                                                                            <select required name="app_period_of_employment"
                                                                                 id="app_period_of_employment">
                                                                                 <option value="< 1 year">
                                                                                     < 1 year </option>
@@ -833,7 +833,7 @@
                                                                     <label><b>Salary:</b></label>
                                                                     <div class="row">
                                                                         <div class="col-md-12">
-                                                                            <input name="app_salary" type="text"
+                                                                            <input required name="app_salary" type="text"
                                                                                 id="salary" placeholder="" />
                                                                         </div>
                                                                     </div>
@@ -853,7 +853,7 @@
                                                                     style="display: flex;width: 100%;justify-content: space-between;">
                                                                     <div style="width:40%;display:flex;align-items: center;"
                                                                         class="form-check form-check-inline">
-                                                                        <input style="margin-bottom:0px"
+                                                                        <input required style="margin-bottom:0px"
                                                                             class="form-check-input" type="radio"
                                                                             name="app_pay_period" id="Weekly"
                                                                             value="Weekly">
@@ -864,7 +864,7 @@
                                                                     </div>
                                                                     <div style="width:40%;display:flex;align-items: center;"
                                                                         class="form-check form-check-inline">
-                                                                        <input style="margin-bottom:0px"
+                                                                        <input required style="margin-bottom:0px"
                                                                             class="form-check-input" type="radio"
                                                                             name="app_pay_period" id="Bi-Monthly"
                                                                             value="Bi-Monthly">
@@ -875,7 +875,7 @@
                                                                     </div>
                                                                     <div style="width:40%;display:flex;align-items: center;"
                                                                         class="form-check form-check-inline">
-                                                                        <input style="margin-bottom:0px"
+                                                                        <input required style="margin-bottom:0px"
                                                                             class="form-check-input" type="radio"
                                                                             name="app_pay_period" id="Monthly"
                                                                             value="Monthly">
@@ -900,7 +900,7 @@
                                                                     style="display: flex;width: 100%;justify-content: space-between;">
                                                                     <div style="width:40%;display:flex;align-items: center;"
                                                                         class="form-check form-check-inline">
-                                                                        <input style="margin-bottom:0px"
+                                                                        <input required style="margin-bottom:0px"
                                                                             class="form-check-input" type="radio"
                                                                             name="app_employment_status" id="Government"
                                                                             value="Government">
@@ -911,7 +911,7 @@
                                                                     </div>
                                                                     <div style="width:40%;display:flex;align-items: center;"
                                                                         class="form-check form-check-inline">
-                                                                        <input style="margin-bottom:0px"
+                                                                        <input required style="margin-bottom:0px"
                                                                             class="form-check-input" type="radio"
                                                                             name="app_employment_status" id="Private"
                                                                             value="Private">
@@ -922,7 +922,7 @@
                                                                     </div>
                                                                     <div style="width:40%;display:flex;align-items: center;"
                                                                         class="form-check form-check-inline">
-                                                                        <input style="margin-bottom:0px"
+                                                                        <input required style="margin-bottom:0px"
                                                                             class="form-check-input" type="radio"
                                                                             name="app_employment_status" id="Self"
                                                                             value="Self">
@@ -954,16 +954,16 @@
                                                                         <td>
                                                                             <input type="number"
                                                                                 class="adults"name="addmore[0][adult_person]"
-                                                                                value="0" min="0">
+                                                                                value="0" required min="0">
                                                                         </td>
                                                                         <td><input type="number"
                                                                                 name="addmore[0][children_person]"
                                                                                 placeholder="Enter Children"
                                                                                 class="form-control" value="0"
-                                                                                min="0" /></td>
-                                                                        <td><button type="button" name="add"
+                                                                                min="0" required /></td>
+                                                                        <td><!--button type="button" name="add"
                                                                                 id="add"
-                                                                                class="btn btn-success addMore">+</button>
+                                                                                class="btn btn-success addMore">+</button-->
                                                                         </td>
                                                                     </tr>
                                                                 </table>
@@ -982,12 +982,12 @@
                                                             <div class="col-md-4">
                                                                 <label><b>Yes:</b></label>
                                                                 <input name="disabilitieswithinthehousehold"
-                                                                    value="yes" type="radio" id="Adults" />
+                                                                    value="yes" type="radio" id="Adults" required />
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <label><b>No:</b></label>
                                                                 <input name="disabilitieswithinthehousehold"
-                                                                    value="No" type="radio" id="Children" />
+                                                                    value="No" type="radio" id="Children" required />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1005,7 +1005,7 @@
                                                             <div class="col-md-6">
                                                                 <label style="color:#fff"><b>.</b></label>
                                                                 <input name="alternative" type="text" id="alternative"
-                                                                    placeholder="" required="required" />
+                                                                    placeholder="" required="required"  />
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <label><b>Amount</b></label>
@@ -1208,7 +1208,7 @@
                                                             <div class="col-md-12">
                                                                 <label><b>Applicant to submit bank statement(s)
                                                                         :</b></label>
-                                                                <input style="margin-bottom: 0px;" type="file"
+                                                                <input  style="margin-bottom: 0px;" type="file"
                                                                     id="bankstatements" name="bankstatements" />
                                                             </div>
                                                         </div>
@@ -1220,7 +1220,7 @@
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <label><b>Qualifying Amount :</b></label>
-                                                                <input name="qualifyngamount" type="text"
+                                                                <input required name="qualifyngamount" type="text"
                                                                     placeholder="" />
                                                                 <p>For personally financed purchases, a BANK STATEMENT is
                                                                     required. For
@@ -3621,8 +3621,20 @@
         $financeBox2.change(function() {
             if ($(this).val() === "Full Cash Payment") {
                 $boxGroup2.show(); // Mostrar el div
+                jQuery(".boxGroup2 input").attr("required");
+
+                    const bankstatements = document.getElementById('bankstatements');
+                    if (bankstatements) {
+                        bankstatements.setAttribute('required', 'required');
+                    }
+
+
             } else {
                 $boxGroup2.hide(); // Ocultar el div
+                 const bankstatements = document.getElementById('bankstatements');
+                    if (bankstatements) {
+                        bankstatements.removeAttribute('required', 'required');
+                    }
             }
         })
 
@@ -3643,7 +3655,7 @@
 
 
         /***begin family fields**/
-        let i = 0;
+       /* let i = 0;
 
         document.getElementById("add").addEventListener("click", function() {
             ++i;
@@ -3658,7 +3670,7 @@
    `;
 
             table.querySelector('tbody').appendChild(row);
-        });
+        });*/
 
         document.addEventListener('click', function(event) {
 

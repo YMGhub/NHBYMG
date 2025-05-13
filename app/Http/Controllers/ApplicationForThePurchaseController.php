@@ -8,6 +8,7 @@ use App\Models\ApplicationForThePurchase;
 use App\Mail\ApplicationRentalMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ApplicationForThePurchaseController extends Controller
 {
@@ -524,6 +525,8 @@ class ApplicationForThePurchaseController extends Controller
 
                 $responseData = json_decode($response, true);
 
+                // Guardar log en Laravel
+                Log::info('Datos de respuesta decodificados:', $responseData);
 
 
                 if ($responseData && $responseData['statusCode'] == 200) {

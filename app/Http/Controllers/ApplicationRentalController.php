@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Validator;
 
 
 
+
 class ApplicationRentalController extends Controller
 {
 
@@ -560,6 +561,9 @@ class ApplicationRentalController extends Controller
 
 
                 $responseData = json_decode($response, true);
+
+                         // Guardar log en Laravel
+                Log::info('Datos de respuesta decodificados:', $responseData);
 
                 //dd($responseData);
 
