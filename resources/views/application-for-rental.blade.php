@@ -2278,7 +2278,7 @@ const form = document.getElementById('applicationrental');
 
                          if(ClientIDValid == 0){
 
-                            mensaje.textContent = "Already has an application, Please contact NHC. Phone: 1-246-536-5300 Email: NHC.CustomerService@barbados.gov.bb";
+                            mensaje.textContent = "Already has an application.<br> Please contact NHC. Phone: 1-246-536-5300 <br>Email: NHC.CustomerService@barbados.gov.bb";
                             mensaje.style.color =
                                 "red"; // Mensaje de error en rojo
                         }else{
