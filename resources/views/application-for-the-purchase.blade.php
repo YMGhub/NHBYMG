@@ -3020,9 +3020,9 @@
 
 
         //alternative_amount
-        const salaryInput = document.getElementById('alternative_amount');
+        const alternative_amount = document.getElementById('alternative_amount');
 
-        salaryInput.addEventListener('input', function(e) {
+        alternative_amount.addEventListener('input', function(e) {
             const input = e.target;
 
             // Obtener solo números y punto
@@ -3050,9 +3050,9 @@
             input.value = value;
         });
         //alternative_amount2
-        const salaryInput = document.getElementById('alternative_amount2');
+        const alternative_amount2 = document.getElementById('alternative_amount2');
 
-        salaryInput.addEventListener('input', function(e) {
+        alternative_amount2.addEventListener('input', function(e) {
             const input = e.target;
 
             // Obtener solo números y punto
