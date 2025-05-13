@@ -137,29 +137,173 @@
         {{ $details['yourownland'] }}<br>
     @endif
 
-    @if ($details['yourownland'] == "Yes")
+    @if ($details['yourownland'] == 'Yes')
         <strong>Prompt the applicant to provide the location of the Land Lot</strong>
         {{ $details['land_or_lot'] }}<br>
     @endif
 
     @if (!empty($details['tenant']))
-        <strong>Do you wish the NHC to provide a housing solution on land you do not own (and not owned by the NHC)?:</strong> {{ $details['tenant'] }}<br>
+        <strong>Do you wish the NHC to provide a housing solution on land you do not own (and not owned by the
+            NHC)?:</strong> {{ $details['tenant'] }}<br>
     @endif
 
-     @if ($details['tenant'] == "Yes")
+    @if ($details['tenant'] == 'Yes')
         <strong>The Letter of permission from the landlord/agent was attached in email.</strong><br>
     @endif
 
 
 
-    <p>
-        <b>CO-APPLICANT</b><br>
-    </p>
+    @if (!empty($details['coapplicant_national_registration_number']))
+        <p>
+            <b>CO-APPLICANT</b><br>
+        </p>
+    @endif
 
-    <p>
-        <strong>SALUDATION:</strong><br>
-        {{ $details['coapplicant_salutation'] }}
-    </p>
+    @if (!empty($details['coapplicant_national_registration_number']))
+        <p>
+
+            <strong>NATIONAL REGISTRATION NUMBER::</strong><br>
+            {{ $details['coapplicant_national_registration_number'] }}
+        </p>
+    @endif
+
+    @if (!empty($details['coapplicant_email']))
+        <p>
+
+            <strong>EMAIL:</strong><br>
+            {{ $details['coapplicant_email'] }}
+        </p>
+    @endif
+
+    @if (!empty($details['coapplicant_salutation']))
+        <p>
+
+            <strong>SALUTATION:</strong><br>
+            {{ $details['coapplicant_salutation'] }}
+        </p>
+    @endif
+
+    @if (!empty($details['coapplicant_first']))
+        <p>
+
+            <strong>fIRST NAME:</strong><br>
+            {{ $details['coapplicant_first'] }}
+        </p>
+    @endif
+
+
+    @if (!empty($details['coapplicant_middle']))
+        <p>
+
+            <strong>Middle:</strong><br>
+            {{ $details['coapplicant_middle'] }}
+        </p>
+    @endif
+
+
+    @if (!empty($details['coapplicant_maiden_name']))
+        <p>
+
+            <strong>Maiden Name:</strong><br>
+            {{ $details['coapplicant_maiden_name'] }}
+        </p>
+    @endif
+
+
+    @if (!empty($details['coapplicant_date_birth']))
+        <p>
+
+            <strong>DATE OF BIRTH:</strong><br>
+            {{ $details['coapplicant_date_birth'] }}
+        </p>
+    @endif
+
+
+    @if (!empty($details['coapplicant_tamis_no']))
+        <p>
+
+            <strong>TAMIS NO:</strong><br>
+            {{ $details['coapplicant_tamis_no'] }}
+        </p>
+    @endif
+
+
+    @if (!empty($details['coapplicant_address']))
+        <p>
+
+            <strong>ADDRESS:</strong><br>
+            {{ $details['coapplicant_address'] }}
+        </p>
+    @endif
+
+
+    @if (!empty($details['coapplicant_address2']))
+        <p>
+
+            <strong>ADDRESS 2:</strong><br>
+            {{ $details['coapplicant_address2'] }}
+        </p>
+    @endif
+
+    @if (!empty($details['coapplicant_address3']))
+        <p>
+
+            <strong>ADDRESS 3:</strong><br>
+            {{ $details['coapplicant_address3'] }}
+        </p>
+    @endif
+
+    @if (!empty($details['coapplicant_parish']))
+        <p>
+
+            <strong>PARISH:</strong><br>
+            {{ $details['coapplicant_parish'] }}
+        </p>
+    @endif
+
+
+    @if (!empty($details['coapplicant_phone_home']))
+        <p>
+
+            <strong>TELEPHONE NUMBER::</strong><br>
+            <strong>HOME:</strong><br>{{ $details['coapplicant_phone_home'] }}
+            <strong>WORK:</strong><br>{{ $details['coapplicant_phone_work'] }}
+            <strong>CELL:</strong><br>{{ $details['coapplicant_phone_cell'] }}
+        </p>
+    @endif
+
+
+    @if (!empty($details['coapplicant_parish']))
+        <p>
+
+            <strong>PARISH:</strong><br>
+            {{ $details['coapplicant_parish'] }}
+        </p>
+    @endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <p>
         <strong>Surname:</strong><br>
