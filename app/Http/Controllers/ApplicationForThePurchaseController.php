@@ -524,7 +524,7 @@ class ApplicationForThePurchaseController extends Controller
 
                 $responseData = json_decode($response, true);
 
-
+                dd($responseData);
 
                 if ($responseData && $responseData['statusCode'] == 200) {
                     $body = json_decode($responseData['body'], true);
