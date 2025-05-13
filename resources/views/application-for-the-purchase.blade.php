@@ -2616,9 +2616,14 @@
 
                         var ClientIDValid = listResponse.data[0].ClientID;
 
+                         ClientIDValid = 0;
+
                         if(ClientIDValid == 0){
 
-                            mensaje.textContent = "Already has an application, Please contact NHC. Phone: 1-246-536-5300 Email: NHC.CustomerService@barbados.gov.bb";
+
+                            mensaje.innerHTML  = "Already has an application.<br> ";
+                            mensaje.innerHTML  += "Please contact NHC. Phone: 1-246-536-5300 <br>";
+                            mensaje.innerHTML  += "Email: NHC.CustomerService@barbados.gov.bb";
                             mensaje.style.color =
                                 "red"; // Mensaje de error en rojo
                         }else{
