@@ -341,7 +341,7 @@ class ApplicationRentalController extends Controller
         if ($request->hasFile('id_card')) {
             $idCardBase64Api =  bin2hex(file_get_contents($request->file('id_card')->getRealPath()));
         } else {
-            $idCardBase64Api = null; // O manejar el error de otro modo
+            $idCardBase64Api = ""; // O manejar el error de otro modo
         }
 
 
@@ -350,7 +350,7 @@ class ApplicationRentalController extends Controller
         if ($request->hasFile('job_letter')) {
             $job_letterBase64Api =  bin2hex(file_get_contents($request->file('job_letter')->getRealPath()));
         } else {
-            $job_letterBase64Api = null; // O manejar el error de otro modo
+            $job_letterBase64Api = ""; // O manejar el error de otro modo
         }
 
         //Passport:
@@ -358,7 +358,7 @@ class ApplicationRentalController extends Controller
         if ($request->hasFile('passport')) {
             $passportBase64Api =  bin2hex(file_get_contents($request->file('passport')->getRealPath()));
         } else {
-            $passportBase64Api = null; // O manejar el error de otro modo
+            $passportBase64Api = ""; // O manejar el error de otro modo
         }
 
         /***end******/
