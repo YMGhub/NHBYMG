@@ -256,8 +256,8 @@ class ApplicationForThePurchaseController extends Controller
             ['base64' => $land_or_agent],
 
         ];
-        Mail::to($request->applicant_email)->send(new ApplicationForThePurchaseMail($details,$documentsSend));
-     ;
+
+
 
 
 
@@ -577,6 +577,10 @@ class ApplicationForThePurchaseController extends Controller
 
                     if ($responseData['statusCode'] == 200) {
                         //return redirect()->back()->with('success', 'Application submitted successfully! - Code '. $statusCode)->with('clear_localstorage', true); // <- esto activa el JS en la vista;
+
+                         $appNumber = $body['Application Number'];
+                         Mail::to($request->applicant_email)->send(new ApplicationForThePurchaseMail($details,$documentsSend,$appNumber));
+
                         return redirect()->route('thankyoupurchase')->with('statusCode', $statusCode)->with('ApplicationNumber', $body['Application Number'])->with('success', 'Application submitted successfully!')->with('clear_localstorage', true);
 
                     } else {
