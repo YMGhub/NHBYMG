@@ -537,7 +537,7 @@ class ApplicationRentalController extends Controller
             "CoEmployer" => $request->co_employer_field ?: "",
             "CoOccupation" => $request->co_occupation_field ?: "",
             "CoPeriodOfEmployment" => $request->co_period_of_employment ?: "< 1 year",
-            "CoSalary" => $co_salarySend ?: 0,
+            "CoSalary" => floatval($co_salarySend) ?: 0,
             "CoPayPeriod" => $co_pay_period ?: 1,
             "CoEmploymentStatus" => $co_employment_status ?: 1,
             "OwnLandOrProperty" =>  $own_landorproperty ?: 0,
