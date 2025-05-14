@@ -197,9 +197,16 @@
     @endif
 
      @if ($details['financethepurchsaseproporty'] == "Mortgage" || $details['financethepurchsaseproporty'] == "Loan")
+        @if (!empty($details['mortgage_or_loan']))
         <strong>If mortgage or loan, please indicate a potential lending institution of your choice</strong> {{ $details['mortgage_or_loan'] }}<br>
+          @endif
+          @if (!empty($details['the_amount_of_deposit']))
         <strong>What is the amount of deposit available?</strong> {{ $details['the_amount_of_deposit'] }}<br>
+        @endif
+
+         @if (!empty($details['qualifyngamount']))
         <strong>Qualifying Amount :</strong> {{ $details['qualifyngamount'] }}<br>
+        @endif
     @endif
 
      @if ($details['financethepurchsaseproporty'] == "Full Cash Payment")

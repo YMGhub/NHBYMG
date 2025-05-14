@@ -230,7 +230,8 @@ class ApplicationForThePurchaseController extends Controller
             'coapplicant_parish'=> $request->coapplicant_parish,
             'addmore'=> json_encode($request->addmore),
             'land_or_lot'=> $request->land_or_lot,
-            'bankstatements'=> $request->bankstatements
+            'bankstatements'=> $request->bankstatements,
+            'qualifyngamount' => $request->qualifyngamount,
         ];
 
         //Mail::to('NHC.CustomerService@barbados.gov.bb')->send(new ApplicationForThePurchaseMail($details));
