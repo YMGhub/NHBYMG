@@ -545,6 +545,8 @@ class ApplicationRentalController extends Controller
         ];
 
 
+         Log::info('datos enviados al api:', $postFields);
+
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
