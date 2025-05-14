@@ -7,7 +7,7 @@
 
 <body>
     <h2>NATIONAL HOUSING CORPORATION<br>
-        APPLICATION FORM FOR THE PURCHASE OF LAND OR PROPERT
+        APPLICATION FORM FOR THE PURCHASE OF LAND OR PROPERTY
     </h2>
 
 
@@ -32,7 +32,7 @@
       @if (!empty($details['salutation']))
     <p>
     <h3>NAME</h3>
-    <strong>Saludation:</strong> {{ $details['salutation'] }}<br>
+    <strong>Salutation:</strong> {{ $details['salutation'] }}<br>
     <strong>First:</strong> {{ $details['applicant_first'] }}<br>
     <strong>Middle:</strong> {{ $details['applicant_middle'] }}<br>
     <strong>DATE OF BIRTH:</strong> {{ $details['applicant_date_birth'] }}<br>
@@ -154,7 +154,7 @@
     @endif
 
     @if (!empty($details['disabilitieswithinthehousehold']))
-        <strong>AALTERNATIVE SOURCES OF INCOME IN HOUSEHOLD: (Maintenance, Alimony, Second Job, Adults working but not
+        <strong>ALTERNATIVE SOURCES OF INCOME IN HOUSEHOLD: (Maintenance, Alimony, Second Job, Adults working but not
             listed on this application etc…):</strong><br>
         <strong>Alternative:</strong>{{ $details['alternative'] }}</br>
         <strong>Amount:</strong>{{ $details['alternative_amount'] }}</br>
