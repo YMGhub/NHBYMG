@@ -583,14 +583,16 @@ class ApplicationForThePurchaseController extends Controller
                         return back()->with('error', 'Unexpected response from server.');
                     }
                 } else {
-                        $body = json_decode($responseData['body'], true);
+                       /* $body = json_decode($responseData['body'], true);
                       $errorMessage = $body["error"];
                       $errorDetail = $body["details"];
 
                     return back()->with('error', [
                         'message' => $body["error"],
                         'detail' => $body["details"],
-                    ]);
+                    ]);*/
+
+                    return back()->with('error', 'Unexpected response from server, Please try again.');
                 }
 
             } catch (\Exception $e) {
