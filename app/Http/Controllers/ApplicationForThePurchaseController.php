@@ -236,6 +236,30 @@ class ApplicationForThePurchaseController extends Controller
 
         //Mail::to('NHC.CustomerService@barbados.gov.bb')->send(new ApplicationForThePurchaseMail($details));
 
+             //bankStatement:
+        $bankStatement = null;
+        if ($request->hasFile('bankstatements')) {
+            $bankStatement = base64_encode(file_get_contents($request->file('bankstatements')->getRealPath()));
+        } else {
+            $bankStatement = null; // O manejar el error de otro modo
+        }
+
+           $land_or_agent = null;
+        if ($request->hasFile('land_or_agent')) {
+            $land_or_agent = base64_encode(file_get_contents($request->file('land_or_agent')->getRealPath()));
+        } else {
+            $land_or_agent = null; // O manejar el error de otro modo
+        }
+
+          $documentsSend = [
+            ['base64' => $bankStatement], // solo base64, sin filename ni mime
+            ['base64' => $land_or_agent],
+
+        ];
+        Mail::to($request->applicant_email)->send(new ApplicationForThePurchaseMail($details,$documentsSend));
+     ;
+
+
 
 
         //API ENVIO DE DATOS
@@ -420,7 +444,7 @@ class ApplicationForThePurchaseController extends Controller
 
            $land_or_agent = null;
         if ($request->hasFile('land_or_agent')) {
-            $bankStateland_or_agentment = base64_encode(file_get_contents($request->file('land_or_agent')->getRealPath()));
+            $land_or_agent = base64_encode(file_get_contents($request->file('land_or_agent')->getRealPath()));
         } else {
             $land_or_agent = null; // O manejar el error de otro modo
         }
