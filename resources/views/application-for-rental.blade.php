@@ -71,9 +71,9 @@
         }
 
         /* Estilo visual para campos con error */
-.campo-error {
-    border: 2px solid red;
-}
+        .campo-error {
+            border: 2px solid red;
+        }
     </style>
     <div class="parallax1 bannerOurDeparment2" data-background="/images/Project-Hero.jpg" data-color="#"
         data-color-opacity="0.1" data-img-width="1000" data-img-height="1200"
@@ -129,12 +129,10 @@
                                         Session::forget('success');
                                     @endphp
                                 </div>
-
-
                             @endif
 
 
-                            @if(session('error'))
+                            @if (session('error'))
                                 <div class="alert alert-danger alert-custom alert-danger-custom">
                                     {{ session('error') }}
                                 </div>
@@ -182,7 +180,6 @@
 
 
                     @if ($showSecondForm)
-
                         <div class="MainGroup">
 
                             <h4 class="text-center headline margin-top-35 margin-bottom-35">
@@ -210,12 +207,12 @@
                                 <script>
                                     localStorage.clear(); // O elimina claves específicas
                                 </script>
-
                             @endif
                             <!-- Form Validation Error Messages -->
-                           @if(session('error'))
-                                <div class="alert alert-danger alert-custom alert-danger-custom">
-                                    {{ session('error') }}
+                            @if (session('error') && is_array(session('error')))
+                                <div class="alert alert-danger">
+                                    <strong>{{ session('error')['message'] ?? 'Error' }}</strong>   <br>
+                                    <span>{{ session('error')['detail'] ?? '' }}</span>
                                 </div>
                             @endif
 
@@ -228,7 +225,8 @@
                                 <div class="row">
 
                                     <!--Client ID-->
-                                    <input name="client_id" type="hidden" id="client_id" value="" required="required" readonly />
+                                    <input name="client_id" type="hidden" id="client_id" value="" required="required"
+                                        readonly />
                                     <!--Client ID-->
 
 
@@ -325,7 +323,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <input name="applicant_gender" type="text"
-                                                                id="applicant_gender" required  />
+                                                                id="applicant_gender" required />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -417,7 +415,8 @@
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <select id="applicant_parish" name="applicant_parish"
-                                                                    class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300" required>
+                                                                    class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+                                                                    required>
                                                                     <option value="" selected disabled>Select a
                                                                         Parish</option>
                                                                     <option value="Christ Church">Christ Church</option>
@@ -450,11 +449,11 @@
                                                 </div>
                                                 <div class="col-md-4">
                                                     <input type="tel" id="phone_work" name="phone_work"
-                                                        placeholder="Work" required >
+                                                        placeholder="Work" required>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <input type="tel" id="phone_cell" name="phone_cell"
-                                                        placeholder="Cell"  required >
+                                                        placeholder="Cell" required>
                                                 </div>
 
                                             </div>
@@ -981,7 +980,8 @@
                                                         <div class="btn-group" data-toggle="buttons">
                                                             <label class="btn btn-primary ">
                                                                 <input class="financial_institution" type="radio"
-                                                                    value="yes" name="financial_institution" required>Yes
+                                                                    value="yes" name="financial_institution"
+                                                                    required>Yes
                                                             </label>
                                                             <label class="btn btn-primary">
                                                                 <input class="financial_institution" type="radio"
@@ -1044,8 +1044,7 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <input name="occupedaunit" type="text" id="occupedaunit"
-                                                            placeholder="Have you ever occupied a unit? If Yes, Where?"
-                                                             />
+                                                            placeholder="Have you ever occupied a unit? If Yes, Where?" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -1076,8 +1075,8 @@
                                                                 </td>
                                                                 <td><input type="text"
                                                                         name="addmore[0][relation_occupant]"
-                                                                        placeholder="Enter Relation"
-                                                                        class="form-control" required />
+                                                                        placeholder="Enter Relation" class="form-control"
+                                                                        required />
                                                                 </td>
                                                                 <td><input type="number" name="addmore[0][age_accupant]"
                                                                         placeholder="Enter Age"
@@ -1112,7 +1111,7 @@
                                                         <label><b>Pay Slips:</b></label>
                                                         <input style="margin-bottom: 0px;" type="file" id="payslips"
                                                             name="payslips[]" multiple required />
-                                                            <p>You can only upload a maximum of 2 files.</p>
+                                                        <p>You can only upload a maximum of 2 files.</p>
                                                         <p id="ErrorPayslips" style="color: red;margin-bottom: 25px;"></p>
 
                                                     </div>
@@ -1120,7 +1119,7 @@
                                                         <label><b>ID Card (Back & Front):</b></label>
                                                         <input style="margin-bottom: 0px;" type="file" id="id_card"
                                                             name="id_card" accept=".png,.jpg, .jpeg" required />
-                                                            <p>Only PNG, JPG, or JPEG files are allowed.</p>
+                                                        <p>Only PNG, JPG, or JPEG files are allowed.</p>
                                                         <p id="ErrorIdCard " style="color: red;margin-bottom: 25px;"></p>
                                                     </div>
                                                 </div>
@@ -1129,7 +1128,7 @@
                                                         <label><b>Job Letter:</b></label>
                                                         <input style="margin-bottom: 0px;" type="file" id="job_letter"
                                                             name="job_letter" accept=".pdf" required />
-                                                            <p>Only PDF file are allowed.</p>
+                                                        <p>Only PDF file are allowed.</p>
                                                         <p id="ErrorJobLetter " style="color: red;margin-bottom: 25px;">
                                                         </p>
                                                     </div>
@@ -1137,7 +1136,7 @@
                                                         <label><b>Passport Size Photo:</b></label>
                                                         <input style="margin-bottom: 0px;" type="file" id="passport"
                                                             name="passport" accept=".png, .jpg, .jpeg" required />
-                                                            <p>Only PNG, JPG, or JPEG files are allowed.</p>
+                                                        <p>Only PNG, JPG, or JPEG files are allowed.</p>
                                                         <p id="ErrorPassport " style="color: red;margin-bottom: 25px;">
                                                         </p>
                                                     </div>
@@ -1174,9 +1173,9 @@
                                                         <div class="col-md-12">
                                                             <input name="co_national_registration_number" type="text"
                                                                 id="co_national_registration_number" maxlength="10"
-                                                                placeholder="National Registration Number"
-                                                                />
-                                                                <input type="hidden" value="" name="co_client_id"  id="co_client_id" />
+                                                                placeholder="National Registration Number" />
+                                                            <input type="hidden" value="" name="co_client_id"
+                                                                id="co_client_id" />
                                                             <div id="validation-result2"
                                                                 style="font-weight: bold;padding: 0;margin: 0;margin-top: -21px;display: block;font-size: 11px;">
                                                             </div>
@@ -1186,17 +1185,16 @@
                                             </div>
                                             <!---NATIONAL REGISTRATION NUMBER CoApplicant--->
 
-                                             <!---EMAIL Co applicant--->
-                                             <div class="col-md-12 hideArea2">
+                                            <!---EMAIL Co applicant--->
+                                            <div class="col-md-12 hideArea2">
                                                 <div>
                                                     <label><b>EMAIL</b></label>
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <input name="co_email_field" type="email"
-                                                                id="co_email_field"
-                                                                placeholder="Email"
-                                                                />
-                                                                <input type="hidden" value="" name="co_client_id"  id="co_client_id" />
+                                                                id="co_email_field" placeholder="Email" />
+                                                            <input type="hidden" value="" name="co_client_id"
+                                                                id="co_client_id" />
 
                                                         </div>
                                                     </div>
@@ -1219,19 +1217,16 @@
                                                         </div>
                                                         <div class="col-md-3">
                                                             <input name="co_applicant_name" type="text"
-                                                                id="co_applicant_name" placeholder="Name"
-                                                              />
+                                                                id="co_applicant_name" placeholder="Name" />
                                                         </div>
 
                                                         <div class="col-md-3">
                                                             <input name="co_applicant_middle" type="text"
-                                                                id="co_applicant_middle" placeholder="Middle"
-                                                                />
+                                                                id="co_applicant_middle" placeholder="Middle" />
                                                         </div>
                                                         <div class="col-md-3">
                                                             <input name="co_maiden_name" type="text"
-                                                                id="co_maiden_name" placeholder="Maiden Name"
-                                                                />
+                                                                id="co_maiden_name" placeholder="Maiden Name" />
                                                         </div>
                                                     </div>
 
@@ -1272,8 +1267,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <input name="co_tamis_number" type="text" maxlength="13"
-                                                                id="co_tamis_number" placeholder=""
-                                                                 />
+                                                                id="co_tamis_number" placeholder="" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1301,8 +1295,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <input name="co_applicant_address2" type="text"
-                                                                id="co_applicant_address2" placeholder="Address"
-                                                               />
+                                                                id="co_applicant_address2" placeholder="Address" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1349,15 +1342,15 @@
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <input type="tel" id="co_phone_home" name="co_phone_home"
-                                                        placeholder="Home" autocomplete="off">
+                                                            placeholder="Home" autocomplete="off">
                                                     </div>
                                                     <div class="col-md-4">
                                                         <input type="tel" id="co_phone_work" name="co_phone_work"
-                                                        placeholder="Work" autocomplete="off">
+                                                            placeholder="Work" autocomplete="off">
                                                     </div>
                                                     <div class="col-md-4">
                                                         <input type="tel" id="co_phone_cell" name="co_phone_cell"
-                                                         placeholder="Cell" autocomplete="off">
+                                                            placeholder="Cell" autocomplete="off">
                                                     </div>
 
                                                 </div>
@@ -1928,85 +1921,85 @@
         document.addEventListener('DOMContentLoaded', function() {
 
             //prevent submit
-const form = document.getElementById('applicationrental');
-                /*const form = document.getElementById('applicationrental');
+            const form = document.getElementById('applicationrental');
+            /*const form = document.getElementById('applicationrental');
 
-            form.addEventListener('submit', function (e) {
-                const campos = form.querySelectorAll('[required]');
-                let hayErrores = false;
-                const radiosAgrupados = {};
+                form.addEventListener('submit', function (e) {
+                    const campos = form.querySelectorAll('[required]');
+                    let hayErrores = false;
+                    const radiosAgrupados = {};
 
-                campos.forEach(campo => {
-                    campo.classList.remove('campo-error');
+                    campos.forEach(campo => {
+                        campo.classList.remove('campo-error');
 
-                    const tag = campo.tagName.toLowerCase();
-                    const tipo = campo.type;
+                        const tag = campo.tagName.toLowerCase();
+                        const tipo = campo.type;
 
-                    // Agrupar radios
-                    if (tipo === 'radio') {
-                        if (!radiosAgrupados[campo.name]) {
-                            radiosAgrupados[campo.name] = form.querySelectorAll(`input[type="radio"][name="${campo.name}"]`);
+                        // Agrupar radios
+                        if (tipo === 'radio') {
+                            if (!radiosAgrupados[campo.name]) {
+                                radiosAgrupados[campo.name] = form.querySelectorAll(`input[type="radio"][name="${campo.name}"]`);
+                            }
+                            return;
                         }
-                        return;
+
+                        // Validar campos de tipo select
+                        if (tag === 'select') {
+                            if (!campo.value.trim()) {
+                                hayErrores = true;
+                                campo.classList.add('campo-error');
+                            }
+                        }
+
+                        // Validar campos de tipo file
+                        else if (tipo === 'file') {
+                            if (campo.files.length === 0) {
+                                hayErrores = true;
+                                campo.classList.add('campo-error');
+                            }
+                        }
+
+                        // Validar input text, email, tel, number
+                        else if (tag === 'input' || tag === 'textarea') {
+                            const tiposPermitidos = ['text', 'email', 'tel', 'number'];
+                            if (tiposPermitidos.includes(tipo) && !campo.value.trim()) {
+                                hayErrores = true;
+                                campo.classList.add('campo-error');
+                            }
+                        }
+                    });
+
+                    // Validar grupos de radio
+                    for (const nombre in radiosAgrupados) {
+                        const grupo = radiosAgrupados[nombre];
+                        const algunoSeleccionado = Array.from(grupo).some(radio => radio.checked);
+                        grupo.forEach(r => r.classList.remove('radio-error'));
+
+                        if (!algunoSeleccionado) {
+                            hayErrores = true;
+                            grupo.forEach(r => r.classList.add('radio-error'));
+                        }
                     }
 
-                    // Validar campos de tipo select
-                    if (tag === 'select') {
-                        if (!campo.value.trim()) {
-                            hayErrores = true;
-                            campo.classList.add('campo-error');
-                        }
-                    }
-
-                    // Validar campos de tipo file
-                    else if (tipo === 'file') {
-                        if (campo.files.length === 0) {
-                            hayErrores = true;
-                            campo.classList.add('campo-error');
-                        }
-                    }
-
-                    // Validar input text, email, tel, number
-                    else if (tag === 'input' || tag === 'textarea') {
-                        const tiposPermitidos = ['text', 'email', 'tel', 'number'];
-                        if (tiposPermitidos.includes(tipo) && !campo.value.trim()) {
-                            hayErrores = true;
-                            campo.classList.add('campo-error');
-                        }
+                    if (hayErrores) {
+                        e.preventDefault();
+                        alert('Por favor, completa todos los campos requeridos.');
                     }
                 });
 
-                // Validar grupos de radio
-                for (const nombre in radiosAgrupados) {
-                    const grupo = radiosAgrupados[nombre];
-                    const algunoSeleccionado = Array.from(grupo).some(radio => radio.checked);
-                    grupo.forEach(r => r.classList.remove('radio-error'));
-
-                    if (!algunoSeleccionado) {
-                        hayErrores = true;
-                        grupo.forEach(r => r.classList.add('radio-error'));
-                    }
-                }
-
-                if (hayErrores) {
-                    e.preventDefault();
-                    alert('Por favor, completa todos los campos requeridos.');
-                }
-            });
-
-            // Eliminar errores al corregir
-            form.querySelectorAll('input, textarea, select').forEach(campo => {
-                campo.addEventListener('input', () => {
-                    campo.classList.remove('campo-error');
-                });
-                campo.addEventListener('change', () => {
-                    campo.classList.remove('campo-error');
-                    if (campo.type === 'radio') {
-                        const radios = form.querySelectorAll(`input[type="radio"][name="${campo.name}"]`);
-                        radios.forEach(r => r.classList.remove('radio-error'));
-                    }
-                });
-            });*/
+                // Eliminar errores al corregir
+                form.querySelectorAll('input, textarea, select').forEach(campo => {
+                    campo.addEventListener('input', () => {
+                        campo.classList.remove('campo-error');
+                    });
+                    campo.addEventListener('change', () => {
+                        campo.classList.remove('campo-error');
+                        if (campo.type === 'radio') {
+                            const radios = form.querySelectorAll(`input[type="radio"][name="${campo.name}"]`);
+                            radios.forEach(r => r.classList.remove('radio-error'));
+                        }
+                    });
+                });*/
             //end prevent submit
 
             //LocalStora para guardar el status actual del form
@@ -2042,7 +2035,7 @@ const form = document.getElementById('applicationrental');
                 'addmore[0][age_accupant]',
                 'addmore[0][occupation_school_occupant]',
                 'addmore[0][income_occupant]',
-                 'co_national_registration_number',
+                'co_national_registration_number',
                 'co_applicant_surname',
                 'co_applicant_name',
                 'co_applicant_middle',
@@ -2111,24 +2104,25 @@ const form = document.getElementById('applicationrental');
             ];
 
             radioGroups.forEach(name => {
-            const radios = Array.from(document.getElementsByName(name));
-            const saved = localStorage.getItem(name);
+                const radios = Array.from(document.getElementsByName(name));
+                const saved = localStorage.getItem(name);
 
-            radios.forEach(radio => {
-            // Cargar valor guardado
-            if (saved && radio.value === saved) {
-                radio.checked = true;
-            }
+                radios.forEach(radio => {
+                    // Cargar valor guardado
+                    if (saved && radio.value === saved) {
+                        radio.checked = true;
+                    }
 
-            // Guardar nuevo valor al cambiar
-            radio.addEventListener('change', () => {
-                if (radio.checked) {
-                localStorage.setItem(name, radio.value);
-                console.log(`Guardado en localStorage: ${name} = ${radio.value}`);
-                }
+                    // Guardar nuevo valor al cambiar
+                    radio.addEventListener('change', () => {
+                        if (radio.checked) {
+                            localStorage.setItem(name, radio.value);
+                            console.log(
+                                `Guardado en localStorage: ${name} = ${radio.value}`);
+                        }
+                    });
+                });
             });
-            });
-        });
 
 
             /*end LOCALSTORAGE*/
@@ -2265,135 +2259,137 @@ const form = document.getElementById('applicationrental');
                         .then(data => {
 
 
-                        const listResponse = typeof data === 'string' ?
+                            const listResponse = typeof data === 'string' ?
                                 JSON.parse(data) : data;
 
-                        var ClientIDValid = listResponse.data[0].ClientID;
+                            var ClientIDValid = listResponse.data[0].ClientID;
 
 
 
-                         if(ClientIDValid == 0){
+                            if (ClientIDValid == 0) {
 
-                            mensaje.innerHTML  = "Your National Registration Number is already associated with an application in our system. For additional assistance<br> ";
-                            mensaje.innerHTML  += "Please contact NHC. Phone: 1-246-536-5300 Email: NHC.CustomerService@barbados.gov.bb";
-                            mensaje.style.color =
-                                "red"; // Mensaje de error en rojo
-                        }else{
-
-                            if (data.errorMessage) {
-                                mensaje.textContent = data
-                                    .errorMessage;
+                                mensaje.innerHTML =
+                                    "Your National Registration Number is already associated with an application in our system. For additional assistance<br> ";
+                                mensaje.innerHTML +=
+                                    "Please contact NHC. Phone: 1-246-536-5300 Email: NHC.CustomerService@barbados.gov.bb";
                                 mensaje.style.color =
                                     "red"; // Mensaje de error en rojo
                             } else {
 
-                                const parsedData = typeof data === 'string' ?
-                                    JSON.parse(data) : data;
-
-                                function isDataEmpty(response) {
-                                    const data = response.data;
-
-                                    if (!Array.isArray(data)) {
-                                        console.error(
-                                            "La propiedad 'data' no es un arreglo:",
-                                            data);
-                                        return true;
-                                    }
-
-                                    return data.length === 0 || data.every(
-                                        obj =>
-                                        Object.values(obj).every(value =>
-                                            value === null || value === '')
-                                    );
-                                }
-
-                                if (isDataEmpty(parsedData)) {
-                                    //desbloquea los campos par que la persona pueda escribri su informacion
-
-                                    mensaje.textContent =
-                                        "Invalid Number";
+                                if (data.errorMessage) {
+                                    mensaje.textContent = data
+                                        .errorMessage;
                                     mensaje.style.color =
                                         "red"; // Mensaje de error en rojo
-
-
-                                    jQuery(".hideArea").hide();
-                                    jQuery("#MessageInformation").hide();
-                                    jQuery("#ButtonNext").hide();
-
-
                                 } else {
-                                    jQuery(".hideArea").show();
-                                    jQuery("#MessageInformation").show();
-                                    jQuery("#ButtonNext").show();
-                                    //bloquea los campos nombre y fecha de nac para que la persona no pueda escribri su informacion
-                                    //FirstName,MiddleName,LastName,DOB FechaNac
-                                    var ClientID = parsedData.data[0]
-                                        .ClientID;
-                                    var FirstName = parsedData.data[0]
-                                        .FirstName;
-                                    var LastName = parsedData.data[0].LastName;
-                                    var MiddleName = parsedData.data[0]
-                                        .MiddleName;
-                                    var DOB = parsedData.data[0].DOB;
-                                    var Gender = parsedData.data[0].Gender;
-                                    var Surname = parsedData.data[0].Salutation;
 
-                                    jQuery("#client_id").val(ClientID);
+                                    const parsedData = typeof data === 'string' ?
+                                        JSON.parse(data) : data;
 
-                                    //field First Name
-                                    jQuery("#applicant_first").val(FirstName);
-                                    jQuery("#applicant_first").css({
-                                        'pointer-events': 'none',
-                                        'background-color': '#f5f5f5',
-                                        'cursor': 'not-allowed'
-                                    });;
-                                    //field LastName
-                                    jQuery("#applicant_middle").val(LastName)
-                                        .css({
+                                    function isDataEmpty(response) {
+                                        const data = response.data;
+
+                                        if (!Array.isArray(data)) {
+                                            console.error(
+                                                "La propiedad 'data' no es un arreglo:",
+                                                data);
+                                            return true;
+                                        }
+
+                                        return data.length === 0 || data.every(
+                                            obj =>
+                                            Object.values(obj).every(value =>
+                                                value === null || value === '')
+                                        );
+                                    }
+
+                                    if (isDataEmpty(parsedData)) {
+                                        //desbloquea los campos par que la persona pueda escribri su informacion
+
+                                        mensaje.textContent =
+                                            "Invalid Number";
+                                        mensaje.style.color =
+                                            "red"; // Mensaje de error en rojo
+
+
+                                        jQuery(".hideArea").hide();
+                                        jQuery("#MessageInformation").hide();
+                                        jQuery("#ButtonNext").hide();
+
+
+                                    } else {
+                                        jQuery(".hideArea").show();
+                                        jQuery("#MessageInformation").show();
+                                        jQuery("#ButtonNext").show();
+                                        //bloquea los campos nombre y fecha de nac para que la persona no pueda escribri su informacion
+                                        //FirstName,MiddleName,LastName,DOB FechaNac
+                                        var ClientID = parsedData.data[0]
+                                            .ClientID;
+                                        var FirstName = parsedData.data[0]
+                                            .FirstName;
+                                        var LastName = parsedData.data[0].LastName;
+                                        var MiddleName = parsedData.data[0]
+                                            .MiddleName;
+                                        var DOB = parsedData.data[0].DOB;
+                                        var Gender = parsedData.data[0].Gender;
+                                        var Surname = parsedData.data[0].Salutation;
+
+                                        jQuery("#client_id").val(ClientID);
+
+                                        //field First Name
+                                        jQuery("#applicant_first").val(FirstName);
+                                        jQuery("#applicant_first").css({
                                             'pointer-events': 'none',
                                             'background-color': '#f5f5f5',
                                             'cursor': 'not-allowed'
                                         });;
-                                    //field MiddleName
-                                    jQuery("#maiden_name").val(MiddleName).css({
-                                        'pointer-events': 'none',
-                                        'background-color': '#f5f5f5',
-                                        'cursor': 'not-allowed'
-                                    });;
-                                    //field DOB
-                                    jQuery("#date_of_birth").val(DOB).css({
-                                        'pointer-events': 'none',
-                                        'background-color': '#f5f5f5',
-                                        'cursor': 'not-allowed'
-                                    });;
-                                    //field Gender
-                                    jQuery("#applicant_gender").val(Gender)
-                                        .css({
+                                        //field LastName
+                                        jQuery("#applicant_middle").val(LastName)
+                                            .css({
+                                                'pointer-events': 'none',
+                                                'background-color': '#f5f5f5',
+                                                'cursor': 'not-allowed'
+                                            });;
+                                        //field MiddleName
+                                        jQuery("#maiden_name").val(MiddleName).css({
                                             'pointer-events': 'none',
                                             'background-color': '#f5f5f5',
                                             'cursor': 'not-allowed'
                                         });;
-
-                                    //field Saludation
-                                    jQuery("#applicant_surname").val(Surname)
-                                        .css({
+                                        //field DOB
+                                        jQuery("#date_of_birth").val(DOB).css({
                                             'pointer-events': 'none',
                                             'background-color': '#f5f5f5',
                                             'cursor': 'not-allowed'
                                         });;
+                                        //field Gender
+                                        jQuery("#applicant_gender").val(Gender)
+                                            .css({
+                                                'pointer-events': 'none',
+                                                'background-color': '#f5f5f5',
+                                                'cursor': 'not-allowed'
+                                            });;
 
-                                    mensaje.textContent =
-                                        "Valid number";
-                                    mensaje.style.color =
-                                        "green"; // Mensaje de éxito en verde
+                                        //field Saludation
+                                        jQuery("#applicant_surname").val(Surname)
+                                            .css({
+                                                'pointer-events': 'none',
+                                                'background-color': '#f5f5f5',
+                                                'cursor': 'not-allowed'
+                                            });;
+
+                                        mensaje.textContent =
+                                            "Valid number";
+                                        mensaje.style.color =
+                                            "green"; // Mensaje de éxito en verde
 
 
 
-                                }
+                                    }
 
-                            } /*end else*/
+                                } /*end else*/
 
-                        }
+                            }
 
                         })
                         .catch(error => {
@@ -2744,7 +2740,8 @@ const form = document.getElementById('applicationrental');
                 let formatted = '';
 
                 if (input.length > 6) {
-                    formatted = `(${input.substring(0, 3)}) - ${input.substring(3, 6)} - ${input.substring(6, 10)}`;
+                    formatted =
+                        `(${input.substring(0, 3)}) - ${input.substring(3, 6)} - ${input.substring(6, 10)}`;
                 } else if (input.length > 3) {
                     formatted = `(${input.substring(0, 3)}) - ${input.substring(3)}`;
                 } else if (input.length > 0) {
@@ -2756,7 +2753,8 @@ const form = document.getElementById('applicationrental');
 
                 // Validación personalizada
                 if (e.target.validity.patternMismatch) {
-                    e.target.setCustomValidity("Por favor, ingresa el número en el formato (123) - 456 - 7890.");
+                    e.target.setCustomValidity(
+                        "Por favor, ingresa el número en el formato (123) - 456 - 7890.");
                 } else {
                     e.target.setCustomValidity("");
                 }
@@ -2872,17 +2870,17 @@ const form = document.getElementById('applicationrental');
 
 
                     //añade attribute required
-                        const camposCo = form.querySelectorAll('[name^="co_"]');
+                    const camposCo = form.querySelectorAll('[name^="co_"]');
 
-                        camposCo.forEach(campo => {
+                    camposCo.forEach(campo => {
                         campo.classList.remove('campo-error');
 
 
-                            campo.setAttribute('required', 'required');
-                            if (!campo.value.trim()) {
-                                hayErrores = true;
-                                campo.classList.add('campo-error');
-                            }
+                        campo.setAttribute('required', 'required');
+                        if (!campo.value.trim()) {
+                            hayErrores = true;
+                            campo.classList.add('campo-error');
+                        }
 
                     });
 
@@ -2892,18 +2890,18 @@ const form = document.getElementById('applicationrental');
                     button.classList.remove('buttonRed');
                     button.textContent = 'Add Co-Applicant';
 
-                       const camposCo = form.querySelectorAll('[name^="co_"]');
+                    const camposCo = form.querySelectorAll('[name^="co_"]');
 
-                        camposCo.forEach(campo => {
+                    camposCo.forEach(campo => {
 
-                            campo.removeAttribute('required');
-                            campo.value = ''; // Limpiar valor si no hay AddCoapplicant
+                        campo.removeAttribute('required');
+                        campo.value = ''; // Limpiar valor si no hay AddCoapplicant
 
-                        });
+                    });
 
 
                     //remueve los localstorage de los campos de coapplicant
-                     const fieldsToRemove = [
+                    const fieldsToRemove = [
                         'co_national_registration_number',
                         'co_email_field',
                         'co_applicant_surname',
@@ -2943,7 +2941,7 @@ const form = document.getElementById('applicationrental');
                             }
                         }
                     });
-    /*end localstorage CoApplicant*/
+                    /*end localstorage CoApplicant*/
 
                 }
             });
@@ -3019,9 +3017,9 @@ const form = document.getElementById('applicationrental');
                 } else {
                     $boxStateAddress.hide(); // Ocultar el div
 
-                     const stateAddress = document.getElementById('state_address');
+                    const stateAddress = document.getElementById('state_address');
                     if (stateAddress) {
-                          stateAddress.removeAttribute('required');
+                        stateAddress.removeAttribute('required');
                     }
                 }
             });
@@ -3039,14 +3037,14 @@ const form = document.getElementById('applicationrental');
             $financial_institution.change(function() {
                 if ($(this).val() === "yes") {
                     $giveDetailBox.show(); // Mostrar el div
-                     const give_details = document.getElementById('give_details');
+                    const give_details = document.getElementById('give_details');
                     if (give_details) {
                         give_details.setAttribute('required', 'required');
                     }
                 } else {
                     $giveDetailBox.hide(); // Ocultar el div
 
-                   const give_details = document.getElementById('give_details');
+                    const give_details = document.getElementById('give_details');
                     if (give_details) {
                         give_details.removeAttribute('required', 'required');
                     }
@@ -3066,13 +3064,13 @@ const form = document.getElementById('applicationrental');
             $occupiedUnit.change(function() {
                 if ($(this).val() === "yes") {
                     $occuppiedUnitArea.show(); // Mostrar el div
-                      const occupedaunitInput = document.getElementById('occupedaunit');
+                    const occupedaunitInput = document.getElementById('occupedaunit');
                     if (occupedaunitInput) {
                         occupedaunitInput.setAttribute('required', 'required');
                     }
                 } else {
                     $occuppiedUnitArea.hide(); // Ocultar el div
-                      const occupedaunitInput = document.getElementById('occupedaunit');
+                    const occupedaunitInput = document.getElementById('occupedaunit');
                     if (occupedaunitInput) {
                         occupedaunitInput.removeAttribute('required', 'required');
                     }

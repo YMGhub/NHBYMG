@@ -649,8 +649,13 @@ class ApplicationRentalController extends Controller
                     }
                 } else {
                       $body = json_decode($responseData['body'], true);
-                      dd($body);
-                    return back()->with('error', $body);
+                      $errorMessage = $body["error"];
+                      $errorDetail = $body["details"];
+
+                    return back()->with('error', [
+                        'message' => $body["error"],
+                        'detail' => $body["details"],
+                    ]);
                     //return back()->with('error', 'Failed to submit application.');
                 }
 
