@@ -15,8 +15,11 @@
     <p>
         <h3>APPLICANT:</h3>
 
-        @if (!empty($details['client_id']))
+        {{--@if (!empty($details['client_id']))
             <strong>Client ID:</strong> {{ $details['client_id'] }}<br>
+        @endif--}}
+        @if (!empty($appNumber))
+            <strong>Application Number:</strong> {{ $appNumber }}<br>
         @endif
         @if (!empty($details['email_field']))
             <strong>Email:</strong> {{ $details['email_field'] }}<br>

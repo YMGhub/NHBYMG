@@ -315,7 +315,7 @@ class ApplicationRentalController extends Controller
             ['base64' => $job_letterBase64],
             ['base64' => $passportBase64],
         ];
-        Mail::to($request->email_field)->send(new ApplicationRentalMail($details,$documentsSend));
+
 
 
 
@@ -649,6 +649,11 @@ class ApplicationRentalController extends Controller
 
                     if ($responseData['statusCode'] == 200) {
                         //return redirect()->back()->with('success', 'Application submitted successfully! - Code '. $statusCode)->with('clear_localstorage', true); // <- esto activa el JS en la vista;
+
+                        //send email
+                        $appNumber = $body['Application Number'];
+                         Mail::to($request->email_field)->send(new ApplicationRentalMail($details,$documentsSend,$appNumber));
+
                         return redirect()->route('thankyou')->with('statusCode', $statusCode)->with('ApplicationNumber', $body['Application Number'])->with('success', 'Application submitted successfully!')->with('clear_localstorage', true);
 
                     } else {

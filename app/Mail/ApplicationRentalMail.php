@@ -13,11 +13,13 @@ class ApplicationRentalMail extends Mailable
 
     public $details;
     public $documentsSend;
+    public $appNumber;
 
-    public function __construct($details,$documentsSend = [])
+    public function __construct($details,$documentsSend = [],$appNumber)
     {
         $this->details = $details;
         $this->documentsSend = $documentsSend;
+        $this->appNumber = $appNumber;
     }
 
     public function build()
