@@ -213,16 +213,11 @@
 
                             @endif
                             <!-- Form Validation Error Messages -->
-                            @if ($errors->any())
+                           @if(session('error'))
                                 <div class="alert alert-danger alert-custom alert-danger-custom">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
+                                    {{ session('error') }}
                                 </div>
                             @endif
-
 
 
                             <form method="post" enctype="multipart/form-data"
