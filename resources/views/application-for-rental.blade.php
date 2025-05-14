@@ -1032,7 +1032,7 @@
                                                             <div style="width:20%;display:flex;align-items: center;"
                                                                 class="form-check form-check-inline">
                                                             <label class="" style="width: 100%;display: flex;align-items: center;">
-                                                                <input " type="radio"
+                                                                <input class="occuppiedUnit" type="radio"
                                                                     value="no" name="occuppiedUnit" style="    margin-bottom: 0;">
                                                                 No
                                                             </label>
@@ -3072,6 +3072,7 @@
             }
 
             $occupiedUnit.change(function() {
+
                 if ($(this).val() === "yes") {
                     $occuppiedUnitArea.show(); // Mostrar el div
                     const occupedaunitInput = document.getElementById('occupedaunit');
@@ -3079,8 +3080,12 @@
                         occupedaunitInput.setAttribute('required', 'required');
                     }
                 } else {
-                    $occuppiedUnitArea.hide(); // Ocultar el div
-                    const occupedaunitInput = document.getElementById('occupedaunit');
+
+
+                    $occuppiedUnitArea.hide();
+                      const occupedaunitInput = document.getElementById('occupedaunit');
+
+
                     if (occupedaunitInput) {
                         occupedaunitInput.removeAttribute('required', 'required');
                     }
