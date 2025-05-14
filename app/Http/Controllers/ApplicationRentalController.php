@@ -32,7 +32,19 @@ class ApplicationRentalController extends Controller
 
         $submission = ApplicationRental::find($id);
         return view('admin.application-for-rental.edit', compact('submission'));
+
     }
+
+    public function fileToHexString($file)
+{
+    if (!$file->isValid()) {
+        throw new \Exception('Archivo inválido.');
+    }
+
+    $binary = file_get_contents($file->getRealPath());
+
+    return '0x' . bin2hex($binary);
+}
 
     //
     public function submitApplication(Request $request)
@@ -304,6 +316,8 @@ class ApplicationRentalController extends Controller
 
         //Mail::to('NHC.CustomerService@barbados.gov.bb')->send(new ApplicationRentalMail($details));
 
+
+
         $documentsSend = [
             ['base64' => $payslipsBase64], // solo base64, sin filename ni mime
             ['base64' => $idcardBase64],
@@ -314,6 +328,49 @@ class ApplicationRentalController extends Controller
 
 
 
+        //documentos a enviar en el api hex
+
+        $payslipsBase64Api = [];
+        if ($request->hasFile('payslips')) {
+
+
+            foreach ($request->file('payslips') as $file) {
+                if ($file->isValid()) {
+                    $payslipsBase64Api[] = $this->fileToHexString(file_get_contents($file->getRealPath()));
+                }
+            }
+
+            //$payslipsBase64Api = (json_encode($payslipsBase64));
+        }
+
+
+        //ID Card:
+        // Verifica si hay un archivo antes de llamar a getRealPath()
+        $idCardBase64Api = null;
+        if ($request->hasFile('id_card')) {
+            $idCardBase64Api =  $this->fileToHexString(file_get_contents($request->file('id_card')->getRealPath()));
+        } else {
+            $idCardBase64Api = null; // O manejar el error de otro modo
+        }
+
+
+        //Job letter:
+        $job_letterBase64Api = null;
+        if ($request->hasFile('job_letter')) {
+            $job_letterBase64Api =  $this->fileToHexString(file_get_contents($request->file('job_letter')->getRealPath()));
+        } else {
+            $job_letterBase64Api = null; // O manejar el error de otro modo
+        }
+
+        //Passport:
+        $passportBase64Api = null;
+        if ($request->hasFile('passport')) {
+            $passportBase64Api =  $this->fileToHexString(file_get_contents($request->file('passport')->getRealPath()));
+        } else {
+            $passportBase64Api = null; // O manejar el error de otro modo
+        }
+
+        /***end******/
 
 
         //API ENVIO DE DATOS
@@ -545,10 +602,10 @@ class ApplicationRentalController extends Controller
             "InDepted" => $financial_institution ?: 0,
             "DebtDetails" => $give_details ?: "None",
             "OccupiedUnitDetails" => $occupedaunit ?: "N/A",
-            "imgPayslips" =>  $payslipsBase64 ?? '',
-            "imgIDCard" => $idCardBase64 ?? '',
-            "imgJobLetter" => $job_letterBase64 ?? '',
-            "imgPhoto" => $passportBase64 ?? '',
+            "imgPayslips" =>  $payslipsBase64Api ?? '',
+            "imgIDCard" => $idCardBase64Api ?? '',
+            "imgJobLetter" => $job_letterBase64Api ?? '',
+            "imgPhoto" => $passportBase64Api ?? '',
             "IPAddress" => $IPAddress,
             "IntendedOccupants" => $request->addmore,
         ];
