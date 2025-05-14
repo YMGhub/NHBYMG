@@ -2096,6 +2096,8 @@
 
                                             <!--CO Applicant-->
 
+
+
                                             <!--NOTE-->
                                             <br>
                                             <div class="col-md-12 hideArea">
@@ -2123,6 +2125,26 @@
                                                 </div>
                                             </div>
                                             <!--NOTE-->
+
+                                             <div class="col-md-12 hideArea">
+                                            <div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div style="display:flex;    align-items: center;">
+                                                            <input style="margin-bottom: 0;" type="checkbox"
+                                                                id="confirm_info" required>
+                                                            <label style="    margin-bottom: 0;margin-left: 10px;"
+                                                                for="confirm_info">I confirm that the information provided
+                                                                is
+                                                                accurate.</label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
                                             <!--dateend-->
                                             <div class="col-md-12 hideArea">
                                                 <div>
