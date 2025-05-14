@@ -592,7 +592,10 @@ class ApplicationForThePurchaseController extends Controller
                         'detail' => $body["details"],
                     ]);*/
 
-                    return back()->with('error', 'Unexpected response from server, Please try again.');
+                     return back()->with('error', [
+                        'message' => "Error",
+                        'detail' => "Unexpected response from server, Please try again.",
+                    ]);
                 }
 
             } catch (\Exception $e) {
