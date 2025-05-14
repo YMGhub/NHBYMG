@@ -171,8 +171,6 @@ class ApplicationForThePurchaseController extends Controller
             'co_applicant_occup' => $request->co_applicant_occup,
             'applicant_employer' =>  $request->applicant_employer,
             'co_applicant_employer' =>  $request->co_applicant_employer,
-            'applicant_salary' =>  $request->applicant_salary,
-            'co_applicant_salary' =>  $request->co_applicant_salary,
             'government' =>  $request->government,
             'private' => $request->private,
             'self' =>  $request->self,

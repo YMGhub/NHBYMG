@@ -11,16 +11,22 @@
     </h2>
 
 
+
+      @if (!empty($details['applicant_email']))
     <p>
         <strong>EMAIL:</strong><br>
         {{ $details['applicant_email'] }}
     </p>
+    @endif
 
+      @if (!empty($details['applicant_national_registration_number']))
     <p>
         <strong>NATIONAL REGISTRATION NUMBER:</strong><br>
         {{ $details['applicant_national_registration_number'] }}
     </p>
+     @endif
 
+      @if (!empty($details['salutation']))
     <p>
     <h3>NAME</h3>
     <strong>Saludation:</strong> {{ $details['salutation'] }}<br>
@@ -29,66 +35,95 @@
     <strong>DATE OF BIRTH:</strong> {{ $details['applicant_date_birth'] }}<br>
     <strong>Gender:</strong> {{ $details['applicant_gender'] }}<br>
     </p>
+     @endif
 
 
 
 
-
+  @if (!empty($details['applicant_tamis_no']))
     <p>
         <strong>TAMIS NO:</strong><br>
         {{ $details['applicant_tamis_no'] }}
     </p>
+    @endif
 
+    @if (!empty($details['applicant_address']))
     <p>
         <strong>ADDRESS:</strong><br>{{ $details['applicant_address'] }}<br>
         <strong>ADDRESS 2:</strong><br>{{ $details['applicant_address2'] }}<br>
         <strong>ADDRESS 3:</strong><br>{{ $details['applicant_address3'] }}<br>
     </p>
+    @endif
 
+
+    @if (!empty($details['applicant_parish']))
     <p>
         <strong>PARISH:</strong><br>{{ $details['applicant_parish'] }}
     </p>
+     @endif
 
 
 
+     @if (!empty($details['applicant_phone_home']))
     <p>
         <strong>TELEPHONE NUMBER:</strong><br>
-        <strong>HOME: :</strong><br>{{ $details['applicant_phone_home'] }}
-        <strong>WORK: :</strong><br>{{ $details['applicant_phone_work'] }}
-        <strong>CELL: :</strong><br>{{ $details['applicant_phone_cell'] }}
+        <strong>HOME: :</strong><br>{{ $details['applicant_phone_home'] }}<br>
+        <strong>WORK: :</strong><br>{{ $details['applicant_phone_work'] }}<br>
+        <strong>CELL: :</strong><br>{{ $details['applicant_phone_cell'] }}<br>
     </p>
+    @endif
 
 
 
-
+@if (!empty($details['marital_status']))
     <p>
         <strong>MARITAL STATUS:</strong><br>
         {{ $details['marital_status'] }}
     </p>
+     @endif
 
+     @if (!empty($details['applicant_citizenship']))
     <p>
         <strong>CITIZENSHIP:</strong><br>
         {{ $details['applicant_citizenship'] }}
     </p>
+     @endif
 
+      @if (!empty($details['applicant_country_of_residence']))
     <p>
         <strong>COUNTRY OF RESIDENCE:</strong><br>
         {{ $details['applicant_country_of_residence'] }}
     </p>
+     @endif
 
+
+      @if (!empty($details['employer_field']))
     <p>
         <strong>Employer:</strong><br>
         {{ $details['employer_field'] }}
     </p>
+    @endif
 
+
+     @if (!empty($details['occupation_field']))
     <p>
         <strong>Occupation:</strong><br>
         {{ $details['occupation_field'] }}
     </p>
+     @endif
+
 
 
     @if (!empty($details['app_period_of_employment']))
-        <strong>Period of Employment:</strong> {{ $details['app_period_of_employment'] }}<br>
+
+        <strong>Period of Employment:</strong>
+        @if ($details['app_period_of_employment'] == "< 1 year")
+    Less than 1 year
+
+    @else
+        {{ $details['app_period_of_employment'] }}
+    @endif
+    <br>
     @endif
 
     @if (!empty($details['app_salary']))
@@ -111,7 +146,7 @@
     @endif
 
     @if (!empty($details['disabilitieswithinthehousehold']))
-        <strong>ARE THERE ANY PERSONS WITH DISABILITIES WITHIN THE HOUSEHOLD?::</strong>
+        <strong>ARE THERE ANY PERSONS WITH DISABILITIES WITHIN THE HOUSEHOLD?::</strong><br>
         {{ $details['disabilitieswithinthehousehold'] }}<br>
     @endif
 
@@ -133,18 +168,18 @@
     @endif
 
     @if (!empty($details['yourownland']))
-        <strong>Do you wish us to provide a housing solution on land you own?</strong>
+        <strong>Do you wish us to provide a housing solution on land you own?</strong><br>
         {{ $details['yourownland'] }}<br>
     @endif
 
     @if ($details['yourownland'] == 'Yes')
-        <strong>Prompt the applicant to provide the location of the Land Lot</strong>
+        <strong>Prompt the applicant to provide the location of the Land Lot</strong><br>
         {{ $details['land_or_lot'] }}<br>
     @endif
 
     @if (!empty($details['tenant']))
         <strong>Do you wish the NHC to provide a housing solution on land you do not own (and not owned by the
-            NHC)?:</strong> {{ $details['tenant'] }}<br>
+            NHC)?:</strong> <br>{{ $details['tenant'] }}<br>
     @endif
 
     @if ($details['tenant'] == 'Yes')
@@ -154,8 +189,8 @@
 
 
      @if (!empty($details['financethepurchsaseproporty']))
-      FINANCING OF PROPERTY/LAND:
-        <strong>How will you finance the purchase of property / land?:</strong> {{ $details['financethepurchsaseproporty'] }}<br>
+      FINANCING OF PROPERTY/LAND:<br>
+        <strong>How will you finance the purchase of property / land?:</strong><br> {{ $details['financethepurchsaseproporty'] }}<br>
     @endif
 
      @if ($details['financethepurchsaseproporty'] == "Mortgage" || $details['financethepurchsaseproporty'] == "Loan")
@@ -175,7 +210,7 @@
         <p>
             <b>CO-APPLICANT</b><br>
         </p>
-    @endif
+
 
     @if (!empty($details['coapplicant_national_registration_number']))
         <p>
@@ -411,6 +446,7 @@
 
         </p>
     @endif
+      @endif
 
 
 
