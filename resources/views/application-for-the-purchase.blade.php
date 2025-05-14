@@ -175,15 +175,12 @@
                                         </div>
                                     @endif
                                     <!-- Form Validation Error Messages -->
-                                    @if ($errors->any())
-                                        <div class="alert alert-danger alert-custom alert-danger-custom">
-                                            <ul>
-                                                @foreach ($errors->all() as $error)
-                                                    <li>{{ $error }}</li>
-                                                @endforeach
-                                            </ul>
-                                        </div>
-                                    @endif
+                                     @if (session('error') && is_array(session('error')))
+                                <div class="alert alert-danger alert-custom alert-danger-custom">
+                                    <strong>{{ session('error')['message'] ?? 'Error' }}</strong>   <br>
+                                    <span>{{ session('error')['detail'] ?? '' }}</span>
+                                </div>
+                            @endif
 
                                     <form method="post" enctype="multipart/form-data"
                                         action="{{ route('application-for-the-purchase.apply') }}"
