@@ -136,6 +136,7 @@ class ApplicationForThePurchaseController extends Controller
 
         // Redirect back with success message and send email
         $details = [
+            'client_id' => $request->client_id,
             'salutation' => $request->salutation,
             'applicant_surname' => $request->applicant_surname,
             'applicant_first' => $request->applicant_first,

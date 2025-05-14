@@ -11,6 +11,9 @@
     </h2>
 
 
+     @if (!empty($details['client_id']))
+            <strong>Client ID:</strong> {{ $details['client_id'] }}<br>
+        @endif
 
       @if (!empty($details['applicant_email']))
     <p>
