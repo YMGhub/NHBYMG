@@ -334,6 +334,8 @@ class ApplicationRentalController extends Controller
             //$payslipsBase64Api = (json_encode($payslipsBase64));
         }
 
+        dd($payslipsBase64Api);
+
 
         //ID Card:
         // Verifica si hay un archivo antes de llamar a getRealPath()
