@@ -648,7 +648,9 @@ class ApplicationRentalController extends Controller
                         return back()->with('error', 'Unexpected response from server.');
                     }
                 } else {
-                    return back()->with('error', 'Failed to submit application.');
+                      $body = json_decode($responseData['body'], true);
+                    return back()->with('error', $body);
+                    //return back()->with('error', 'Failed to submit application.');
                 }
 
             } catch (\Exception $e) {
