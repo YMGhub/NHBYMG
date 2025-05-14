@@ -584,7 +584,7 @@ class ApplicationForThePurchaseController extends Controller
                     }
                 } else {
                     $body = json_decode($responseData['body'], true);
-                    dd($body);
+
                     return back()->with('error', $body);
                 }
 
