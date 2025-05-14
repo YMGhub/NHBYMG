@@ -327,14 +327,19 @@ class ApplicationRentalController extends Controller
 
             foreach ($request->file('payslips') as $file) {
                 if ($file->isValid()) {
-                    $payslipsBase64Api[] = bin2hex(file_get_contents($file->getRealPath()));
+                    $payslipsBase64Api[] = '0x'.bin2hex(file_get_contents($file->getRealPath()));
+
+
                 }
             }
+
+             // Unir en una sola cadena separada por coma
+        $payslipsBase64Api = implode(',', $payslipsBase64Api);
 
             //$payslipsBase64Api = (json_encode($payslipsBase64));
         }
 
-        dd($payslipsBase64Api);
+
 
 
         //ID Card:
