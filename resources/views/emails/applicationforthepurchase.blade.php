@@ -153,6 +153,24 @@
 
 
 
+     @if (!empty($details['financethepurchsaseproporty']))
+      FINANCING OF PROPERTY/LAND:
+        <strong>How will you finance the purchase of property / land?:</strong> {{ $details['financethepurchsaseproporty'] }}<br>
+    @endif
+
+     @if ($details['financethepurchsaseproporty'] == "Mortgage" || $details['financethepurchsaseproporty'] == "Loan")
+        <strong>If mortgage or loan, please indicate a potential lending institution of your choice</strong> {{ $details['mortgage_or_loan'] }}<br>
+        <strong>What is the amount of deposit available?</strong> {{ $details['the_amount_of_deposit'] }}<br>
+        <strong>Qualifying Amount :</strong> {{ $details['qualifyngamount'] }}<br>
+    @endif
+
+     @if ($details['financethepurchsaseproporty'] == "Full Cash Payment")
+
+        <strong>Applicant to submit bank statement</strong> Is attached in the email.<br>
+    @endif
+
+
+
     @if (!empty($details['coapplicant_national_registration_number']))
         <p>
             <b>CO-APPLICANT</b><br>
@@ -281,242 +299,118 @@
         </p>
     @endif
 
+    @if (!empty($details['co_marital_status']))
+        <p>
 
+            <strong>Marital Status::</strong><br>
+            {{ $details['co_marital_status'] }}
+        </p>
+    @endif
 
+    @if (!empty($details['co_applicant_citizenship']))
+        <p>
 
+            <strong>CITIZENSHIP:</strong><br>
+            {{ $details['co_applicant_citizenship'] }}
+        </p>
+    @endif
 
+    @if (!empty($details['co_applicant_country_of_residence']))
+        <p>
 
+            <strong>CITIZENSHIP:</strong><br>
+            {{ $details['co_applicant_country_of_residence'] }}
+        </p>
+    @endif
 
+    @if (!empty($details['co_app_employer_field']))
+        <p>
 
+            <strong>Employer:</strong><br>
+            {{ $details['co_app_employer_field'] }}
+        </p>
+    @endif
 
+    @if (!empty($details['co_app_employer_field']))
+        <p>
 
+            <strong>Occupation:</strong><br>
+            {{ $details['co_app_occupation_field'] }}
+        </p>
+    @endif
 
 
+    @if (!empty($details['co_app_period_of_employment']))
+        <p>
 
+            <strong>Period of Employment:</strong><br>
+            {{ $details['co_app_period_of_employment'] }}
+        </p>
+    @endif
 
+    @if (!empty($details['co_app_salary']))
+        <p>
 
+            <strong>Salary:</strong><br>
+            {{ $details['co_app_salary'] }}
+        </p>
+    @endif
 
+    @if (!empty($details['co_app_pay_period']))
+        <p>
 
+            <strong>Pay Period:</strong><br>
+            {{ $details['co_app_pay_period'] }}
+        </p>
+    @endif
 
+    @if (!empty($details['co_app_employment_status']))
+        <p>
 
+            <strong>Employment Status:</strong><br>
+            {{ $details['co_app_employment_status'] }}
+        </p>
+    @endif
 
+    @if (!empty($details['co_house_type']))
+        <p>
 
+            <strong>APPLICATION TYPE:</strong><br>
+            {{ $details['co_house_type'] }}
+        </p>
+    @endif
 
 
+    @if (!empty($details['co_bedrooms']))
+        <p>
 
+            <strong>PREFERRED HOUSE TYPE:</strong><br>
+            @if ($details['co_bedrooms'] == 2)
+                2 Bedroom
 
-    <p>
-        <strong>Surname:</strong><br>
-        {{ $details['coapplicant_surname'] }}
-    </p>
+            @else
+                3 Bedroom
+            @endif
+        </p>
+    @endif
 
-    <p>
-        <strong>First Name:</strong><br>
-        {{ $details['coapplicant_first'] }}
-    </p>
+      @if (!empty($details['co_no_occupants_adult']))
+        <p>
 
-    <p>
-        <strong>Middle name:</strong><br>
-        {{ $details['coapplicant_middle'] }}
-    </p>
+            <strong>NO OF OCCUPANTS:</strong><br>
+            Adults: {{ $details['co_no_occupants_adult'] }}<br>
+            Children:{{ $details['co_no_occupants_children'] }}<br>
+        </p>
+    @endif
 
-    <p>
-        <strong>Maiden name:</strong><br>
-        {{ $details['coapplicant_maiden_name'] }}
-    </p>
 
-    <p>
-        <strong>NATIONAL REGISTRATION NUMBER:</strong><br>
-        {{ $details['coapplicant_national_registration_number'] }}
-    </p>
+          @if (!empty($details['co_no_occupants_adult']))
+        <p>
 
-    <p>
-        <strong>TAMIS NO:</strong><br>
-        {{ $details['coapplicant_tamis_no'] }}
-    </p>
+            <strong>CHILDREN’S AGES:::</strong>{{ $details['co_children_age'] }}<br>
 
-    <p>
-        <strong>ADDRESS:</strong><br>
-        {{ $details['coapplicant_address'] }}
-    </p>
-
-    <p>
-        <strong>DATE OF BIRTH:</strong><br>
-        {{ $details['coapplicant_date_birth'] }}
-    </p>
-
-    <p>
-        <strong>TELEPHONE NUMBER:</strong><br>
-        <strong>HOME: :</strong><br>{{ $details['coapplicant_phone_home'] }}
-        <strong>WORK: :</strong><br>{{ $details['coapplicant_phone_work'] }}
-        <strong>CELL: :</strong><br>{{ $details['coapplicant_phone_cell'] }}
-    </p>
-
-
-    <p>
-        <strong>PERIOD OF EMPLOYMENT:</strong><br>
-        {{ $details['applicant_period'] }}
-        {{ $details['co_applicant_period'] }}
-    </p>
-
-    <p>
-        <strong>OCCUPATION:</strong><br>
-        {{ $details['applicant_occup'] }}
-        {{ $details['co_applicant_occup'] }}
-    </p>
-
-    <p>
-        <strong>EMPLOYER:</strong><br>
-        {{ $details['applicant_employer'] }}
-        {{ $details['co_applicant_employer'] }}
-    </p>
-
-    <p>
-        <strong>SALARY:</strong><br>
-        {{ $details['applicant_salary'] }}
-        {{ $details['co_applicant_salary'] }}
-    </p>
-
-
-    <p>
-        <strong>GOVERNMENT:</strong><br>
-        {{ $details['government'] }}
-    </p>
-
-    <p>
-        <strong>GOVERNMENT:</strong><br>
-        {{ $details['government'] }}
-    </p>
-
-    <p>
-        <strong>PRIVATE:</strong><br>
-        {{ $details['private'] }}
-    </p>
-
-    <p>
-        <strong>SELF:</strong><br>
-        {{ $details['self'] }}
-    </p>
-
-    <p>
-        <strong>MONTHLY:</strong><br>
-        {{ $details['monthly'] }}
-    </p>
-
-    <p>
-        <strong>WEEKLY:</strong><br>
-        {{ $details['weekly'] }}
-    </p>
-
-    <p>
-        <strong>FORT-NIGHTLY:</strong><br>
-        {{ $details['forth_nightly'] }}
-    </p>
-
-    <p>
-        <strong>HOUSE TYPE:</strong><br>
-        {{ $details['house_type'] }}
-    </p>
-
-    <p>
-        <strong>PURCHASING OPTIONS:</strong><br>
-        {{ $details['purchasing_options'] }}
-    </p>
-
-    <p>
-        <strong>IF YOU INTEND TO PURCHASE PROPERTY, FILL OUT THIS SECTION:</strong><br>
-    </p>
-
-    <p>
-        <strong>PREFERRED HOUSE TYPE:</strong><br>
-        {{ $details['preferedhousetype'] }}
-    </p>
-
-    <p>
-        <strong>NO OF OCCUPANTS:</strong><br>
-        {{ $details['no_of_occupants'] }}
-    </p>
-
-    <p>
-        <strong>CHILDREN’S AGES:</strong><br>
-        {{ $details['children_ages'] }}
-    </p>
-
-    <p>
-        <strong>ARE THERE ANY PERSONS WITH DISABILITIES WITHIN THE HOUSEHOLD?:</strong><br>
-        {{ $details['disabilitieswithinthehousehold'] }}
-    </p>
-
-    <p>
-        <strong>ALTERNATIVE SOURCES OF INCOME IN HOUSEHOLD: (Maintenance, Alimony, Second
-            Job, Adults working but not listed on this application etc…):</strong><br>
-        {{ $details['alternative'] }} AMOUNT:${{ $details['alternative_amount'] }}<br>
-        {{ $details['alternative1'] }} AMOUNT:${{ $details['alternative_amount2'] }}
-    </p>
-
-    <p>
-        <strong>Are you currently renting?:</strong><br>
-        {{ $details['areyourenting'] }}
-    </p>
-
-    <p>
-        <strong>If yes, how much is your rent?:</strong><br>
-        {{ $details['ifyeshowmuch'] }}
-    </p>
-
-    <p>
-        <strong>Do you have your own land and wish us to provide you with a Housing solution?:</strong><br>
-        {{ $details['yourownland'] }}
-    </p>
-
-    <p>
-        <strong>Are you a tenant of the land on which you wish to build your Housing solution?:</strong><br>
-        {{ $details['tenant'] }}
-    </p>
-
-    <p>
-        <strong>(If yes, you MUST have a letter of permission from the landlord/agent):</strong><br>
-        {{ $details['land_or_agent'] }}
-    </p>
-
-    <p>
-        <strong>FINANCING OF PROPERTY/LAND</strong><br>
-    </p>
-
-    <p>
-        <strong>How will you finance the purchase of property / land? :</strong><br>
-        {{ $details['financethepurchsaseproporty'] }}
-    </p>
-
-    <p>
-        <strong>If mortgage or loan, please indicate a potential lending institution of your choice:</strong><br>
-        {{ $details['mortgage_or_loan'] }}
-    </p>
-
-    <p>
-        <strong>What is the amount of deposit available?:</strong><br>
-        {{ $details['the_amount_of_deposit'] }}
-    </p>
-
-    <p>
-        <strong>APPLICATION FOR HOUSING EVERY LAST PERSON (H.E.L.P)</strong>
-        {{ $details['land_or_property'] }}
-    </p>
-
-    <p>
-        <strong>Signature(s): Applicant:</strong><br>
-        {{ $details['signature_applican'] }}
-    </p>
-
-    <p>
-        <strong>Co-Applicant:</strong><br>
-        {{ $details['signature_coapplicant'] }}
-    </p>
-
-    <p>
-        <strong>Date:</strong><br>
-        {{ $details['dateend'] }}
-    </p>
+        </p>
+    @endif
 
 
 

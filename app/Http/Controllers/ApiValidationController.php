@@ -17,13 +17,13 @@ class ApiValidationController extends Controller {
 
 
 
-        //ApplicationType 2=rental and 3 purchase
-        $typeApplication = 2;
+        //ApplicationType 1=rental and 2 purchase
+        $typeApplication = 1;
 
         if($request->type_form == "Rental"){
-            $typeApplication = 2;
+            $typeApplication = 1;
         }else{
-            $typeApplication = 3;
+            $typeApplication = 2;
         }
 
         try {

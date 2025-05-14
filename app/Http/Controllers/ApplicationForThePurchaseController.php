@@ -513,6 +513,9 @@ class ApplicationForThePurchaseController extends Controller
         ];
 
 
+        //dd( json_encode($postFields));
+
+
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
