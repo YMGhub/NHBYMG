@@ -1159,7 +1159,7 @@
                                                                 <label><b>Mortgage:</b></label>
                                                                 <input class="financeBox"
                                                                     name="financethepurchsaseproporty" value="Mortgage"
-                                                                    type="radio" />
+                                                                    type="radio" required />
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <label><b>Loan:</b></label>
@@ -1190,7 +1190,7 @@
                                                                 choice</b></label>
                                                         <div class="row">
                                                             <div class="col-md-12">
-                                                                <input name="mortgage_or_loan" type="text"
+                                                                <input class="mortgage_or_loan" name="mortgage_or_loan" type="text"
                                                                     placeholder="" />
                                                             </div>
                                                         </div>
@@ -1203,7 +1203,7 @@
                                                         <label><b>What is the amount of deposit available?</b></label>
                                                         <div class="row">
                                                             <div class="col-md-12">
-                                                                <input name="the_amount_of_deposit" id="the_amount_of_deposit" type="text"
+                                                                <input class="the_amount_of_deposit" name="the_amount_of_deposit" id="the_amount_of_deposit" type="text"
                                                                     placeholder="$" />
                                                             </div>
                                                         </div>
@@ -1232,8 +1232,8 @@
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <label><b>Qualifying Amount :</b></label>
-                                                                <input required name="qualifyngamount" type="text"
-                                                                    placeholder="" id="qualifyngamount" />
+                                                                <input  name="qualifyngamount" type="text"
+                                                                    placeholder="" id="qualifyngamount" class="qualifyngamount" />
                                                                 <p>For personally financed purchases, a BANK STATEMENT is
                                                                     required. For
                                                                     mortgages/loans, a MORTGAGE CERTIFICATE is required.
@@ -2637,7 +2637,7 @@
 
 
 
-                        if(ClientIDValid == 0){
+                        if(ClientIDValid != 0){
 
 
 
@@ -3786,8 +3786,77 @@
         $financeBox.change(function() {
             if ($(this).val() === "Loan" || $(this).val() === "Mortgage") {
                 $boxGroup1.show(); // Mostrar el div
+
+                const input = document.querySelector('input[name="mortgage_or_loan"]');
+
+                // Mostrar el campo (si estuviera oculto)
+                input.style.display = 'block'; // o usa otra lógica según tu HTML
+
+                // Agrega el atributo required
+                input.setAttribute('required', true);
+
+                // Limpia su valor
+                input.value = '';
+
+                const input2 = document.querySelector('input[name="the_amount_of_deposit"]');
+
+                // Mostrar el campo (si estuviera oculto)
+                input2.style.display = 'block'; // o usa otra lógica según tu HTML
+
+                // Agrega el atributo required
+                input2.setAttribute('required', true);
+
+                // Limpia su valor
+                input2.value = '';
+
+                const input3 = document.querySelector('input[name="qualifyngamount"]');
+
+                // Mostrar el campo (si estuviera oculto)
+                input3.style.display = 'block'; // o usa otra lógica según tu HTML
+
+                // Agrega el atributo required
+                input3.setAttribute('required', true);
+
+                // Limpia su valor
+                input3.value = '';
+
+
+
             } else {
                 $boxGroup1.hide(); // Ocultar el div
+
+                const input = document.querySelector('input[name="mortgage_or_loan"]');
+
+                // Mostrar el campo (si estuviera oculto)
+                input.style.display = 'block'; // o usa otra lógica según tu HTML
+
+                // Agrega el atributo required
+                input.setAttribute('required', false);
+
+                // Limpia su valor
+                input.value = '';
+
+                const input2 = document.querySelector('input[name="the_amount_of_deposit"]');
+
+                // Mostrar el campo (si estuviera oculto)
+                input2.style.display = 'block'; // o usa otra lógica según tu HTML
+
+                // Agrega el atributo required
+                input2.setAttribute('required', false);
+
+                // Limpia su valor
+                input2.value = '';
+
+                const input3 = document.querySelector('input[name="qualifyngamount"]');
+
+                // Mostrar el campo (si estuviera oculto)
+                input3.style.display = 'block'; // o usa otra lógica según tu HTML
+
+                // Agrega el atributo false
+                input3.setAttribute('required', false);
+
+                // Limpia su valor
+                input3.value = '';
             }
         })
 
