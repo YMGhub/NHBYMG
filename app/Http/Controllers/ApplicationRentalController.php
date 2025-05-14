@@ -471,6 +471,15 @@ class ApplicationRentalController extends Controller
 
          $IPAddress =  $_SERVER['REMOTE_ADDR'];
 
+
+         //para enviar al api
+
+          $salarySend = str_replace(',', '', $request->salary);
+          $salarySend = (int)$salarySend;
+          $co_salarySend = str_replace(',', '', $request->co_salary);
+          $co_salarySend = (int)$co_salarySend;
+
+
          $postFields = [
             "ClientID" => $request->client_id,
             "NRN" => $request->national_registration_number,
@@ -494,7 +503,7 @@ class ApplicationRentalController extends Controller
             "Employer" => $request->employer_field,
             "Occupation" => $request->occupation_field,
             "PeriodOfEmployment" => $request->period_of_employment,
-            "Salary" => $salary,
+            "Salary" => $salarySend,
             "PayPeriod" => $pay_period,
             "EmploymentStatus" => $employment_status,
             "CoApplicantClientID" => $request->co_client_id,
@@ -519,7 +528,7 @@ class ApplicationRentalController extends Controller
             "CoEmployer" => $request->co_employer_field,
             "CoOccupation" => $request->co_occupation_field,
             "CoPeriodOfEmployment" => $request->co_period_of_employment,
-            "CoSalary" => $co_salary,
+            "CoSalary" => $co_salarySend,
             "CoPayPeriod" => $co_pay_period,
             "CoEmploymentStatus" => $co_employment_status,
             "OwnLandOrProperty" =>  $own_landorproperty,
