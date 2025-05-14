@@ -37,9 +37,7 @@ class ApplicationRentalController extends Controller
 
     public function fileToHexString($file)
 {
-    if (!$file->isValid()) {
-        throw new \Exception('Archivo inválido.');
-    }
+
 
     $binary = file_get_contents($file->getRealPath());
 
