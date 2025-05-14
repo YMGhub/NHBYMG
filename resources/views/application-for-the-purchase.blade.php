@@ -997,7 +997,7 @@
                                                             <div class="col-md-4">
                                                                 <label><b>No:</b></label>
                                                                 <input name="disabilitieswithinthehousehold"
-                                                                    value="No" type="radio" id="Children" required />
+                                                                    value="No" type="radio" id="Children" />
                                                             </div>
                                                         </div>
                                                     </div>
