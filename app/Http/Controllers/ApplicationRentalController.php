@@ -656,7 +656,12 @@ class ApplicationRentalController extends Controller
                         'message' => $body["error"],
                         'detail' => $body["details"],
                     ]);*/
-                     return back()->with('error', 'Unexpected response from server, Please try again.');
+
+                     return back()->with('error', [
+                        'message' => "Error",
+                        'detail' => "Unexpected response from server, Please try again.",
+                    ]);
+
                     //return back()->with('error', 'Failed to submit application.');
                 }
 
