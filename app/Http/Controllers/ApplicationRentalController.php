@@ -35,14 +35,7 @@ class ApplicationRentalController extends Controller
 
     }
 
-    public function fileToHexString($file)
-{
 
-
-    $binary = file_get_contents($file->getRealPath());
-
-    return '0x' . bin2hex($binary);
-}
 
     //
     public function submitApplication(Request $request)
@@ -334,7 +327,7 @@ class ApplicationRentalController extends Controller
 
             foreach ($request->file('payslips') as $file) {
                 if ($file->isValid()) {
-                    $payslipsBase64Api[] = $this->fileToHexString(file_get_contents($file->getRealPath()));
+                    $payslipsBase64Api[] = bin2hex(file_get_contents($file->getRealPath()));
                 }
             }
 
@@ -346,7 +339,7 @@ class ApplicationRentalController extends Controller
         // Verifica si hay un archivo antes de llamar a getRealPath()
         $idCardBase64Api = null;
         if ($request->hasFile('id_card')) {
-            $idCardBase64Api =  $this->fileToHexString(file_get_contents($request->file('id_card')->getRealPath()));
+            $idCardBase64Api =  bin2hex(file_get_contents($request->file('id_card')->getRealPath()));
         } else {
             $idCardBase64Api = null; // O manejar el error de otro modo
         }
@@ -355,7 +348,7 @@ class ApplicationRentalController extends Controller
         //Job letter:
         $job_letterBase64Api = null;
         if ($request->hasFile('job_letter')) {
-            $job_letterBase64Api =  $this->fileToHexString(file_get_contents($request->file('job_letter')->getRealPath()));
+            $job_letterBase64Api =  bin2hex(file_get_contents($request->file('job_letter')->getRealPath()));
         } else {
             $job_letterBase64Api = null; // O manejar el error de otro modo
         }
@@ -363,7 +356,7 @@ class ApplicationRentalController extends Controller
         //Passport:
         $passportBase64Api = null;
         if ($request->hasFile('passport')) {
-            $passportBase64Api =  $this->fileToHexString(file_get_contents($request->file('passport')->getRealPath()));
+            $passportBase64Api =  bin2hex(file_get_contents($request->file('passport')->getRealPath()));
         } else {
             $passportBase64Api = null; // O manejar el error de otro modo
         }
