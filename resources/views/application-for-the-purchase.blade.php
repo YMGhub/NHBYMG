@@ -175,12 +175,12 @@
                                         </div>
                                     @endif
                                     <!-- Form Validation Error Messages -->
-                                     @if (session('error') && is_array(session('error')))
-                                <div class="alert alert-danger alert-custom alert-danger-custom">
-                                    <strong>{{ session('error')['message'] ?? 'Error' }}</strong>   <br>
-                                    <span>{{ session('error')['detail'] ?? '' }}</span>
-                                </div>
-                            @endif
+                                    @if (session('error') && is_array(session('error')))
+                                        <div class="alert alert-danger alert-custom alert-danger-custom">
+                                            <strong>{{ session('error')['message'] ?? 'Error' }}</strong> <br>
+                                            <span>{{ session('error')['detail'] ?? '' }}</span>
+                                        </div>
+                                    @endif
 
                                     <form method="post" enctype="multipart/form-data"
                                         action="{{ route('application-for-the-purchase.apply') }}"
@@ -249,10 +249,10 @@
                                                             </div>
                                                         </div>
                                                         <!--div class="col-md-3">
-                                                                                                                                    <label style="color:#fff"><b>.</b></label>
-                                                                                                                                    <input name="applicant_surname" type="text" id="applicant_surname"
-                                                                                                                                        placeholder="Surname" required="required" />
-                                                                                                                                    </div-->
+                                                                                                                                        <label style="color:#fff"><b>.</b></label>
+                                                                                                                                        <input name="applicant_surname" type="text" id="applicant_surname"
+                                                                                                                                            placeholder="Surname" required="required" />
+                                                                                                                                        </div-->
                                                         <div class="col-md-4">
                                                             <label style="color:#fff"><b>.</b></label>
                                                             <input name="applicant_first" type="text"
@@ -341,9 +341,10 @@
                                                                 <label><b>TAMIS NO:</b></label>
                                                                 <div class="row">
                                                                     <div class="col-md-12">
-                                                                        <input maxlength="13
-                                                                            name="applicant_tamis_no" type="text"
-                                                                            id="applicant_tamis_no"
+                                                                        <input
+                                                                            maxlength="13
+                                                                            name="applicant_tamis_no"
+                                                                            type="text" id="applicant_tamis_no"
                                                                             placeholder="Tamis No." required="required" />
                                                                     </div>
                                                                 </div>
@@ -361,8 +362,8 @@
                                                                 <div class="row">
                                                                     <div class="col-md-12">
                                                                         <input name="applicant_address" type="text"
-                                                                            id="applicant_address"
-                                                                            placeholder="Address" required />
+                                                                            id="applicant_address" placeholder="Address"
+                                                                            required />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -379,8 +380,8 @@
                                                                 <div class="row">
                                                                     <div class="col-md-12">
                                                                         <input name="applicant_address2" type="text"
-                                                                            id="applicant_address2"
-                                                                            placeholder="Address" required />
+                                                                            id="applicant_address2" placeholder="Address"
+                                                                            required />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -397,8 +398,8 @@
                                                                 <div class="row">
                                                                     <div class="col-md-12">
                                                                         <input name="applicant_address3" type="text"
-                                                                            id="applicant_address3"
-                                                                            placeholder="Address" required />
+                                                                            id="applicant_address3" placeholder="Address"
+                                                                            required />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -488,63 +489,63 @@
                                                                 <label><b>MARITAL STATUS:</b></label>
                                                                 <div class="row">
                                                                     <div
-                                                                    style="display: flex;width: 100%;justify-content: space-between;">
-                                                                    <div style="width:20%;display:flex;align-items: center;"
-                                                                        class="form-check form-check-inline">
-                                                                        <input style="margin-bottom:0px"
-                                                                            class="form-check-input" type="radio"
-                                                                            name="marital_status" id="Single"
-                                                                            value="Single">
-                                                                        <label
-                                                                            style="margin-bottom: 0;display: block;margin-left: 10px;"
-                                                                            class="form-check-label"
-                                                                            for="Single">Single</label>
+                                                                        style="display: flex;width: 100%;justify-content: space-between;">
+                                                                        <div style="width:20%;display:flex;align-items: center;"
+                                                                            class="form-check form-check-inline">
+                                                                            <input style="margin-bottom:0px"
+                                                                                class="form-check-input" type="radio"
+                                                                                name="marital_status" id="Single"
+                                                                                value="Single">
+                                                                            <label
+                                                                                style="margin-bottom: 0;display: block;margin-left: 10px;"
+                                                                                class="form-check-label"
+                                                                                for="Single">Single</label>
+                                                                        </div>
+                                                                        <div style="width:20%;display:flex;align-items: center;"
+                                                                            class="form-check form-check-inline">
+                                                                            <input style="margin-bottom:0px"
+                                                                                class="form-check-input" type="radio"
+                                                                                name="marital_status" id="Married"
+                                                                                value="Married">
+                                                                            <label
+                                                                                style="margin-bottom: 0;display: block;margin-left: 10px;"
+                                                                                class="form-check-label"
+                                                                                for="Married">Married</label>
+                                                                        </div>
+                                                                        <div style="width:20%;display:flex;align-items: center;"
+                                                                            class="form-check form-check-inline">
+                                                                            <input style="margin-bottom:0px"
+                                                                                class="form-check-input" type="radio"
+                                                                                name="marital_status" id="Widowed"
+                                                                                value="Widowed">
+                                                                            <label
+                                                                                style="margin-bottom: 0;display: block;margin-left: 10px;"
+                                                                                class="form-check-label"
+                                                                                for="Widowed">Widowed</label>
+                                                                        </div>
+                                                                        <div style="width:20%;display:flex;align-items: center;"
+                                                                            class="form-check form-check-inline">
+                                                                            <input style="margin-bottom:0px"
+                                                                                class="form-check-input" type="radio"
+                                                                                name="marital_status" id="Divorced"
+                                                                                value="Divorced">
+                                                                            <label
+                                                                                style="margin-bottom: 0;display: block;margin-left: 10px;"
+                                                                                class="form-check-label"
+                                                                                for="Divorced">Divorced</label>
+                                                                        </div>
+                                                                        <div style="width:20%;display:flex;align-items: center;"
+                                                                            class="form-check form-check-inline">
+                                                                            <input style="margin-bottom:0px"
+                                                                                class="form-check-input" type="radio"
+                                                                                name="marital_status" id="Separated"
+                                                                                value="Separated">
+                                                                            <label
+                                                                                style="margin-bottom: 0;display: block;margin-left: 10px;"
+                                                                                class="form-check-label"
+                                                                                for="Separated">Separated</label>
+                                                                        </div>
                                                                     </div>
-                                                                    <div style="width:20%;display:flex;align-items: center;"
-                                                                        class="form-check form-check-inline">
-                                                                        <input style="margin-bottom:0px"
-                                                                            class="form-check-input" type="radio"
-                                                                            name="marital_status" id="Married"
-                                                                            value="Married">
-                                                                        <label
-                                                                            style="margin-bottom: 0;display: block;margin-left: 10px;"
-                                                                            class="form-check-label"
-                                                                            for="Married">Married</label>
-                                                                    </div>
-                                                                    <div style="width:20%;display:flex;align-items: center;"
-                                                                        class="form-check form-check-inline">
-                                                                        <input style="margin-bottom:0px"
-                                                                            class="form-check-input" type="radio"
-                                                                            name="marital_status" id="Widowed"
-                                                                            value="Widowed">
-                                                                        <label
-                                                                            style="margin-bottom: 0;display: block;margin-left: 10px;"
-                                                                            class="form-check-label"
-                                                                            for="Widowed">Widowed</label>
-                                                                    </div>
-                                                                    <div style="width:20%;display:flex;align-items: center;"
-                                                                        class="form-check form-check-inline">
-                                                                        <input style="margin-bottom:0px"
-                                                                            class="form-check-input" type="radio"
-                                                                            name="marital_status" id="Divorced"
-                                                                            value="Divorced">
-                                                                        <label
-                                                                            style="margin-bottom: 0;display: block;margin-left: 10px;"
-                                                                            class="form-check-label"
-                                                                            for="Divorced">Divorced</label>
-                                                                    </div>
-                                                                    <div style="width:20%;display:flex;align-items: center;"
-                                                                        class="form-check form-check-inline">
-                                                                        <input style="margin-bottom:0px"
-                                                                            class="form-check-input" type="radio"
-                                                                            name="marital_status" id="Separated"
-                                                                            value="Separated">
-                                                                        <label
-                                                                            style="margin-bottom: 0;display: block;margin-left: 10px;"
-                                                                            class="form-check-label"
-                                                                            for="Separated">Separated</label>
-                                                                    </div>
-                                                                </div>
 
 
                                                                 </div>
@@ -669,7 +670,8 @@
                                                                 <label><b>COUNTRY OF RESIDENCE:</b></label>
                                                                 <div class="row">
                                                                     <div class="col-md-12">
-                                                                        <select required name="applicant_country_of_residence"
+                                                                        <select required
+                                                                            name="applicant_country_of_residence"
                                                                             id="applicant_country_of_residence">
                                                                             <option value="">Select a country
                                                                             </option>
@@ -819,7 +821,8 @@
                                                                     <label><b>Period of Employment:</b></label>
                                                                     <div class="row">
                                                                         <div class="col-md-12">
-                                                                            <select required name="app_period_of_employment"
+                                                                            <select required
+                                                                                name="app_period_of_employment"
                                                                                 id="app_period_of_employment">
                                                                                 <option value="< 1 year">
                                                                                     < 1 year </option>
@@ -843,8 +846,9 @@
                                                                     <label><b>Salary:</b></label>
                                                                     <div class="row">
                                                                         <div class="col-md-12">
-                                                                            <input required name="app_salary" type="text"
-                                                                                id="salary" placeholder="" />
+                                                                            <input required name="app_salary"
+                                                                                type="text" id="salary"
+                                                                                placeholder="" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -972,8 +976,8 @@
                                                                                 class="form-control" value="0"
                                                                                 min="0" required /></td>
                                                                         <td><!--button type="button" name="add"
-                                                                                id="add"
-                                                                                class="btn btn-success addMore">+</button-->
+                                                                                    id="add"
+                                                                                    class="btn btn-success addMore">+</button-->
                                                                         </td>
                                                                     </tr>
                                                                 </table>
@@ -992,7 +996,8 @@
                                                             <div class="col-md-4">
                                                                 <label><b>Yes:</b></label>
                                                                 <input name="disabilitieswithinthehousehold"
-                                                                    value="yes" type="radio" id="Adults" required />
+                                                                    value="yes" type="radio" id="Adults"
+                                                                    required />
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <label><b>No:</b></label>
@@ -1015,7 +1020,7 @@
                                                             <div class="col-md-6">
                                                                 <label style="color:#fff"><b>.</b></label>
                                                                 <input name="alternative" type="text" id="alternative"
-                                                                    placeholder="" required="required"  />
+                                                                    placeholder="" required="required" />
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <label><b>Amount</b></label>
@@ -1190,8 +1195,8 @@
                                                                 choice</b></label>
                                                         <div class="row">
                                                             <div class="col-md-12">
-                                                                <input class="mortgage_or_loan" name="mortgage_or_loan" type="text"
-                                                                    placeholder="" />
+                                                                <input class="mortgage_or_loan" name="mortgage_or_loan"
+                                                                    type="text" placeholder="" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1203,7 +1208,9 @@
                                                         <label><b>What is the amount of deposit available?</b></label>
                                                         <div class="row">
                                                             <div class="col-md-12">
-                                                                <input class="the_amount_of_deposit" name="the_amount_of_deposit" id="the_amount_of_deposit" type="text"
+                                                                <input class="the_amount_of_deposit"
+                                                                    name="the_amount_of_deposit"
+                                                                    id="the_amount_of_deposit" type="text"
                                                                     placeholder="$" />
                                                             </div>
                                                         </div>
@@ -1220,7 +1227,7 @@
                                                             <div class="col-md-12">
                                                                 <label><b>Applicant to submit bank statement(s)
                                                                         :</b></label>
-                                                                <input  style="margin-bottom: 0px;" type="file"
+                                                                <input style="margin-bottom: 0px;" type="file"
                                                                     id="bankstatements" name="bankstatements" />
                                                             </div>
                                                         </div>
@@ -1232,8 +1239,9 @@
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <label><b>Qualifying Amount :</b></label>
-                                                                <input  name="qualifyngamount" type="text"
-                                                                    placeholder="" id="qualifyngamount" class="qualifyngamount" />
+                                                                <input name="qualifyngamount" type="text"
+                                                                    placeholder="" id="qualifyngamount"
+                                                                    class="qualifyngamount" />
                                                                 <p>For personally financed purchases, a BANK STATEMENT is
                                                                     required. For
                                                                     mortgages/loans, a MORTGAGE CERTIFICATE is required.
@@ -1995,7 +2003,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-12 hideArea2" >
+                                                <div class="col-md-12 hideArea2">
                                                     <div>
                                                         <label><b>APPLICATION TYPE:</b></label>
                                                     </div>
@@ -2014,8 +2022,8 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <label><b>Timber / Wall:</b></label>
-                                                        <input name="co_house_type" value="Timber / Wall" type="radio"
-                                                            id="timber_wall" />
+                                                        <input name="co_house_type" value="Timber / Wall"
+                                                            type="radio" id="timber_wall" />
                                                     </div>
                                                     <div class="col-md-4">
                                                         <label><b>Steel Frame:</b></label>
@@ -2024,7 +2032,7 @@
                                                     </div>
                                                 </div>
 
-                                                  <div class="col-md-12 hideArea2">
+                                                <div class="col-md-12 hideArea2">
                                                     <div>
                                                         <label><b>PREFERRED HOUSE TYPE:</b></label>
                                                     </div>
@@ -2033,17 +2041,15 @@
                                                 <div class="col-md-12 hideArea2">
                                                     <div>
                                                         <label><b>2 Bedroom:</b></label>
-                                                        <input name="co_bedrooms" value="2" type="radio"
-                                                            />
+                                                        <input name="co_bedrooms" value="2" type="radio" />
                                                     </div>
                                                     <div>
                                                         <label><b>3 Bedroom:</b></label>
-                                                        <input name="co_bedrooms" value="3" type="radio"
-                                                             />
+                                                        <input name="co_bedrooms" value="3" type="radio" />
                                                     </div>
                                                 </div>
 
-                                                   <div class="col-md-12 hideArea2">
+                                                <div class="col-md-12 hideArea2">
                                                     <div>
                                                         <label><b>NO OF OCCUPANTS:</b></label>
                                                     </div>
@@ -2052,17 +2058,17 @@
                                                 <div class="col-md-12 hideArea2">
                                                     <div>
                                                         <label><b>Adults:</b></label>
-                                                        <input name="co_no_occupants_adult" value="2" type="number"
-                                                         />
+                                                        <input name="co_no_occupants_adult" value="2"
+                                                            type="number" />
                                                     </div>
                                                     <div>
                                                         <label><b>Children:</b></label>
-                                                        <input name="co_no_occupants_children" value="3" type="number"
-                                                             />
+                                                        <input name="co_no_occupants_children" value="3"
+                                                            type="number" />
                                                     </div>
                                                 </div>
 
-                                                  <!---co_children_agen--->
+                                                <!---co_children_agen--->
                                                 <div class="col-md-12 hideArea2">
                                                     <div>
                                                         <div class="row">
@@ -2071,10 +2077,8 @@
                                                                     <label><b>CHILDREN’S AGES::</b></label>
                                                                     <div class="row">
                                                                         <div class="col-md-12">
-                                                                            <input name="co_children_age"
-                                                                                type="text"
-                                                                                id="co_children_age"
-                                                                                placeholder="" />
+                                                                            <input name="co_children_age" type="text"
+                                                                                id="co_children_age" placeholder="" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -2123,23 +2127,34 @@
                                             </div>
                                             <!--NOTE-->
 
-                                             <div class="col-md-12 hideArea">
-                                            <div>
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div style="display:flex;    align-items: center;">
-                                                            <input style="margin-bottom: 0;" type="checkbox"
-                                                                id="confirm_info" required>
-                                                            <label style="    margin-bottom: 0;margin-left: 10px;"
-                                                                for="confirm_info">I confirm that the information provided
-                                                                is
-                                                                accurate.</label>
-                                                        </div>
+                                            <div class="col-md-12 hideArea">
+                                                <div>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div style="display:flex;    align-items: center;">
+                                                                <input style="margin-bottom: 0;" type="checkbox"
+                                                                    id="privacy" required>
+                                                                <label style="    margin-bottom: 0;margin-left: 10px;"
+                                                                    for="privacy">I have read and accept the <a
+                                                                        href="/privacy-policy" target="_blank">Privacy Policy.</a></label>
+                                                            </div>
 
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div style="display:flex;    align-items: center;">
+                                                                <input style="margin-bottom: 0;" type="checkbox"
+                                                                    id="confirm_info" required>
+                                                                <label style="    margin-bottom: 0;margin-left: 10px;"
+                                                                    for="confirm_info">I confirm that the information
+                                                                    provided
+                                                                    is
+                                                                    accurate.</label>
+                                                            </div>
+
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
 
 
                                             <!--dateend-->
@@ -2175,67 +2190,67 @@
     document.addEventListener('DOMContentLoaded', function() {
 
         //
-            //the_amount_of_deposit
-            const the_amount_of_deposit = document.getElementById('the_amount_of_deposit');
+        //the_amount_of_deposit
+        const the_amount_of_deposit = document.getElementById('the_amount_of_deposit');
 
-            the_amount_of_deposit.addEventListener('input', function(e) {
-                const input = e.target;
+        the_amount_of_deposit.addEventListener('input', function(e) {
+            const input = e.target;
 
-                // Obtener solo números y punto
-                let value = input.value.replace(/[^0-9.]/g, '');
+            // Obtener solo números y punto
+            let value = input.value.replace(/[^0-9.]/g, '');
 
-                // Separar entero y decimal
-                let [intPart, decimalPart] = value.split('.');
+            // Separar entero y decimal
+            let [intPart, decimalPart] = value.split('.');
 
-                // Formatear parte entera con comas
-                if (intPart) {
-                    intPart = intPart.replace(/^0+/, ''); // eliminar ceros iniciales
-                    intPart = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-                } else {
-                    intPart = '0';
-                }
+            // Formatear parte entera con comas
+            if (intPart) {
+                intPart = intPart.replace(/^0+/, ''); // eliminar ceros iniciales
+                intPart = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            } else {
+                intPart = '0';
+            }
 
-                // Limitar decimales a 2
-                if (decimalPart !== undefined) {
-                    decimalPart = decimalPart.substring(0, 2);
-                    value = `${intPart}.${decimalPart}`;
-                } else {
-                    value = `${intPart}`;
-                }
+            // Limitar decimales a 2
+            if (decimalPart !== undefined) {
+                decimalPart = decimalPart.substring(0, 2);
+                value = `${intPart}.${decimalPart}`;
+            } else {
+                value = `${intPart}`;
+            }
 
-                input.value = value;
-            });
+            input.value = value;
+        });
 
-             //qualifyngamount
-            const qualifyngamount = document.getElementById('qualifyngamount');
+        //qualifyngamount
+        const qualifyngamount = document.getElementById('qualifyngamount');
 
-            qualifyngamount.addEventListener('input', function(e) {
-                const input = e.target;
+        qualifyngamount.addEventListener('input', function(e) {
+            const input = e.target;
 
-                // Obtener solo números y punto
-                let value = input.value.replace(/[^0-9.]/g, '');
+            // Obtener solo números y punto
+            let value = input.value.replace(/[^0-9.]/g, '');
 
-                // Separar entero y decimal
-                let [intPart, decimalPart] = value.split('.');
+            // Separar entero y decimal
+            let [intPart, decimalPart] = value.split('.');
 
-                // Formatear parte entera con comas
-                if (intPart) {
-                    intPart = intPart.replace(/^0+/, ''); // eliminar ceros iniciales
-                    intPart = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-                } else {
-                    intPart = '0';
-                }
+            // Formatear parte entera con comas
+            if (intPart) {
+                intPart = intPart.replace(/^0+/, ''); // eliminar ceros iniciales
+                intPart = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            } else {
+                intPart = '0';
+            }
 
-                // Limitar decimales a 2
-                if (decimalPart !== undefined) {
-                    decimalPart = decimalPart.substring(0, 2);
-                    value = `${intPart}.${decimalPart}`;
-                } else {
-                    value = `${intPart}`;
-                }
+            // Limitar decimales a 2
+            if (decimalPart !== undefined) {
+                decimalPart = decimalPart.substring(0, 2);
+                value = `${intPart}.${decimalPart}`;
+            } else {
+                value = `${intPart}`;
+            }
 
-                input.value = value;
-            });
+            input.value = value;
+        });
 
 
         const form = document.getElementById('applicationpurchase');
@@ -2631,139 +2646,141 @@
 
 
                         const listResponse = typeof data === 'string' ?
-                                JSON.parse(data) : data;
+                            JSON.parse(data) : data;
 
                         var ClientIDValid = listResponse.data[0].ClientID;
 
 
 
-                        if(ClientIDValid != 0){
+                        if (ClientIDValid != 0) {
 
 
 
-                            mensaje.innerHTML  = "Your National Registration Number is already associated with an application in our system. For additional assistance<br> ";
-                            mensaje.innerHTML  += "Please contact NHC. Phone: 1-246-536-5300 Email: NHC.CustomerService@barbados.gov.bb";
+                            mensaje.innerHTML =
+                                "Your National Registration Number is already associated with an application in our system. For additional assistance<br> ";
+                            mensaje.innerHTML +=
+                                "Please contact NHC. Phone: 1-246-536-5300 Email: NHC.CustomerService@barbados.gov.bb";
 
-                            mensaje.style.color =
-                                "red"; // Mensaje de error en rojo
-                        }else{
-
-
-
-                        if (data.errorMessage) {
-                            mensaje.textContent = data
-                                .errorMessage;
                             mensaje.style.color =
                                 "red"; // Mensaje de error en rojo
                         } else {
 
-                            const parsedData = typeof data === 'string' ?
-                                JSON.parse(data) : data;
 
-                            function isDataEmpty(response) {
-                                const data = response.data;
 
-                                if (!Array.isArray(data)) {
-                                    console.error(
-                                        "La propiedad 'data' no es un arreglo:",
-                                        data);
-                                    return true;
-                                }
-
-                                return data.length === 0 || data.every(
-                                    obj =>
-                                    Object.values(obj).every(value =>
-                                        value === null || value === '')
-                                );
-                            }
-
-                            if (isDataEmpty(parsedData)) {
-                                //desbloquea los campos par que la persona pueda escribri su informacion
-
-                                mensaje.textContent =
-                                    "The number you entered is invalid. Please check it and try again.";
+                            if (data.errorMessage) {
+                                mensaje.textContent = data
+                                    .errorMessage;
                                 mensaje.style.color =
                                     "red"; // Mensaje de error en rojo
-
-
-                                jQuery(".hideArea").hide();
-                                jQuery("#MessageInformation").hide();
-                                jQuery("#ButtonNext").hide();
-
-
                             } else {
-                                jQuery(".hideArea").show();
-                                jQuery("#MessageInformation").show();
-                                jQuery("#ButtonNext").show();
-                                //bloquea los campos nombre y fecha de nac para que la persona no pueda escribri su informacion
-                                //FirstName,MiddleName,LastName,DOB FechaNac
-                                var ClientID = parsedData.data[0]
-                                    .ClientID;
-                                var FirstName = parsedData.data[0]
-                                    .FirstName;
-                                var LastName = parsedData.data[0].LastName;
-                                var MiddleName = parsedData.data[0]
-                                    .MiddleName;
-                                var DOB = parsedData.data[0].DOB;
-                                var Gender = parsedData.data[0].Gender;
-                                var Surname = parsedData.data[0].Salutation;
 
-                                jQuery("#client_id").val(ClientID);
+                                const parsedData = typeof data === 'string' ?
+                                    JSON.parse(data) : data;
 
-                                //field First Name
-                                jQuery("#applicant_first").val(FirstName);
-                                jQuery("#applicant_first").css({
-                                    'pointer-events': 'none',
-                                    'background-color': '#f5f5f5',
-                                    'cursor': 'not-allowed'
-                                });;
-                                //field LastName
-                                jQuery("#applicant_middle").val(LastName)
-                                    .css({
+                                function isDataEmpty(response) {
+                                    const data = response.data;
+
+                                    if (!Array.isArray(data)) {
+                                        console.error(
+                                            "La propiedad 'data' no es un arreglo:",
+                                            data);
+                                        return true;
+                                    }
+
+                                    return data.length === 0 || data.every(
+                                        obj =>
+                                        Object.values(obj).every(value =>
+                                            value === null || value === '')
+                                    );
+                                }
+
+                                if (isDataEmpty(parsedData)) {
+                                    //desbloquea los campos par que la persona pueda escribri su informacion
+
+                                    mensaje.textContent =
+                                        "The number you entered is invalid. Please check it and try again.";
+                                    mensaje.style.color =
+                                        "red"; // Mensaje de error en rojo
+
+
+                                    jQuery(".hideArea").hide();
+                                    jQuery("#MessageInformation").hide();
+                                    jQuery("#ButtonNext").hide();
+
+
+                                } else {
+                                    jQuery(".hideArea").show();
+                                    jQuery("#MessageInformation").show();
+                                    jQuery("#ButtonNext").show();
+                                    //bloquea los campos nombre y fecha de nac para que la persona no pueda escribri su informacion
+                                    //FirstName,MiddleName,LastName,DOB FechaNac
+                                    var ClientID = parsedData.data[0]
+                                        .ClientID;
+                                    var FirstName = parsedData.data[0]
+                                        .FirstName;
+                                    var LastName = parsedData.data[0].LastName;
+                                    var MiddleName = parsedData.data[0]
+                                        .MiddleName;
+                                    var DOB = parsedData.data[0].DOB;
+                                    var Gender = parsedData.data[0].Gender;
+                                    var Surname = parsedData.data[0].Salutation;
+
+                                    jQuery("#client_id").val(ClientID);
+
+                                    //field First Name
+                                    jQuery("#applicant_first").val(FirstName);
+                                    jQuery("#applicant_first").css({
                                         'pointer-events': 'none',
                                         'background-color': '#f5f5f5',
                                         'cursor': 'not-allowed'
                                     });;
-                                //field MiddleName
-                                jQuery("#maiden_name").val(MiddleName).css({
-                                    'pointer-events': 'none',
-                                    'background-color': '#f5f5f5',
-                                    'cursor': 'not-allowed'
-                                });;
-                                //field DOB
-                                jQuery("#applicant_date_birth").val(DOB).css({
-                                    'pointer-events': 'none',
-                                    'background-color': '#f5f5f5',
-                                    'cursor': 'not-allowed'
-                                });;
-                                //field Gender
-                                jQuery("#applicant_gender").val(Gender)
-                                    .css({
+                                    //field LastName
+                                    jQuery("#applicant_middle").val(LastName)
+                                        .css({
+                                            'pointer-events': 'none',
+                                            'background-color': '#f5f5f5',
+                                            'cursor': 'not-allowed'
+                                        });;
+                                    //field MiddleName
+                                    jQuery("#maiden_name").val(MiddleName).css({
                                         'pointer-events': 'none',
                                         'background-color': '#f5f5f5',
                                         'cursor': 'not-allowed'
                                     });;
-
-                                //field Saludation
-                                jQuery("#salutation").val(Surname)
-                                    .css({
+                                    //field DOB
+                                    jQuery("#applicant_date_birth").val(DOB).css({
                                         'pointer-events': 'none',
                                         'background-color': '#f5f5f5',
                                         'cursor': 'not-allowed'
                                     });;
+                                    //field Gender
+                                    jQuery("#applicant_gender").val(Gender)
+                                        .css({
+                                            'pointer-events': 'none',
+                                            'background-color': '#f5f5f5',
+                                            'cursor': 'not-allowed'
+                                        });;
 
-                                mensaje.textContent =
-                                    "Valid number";
-                                mensaje.style.color =
-                                    "green"; // Mensaje de éxito en verde
+                                    //field Saludation
+                                    jQuery("#salutation").val(Surname)
+                                        .css({
+                                            'pointer-events': 'none',
+                                            'background-color': '#f5f5f5',
+                                            'cursor': 'not-allowed'
+                                        });;
+
+                                    mensaje.textContent =
+                                        "Valid number";
+                                    mensaje.style.color =
+                                        "green"; // Mensaje de éxito en verde
 
 
 
-                            }
+                                }
 
-                        } /*end else*/
+                            } /*end else*/
 
-                         }/*end validation client id */
+                        } /*end validation client id */
 
 
                     })
@@ -3874,18 +3891,18 @@
                 $boxGroup2.show(); // Mostrar el div
                 jQuery(".boxGroup2 input").attr("required");
 
-                    const bankstatements = document.getElementById('bankstatements');
-                    if (bankstatements) {
-                        bankstatements.setAttribute('required', 'required');
-                    }
+                const bankstatements = document.getElementById('bankstatements');
+                if (bankstatements) {
+                    bankstatements.setAttribute('required', 'required');
+                }
 
 
             } else {
                 $boxGroup2.hide(); // Ocultar el div
-                 const bankstatements = document.getElementById('bankstatements');
-                    if (bankstatements) {
-                        bankstatements.removeAttribute('required', 'required');
-                    }
+                const bankstatements = document.getElementById('bankstatements');
+                if (bankstatements) {
+                    bankstatements.removeAttribute('required', 'required');
+                }
             }
         })
 
@@ -3906,7 +3923,7 @@
 
 
         /***begin family fields**/
-       /* let i = 0;
+        /* let i = 0;
 
         document.getElementById("add").addEventListener("click", function() {
             ++i;

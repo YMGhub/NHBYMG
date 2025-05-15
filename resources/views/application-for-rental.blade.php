@@ -1882,6 +1882,16 @@
                                         <div class="col-md-12 hideArea">
                                             <div>
                                                 <div class="row">
+                                                      <div class="col-md-12">
+                                                            <div style="display:flex;    align-items: center;">
+                                                                <input style="margin-bottom: 0;" type="checkbox"
+                                                                    id="privacy" required>
+                                                                <label style="    margin-bottom: 0;margin-left: 10px;"
+                                                                    for="privacy">I have read and accept the <a
+                                                                        href="/privacy-policy" target="_blank">Privacy Policy.</a></label>
+                                                            </div>
+
+                                                        </div>
                                                     <div class="col-md-12">
                                                         <div style="display:flex;    align-items: center;">
                                                             <input style="margin-bottom: 0;" type="checkbox"
