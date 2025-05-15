@@ -2681,7 +2681,7 @@
                                 //desbloquea los campos par que la persona pueda escribri su informacion
 
                                 mensaje.textContent =
-                                    "Invalid Number";
+                                    "The number you entered is invalid. Please check it and try again.";
                                 mensaje.style.color =
                                     "red"; // Mensaje de error en rojo
 
@@ -2934,7 +2934,7 @@
                                     //desbloquea los campos par que la persona pueda escribri su informacion
 
                                     mensaje.textContent =
-                                        "Invalid Number";
+                                        "The number you entered is invalid. Please check it and try again.";
                                     mensaje.style.color =
                                         "red"; // Mensaje de error en rojo
 
@@ -3419,7 +3419,7 @@
                                         console.log("La información está vacía.");
 
                                         validationResult.textContent =
-                                            "Invalid Number";
+                                            "The number you entered is invalid. Please check it and try again.";
                                         validationResult.style.color =
                                             "red"; // Mensaje de error en rojo
 

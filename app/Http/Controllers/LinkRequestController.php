@@ -55,7 +55,7 @@ class LinkRequestController extends Controller
             // Opcional: mensaje de éxito para debugging
             //Log::info('Mail successfully sent to: ' . $request->email_field2);
 
-            return back()->with('success', 'Email sent successfully');
+            return back()->with('success', 'Your email has been sent successfully! Please check your inbox to continue the application process.');
 
         } catch (Exception $e) {
             // Registrar el error
