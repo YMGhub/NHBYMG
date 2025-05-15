@@ -132,11 +132,12 @@
                             @endif
 
 
-                            @if (session('error'))
-                                <div class="alert alert-danger alert-custom alert-danger-custom">
-                                    {{ session('error') }}
-                                </div>
-                            @endif
+                            @if (session('error') && is_array(session('error')))
+                                        <div class="alert alert-danger alert-custom alert-danger-custom">
+                                            <strong>{{ session('error')['message'] ?? 'Error' }}</strong> <br>
+                                            <span>{{ session('error')['detail'] ?? '' }}</span>
+                                        </div>
+                                    @endif
                             <!-- Form Validation Error Messages -->
 
 

@@ -62,7 +62,12 @@ class LinkRequestController extends Controller
             //Log::error('Error sending the mail: ' . $e->getMessage());
 
             // Si deseas, puedes también devolver un error al usuario
-            return back()->with('error', 'The mail could not be sent. Please try again.');
+            //return back()->with('error', 'The mail could not be sent. Please try again.');
+              return back()->with('error', [
+                        'message' => "Error",
+                        'detail' => "The mail could not be sent. Please try again.",
+                    ]);
+
         }
 
         }else{
