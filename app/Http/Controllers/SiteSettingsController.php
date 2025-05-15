@@ -43,8 +43,15 @@ class SiteSettingsController extends Controller
         $settings->site_contact_us = $request->site_contact_us;
         $settings->facebook_url = $request->facebook_url;
         $settings->instagram_url = $request->instagram_url;
+        $settings->policy = $request->policy;
         $settings->save();
 
         return redirect()->back()->with('success', 'Settings saved correctly..');
     }
+
+    public function policy()
+{
+    $settings = SiteSetting::first(); // o ajusta si usas múltiples configuraciones
+    return view('policy', compact('settings'));
+}
 }

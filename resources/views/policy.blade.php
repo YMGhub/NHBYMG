@@ -1,13 +1,41 @@
-<x-guest-layout>
-    <div class="pt-4 bg-gray-100 dark:bg-gray-900">
-        <div class="min-h-screen flex flex-col items-center pt-6 sm:pt-0">
-            <div>
-                <x-authentication-card-logo />
+@extends('layouts.layout')
+@section('title', 'About')
+@section('content')
+    <div class="parallax" data-background="images/headOffice.jpeg" data-color="#36383e" data-color-opacity="0.45"
+        data-img-width="2500" data-img-height="1600">
+        <div class="parallax-content">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <!-- Main Search Container -->
+                        <div class="main-search-container">
+                            <h2>PRIVACY POLICY</h2>
+
+
+                        </div>
+                        <!-- Main Search Container / End -->
+
+                    </div>
+                </div>
             </div>
 
-            <div class="w-full sm:max-w-2xl mt-6 p-6 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg prose dark:prose-invert">
-                {!! $policy !!}
+        </div>
+    </div>
+
+    <!-- Titlebar
+                                                    ================================================== -->
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <!-- Main Search Input -->
+                    {!! $settings->policy ?? 'No policy found.' !!}
+
             </div>
         </div>
     </div>
-</x-guest-layout>
+    <!-- Content
+
+@endsection

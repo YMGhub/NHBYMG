@@ -48,6 +48,8 @@ Route::get('/', [HomeController::class, 'index'])->name('welcome');
 Route::get('/about-us', [AboutUsController::class, 'aboutus_info'])->name('about-us');
 
 
+
+
 Route::get('/mission-and-vision', [AboutUsController::class, 'mission_vision_info'])->name('mission-and-vision');
 
 Route::get('/our-executives', [OurExecutivesController::class, 'ourexecutives_info'])->name('our-executives');
@@ -371,6 +373,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::put('/update', [SiteSettingsController::class, 'update'])->name('admin.settings.update');
     });
 
+
+    Route::get('/privacy-policy', [SiteSettingsController::class, 'policy'])->name('policy');
 
     //NATIONAL HOUSING CORPORATION APPLICATION FOR EMPLOYMENT (WEEKLY) - ADMIN
     Route::prefix('/admin/application-for-employment-weekly')->group(function () {
