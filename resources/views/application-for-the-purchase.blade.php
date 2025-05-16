@@ -96,12 +96,12 @@
                                 </div>
                             @endif
                             <!-- Form Validation Error Messages -->
-                           @if (session('error') && is_array(session('error')))
-                                        <div class="alert alert-danger alert-custom alert-danger-custom">
-                                            <strong>{{ session('error')['message'] ?? 'Error' }}</strong> <br>
-                                            <span>{{ session('error')['detail'] ?? '' }}</span>
-                                        </div>
-                                    @endif
+                            @if (session('error') && is_array(session('error')))
+                                <div class="alert alert-danger alert-custom alert-danger-custom">
+                                    <strong>{{ session('error')['message'] ?? 'Error' }}</strong> <br>
+                                    <span>{{ session('error')['detail'] ?? '' }}</span>
+                                </div>
+                            @endif
                             <form action="{{ route('link-request.send-purchase') }}" method="POST"
                                 id="FormRequestPurchase">
                                 @csrf
@@ -246,10 +246,10 @@
                                                             </div>
                                                         </div>
                                                         <!--div class="col-md-3">
-                                                                                                                                        <label style="color:#fff"><b>.</b></label>
-                                                                                                                                        <input name="applicant_surname" type="text" id="applicant_surname"
-                                                                                                                                            placeholder="Surname" required="required" />
-                                                                                                                                        </div-->
+                                                                                                                                            <label style="color:#fff"><b>.</b></label>
+                                                                                                                                            <input name="applicant_surname" type="text" id="applicant_surname"
+                                                                                                                                                placeholder="Surname" required="required" />
+                                                                                                                                            </div-->
                                                         <div class="col-md-4">
                                                             <label style="color:#fff"><b>.</b></label>
                                                             <input name="applicant_first" type="text"
@@ -338,11 +338,19 @@
                                                                 <label><b>TAMIS NO:</b></label>
                                                                 <div class="row">
                                                                     <div class="col-md-12">
-                                                                        <input
-                                                                            maxlength="13
-                                                                            name="applicant_tamis_no"
+                                                                        <input maxlength="13" name="applicant_tamis_no"
                                                                             type="text" id="applicant_tamis_no"
-                                                                            placeholder="Tamis No." required="required" />
+                                                                            placeholder="Tamis No." required="required"
+                                                                            minlength="13" maxlength="13" />
+                                                                        <p id="tamis_error"
+                                                                            style="    color: red;
+    margin: 0;
+    display: block;
+    padding: 0;
+    position: absolute;
+    top: 51px;
+    font-size: 12px;"
+                                                                            class="text-red-600 text-sm mt-1"></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -973,8 +981,8 @@
                                                                                 class="form-control" value="0"
                                                                                 min="0" required /></td>
                                                                         <td><!--button type="button" name="add"
-                                                                                    id="add"
-                                                                                    class="btn btn-success addMore">+</button-->
+                                                                                        id="add"
+                                                                                        class="btn btn-success addMore">+</button-->
                                                                         </td>
                                                                     </tr>
                                                                 </table>
@@ -1395,7 +1403,17 @@
                                                                     <div class="col-md-12">
                                                                         <input name="coapplicant_tamis_no" type="text"
                                                                             id="coapplicant_tamis_no"
-                                                                            placeholder="Tamis No." />
+                                                                            placeholder="Tamis No." maxlength="13"
+                                                                            minlength="13" />
+                                                                        <p id="co_tamis_error"
+                                                                            style="    color: red;
+    margin: 0;
+    display: block;
+    padding: 0;
+    position: absolute;
+    top: 51px;
+    font-size: 12px;"
+                                                                            class="text-red-600 text-sm mt-1"></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2127,13 +2145,14 @@
                                             <div class="col-md-12 hideArea">
                                                 <div>
                                                     <div class="row">
-                                                       <div class="col-md-12">
+                                                        <div class="col-md-12">
                                                             <div style="display:flex;    align-items: center;">
-                                                                <input name="privacy" style="margin-bottom: 0;" type="checkbox"
-                                                                    id="privacy" required>
+                                                                <input name="privacy" style="margin-bottom: 0;"
+                                                                    type="checkbox" id="privacy" required>
                                                                 <label style="    margin-bottom: 0;margin-left: 10px;"
                                                                     for="privacy">I have read and accept the <a
-                                                                        href="/privacy-policy" target="_blank">Privacy Policy.</a></label>
+                                                                        href="/privacy-policy" target="_blank">Privacy
+                                                                        Policy.</a></label>
                                                             </div>
 
                                                         </div>
@@ -2185,6 +2204,55 @@
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+
+              //validate tamis number 13 digitos
+            const input = document.getElementById('applicant_tamis_no');
+            const errorText = document.getElementById('tamis_error');
+
+            input.addEventListener('input', function () {
+                const value = input.value;
+
+                // Si contiene letras o caracteres no numéricos
+                if (!/^\d*$/.test(value)) {
+                    errorText.textContent = "Only numbers are allowed.";
+                }
+                // Si tiene menos de 13 dígitos (pero más de 0)
+                else if (value.length > 0 && value.length < 13) {
+                    errorText.textContent = "It must contain exactly 13 digits.";
+                }
+                // Si tiene exactamente 13 dígitos
+                else if (value.length === 13) {
+                    errorText.textContent = ""; // todo correcto
+                }
+                // Si está vacío
+                else {
+                    errorText.textContent = "";
+                }
+            });
+
+              const inputx = document.getElementById('coapplicant_tamis_no');
+            const errorTextx = document.getElementById('co_tamis_error');
+
+            inputx.addEventListener('input', function () {
+                const value = input.value;
+
+                // Si contiene letras o caracteres no numéricos
+                if (!/^\d*$/.test(value)) {
+                    errorTextx.textContent = "Only numbers are allowed.";
+                }
+                // Si tiene menos de 13 dígitos (pero más de 0)
+                else if (value.length > 0 && value.length < 13) {
+                    errorTextx.textContent = "It must contain exactly 13 digits.";
+                }
+                // Si tiene exactamente 13 dígitos
+                else if (value.length === 13) {
+                    errorTextx.textContent = ""; // todo correcto
+                }
+                // Si está vacío
+                else {
+                    errorTextx.textContent = "";
+                }
+            });
 
         //
         //the_amount_of_deposit
@@ -2649,7 +2717,7 @@
 
 
 
-                        if (ClientIDValid != 0) {
+                        if (ClientIDValid == 0) {
 
 
 

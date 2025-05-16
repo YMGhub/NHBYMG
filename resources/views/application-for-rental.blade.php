@@ -368,13 +368,20 @@
 
                                     <div id="GroupFields">
                                         <!--TAMIS-->
-                                        <div class="col-md-12">
+                                        <div class="col-md-12" style="position: relative">
                                             <div>
                                                 <label><b>Tamis Number</b></label>
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <input name="tamis_number" type="text" maxlength="13"
-                                                            id="tamis_number" placeholder="" required />
+                                                            id="tamis_number" placeholder="" required   minlength="13" title="Debe contener exactamente 13 dígitos numéricos"/>
+                                                            <p id="tamis_error" style="    color: red;
+    margin: 0;
+    display: block;
+    padding: 0;
+    position: absolute;
+    top: 51px;
+    font-size: 12px;" class="text-red-600 text-sm mt-1"></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1272,13 +1279,21 @@
                                             <!-- date and photograph-->
 
                                             <!--TAMIS Co applicant-->
-                                            <div class="col-md-12 hideArea2">
+                                            <div class="col-md-12 hideArea2" style="position: relative;">
                                                 <div>
                                                     <label><b>Tamis Number</b></label>
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <input name="co_tamis_number" type="text" maxlength="13"
+                                                            <input name="co_tamis_number" type="text"  minlength="13" maxlength="13"
                                                                 id="co_tamis_number" placeholder="" />
+                                                                <p id="co_tamis_error" style="    color: red;
+    margin: 0;
+    display: block;
+    padding: 0;
+    position: absolute;
+    top: 51px;
+    font-size: 12px;" class="text-red-600 text-sm mt-1"></p>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2023,6 +2038,54 @@
                 });*/
             //end prevent submit
 
+            //validate tamis number 13 digitos
+            const input = document.getElementById('tamis_number');
+            const errorText = document.getElementById('tamis_error');
+
+            input.addEventListener('input', function () {
+                const value = input.value;
+
+                // Si contiene letras o caracteres no numéricos
+                if (!/^\d*$/.test(value)) {
+                    errorText.textContent = "Only numbers are allowed.";
+                }
+                // Si tiene menos de 13 dígitos (pero más de 0)
+                else if (value.length > 0 && value.length < 13) {
+                    errorText.textContent = "It must contain exactly 13 digits.";
+                }
+                // Si tiene exactamente 13 dígitos
+                else if (value.length === 13) {
+                    errorText.textContent = ""; // todo correcto
+                }
+                // Si está vacío
+                else {
+                    errorText.textContent = "";
+                }
+            });
+
+              const inputx = document.getElementById('co_tamis_number');
+            const errorTextx = document.getElementById('co_tamis_error');
+
+            inputx.addEventListener('input', function () {
+                const value = input.value;
+
+                // Si contiene letras o caracteres no numéricos
+                if (!/^\d*$/.test(value)) {
+                    errorTextx.textContent = "Only numbers are allowed.";
+                }
+                // Si tiene menos de 13 dígitos (pero más de 0)
+                else if (value.length > 0 && value.length < 13) {
+                    errorTextx.textContent = "It must contain exactly 13 digits.";
+                }
+                // Si tiene exactamente 13 dígitos
+                else if (value.length === 13) {
+                    errorTextx.textContent = ""; // todo correcto
+                }
+                // Si está vacío
+                else {
+                    errorTextx.textContent = "";
+                }
+            });
             //LocalStora para guardar el status actual del form
 
             const fieldsToPersistByName = [
