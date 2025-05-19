@@ -57,7 +57,7 @@
             }
 
             .BoxMarital .form-check{
-                width:100%
+                        width: 100% !important;
             }
         }
     </style>
@@ -2770,7 +2770,7 @@
 
 
 
-                        if (ClientIDValid != 0) {
+                        if (ClientIDValid == 0) {
 
 
 
