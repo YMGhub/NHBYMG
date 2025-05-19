@@ -1106,7 +1106,7 @@
                                                 <!--prompt the applicant to provide the location of the land lot.-->
                                                 <div class="col-md-12 landLotBox" style="display: none">
                                                     <div>
-                                                        <label><b>Prompt the applicant to provide the location of the Land Lot to: Please provide the location of the land Lot</b></label>
+                                                        <label><b>Please provide the location of the land Lot</b></label>
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <input name="land_or_lot" type="text"
