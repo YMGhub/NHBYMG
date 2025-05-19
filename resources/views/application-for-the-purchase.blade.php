@@ -1167,7 +1167,11 @@
                                                                 land?</b></label>
                                                         <div class="row">
                                                             <div class="col-md-4">
-                                                                <label><b>Mortgage:</b></label>
+                                                                <label><b>Mortgage:</b><small
+                                                                        style="display:block">State the
+                                                                        amount
+                                                                        to be deposited as a
+                                                                        down payment</small></label>
                                                                 <input class="financeBox"
                                                                     name="financethepurchsaseproporty" value="Mortgage"
                                                                     type="radio" required />
@@ -1179,11 +1183,7 @@
                                                                     type="radio" />
                                                             </div>
                                                             <div class="col-md-4">
-                                                                <label><b>For Full Cash Payment:</b><small
-                                                                        style="display:block">State the
-                                                                        amount
-                                                                        to be deposited as a
-                                                                        down payment</small></label>
+                                                                <label><b>For Full Cash Payment:</b></label>
                                                                 <input class="financeBox"
                                                                     name="financethepurchsaseproporty"
                                                                     value="Full Cash Payment" type="radio" />
@@ -1224,6 +1224,20 @@
                                                 </div>
 
 
+
+                                                 <!--Applicant to submit bank statement(s) -->
+                                                <div class="col-md-12 boxGroup2 mortage_certificate" id="mortage_certificate" style="display: none">
+                                                    <div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <label><b>Mortage Certificate(s)
+                                                                        :</b></label>
+                                                                <input style="margin-bottom: 0px;" type="file"
+                                                                    id="mortage_certificate" name="mortage_certificate" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
                                                 <!--PREFERRED LOCATION OF LAND/PROPERT:-->
                                                 <!--Applicant to submit bank statement(s) -->
@@ -3870,7 +3884,7 @@
         }
 
         $financeBox.change(function() {
-            if ($(this).val() === "Loan" || $(this).val() === "Mortgage") {
+            if ($(this).val() === "Loan" ) {
                 $boxGroup1.show(); // Mostrar el div
 
                 const input = document.querySelector('input[name="mortgage_or_loan"]');
@@ -3908,6 +3922,57 @@
 
 
 
+            }else if(  $(this).val() === "Mortgage"){
+
+
+                   $boxGroup1.show(); // Mostrar el div
+
+                const input = document.querySelector('input[name="mortgage_or_loan"]');
+
+                // Mostrar el campo (si estuviera oculto)
+                input.style.display = 'block'; // o usa otra lógica según tu HTML
+
+                // Agrega el atributo required
+                input.setAttribute('required', true);
+
+                // Limpia su valor
+                input.value = '';
+
+                const input2 = document.querySelector('input[name="the_amount_of_deposit"]');
+
+                // Mostrar el campo (si estuviera oculto)
+                input2.style.display = 'block'; // o usa otra lógica según tu HTML
+
+                // Agrega el atributo required
+                input2.setAttribute('required', true);
+
+                // Limpia su valor
+                input2.value = '';
+
+                const input3 = document.querySelector('input[name="qualifyngamount"]');
+
+                // Mostrar el campo (si estuviera oculto)
+                input3.style.display = 'block'; // o usa otra lógica según tu HTML
+
+                // Agrega el atributo required
+                input3.setAttribute('required', true);
+
+                // Limpia su valor
+                input3.value = '';
+
+                //mortage File
+
+                const mortageFile = document.querySelector('#mortage_certificate');
+
+                // Mostrar el campo (si estuviera oculto)
+                inpumortageFilet3.style.display = 'block'; // o usa otra lógica según tu HTML
+
+                // Agrega el atributo required
+                mortageFile.setAttribute('required', true);
+
+                // Limpia su valor
+                mortageFile.value = '';
+
             } else {
                 $boxGroup1.hide(); // Ocultar el div
 
@@ -3943,6 +4008,17 @@
 
                 // Limpia su valor
                 input3.value = '';
+
+                   const mortageFile = document.querySelector('#mortage_certificate');
+
+                // Mostrar el campo (si estuviera oculto)
+                inpumortageFilet3.style.display = 'block'; // o usa otra lógica según tu HTML
+
+                // Agrega el atributo required
+                mortageFile.setAttribute('required', false);
+
+                // Limpia su valor
+                mortageFile.value = '';
             }
         })
 
