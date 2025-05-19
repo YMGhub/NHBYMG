@@ -2142,7 +2142,7 @@
                                             </div>
                                             <!--NOTE-->
 
-                                            <div class="col-md-12 hideArea">
+                                            <div class="col-md-12" id="groupCheckbox">
                                                 <div>
                                                     <div class="row">
                                                         <div class="col-md-12">
@@ -2174,7 +2174,7 @@
 
 
                                             <!--dateend-->
-                                            <div class="col-md-12 hideArea">
+                                            <div class="col-md-12 hideArea" id="buttonSubmit">
                                                 <div>
                                                     <div class="row">
                                                         <div class="col-md-12">
@@ -3251,6 +3251,9 @@
         document.getElementById('ButtonNext').addEventListener('click', function(e) {
             e.preventDefault();
             document.getElementById('GroupFields').classList.toggle('mostrar');
+            document.getElementById('groupCheckbox').classList.toggle('mostrar');
+            document.getElementById('buttonSubmit').classList.toggle('mostrar');
+            buttonSubmit
         });
 
         //campos Co Appllicant
