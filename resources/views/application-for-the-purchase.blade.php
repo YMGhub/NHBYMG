@@ -8,7 +8,9 @@
 
         .bannerOurDeparment {}
 
-        #GroupFields {
+        #GroupFields,
+        #groupCheckbox,
+        #buttonSubmit {
             opacity: 0;
             visibility: hidden;
             display: none;
