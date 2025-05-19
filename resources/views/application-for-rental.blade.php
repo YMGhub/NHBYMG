@@ -2815,6 +2815,39 @@
             });
 
 
+            const cosalaryInput = document.getElementById('co_salary');
+
+            cosalaryInput.addEventListener('input', function(e) {
+                const input = e.target;
+
+                // Obtener solo números y punto
+                let value = input.value.replace(/[^0-9.]/g, '');
+
+                // Separar entero y decimal
+                let [intPart, decimalPart] = value.split('.');
+
+                // Formatear parte entera con comas
+                if (intPart) {
+                    intPart = intPart.replace(/^0+/, ''); // eliminar ceros iniciales
+                    intPart = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                } else {
+                    intPart = '0';
+                }
+
+                // Limitar decimales a 2
+                if (decimalPart !== undefined) {
+                    decimalPart = decimalPart.substring(0, 2);
+                    value = `${intPart}.${decimalPart}`;
+                } else {
+                    value = `${intPart}`;
+                }
+
+                input.value = value;
+            })
+
+
+
+
 
             //phone applicant
 
