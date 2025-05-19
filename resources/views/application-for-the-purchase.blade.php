@@ -2749,7 +2749,7 @@
 
 
 
-                        if (ClientIDValid != 0) {
+                        if (ClientIDValid == 0) {
 
 
 
