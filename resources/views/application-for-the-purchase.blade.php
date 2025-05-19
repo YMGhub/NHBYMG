@@ -49,6 +49,17 @@
         .hideArea2 {
             display: none;
         }
+
+        @media only screen and (max-width: 480px) and (orientation: portrait) {
+            /* Portrait-specific styles */
+            .BoxMarital{
+        flex-wrap: wrap;
+            }
+
+            .BoxMarital .form-check{
+                width:100%
+            }
+        }
     </style>
     <div class="parallax bannerOurDeparment" data-background="images/Project-Hero.jpg" data-color="#" data-color-opacity="0.1"
         data-img-width="1000" data-img-height="1200"
@@ -495,10 +506,10 @@
                                                             <div class="col-md-12">
                                                                 <label><b>MARITAL STATUS:</b></label>
                                                                 <div class="row">
-                                                                    <div
-                                                                        style="display: flex;width: 100%;justify-content: space-between;">
+                                                                    <div class="BoxMarital"
+                                                                        style="display: flex;width: 100%;justify-content: space-between; ">
                                                                         <div style="width:20%;display:flex;align-items: center;"
-                                                                            class="form-check form-check-inline">
+                                                                            class="form-check form-check-inline ">
                                                                             <input style="margin-bottom:0px"
                                                                                 class="form-check-input" type="radio"
                                                                                 name="marital_status" id="Single"
@@ -966,26 +977,28 @@
                                                 </div>
 
                                                 <div class="col-md-12 ">
-                                                    <div>
-                                                        <label><b>Timber:</b></label>
-                                                        <input name="co_house_type" value="Timber" type="radio"
-                                                            id="Timber" />
-                                                    </div>
-                                                    <div>
-                                                        <label><b>Wall:</b></label>
-                                                        <input name="co_house_type" value="Wall" type="radio"
-                                                            id="Wall" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label><b>Timber / Wall:</b></label>
-                                                        <input name="co_house_type" value="Timber / Wall"
-                                                            type="radio" id="timber_wall" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label><b>Steel Frame:</b></label>
-                                                        <input name="co_house_type" value="Steel Frame" type="radio"
-                                                            id="Steel_Frame" />
-                                                    </div>
+                                                    <div style="display: flex;width: 100%;justify-content: space-between;">
+                                                        <div class="col-12 col-md-3">
+                                                            <label><b>Timber:</b></label>
+                                                            <input name="co_house_type" value="Timber" type="radio"
+                                                                id="Timber" />
+                                                        </div>
+                                                        <div class="col-12 col-md-3">
+                                                            <label><b>Wall:</b></label>
+                                                            <input name="co_house_type" value="Wall" type="radio"
+                                                                id="Wall" />
+                                                        </div>
+                                                        <div class="col-12 col-md-3">
+                                                            <label><b>Timber / Wall:</b></label>
+                                                            <input name="co_house_type" value="Timber / Wall"
+                                                                type="radio" id="timber_wall" />
+                                                        </div>
+                                                        <div class="col-12 col-md-3">
+                                                            <label><b>Steel Frame:</b></label>
+                                                            <input name="co_house_type" value="Steel Frame" type="radio"
+                                                                id="Steel_Frame" />
+                                                        </div>
+                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-12 ">
@@ -995,14 +1008,22 @@
                                                 </div>
 
                                                 <div class="col-md-12 ">
-                                                    <div>
+                                                    <div style="display: flex;width: 100%;justify-content: space-between;">
+                                                    <div class="col-12 col-md-3">
                                                         <label><b>2 Bedroom:</b></label>
                                                         <input name="co_bedrooms" value="2" type="radio" />
                                                     </div>
-                                                    <div>
+                                                    <div class="col-12 col-md-3">
+
+                                                    </div>
+                                                    <div class="col-12 col-md-3">
                                                         <label><b>3 Bedroom:</b></label>
                                                         <input name="co_bedrooms" value="3" type="radio" />
                                                     </div>
+                                                    <div class="col-12 col-md-3">
+
+                                                    </div>
+                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-12 ">
@@ -1673,9 +1694,9 @@
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <div
-                                                                    style="display: flex;width: 100%;justify-content: space-between;">
+                                                                    style="display: flex;width: 100%;justify-content: space-between;" class="BoxMarital">
                                                                     <div style="width:20%;display:flex;align-items: center;"
-                                                                        class="form-check form-check-inline">
+                                                                        class="form-check form-check-inline" >
                                                                         <input style="margin-bottom:0px"
                                                                             class="form-check-input" type="radio"
                                                                             name="co_marital_status" id="Single"
@@ -2749,7 +2770,7 @@
 
 
 
-                        if (ClientIDValid == 0) {
+                        if (ClientIDValid != 0) {
 
 
 
