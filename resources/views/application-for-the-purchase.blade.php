@@ -957,6 +957,92 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+
+                                                <div class="col-md-12 ">
+                                                    <div>
+                                                        <label><b>APPLICATION TYPE:</b></label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 ">
+                                                    <div>
+                                                        <label><b>Timber:</b></label>
+                                                        <input name="co_house_type" value="Timber" type="radio"
+                                                            id="Timber" />
+                                                    </div>
+                                                    <div>
+                                                        <label><b>Wall:</b></label>
+                                                        <input name="co_house_type" value="Wall" type="radio"
+                                                            id="Wall" />
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label><b>Timber / Wall:</b></label>
+                                                        <input name="co_house_type" value="Timber / Wall"
+                                                            type="radio" id="timber_wall" />
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label><b>Steel Frame:</b></label>
+                                                        <input name="co_house_type" value="Steel Frame" type="radio"
+                                                            id="Steel_Frame" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 ">
+                                                    <div>
+                                                        <label><b>PREFERRED HOUSE TYPE:</b></label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 ">
+                                                    <div>
+                                                        <label><b>2 Bedroom:</b></label>
+                                                        <input name="co_bedrooms" value="2" type="radio" />
+                                                    </div>
+                                                    <div>
+                                                        <label><b>3 Bedroom:</b></label>
+                                                        <input name="co_bedrooms" value="3" type="radio" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 ">
+                                                    <div>
+                                                        <label><b>NO OF OCCUPANTS:</b></label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 ">
+                                                    <div>
+                                                        <label><b>Adults:</b></label>
+                                                        <input name="co_no_occupants_adult" value="2"
+                                                            type="number" />
+                                                    </div>
+                                                    <div>
+                                                        <label><b>Children:</b></label>
+                                                        <input name="co_no_occupants_children" value="3"
+                                                            type="number" />
+                                                    </div>
+                                                </div>
+
+                                                <!---co_children_agen--->
+                                                <div class="col-md-12 ">
+                                                    <div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div>
+                                                                    <label><b>CHILDREN’S AGES::</b></label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <input name="co_children_age" type="text"
+                                                                                id="co_children_age" placeholder="" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <!----------->
                                                 <!-------------------------->
                                                 <!---INFORMATION ON INTENDED OCCUPANTS --->
@@ -2049,90 +2135,6 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-12 hideArea2">
-                                                    <div>
-                                                        <label><b>APPLICATION TYPE:</b></label>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-12 hideArea2">
-                                                    <div>
-                                                        <label><b>Timber:</b></label>
-                                                        <input name="co_house_type" value="Timber" type="radio"
-                                                            id="Timber" />
-                                                    </div>
-                                                    <div>
-                                                        <label><b>Wall:</b></label>
-                                                        <input name="co_house_type" value="Wall" type="radio"
-                                                            id="Wall" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label><b>Timber / Wall:</b></label>
-                                                        <input name="co_house_type" value="Timber / Wall"
-                                                            type="radio" id="timber_wall" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label><b>Steel Frame:</b></label>
-                                                        <input name="co_house_type" value="Steel Frame" type="radio"
-                                                            id="Steel_Frame" />
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-12 hideArea2">
-                                                    <div>
-                                                        <label><b>PREFERRED HOUSE TYPE:</b></label>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-12 hideArea2">
-                                                    <div>
-                                                        <label><b>2 Bedroom:</b></label>
-                                                        <input name="co_bedrooms" value="2" type="radio" />
-                                                    </div>
-                                                    <div>
-                                                        <label><b>3 Bedroom:</b></label>
-                                                        <input name="co_bedrooms" value="3" type="radio" />
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-12 hideArea2">
-                                                    <div>
-                                                        <label><b>NO OF OCCUPANTS:</b></label>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-12 hideArea2">
-                                                    <div>
-                                                        <label><b>Adults:</b></label>
-                                                        <input name="co_no_occupants_adult" value="2"
-                                                            type="number" />
-                                                    </div>
-                                                    <div>
-                                                        <label><b>Children:</b></label>
-                                                        <input name="co_no_occupants_children" value="3"
-                                                            type="number" />
-                                                    </div>
-                                                </div>
-
-                                                <!---co_children_agen--->
-                                                <div class="col-md-12 hideArea2">
-                                                    <div>
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div>
-                                                                    <label><b>CHILDREN’S AGES::</b></label>
-                                                                    <div class="row">
-                                                                        <div class="col-md-12">
-                                                                            <input name="co_children_age" type="text"
-                                                                                id="co_children_age" placeholder="" />
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
 
 
 
