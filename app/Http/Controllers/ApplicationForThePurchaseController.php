@@ -130,7 +130,8 @@ class ApplicationForThePurchaseController extends Controller
         'coapplicant_parish'=> $request->coapplicant_parish,
         'addmore'=> json_encode($request->addmore),
         'land_or_lot'=> $request->land_or_lot,
-        'bankstatements'=> $request->bankstatements
+        'bankstatements'=> $request->bankstatements,
+        'mortage_certificate_doc' => $request->mortage_certificate
         ]);
 
 
@@ -232,9 +233,17 @@ class ApplicationForThePurchaseController extends Controller
             'land_or_lot'=> $request->land_or_lot,
             'bankstatements'=> $request->bankstatements,
             'qualifyngamount' => $request->qualifyngamount,
+             'mortage_certificate_doc' => $request->mortage_certificate
         ];
 
         //Mail::to('NHC.CustomerService@barbados.gov.bb')->send(new ApplicationForThePurchaseMail($details));
+
+          $MortgageDoc = null;
+        if ($request->hasFile('mortage_certificate')) {
+            $MortgageDoc = base64_encode(file_get_contents($request->file('mortage_certificate')->getRealPath()));
+        } else {
+            $MortgageDoc = null; // O manejar el error de otro modo
+        }
 
              //bankStatement:
         $bankStatement = null;
@@ -254,6 +263,7 @@ class ApplicationForThePurchaseController extends Controller
           $documentsSend = [
             ['base64' => $bankStatement], // solo base64, sin filename ni mime
             ['base64' => $land_or_agent],
+            ['base64' => $MortgageDoc],
 
         ];
 
@@ -450,6 +460,14 @@ class ApplicationForThePurchaseController extends Controller
         }
 
 
+          $MortgageDoc1 = null;
+        if ($request->hasFile('mortage_certificate')) {
+            $MortgageDoc1 = base64_encode(file_get_contents($request->file('mortage_certificate')->getRealPath()));
+        } else {
+            $MortgageDoc1 = null; // O manejar el error de otro modo
+        }
+
+
 
 
              $OtherIncome2 = str_replace(',', '', $request->alternative1);
@@ -530,7 +548,7 @@ class ApplicationForThePurchaseController extends Controller
             "DepositAmt" => $the_amount_of_deposit,
 
             "imgLandLordLetter" => $land_or_agent ,
-            "imgMortgageCertificate" => NULL ,
+            "imgMortgageCertificate" => $MortgageDoc1 ,
             "imgBankStatement" => $bankStatement ,
 
             "IPAddress" =>$IPAddress,

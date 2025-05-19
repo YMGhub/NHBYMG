@@ -1171,22 +1171,22 @@
                                                                         style="display:block">State the
                                                                         amount
                                                                         to be deposited as a
-                                                                        down payment</small></label>
+                                                                        down payment</small>
                                                                 <input class="financeBox"
                                                                     name="financethepurchsaseproporty" value="Mortgage"
-                                                                    type="radio" required />
+                                                                    type="radio" required /></label>
                                                             </div>
                                                             <div class="col-md-4">
-                                                                <label><b>Loan:</b></label>
+                                                                <label><b>Loan:</b>
                                                                 <input class="financeBox"
                                                                     name="financethepurchsaseproporty" value="Loan"
-                                                                    type="radio" />
+                                                                    type="radio" /></label>
                                                             </div>
                                                             <div class="col-md-4">
-                                                                <label><b>For Full Cash Payment:</b></label>
+                                                                <label><b>For Full Cash Payment:</b>
                                                                 <input class="financeBox"
                                                                     name="financethepurchsaseproporty"
-                                                                    value="Full Cash Payment" type="radio" />
+                                                                    value="Full Cash Payment" type="radio" /></label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1225,19 +1225,7 @@
 
 
 
-                                                 <!--Applicant to submit bank statement(s) -->
-                                                <div class="col-md-12 boxGroup2 mortage_certificate" id="mortage_certificate" style="display: none">
-                                                    <div>
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <label><b>Mortage Certificate(s)
-                                                                        :</b></label>
-                                                                <input style="margin-bottom: 0px;" type="file"
-                                                                    id="mortage_certificate" name="mortage_certificate" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+
 
                                                 <!--PREFERRED LOCATION OF LAND/PROPERT:-->
                                                 <!--Applicant to submit bank statement(s) -->
@@ -1262,6 +1250,31 @@
                                                                 <input name="qualifyngamount" type="text"
                                                                     placeholder="" id="qualifyngamount"
                                                                     class="qualifyngamount" />
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                  <!--Applicant to submit mortage_certificate(s) -->
+                                                <div class="col-md-12 boxGroup1 mortage_certificate" id="mortage_certificate" style="display: none">
+                                                    <div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <label><b>Mortage Certificate(s)
+                                                                        :</b></label>
+                                                                <input style="margin-bottom: 0px;" type="file"
+                                                                    id="mortage_certificate" name="mortage_certificate" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                 <!--or personally financed purchases Description -->
+                                                <div class="col-md-12 boxGroup1" style="display: none">
+                                                    <div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
                                                                 <p>For personally financed purchases, a BANK STATEMENT is
                                                                     required. For
                                                                     mortgages/loans, a MORTGAGE CERTIFICATE is required.
@@ -1270,6 +1283,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+
+
 
                                                 <!--CO Applicant-->
                                                 <!--ES NUEVA POSICION DEL COAPPLICANT FIELDS-->
@@ -2376,7 +2392,6 @@
             "land_or_lot",
             "tenant",
             "land_or_agent",
-            "financethepurchsaseproporty",
             "mortgage_or_loan",
             "the_amount_of_deposit",
             "bankstatements",
@@ -2732,7 +2747,7 @@
 
 
 
-                        if (ClientIDValid == 0) {
+                        if (ClientIDValid != 0) {
 
 
 
@@ -3884,6 +3899,8 @@
         }
 
         $financeBox.change(function() {
+
+
             if ($(this).val() === "Loan" ) {
                 $boxGroup1.show(); // Mostrar el div
 
@@ -3920,12 +3937,28 @@
                 // Limpia su valor
                 input3.value = '';
 
+                  //mortage file
+                const mortageFile1 = document.querySelector('#mortage_certificate');
+
+                // Mostrar el campo (si estuviera oculto)
+                mortageFile1.style.display = 'none'; // o usa otra lógica según tu HTML
+
+                // Agrega el atributo required
+                mortageFile1.setAttribute('required', false);
+
+                // Limpia su valor
+                mortageFile1.value = '';
 
 
-            }else if(  $(this).val() === "Mortgage"){
+
+            }
+
+            if( $(this).val() === "Mortgage"){
 
 
-                   $boxGroup1.show(); // Mostrar el div
+                $boxGroup1.show(); // Mostrar el div
+
+
 
                 const input = document.querySelector('input[name="mortgage_or_loan"]');
 
@@ -3962,18 +3995,21 @@
 
                 //mortage File
 
-                const mortageFile = document.querySelector('#mortage_certificate');
+                //mortage_certificate file
+                const mortageFile2 = document.querySelector('#mortage_certificate');
 
-                // Mostrar el campo (si estuviera oculto)
-                inpumortageFilet3.style.display = 'block'; // o usa otra lógica según tu HTML
+                // Ocultar el campo
+                mortageFile2.style.display = 'block';
 
-                // Agrega el atributo required
-                mortageFile.setAttribute('required', true);
+                // Quitar el atributo required
+                mortageFile2.removeAttribute('required');
 
-                // Limpia su valor
-                mortageFile.value = '';
+                // Limpiar el valor
+                mortageFile2.value = '';
 
-            } else {
+            }
+
+            if( $(this).val() === "Full Cash Payment"){
                 $boxGroup1.hide(); // Ocultar el div
 
                 const input = document.querySelector('input[name="mortgage_or_loan"]');
@@ -4009,16 +4045,17 @@
                 // Limpia su valor
                 input3.value = '';
 
-                   const mortageFile = document.querySelector('#mortage_certificate');
+                //mortage_certificate file
+            const mortageFile3 = document.querySelector('#mortage_certificate');
 
-                // Mostrar el campo (si estuviera oculto)
-                inpumortageFilet3.style.display = 'block'; // o usa otra lógica según tu HTML
+            // Ocultar el campo
+            mortageFile3.style.display = 'none';
 
-                // Agrega el atributo required
-                mortageFile.setAttribute('required', false);
+            // Quitar el atributo required
+            mortageFile3.removeAttribute('required');
 
-                // Limpia su valor
-                mortageFile.value = '';
+            // Limpiar el valor
+            mortageFile3.value = '';
             }
         })
 

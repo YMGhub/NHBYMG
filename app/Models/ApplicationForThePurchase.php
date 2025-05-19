@@ -108,6 +108,7 @@ class ApplicationForThePurchase extends Model
         'co_house_type',
         'co_bedrooms',
         'co_no_occupants_adult',
-        'co_children_age'
+        'co_children_age',
+        'mortage_certificate_doc'
     ];
 }
