@@ -2253,7 +2253,6 @@
         </div>
     </div>
 @endsection
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
@@ -2770,7 +2769,7 @@
 
 
 
-                        if (ClientIDValid == 0) {
+                        if (ClientIDValid != 0) {
 
 
 
@@ -3967,7 +3966,7 @@
                 mortageFile1.style.display = 'none'; // o usa otra lógica según tu HTML
 
                 // Agrega el atributo required
-                mortageFile1.setAttribute('required', false);
+                mortageFile1.removeAttribute('required');
 
                 // Limpia su valor
                 mortageFile1.value = '';
@@ -4025,7 +4024,7 @@
                 mortageFile2.style.display = 'block';
 
                 // Quitar el atributo required
-                mortageFile2.removeAttribute('required');
+                mortageFile2.setAttribute('required', true);
 
                 // Limpiar el valor
                 mortageFile2.value = '';
@@ -4038,10 +4037,10 @@
                 const input = document.querySelector('input[name="mortgage_or_loan"]');
 
                 // Mostrar el campo (si estuviera oculto)
-                input.style.display = 'block'; // o usa otra lógica según tu HTML
+                input.style.display = 'none'; // o usa otra lógica según tu HTML
 
                 // Agrega el atributo required
-                input.setAttribute('required', false);
+                input.removeAttribute('required');
 
                 // Limpia su valor
                 input.value = '';
@@ -4049,10 +4048,10 @@
                 const input2 = document.querySelector('input[name="the_amount_of_deposit"]');
 
                 // Mostrar el campo (si estuviera oculto)
-                input2.style.display = 'block'; // o usa otra lógica según tu HTML
+                input2.style.display = 'none'; // o usa otra lógica según tu HTML
 
                 // Agrega el atributo required
-                input2.setAttribute('required', false);
+                input2.removeAttribute('required');
 
                 // Limpia su valor
                 input2.value = '';
@@ -4060,10 +4059,10 @@
                 const input3 = document.querySelector('input[name="qualifyngamount"]');
 
                 // Mostrar el campo (si estuviera oculto)
-                input3.style.display = 'block'; // o usa otra lógica según tu HTML
+                input3.style.display = 'none'; // o usa otra lógica según tu HTML
 
                 // Agrega el atributo false
-                input3.setAttribute('required', false);
+                input3.removeAttribute('required');
 
                 // Limpia su valor
                 input3.value = '';
@@ -4212,46 +4211,5 @@
 
         /**end fields  family**/
 
-
-
-
-        /*document.getElementById('applicationpurchase').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the form from submitting normally
-
-            // Assuming you have included SweetAlert library script tag
-
-            // Submit the form data via AJAX
-            let formData = new FormData(this);
-
-            fetch(this.action, {
-                    method: this.method,
-                    body: formData
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        Swal.fire({
-                            title: 'Error!',
-                            text: 'An error occurred while submitting the form. Please try again later.',
-                            icon: 'error',
-                            confirmButtonText: 'OK'
-                        });
-                        throw new Error('Network response was not ok');
-                    } else {
-
-                        Swal.fire({
-                            title: 'Success!',
-                            text: "Submitted successfully", // Assuming the server returns a message key in the JSON response
-                            icon: 'success',
-                            confirmButtonText: 'OK'
-                        });
-
-
-                    }
-                    return response.json();
-                })
-
-            document.getElementById('applicationpurchase').reset();
-
-        });*/
-    });
+    })
 </script>
