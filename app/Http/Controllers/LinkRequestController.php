@@ -88,7 +88,7 @@ class LinkRequestController extends Controller
                         ->subject('NHC Verification Link');
             });
 
-             return back()->with('success', 'Email sent successfully');
+             return back()->with('success', 'Your email has been sent successfully! Please check your inbox to continue the application process.');
         }
 
 
