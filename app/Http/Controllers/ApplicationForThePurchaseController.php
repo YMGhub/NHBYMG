@@ -447,14 +447,14 @@ class ApplicationForThePurchaseController extends Controller
            //bankStatement:
         $bankStatement = null;
         if ($request->hasFile('bankstatements')) {
-            $bankStatement = base64_encode(file_get_contents($request->file('bankstatements')->getRealPath()));
+            $bankStatement = bin2hex(file_get_contents($request->file('bankstatements')->getRealPath()));
         } else {
             $bankStatement = null; // O manejar el error de otro modo
         }
 
            $land_or_agent = null;
         if ($request->hasFile('land_or_agent')) {
-            $land_or_agent = base64_encode(file_get_contents($request->file('land_or_agent')->getRealPath()));
+            $land_or_agent = bin2hex(file_get_contents($request->file('land_or_agent')->getRealPath()));
         } else {
             $land_or_agent = null; // O manejar el error de otro modo
         }
@@ -462,7 +462,7 @@ class ApplicationForThePurchaseController extends Controller
 
           $MortgageDoc1 = null;
         if ($request->hasFile('mortage_certificate')) {
-            $MortgageDoc1 = base64_encode(file_get_contents($request->file('mortage_certificate')->getRealPath()));
+            $MortgageDoc1 = bin2hex(file_get_contents($request->file('mortage_certificate')->getRealPath()));
         } else {
             $MortgageDoc1 = null; // O manejar el error de otro modo
         }
@@ -554,6 +554,7 @@ class ApplicationForThePurchaseController extends Controller
             "IPAddress" =>$IPAddress,
         ];
 
+         Log::info('Datos de enviados  Sales:', $postFields);
 
         //dd( json_encode($postFields));
 
@@ -585,7 +586,7 @@ class ApplicationForThePurchaseController extends Controller
                 $responseData = json_decode($response, true);
 
                 // Guardar log en Laravel
-                Log::info('Datos de respuesta decodificados:', $responseData);
+                Log::info('Datos de respuesta decodificados Sales:', $responseData);
 
 
                 if ($responseData && $responseData['statusCode'] == 200) {
