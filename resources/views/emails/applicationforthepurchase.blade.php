@@ -146,6 +146,31 @@
         <strong>Employment Status:</strong> {{ $details['app_employment_status'] }}<br>
     @endif
 
+
+      @if (!empty($details['co_house_type']))
+        <p>
+
+            <strong>APPLICATION TYPE:</strong><br>
+            {{ $details['co_house_type'] }}
+        </p>
+    @endif
+
+
+    @if (!empty($details['co_bedrooms']))
+        <p>
+
+            <strong>PREFERRED HOUSE TYPE:</strong><br>
+            @if ($details['co_bedrooms'] == 2)
+                2 Bedroom
+
+            @else
+                3 Bedroom
+            @endif
+        </p>
+    @endif
+
+
+
     @if (!empty($details['addmore[0][adult_person]']))
         <strong>INFORMATION ON INTENDED OCCUPANTS:</strong><br>
         <strong>Adults:</strong>{{ $details['addmore[0][adult_person]'] }}</br>
@@ -429,27 +454,7 @@
         </p>
     @endif
 
-    @if (!empty($details['co_house_type']))
-        <p>
 
-            <strong>APPLICATION TYPE:</strong><br>
-            {{ $details['co_house_type'] }}
-        </p>
-    @endif
-
-
-    @if (!empty($details['co_bedrooms']))
-        <p>
-
-            <strong>PREFERRED HOUSE TYPE:</strong><br>
-            @if ($details['co_bedrooms'] == 2)
-                2 Bedroom
-
-            @else
-                3 Bedroom
-            @endif
-        </p>
-    @endif
 
       @if (!empty($details['co_no_occupants_adult']))
         <p>

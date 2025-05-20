@@ -136,6 +136,20 @@ class ApplicationForThePurchaseController extends Controller
 
 
         // Redirect back with success message and send email
+           //co_house_type
+          $co_house_type = 1;
+        if($request->co_house_type == "Timber"){
+            $co_house_type = 1;
+        }
+        if($request->co_house_type == "Wall"){
+            $co_house_type = 2;
+        }
+        if($request->co_house_type == "Timber / Wall"){
+            $co_house_type = 3;
+        }
+         if($request->co_house_type == "Steel Frame"){
+            $co_house_type = 4;
+        }
         $details = [
             'client_id' => $request->client_id,
             'salutation' => $request->salutation,
@@ -233,7 +247,9 @@ class ApplicationForThePurchaseController extends Controller
             'land_or_lot'=> $request->land_or_lot,
             'bankstatements'=> $request->bankstatements,
             'qualifyngamount' => $request->qualifyngamount,
-             'mortage_certificate_doc' => $request->mortage_certificate
+             'mortage_certificate_doc' => $request->mortage_certificate,
+              "co_house_type" => $co_house_type ,
+            "co_bedrooms" => (int)$request->co_bedrooms ,
         ];
 
         //Mail::to('NHC.CustomerService@barbados.gov.bb')->send(new ApplicationForThePurchaseMail($details));
