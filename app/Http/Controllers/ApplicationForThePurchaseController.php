@@ -445,18 +445,18 @@ class ApplicationForThePurchaseController extends Controller
 
 
            //bankStatement:
-        $bankStatement = null;
+        $bankStatementApi = null;
         if ($request->hasFile('bankstatements')) {
-            $bankStatement = bin2hex(file_get_contents($request->file('bankstatements')->getRealPath()));
+            $bankStatementApi = bin2hex(file_get_contents($request->file('bankstatements')->getRealPath()));
         } else {
-            $bankStatement = null; // O manejar el error de otro modo
+            $bankStatementApi = null; // O manejar el error de otro modo
         }
 
-           $land_or_agent = null;
+           $land_or_agentApi = null;
         if ($request->hasFile('land_or_agent')) {
-            $land_or_agent = bin2hex(file_get_contents($request->file('land_or_agent')->getRealPath()));
+            $land_or_agentApi = bin2hex(file_get_contents($request->file('land_or_agent')->getRealPath()));
         } else {
-            $land_or_agent = null; // O manejar el error de otro modo
+            $land_or_agentApi = null; // O manejar el error de otro modo
         }
 
 
@@ -547,9 +547,9 @@ class ApplicationForThePurchaseController extends Controller
             "Lender" => $request->mortgage_or_loan,
             "DepositAmt" => $the_amount_of_deposit,
 
-            "imgLandLordLetter" => $land_or_agent ,
-            "imgMortgageCertificate" => $MortgageDoc1 ,
-            "imgBankStatement" => $bankStatement ,
+            "imgLandLordLetter" => $land_or_agentApi ,
+            "imgMortgageCertificate" => $MortgageDoc1,
+            "imgBankStatement" => $bankStatementApi,
 
             "IPAddress" =>$IPAddress,
         ];
