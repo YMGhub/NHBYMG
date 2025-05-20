@@ -1712,52 +1712,52 @@
                                                                         class="form-check form-check-inline">
                                                                         <input style="margin-bottom:0px"
                                                                             class="form-check-input" type="radio"
-                                                                            name="co_marital_status" id="Single"
+                                                                            name="co_marital_status" id="CoSingle"
                                                                             value="Single">
                                                                         <label
                                                                             style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                             class="form-check-label"
-                                                                            for="Single">Single</label>
+                                                                            for="CoSingle">Single</label>
                                                                     </div>
                                                                     <div style="width:20%;display:flex;align-items: center;"
                                                                         class="form-check form-check-inline">
                                                                         <input style="margin-bottom:0px"
                                                                             class="form-check-input" type="radio"
-                                                                            name="co_marital_status" id="Married"
+                                                                            name="co_marital_status" id="CoMarried"
                                                                             value="Married">
                                                                         <label
                                                                             style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                             class="form-check-label"
-                                                                            for="Married">Married</label>
+                                                                            for="CoMarried">Married</label>
                                                                     </div>
                                                                     <div style="width:20%;display:flex;align-items: center;"
                                                                         class="form-check form-check-inline">
                                                                         <input style="margin-bottom:0px"
                                                                             class="form-check-input" type="radio"
-                                                                            name="co_marital_status" id="Widowed"
+                                                                            name="co_marital_status" id="CoWidowed"
                                                                             value="Widowed">
                                                                         <label
                                                                             style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                             class="form-check-label"
-                                                                            for="Widowed">Widowed</label>
+                                                                            for="CoWidowed">Widowed</label>
                                                                     </div>
                                                                     <div style="width:20%;display:flex;align-items: center;"
                                                                         class="form-check form-check-inline">
                                                                         <input style="margin-bottom:0px"
                                                                             class="form-check-input" type="radio"
-                                                                            name="co_marital_status" id="Divorced"
+                                                                            name="co_marital_status" id="CoDivorced"
                                                                             value="Divorced">
                                                                         <label
                                                                             style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                             class="form-check-label"
-                                                                            for="Divorced">Divorced</label>
+                                                                            for="CoDivorced">Divorced</label>
                                                                     </div>
                                                                     <div style="width:20%;display:flex;align-items: center;"
                                                                         class="form-check form-check-inline">
                                                                         <input style="margin-bottom:0px"
                                                                             class="form-check-input" type="radio"
-                                                                            name="co_marital_status" id="Separated"
-                                                                            value="Separated">
+                                                                            name="co_marital_status" id="CoSeparated"
+                                                                            value="CoSeparated">
                                                                         <label
                                                                             style="margin-bottom: 0;display: block;margin-left: 10px;"
                                                                             class="form-check-label"

@@ -492,6 +492,9 @@ class ApplicationForThePurchaseController extends Controller
          $Income2Amt = str_replace(',', '', $request->alternative_amount2);
         $Income2Amt = number_format(floatval($Income2Amt), 2, '.', '');
 
+
+
+
          $IPAddress =  $_SERVER['REMOTE_ADDR'];
         /**************/
         /*send to curl*/
@@ -519,11 +522,11 @@ class ApplicationForThePurchaseController extends Controller
             "Occupation" => $request->app_occupation_field,
             "PeriodOfEmployment" => $request->app_period_of_employment,
             "Salary" => $salary,
-            "PayPeriod" => $request->pay_period,
-            "EmploymentStatus" => $request->employment_status,
+            "PayPeriod" => $request->app_pay_period,
+            "EmploymentStatus" => $request->app_employment_status,
 
             "CoNRN" => $request->coapplicant_national_registration_number,
-            "CoSalutation" => $request->coapplicant_surname ,
+            "CoSalutation" => $request->coapplicant_salutation ,
             "CoApplicantSurname" => $request->coapplicant_surname ,
             "CoApplicantFirst" => $request->coapplicant_first,
             "CoDateOfBirth" => $request->coapplicant_date_birth,
@@ -543,7 +546,7 @@ class ApplicationForThePurchaseController extends Controller
             "CoEmployer" => $request->co_app_employer_field ,
             "CoOccupation" => $request->co_app_occupation_field ,
             "CoPeriodOfEmployment" => $request->co_app_occupation_field ,
-            "CoSalary" => $request->co_salary ,
+            "CoSalary" =>  $co_salary ,
             "CoPayPeriod" => $copay_period ,
             "CoEmploymentStatus" => $coemployment_status ,
 
@@ -570,7 +573,11 @@ class ApplicationForThePurchaseController extends Controller
             "IPAddress" =>$IPAddress,
         ];
 
+
+
+
          Log::info('Datos de enviados  Sales:', $postFields);
+
 
         //dd( json_encode($postFields));
 
@@ -622,14 +629,7 @@ class ApplicationForThePurchaseController extends Controller
                         return back()->with('error', 'Unexpected response from server.');
                     }
                 } else {
-                       /* $body = json_decode($responseData['body'], true);
-                      $errorMessage = $body["error"];
-                      $errorDetail = $body["details"];
 
-                    return back()->with('error', [
-                        'message' => $body["error"],
-                        'detail' => $body["details"],
-                    ]);*/
 
                      return back()->with('error', [
                         'message' => "Error",
@@ -650,11 +650,7 @@ class ApplicationForThePurchaseController extends Controller
 
 
 
-        try {
-            return redirect()->back()->with('success', 'Application submitted successfully!');
-        } catch (\Exception $e) {
-            return back()->with('error', 'Please try again.');
-        }
+
     }
 
 
