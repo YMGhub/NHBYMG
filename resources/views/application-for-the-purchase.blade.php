@@ -1068,7 +1068,7 @@
                                                 <!----------->
                                                 <!-------------------------->
                                                 <!---INFORMATION ON INTENDED OCCUPANTS --->
-                                                <!--div class="col-md-12 hideArea">
+                                                <div class="col-md-12" style="display:none">
                                                             <div>
                                                                 <label><b>INFORMATION ON INTENDED OCCUPANTS:</b></label>
                                                                 <div class="row">
@@ -1083,23 +1083,21 @@
                                                                                 <td>
                                                                                     <input type="number"
                                                                                         class="adults"name="addmore[0][adult_person]"
-                                                                                        value="0" required min="0">
+                                                                                        value="0"  min="0">
                                                                                 </td>
                                                                                 <td><input type="number"
                                                                                         name="addmore[0][children_person]"
                                                                                         placeholder="Enter Children"
                                                                                         class="form-control" value="0"
                                                                                         min="0"  /></td>
-                                                                                <td><button type="button" name="add"
-                                                                                                id="add"
-                                                                                                class="btn btn-success addMore">+</button>
+                                                                                <td>
                                                                                 </td>
                                                                             </tr>
                                                                         </table>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div-->
+                                                        </div>
                                                 <!---INFORMATION ON INTENDED OCCUPANTS --->
 
                                                 <!--ARE THERE ANY PERSONS WITH DISABILITIES WITHIN THE HOUSEHOLD?-->
