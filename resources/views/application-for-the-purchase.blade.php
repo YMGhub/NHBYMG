@@ -1051,7 +1051,7 @@
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <div>
-                                                                    <label><b>CHILDREN’S AGES::</b></label>
+                                                                    <label><b>CHILDREN’S AGES:</b></label>
                                                                     <div class="row">
                                                                         <div class="col-md-12">
                                                                             <input name="co_children_age" type="text"
