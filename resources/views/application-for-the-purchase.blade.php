@@ -51,13 +51,14 @@
         }
 
         @media only screen and (max-width: 480px) and (orientation: portrait) {
+
             /* Portrait-specific styles */
-            .BoxMarital{
-        flex-wrap: wrap;
+            .BoxMarital {
+                flex-wrap: wrap;
             }
 
-            .BoxMarital .form-check{
-                        width: 100% !important;
+            .BoxMarital .form-check {
+                width: 100% !important;
             }
         }
     </style>
@@ -259,10 +260,10 @@
                                                             </div>
                                                         </div>
                                                         <!--div class="col-md-3">
-                                                                                                                                            <label style="color:#fff"><b>.</b></label>
-                                                                                                                                            <input name="applicant_surname" type="text" id="applicant_surname"
-                                                                                                                                                placeholder="Surname" required="required" />
-                                                                                                                                            </div-->
+                                                                                                                                                    <label style="color:#fff"><b>.</b></label>
+                                                                                                                                                    <input name="applicant_surname" type="text" id="applicant_surname"
+                                                                                                                                                        placeholder="Surname" required="required" />
+                                                                                                                                                    </div-->
                                                         <div class="col-md-4">
                                                             <label style="color:#fff"><b>.</b></label>
                                                             <input name="applicant_first" type="text"
@@ -995,10 +996,10 @@
                                                         </div>
                                                         <div class="col-12 col-md-3">
                                                             <label><b>Steel Frame:</b></label>
-                                                            <input name="co_house_type" value="Steel Frame" type="radio"
-                                                                id="Steel_Frame" />
+                                                            <input name="co_house_type" value="Steel Frame"
+                                                                type="radio" id="Steel_Frame" />
                                                         </div>
-                                                     </div>
+                                                    </div>
                                                 </div>
 
                                                 <div class="col-md-12 ">
@@ -1009,21 +1010,21 @@
 
                                                 <div class="col-md-12 ">
                                                     <div style="display: flex;width: 100%;justify-content: space-between;">
-                                                    <div class="col-12 col-md-3">
-                                                        <label><b>2 Bedroom:</b></label>
-                                                        <input name="co_bedrooms" value="2" type="radio" />
-                                                    </div>
-                                                    <div class="col-12 col-md-3">
+                                                        <div class="col-12 col-md-3">
+                                                            <label><b>2 Bedroom:</b></label>
+                                                            <input name="co_bedrooms" value="2" type="radio" />
+                                                        </div>
+                                                        <div class="col-12 col-md-3">
 
-                                                    </div>
-                                                    <div class="col-12 col-md-3">
-                                                        <label><b>3 Bedroom:</b></label>
-                                                        <input name="co_bedrooms" value="3" type="radio" />
-                                                    </div>
-                                                    <div class="col-12 col-md-3">
+                                                        </div>
+                                                        <div class="col-12 col-md-3">
+                                                            <label><b>3 Bedroom:</b></label>
+                                                            <input name="co_bedrooms" value="3" type="radio" />
+                                                        </div>
+                                                        <div class="col-12 col-md-3">
 
+                                                        </div>
                                                     </div>
-                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-12 ">
@@ -1068,37 +1069,37 @@
                                                 <!-------------------------->
                                                 <!---INFORMATION ON INTENDED OCCUPANTS --->
                                                 <!--div class="col-md-12 hideArea">
-                                                    <div>
-                                                        <label><b>INFORMATION ON INTENDED OCCUPANTS:</b></label>
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <table class="table table-bordered" id="dynamicTable">
-                                                                    <tr>
-                                                                        <th>ADULT</th>
-                                                                        <th>CHILDREN</th>
-                                                                        <th>Action</th>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <input type="number"
-                                                                                class="adults"name="addmore[0][adult_person]"
-                                                                                value="0" required min="0">
-                                                                        </td>
-                                                                        <td><input type="number"
-                                                                                name="addmore[0][children_person]"
-                                                                                placeholder="Enter Children"
-                                                                                class="form-control" value="0"
-                                                                                min="0"  /></td>
-                                                                        <td><button type="button" name="add"
-                                                                                        id="add"
-                                                                                        class="btn btn-success addMore">+</button>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
+                                                            <div>
+                                                                <label><b>INFORMATION ON INTENDED OCCUPANTS:</b></label>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <table class="table table-bordered" id="dynamicTable">
+                                                                            <tr>
+                                                                                <th>ADULT</th>
+                                                                                <th>CHILDREN</th>
+                                                                                <th>Action</th>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <input type="number"
+                                                                                        class="adults"name="addmore[0][adult_person]"
+                                                                                        value="0" required min="0">
+                                                                                </td>
+                                                                                <td><input type="number"
+                                                                                        name="addmore[0][children_person]"
+                                                                                        placeholder="Enter Children"
+                                                                                        class="form-control" value="0"
+                                                                                        min="0"  /></td>
+                                                                                <td><button type="button" name="add"
+                                                                                                id="add"
+                                                                                                class="btn btn-success addMore">+</button>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                </div-->
+                                                        </div-->
                                                 <!---INFORMATION ON INTENDED OCCUPANTS --->
 
                                                 <!--ARE THERE ANY PERSONS WITH DISABILITIES WITHIN THE HOUSEHOLD?-->
@@ -1274,26 +1275,28 @@
                                                                 land?</b></label>
                                                         <div class="row">
                                                             <div class="col-md-4">
-                                                                <label><b>Mortgage:</b><small
-                                                                        style="display:block">State the
+                                                                <label><b>Mortgage:</b><small style="display:block">State
+                                                                        the
                                                                         amount
                                                                         to be deposited as a
                                                                         down payment</small>
-                                                                <input class="financeBox"
-                                                                    name="financethepurchsaseproporty" value="Mortgage"
-                                                                    type="radio" required /></label>
+                                                                    <input class="financeBox"
+                                                                        name="financethepurchsaseproporty"
+                                                                        value="Mortgage" type="radio"
+                                                                        required /></label>
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <label><b>Loan:</b>
-                                                                <input class="financeBox"
-                                                                    name="financethepurchsaseproporty" value="Loan"
-                                                                    type="radio" /></label>
+                                                                    <input class="financeBox"
+                                                                        name="financethepurchsaseproporty" value="Loan"
+                                                                        type="radio" /></label>
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <label><b>For Full Cash Payment:</b>
-                                                                <input class="financeBox"
-                                                                    name="financethepurchsaseproporty"
-                                                                    value="Full Cash Payment" type="radio" /></label>
+                                                                    <input class="financeBox"
+                                                                        name="financethepurchsaseproporty"
+                                                                        value="Full Cash Payment"
+                                                                        type="radio" /></label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1363,8 +1366,9 @@
                                                     </div>
                                                 </div>
 
-                                                  <!--Applicant to submit mortage_certificate(s) -->
-                                                <div class="col-md-12 boxGroup1 mortage_certificate" id="mortage_certificate" style="display: none">
+                                                <!--Applicant to submit mortage_certificate(s) -->
+                                                <div class="col-md-12 boxGroup1 mortage_certificate"
+                                                    id="mortage_certificate" style="display: none">
                                                     <div>
                                                         <div class="row">
                                                             <div class="col-md-12">
@@ -1377,7 +1381,7 @@
                                                     </div>
                                                 </div>
 
-                                                 <!--or personally financed purchases Description -->
+                                                <!--or personally financed purchases Description -->
                                                 <div class="col-md-12 boxGroup1" style="display: none">
                                                     <div>
                                                         <div class="row">
@@ -1522,9 +1526,9 @@
                                                                 <label><b>DATE OF BIRTH: Self: yyyy/mm/dd</b></label>
                                                                 <div class="row">
                                                                     <div class="col-md-12">
-                                                                        <input name="coapplicant_date_birth" type="text"
-                                                                            id="coapplicant_date_birth" placeholder="YYYY-MM-DD"
-                                                                        />
+                                                                        <input name="coapplicant_date_birth"
+                                                                            type="text" id="coapplicant_date_birth"
+                                                                            placeholder="YYYY-MM-DD" />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1533,8 +1537,8 @@
                                                                 <div class="row">
                                                                     <div class="col-md-12">
                                                                         <input name="coapplicant_gender" type="text"
-                                                                            id="coapplicant_gender" placeholder="GENDER"
-                                                                            />
+                                                                            id="coapplicant_gender"
+                                                                            placeholder="GENDER" />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1704,10 +1708,10 @@
                                                         <label><b>Marital Status:</b></label>
                                                         <div class="row">
                                                             <div class="col-md-12">
-                                                                <div
-                                                                    style="display: flex;width: 100%;justify-content: space-between;" class="BoxMarital">
+                                                                <div style="display: flex;width: 100%;justify-content: space-between;"
+                                                                    class="BoxMarital">
                                                                     <div style="width:20%;display:flex;align-items: center;"
-                                                                        class="form-check form-check-inline" >
+                                                                        class="form-check form-check-inline">
                                                                         <input style="margin-bottom:0px"
                                                                             class="form-check-input" type="radio"
                                                                             name="co_marital_status" id="Single"
@@ -1786,7 +1790,8 @@
                                                                             <option value="Algeria">Algeria</option>
                                                                             <option value="Andorra">Andorra</option>
                                                                             <option value="Angola">Angola</option>
-                                                                            <option value="Antigua and Barbuda">Antigua and
+                                                                            <option value="Antigua and Barbuda">Antigua
+                                                                                and
                                                                                 Barbuda
                                                                             </option>
                                                                             <option value="Argentina">Argentina</option>
@@ -2269,54 +2274,74 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
 
-              //validate tamis number 13 digitos
-            const input = document.getElementById('applicant_tamis_no');
-            const errorText = document.getElementById('tamis_error');
 
-            input.addEventListener('input', function () {
-                const value = input.value;
+        //adult and children
+        //adult
+        const sourceInput = document.querySelector('input[name="co_no_occupants_adult"]');
+        const targetInput = document.querySelector('input[name="addmore[0][adult_person]"]');
 
-                // Si contiene letras o caracteres no numéricos
-                if (!/^\d*$/.test(value)) {
-                    errorText.textContent = "Only numbers are allowed.";
-                }
-                // Si tiene menos de 13 dígitos (pero más de 0)
-                else if (value.length > 0 && value.length < 13) {
-                    errorText.textContent = "It must contain exactly 13 digits.";
-                }
-                // Si tiene exactamente 13 dígitos
-                else if (value.length === 13) {
-                    errorText.textContent = ""; // todo correcto
-                }
-                // Si está vacío
-                else {
-                    errorText.textContent = "";
-                }
-            });
+        sourceInput.addEventListener('input', function() {
+            targetInput.value = sourceInput.value;
+        });
 
-              const inputx = document.getElementById('coapplicant_tamis_no');
-            const errorTextx = document.getElementById('co_tamis_error');
+        //chiildren
+        const sourceInput1 = document.querySelector('input[name="co_no_occupants_children"]');
+        const targetInput1 = document.querySelector('input[name="addmore[0][children_person]"]');
 
-            inputx.addEventListener('input', function () {
-                const value = input.value;
+        sourceInput1.addEventListener('input', function() {
+            targetInput1.value = sourceInput1.value;
+        });
 
-                // Si contiene letras o caracteres no numéricos
-                if (!/^\d*$/.test(value)) {
-                    errorTextx.textContent = "Only numbers are allowed.";
-                }
-                // Si tiene menos de 13 dígitos (pero más de 0)
-                else if (value.length > 0 && value.length < 13) {
-                    errorTextx.textContent = "It must contain exactly 13 digits.";
-                }
-                // Si tiene exactamente 13 dígitos
-                else if (value.length === 13) {
-                    errorTextx.textContent = ""; // todo correcto
-                }
-                // Si está vacío
-                else {
-                    errorTextx.textContent = "";
-                }
-            });
+        //////////////////
+
+        //validate tamis number 13 digitos
+        const input = document.getElementById('applicant_tamis_no');
+        const errorText = document.getElementById('tamis_error');
+
+        input.addEventListener('input', function() {
+            const value = input.value;
+
+            // Si contiene letras o caracteres no numéricos
+            if (!/^\d*$/.test(value)) {
+                errorText.textContent = "Only numbers are allowed.";
+            }
+            // Si tiene menos de 13 dígitos (pero más de 0)
+            else if (value.length > 0 && value.length < 13) {
+                errorText.textContent = "It must contain exactly 13 digits.";
+            }
+            // Si tiene exactamente 13 dígitos
+            else if (value.length === 13) {
+                errorText.textContent = ""; // todo correcto
+            }
+            // Si está vacío
+            else {
+                errorText.textContent = "";
+            }
+        });
+
+        const inputx = document.getElementById('coapplicant_tamis_no');
+        const errorTextx = document.getElementById('co_tamis_error');
+
+        inputx.addEventListener('input', function() {
+            const value = input.value;
+
+            // Si contiene letras o caracteres no numéricos
+            if (!/^\d*$/.test(value)) {
+                errorTextx.textContent = "Only numbers are allowed.";
+            }
+            // Si tiene menos de 13 dígitos (pero más de 0)
+            else if (value.length > 0 && value.length < 13) {
+                errorTextx.textContent = "It must contain exactly 13 digits.";
+            }
+            // Si tiene exactamente 13 dígitos
+            else if (value.length === 13) {
+                errorTextx.textContent = ""; // todo correcto
+            }
+            // Si está vacío
+            else {
+                errorTextx.textContent = "";
+            }
+        });
 
         //
         //the_amount_of_deposit
@@ -3021,7 +3046,7 @@
                     'cursor': ''
                 });
 
-                 jQuery(".co_children_age").val("").css({
+                jQuery(".co_children_age").val("").css({
                     'pointer-events': '',
                     'background-color': '',
                     'cursor': ''
@@ -3945,7 +3970,7 @@
         $financeBox.change(function() {
 
 
-            if ($(this).val() === "Loan" ) {
+            if ($(this).val() === "Loan") {
                 $boxGroup1.show(); // Mostrar el div
 
                 const input = document.querySelector('input[name="mortgage_or_loan"]');
@@ -3981,7 +4006,7 @@
                 // Limpia su valor
                 input3.value = '';
 
-                  //mortage file
+                //mortage file
                 const mortageFile1 = document.querySelector('#mortage_certificate');
 
                 // Mostrar el campo (si estuviera oculto)
@@ -3997,7 +4022,7 @@
 
             }
 
-            if( $(this).val() === "Mortgage"){
+            if ($(this).val() === "Mortgage") {
 
 
                 $boxGroup1.show(); // Mostrar el div
@@ -4053,7 +4078,7 @@
 
             }
 
-            if( $(this).val() === "Full Cash Payment"){
+            if ($(this).val() === "Full Cash Payment") {
                 $boxGroup1.hide(); // Ocultar el div
 
                 const input = document.querySelector('input[name="mortgage_or_loan"]');
@@ -4090,16 +4115,16 @@
                 input3.value = '';
 
                 //mortage_certificate file
-            const mortageFile3 = document.querySelector('#mortage_certificate');
+                const mortageFile3 = document.querySelector('#mortage_certificate');
 
-            // Ocultar el campo
-            mortageFile3.style.display = 'none';
+                // Ocultar el campo
+                mortageFile3.style.display = 'none';
 
-            // Quitar el atributo required
-            mortageFile3.removeAttribute('required');
+                // Quitar el atributo required
+                mortageFile3.removeAttribute('required');
 
-            // Limpiar el valor
-            mortageFile3.value = '';
+                // Limpiar el valor
+                mortageFile3.value = '';
             }
         })
 
