@@ -511,7 +511,7 @@ class ApplicationForThePurchaseController extends Controller
             "CoApplicantSurname" => $request->coapplicant_surname ,
             "CoApplicantFirst" => $request->coapplicant_first,
             "CoDateOfBirth" => $request->coapplicant_date_birth,
-            "CoGender" => NULL ,
+            "CoGender" => $request->coapplicant_gender ,
             "CoTamisNumber" => $request->coapplicant_tamis_no ,
             "CoApplicantAddress1" => $request->coapplicant_address,
             "CoApplicantAddress2" => $request->coapplicant_address2,

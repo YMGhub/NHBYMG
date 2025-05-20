@@ -285,6 +285,14 @@
         </p>
     @endif
 
+        @if (!empty($details['coapplicant_gender']))
+        <p>
+
+            <strong>GENDER:</strong><br>
+            {{ $details['coapplicant_gender'] }}
+        </p>
+    @endif
+
 
     @if (!empty($details['coapplicant_tamis_no']))
         <p>

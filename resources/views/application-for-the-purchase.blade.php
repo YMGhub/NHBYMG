@@ -1514,23 +1514,34 @@
 
                                                 <!----------->
                                                 <!----------->
-                                                <div class="col-md-12 hideArea2">
+
+                                                <div class="col-md-12 hideArea">
                                                     <div>
                                                         <div class="row">
-                                                            <div class="col-md-12">
-                                                                <label><b>DATE OF BIRTH: Self: mm-dd-yyyy</b></label>
+                                                            <div class="col-md-6">
+                                                                <label><b>DATE OF BIRTH: Self: yyyy/mm/dd</b></label>
                                                                 <div class="row">
                                                                     <div class="col-md-12">
-                                                                        <input name="coapplicant_date_birth"
-                                                                            type="text" id="coapplicant_date_birth"
-                                                                            placeholder="YYYY-MM-DD" />
+                                                                        <input name="coapplicant_date_birth" type="text"
+                                                                            id="coapplicant_date_birth" placeholder="YYYY-MM-DD"
+                                                                        />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label><b>GENDER</b></label>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <input name="coapplicant_gender" type="text"
+                                                                            id="coapplicant_gender" placeholder="GENDER"
+                                                                            />
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!----------->
+
                                                 <!----------->
                                                 <div class="col-md-12 hideArea2">
                                                     <div>
