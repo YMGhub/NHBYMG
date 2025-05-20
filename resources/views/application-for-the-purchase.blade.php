@@ -1067,7 +1067,7 @@
                                                 <!----------->
                                                 <!-------------------------->
                                                 <!---INFORMATION ON INTENDED OCCUPANTS --->
-                                                <div class="col-md-12 hideArea">
+                                                <!--div class="col-md-12 hideArea">
                                                     <div>
                                                         <label><b>INFORMATION ON INTENDED OCCUPANTS:</b></label>
                                                         <div class="row">
@@ -1088,17 +1088,17 @@
                                                                                 name="addmore[0][children_person]"
                                                                                 placeholder="Enter Children"
                                                                                 class="form-control" value="0"
-                                                                                min="0" required /></td>
-                                                                        <td><!--button type="button" name="add"
+                                                                                min="0"  /></td>
+                                                                        <td><button type="button" name="add"
                                                                                         id="add"
-                                                                                        class="btn btn-success addMore">+</button-->
+                                                                                        class="btn btn-success addMore">+</button>
                                                                         </td>
                                                                     </tr>
                                                                 </table>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div-->
                                                 <!---INFORMATION ON INTENDED OCCUPANTS --->
 
                                                 <!--ARE THERE ANY PERSONS WITH DISABILITIES WITHIN THE HOUSEHOLD?-->
