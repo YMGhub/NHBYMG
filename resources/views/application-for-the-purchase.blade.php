@@ -3021,6 +3021,11 @@
                     'cursor': ''
                 });
 
+                 jQuery(".co_children_age").val("").css({
+                    'pointer-events': '',
+                    'background-color': '',
+                    'cursor': ''
+                });
 
 
                 /******************/
@@ -3145,6 +3150,12 @@
                                         });;
                                     //field DOB
                                     jQuery("#coapplicant_date_birth").val(DOB).css({
+                                        'pointer-events': 'none',
+                                        'background-color': '#f5f5f5',
+                                        'cursor': 'not-allowed'
+                                    });;
+
+                                    jQuery(".co_children_age").val(Gender).css({
                                         'pointer-events': 'none',
                                         'background-color': '#f5f5f5',
                                         'cursor': 'not-allowed'
