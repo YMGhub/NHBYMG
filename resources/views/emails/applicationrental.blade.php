@@ -28,16 +28,16 @@
             <strong>NATIONAL REGISTRATION NUMBER:</strong> {{ $details['national_registration_number'] }}<br>
         @endif
         @if (!empty($details['applicant_surname']))
-            <strong>Surname:</strong> {{ $details['applicant_surname'] }}<br>
+            <strong>Salutation:</strong> {{ $details['applicant_surname'] }}<br>
         @endif
         @if (!empty($details['applicant_first']))
             <strong>First:</strong> {{ $details['applicant_first'] }}<br>
         @endif
         @if (!empty($details['applicant_middle']))
-            <strong>Middle:</strong> {{ $details['applicant_middle'] }}<br>
+            <strong>Surname:</strong> {{ $details['applicant_middle'] }}<br>
         @endif
         @if (!empty($details['maiden_name']))
-        <strong>Maiden Name:</strong> {{ $details['maiden_name'] }}<br>
+        <strong>Middle:</strong> {{ $details['maiden_name'] }}<br>
         @endif
         @if (!empty($details['date_of_birth']))
             <strong>Date of Birth:</strong> {{ $details['date_of_birth'] }}<br>
@@ -184,16 +184,16 @@
             <strong>EMAIL:</strong> {{ $details['co_email_field'] }}<br>
         @endif
         @if (!empty($details['co_applicant_surname']))
-            <strong>Surname:</strong> {{ $details['co_applicant_surname'] }}<br>
+            <strong>Salutation:</strong> {{ $details['co_applicant_surname'] }}<br>
         @endif
         @if (!empty($details['co_applicant_name']))
             <strong>Name:</strong> {{ $details['co_applicant_name'] }}<br>
         @endif
         @if (!empty($details['co_applicant_middle']))
-        <strong>Middle:</strong> {{ $details['co_applicant_middle'] }}<br>
+        <strong>Surname:</strong> {{ $details['co_applicant_middle'] }}<br>
         @endif
         @if (!empty($details['co_maiden_name']))
-            <strong>Maiden Name:</strong> {{ $details['co_maiden_name'] }}<br>
+            <strong>Middle:</strong> {{ $details['co_maiden_name'] }}<br>
         @endif
 
         @if (!empty($details['co_date_of_birth']))
