@@ -547,11 +547,14 @@ class ApplicationRentalController extends Controller
          $postFields = [
             "ClientID" => (int)$request->client_id,
             "NRN" => $request->national_registration_number,
+
             "ApplicantSalutation" => $request->applicant_salutation,
             "ApplicantSurname" => $request->applicant_surname,
             "ApplicantFirst" => $request->applicant_first,
             "ApplicantMiddle" => $request->applicant_middle,
             "MaidenName" => $request->maiden_name,
+
+
             "DateOfBirth" => $request->date_of_birth,
             "TamisNumber" => (int)$request->tamis_number,
             "ApplicantAddress1" => $request->applicant_address,
@@ -572,11 +575,14 @@ class ApplicationRentalController extends Controller
             "EmploymentStatus" => $employment_status,
             "CoApplicantClientID" => $coaaplicantId,
             "CoNRN" => $request->co_national_registration_number ?: "",
+
             "CoApplicantSalutation" => $request->co_applicant_salutation?: "",
             "CoApplicantSurname" => $request->co_applicant_surname?: "",
             "CoApplicantFirst" => $request->co_applicant_name?: "",
             "CoApplicantMiddle" => $request->co_applicant_middle?: "",
-            "CoMaidenName" => $request->co_maiden_name?: "",
+            "CoMaidenName" => $request->co_applicant_maiden_name?: "",
+
+
             "CoDateOfBirth" => $request->co_date_of_birth?: "",
             "CoTamisNumber" => $request->co_tamis_number?: 0,
             "CoApplicantAddress1" => $request->co_applicant_address?: "",

@@ -501,11 +501,19 @@ class ApplicationForThePurchaseController extends Controller
         $postFields = [
             "ClientID" => $request->client_id,
             "NRN" => $request->applicant_national_registration_number,
+
             "Salutation" => $request->salutation,
-            "ApplicantSurname" => $request->salutation,
+            "ApplicantSurname" => $request->applicant_surname,
             "ApplicantFirst" => $request->applicant_first,
+
+            "ApplicantMiddle" => $request->applicant_middle,
+            "MaidenName" => $request->applicant_maiden,
+
+
             "DateOfBirth" => $request->applicant_date_birth,
             "Gender" => $request->applicant_gender,
+
+
             "TamisNumber" => $request->applicant_tamis_no,
             "ApplicantAddress1" => $request->applicant_address,
             "ApplicantAddress2" => $request->applicant_address2,
@@ -526,11 +534,19 @@ class ApplicationForThePurchaseController extends Controller
             "EmploymentStatus" => $employment_status,
 
             "CoNRN" => $request->coapplicant_national_registration_number,
+
             "CoSalutation" => $request->coapplicant_salutation ,
             "CoApplicantSurname" => $request->coapplicant_surname ,
             "CoApplicantFirst" => $request->coapplicant_first,
+
+            "CoApplicantMiddle" => $request->coapplicant_middle,
+            "CoMaidenName" => $request->coapplicant_maiden_name,
+
+
+
             "CoDateOfBirth" => $request->coapplicant_date_birth,
             "CoGender" => $request->coapplicant_gender ,
+
             "CoTamisNumber" => $request->coapplicant_tamis_no ,
             "CoApplicantAddress1" => $request->coapplicant_address,
             "CoApplicantAddress2" => $request->coapplicant_address2,
@@ -576,6 +592,8 @@ class ApplicationForThePurchaseController extends Controller
 
 
 
+
+
          Log::info('Datos de enviados  Sales:', $postFields);
 
 
@@ -596,7 +614,7 @@ class ApplicationForThePurchaseController extends Controller
         CURLOPT_POSTFIELDS => json_encode($postFields),
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'x-api-key: LkOr0jcaKH1VMPVwMYNNW3nlPDkHTYoY9k09fJ3F'
+            //'x-api-key: LkOr0jcaKH1VMPVwMYNNW3nlPDkHTYoY9k09fJ3F'
         ),
         ));
 

@@ -256,21 +256,33 @@
                                                             <div>
                                                                 <label style="color:#fff"><b>.</b></label>
                                                                 <input name="salutation" type="text" id="salutation"
-                                                                    placeholder="Surname" required="required" />
+                                                                    placeholder="Salutation" required="required" />
                                                             </div>
                                                         </div>
-                                                        <!--div class="col-md-3">
-                                                                                                                                                    <label style="color:#fff"><b>.</b></label>
-                                                                                                                                                    <input name="applicant_surname" type="text" id="applicant_surname"
-                                                                                                                                                        placeholder="Surname" required="required" />
-                                                                                                                                                    </div-->
+
                                                         <div class="col-md-4">
                                                             <label style="color:#fff"><b>.</b></label>
                                                             <input name="applicant_first" type="text"
                                                                 id="applicant_first" placeholder="First"
                                                                 required="required" />
                                                         </div>
+
                                                         <div class="col-md-4">
+                                                            <label style="color:#fff"><b>.</b></label>
+                                                            <input name="applicant_surname" type="text"
+                                                                id="applicant_surname" placeholder="Surname"
+                                                                required="required" />
+                                                        </div>
+
+
+
+
+
+                                                    </div>
+
+                                                    <div class="row">
+
+                                                        <div class="col-md-6">
                                                             <label style="color:#fff"><b>.</b></label>
                                                             <div class="row">
                                                                 <div class="col-md-12">
@@ -280,7 +292,18 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+
+                                                        <div class="col-md-6">
+                                                            <div>
+                                                                <label style="color:#fff"><b>.</b></label>
+                                                                <input name="applicant_maiden" type="text"
+                                                                    id="applicant_maiden" placeholder="Maiden" />
+                                                            </div>
+                                                        </div>
+
+
                                                     </div>
+
                                                 </div>
                                             </div>
                                             <!----------->
@@ -1069,35 +1092,35 @@
                                                 <!-------------------------->
                                                 <!---INFORMATION ON INTENDED OCCUPANTS --->
                                                 <div class="col-md-12" style="display:none">
-                                                            <div>
-                                                                <label><b>INFORMATION ON INTENDED OCCUPANTS:</b></label>
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <table class="table table-bordered" id="dynamicTable">
-                                                                            <tr>
-                                                                                <th>ADULT</th>
-                                                                                <th>CHILDREN</th>
-                                                                                <th>Action</th>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <input type="number"
-                                                                                        class="adults"name="addmore[0][adult_person]"
-                                                                                        value="0"  min="0">
-                                                                                </td>
-                                                                                <td><input type="number"
-                                                                                        name="addmore[0][children_person]"
-                                                                                        placeholder="Enter Children"
-                                                                                        class="form-control" value="0"
-                                                                                        min="0"  /></td>
-                                                                                <td>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </div>
-                                                                </div>
+                                                    <div>
+                                                        <label><b>INFORMATION ON INTENDED OCCUPANTS:</b></label>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <table class="table table-bordered" id="dynamicTable">
+                                                                    <tr>
+                                                                        <th>ADULT</th>
+                                                                        <th>CHILDREN</th>
+                                                                        <th>Action</th>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <input type="number"
+                                                                                class="adults"name="addmore[0][adult_person]"
+                                                                                value="0" min="0">
+                                                                        </td>
+                                                                        <td><input type="number"
+                                                                                name="addmore[0][children_person]"
+                                                                                placeholder="Enter Children"
+                                                                                class="form-control" value="0"
+                                                                                min="0" /></td>
+                                                                        <td>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                </div>
                                                 <!---INFORMATION ON INTENDED OCCUPANTS --->
 
                                                 <!--ARE THERE ANY PERSONS WITH DISABILITIES WITHIN THE HOUSEHOLD?-->
@@ -1500,7 +1523,7 @@
                                                             <div class="col-md-3">
                                                                 <label><b>Maiden Name:</b></label>
                                                                 <div class="row">
-                                                                    <div class="    col-md-12">
+                                                                    <div class="col-md-12">
                                                                         <input name="coapplicant_maiden_name"
                                                                             type="text" id="coapplicant_maiden_name"
                                                                             placeholder="Maiden Name" />
@@ -2796,6 +2819,7 @@
                     .then(data => {
 
 
+
                         const listResponse = typeof data === 'string' ?
                             JSON.parse(data) : data;
 
@@ -2867,16 +2891,29 @@
                                     //FirstName,MiddleName,LastName,DOB FechaNac
                                     var ClientID = parsedData.data[0]
                                         .ClientID;
+                                    var Salutation = parsedData.data[0].Salutation;
                                     var FirstName = parsedData.data[0]
                                         .FirstName;
-                                    var LastName = parsedData.data[0].LastName;
                                     var MiddleName = parsedData.data[0]
                                         .MiddleName;
+                                    var Surname = parsedData.data[0].LastName;
+
                                     var DOB = parsedData.data[0].DOB;
                                     var Gender = parsedData.data[0].Gender;
-                                    var Surname = parsedData.data[0].Salutation;
+
+                                      var MaidenName = parsedData.data[0].MaidenName;
+
 
                                     jQuery("#client_id").val(ClientID);
+
+                                    //field Saludation
+                                    jQuery("#salutation").val(Salutation)
+                                        .css({
+                                            'pointer-events': 'none',
+                                            'background-color': '#f5f5f5',
+                                            'cursor': 'not-allowed'
+                                        });
+
 
                                     //field First Name
                                     jQuery("#applicant_first").val(FirstName);
@@ -2884,41 +2921,46 @@
                                         'pointer-events': 'none',
                                         'background-color': '#f5f5f5',
                                         'cursor': 'not-allowed'
-                                    });;
-                                    //field LastName
-                                    jQuery("#applicant_middle").val(LastName)
+                                    });
+
+
+                                    //field middleName
+                                    jQuery("#applicant_middle").val(MiddleName)
                                         .css({
                                             'pointer-events': 'none',
                                             'background-color': '#f5f5f5',
                                             'cursor': 'not-allowed'
-                                        });;
+                                        });
+
+
+                                    //field Surname
+                                    jQuery("#applicant_surname").val(Surname).css({
+                                            'pointer-events': 'none',
+                                            'background-color': '#f5f5f5',
+                                            'cursor': 'not-allowed'
+                                    });
+
+
                                     //field MiddleName
-                                    jQuery("#maiden_name").val(MiddleName).css({
+                                    jQuery("#maiden_name").val(MaidenName).css({
                                         'pointer-events': 'none',
                                         'background-color': '#f5f5f5',
                                         'cursor': 'not-allowed'
-                                    });;
+                                    });
+
                                     //field DOB
                                     jQuery("#applicant_date_birth").val(DOB).css({
                                         'pointer-events': 'none',
                                         'background-color': '#f5f5f5',
                                         'cursor': 'not-allowed'
-                                    });;
+                                    });
                                     //field Gender
-                                    jQuery("#applicant_gender").val(Gender)
-                                        .css({
+                                    jQuery("#applicant_gender").val(Gender).css({
                                             'pointer-events': 'none',
                                             'background-color': '#f5f5f5',
                                             'cursor': 'not-allowed'
-                                        });;
+                                    });
 
-                                    //field Saludation
-                                    jQuery("#salutation").val(Surname)
-                                        .css({
-                                            'pointer-events': 'none',
-                                            'background-color': '#f5f5f5',
-                                            'cursor': 'not-allowed'
-                                        });;
 
                                     mensaje.textContent =
                                         "Valid number";
@@ -2938,7 +2980,7 @@
                     .catch(error => {
                         document.getElementById("validation-result")
                             .textContent = "Validation error";
-                        console.error("Error:", error);
+                        //console.error("Error:", error);
                     });
 
                 //termina el consumo del api
@@ -3124,14 +3166,16 @@
                                     //FirstName,MiddleName,LastName,DOB FechaNac
                                     var ClientID = parsedData.data[0]
                                         .ClientID;
+                                    var Salutation = parsedData.data[0].Salutation;
                                     var FirstName = parsedData.data[0]
                                         .FirstName;
-                                    var LastName = parsedData.data[0].LastName;
                                     var MiddleName = parsedData.data[0]
                                         .MiddleName;
+                                    var Surname = parsedData.data[0].LastName;
+                                    var MaidenName = parsedData.data[0].MaidenName;
+
                                     var DOB = parsedData.data[0].DOB;
                                     var Gender = parsedData.data[0].Gender;
-                                    var Surname = parsedData.data[0].Salutation;
 
 
 
@@ -3144,28 +3188,40 @@
                                         });;
 
 
-                                    //field First Name
-                                    jQuery("#coapplicant_salutation").val(Surname);
+                                    //field Salutation
+                                    jQuery("#coapplicant_salutation").val(Salutation);
                                     jQuery("#coapplicant_salutation").css({
                                         'pointer-events': 'none',
                                         'background-color': '#f5f5f5',
                                         'cursor': 'not-allowed'
                                     });;
+
+                                    //field FirstName
                                     jQuery("#coapplicant_first").val(FirstName);
                                     jQuery("#coapplicant_first").css({
                                         'pointer-events': 'none',
                                         'background-color': '#f5f5f5',
                                         'cursor': 'not-allowed'
                                     });;
-                                    //field LastName
-                                    jQuery("#coapplicant_middle").val(LastName)
+
+                                    //field MiddleName
+                                    jQuery("#coapplicant_middle").val(MiddleName)
                                         .css({
                                             'pointer-events': 'none',
                                             'background-color': '#f5f5f5',
                                             'cursor': 'not-allowed'
                                         });;
-                                    //field MiddleName
-                                    jQuery("#coapplicant_maiden_name").val(MiddleName)
+
+                                    //field SurName
+                                    jQuery("#coapplicant_surname").val(Surname)
+                                        .css({
+                                            'pointer-events': 'none',
+                                            'background-color': '#f5f5f5',
+                                            'cursor': 'not-allowed'
+                                        });;
+
+                                    //field MaidenName
+                                    jQuery("#coapplicant_maiden_name").val(MaidenName)
                                         .css({
                                             'pointer-events': 'none',
                                             'background-color': '#f5f5f5',
@@ -3178,7 +3234,7 @@
                                         'cursor': 'not-allowed'
                                     });;
 
-                                    jQuery(".co_children_age").val(Gender).css({
+                                    jQuery("#coapplicant_gender").val(Gender).css({
                                         'pointer-events': 'none',
                                         'background-color': '#f5f5f5',
                                         'cursor': 'not-allowed'
@@ -3815,6 +3871,8 @@
                                         var DOB = parsedData.data[0].DOB;
                                         var Gender = parsedData.data[0].Gender;
 
+                                         var MaidenName = parsedData.data[0].MaidenName;
+
 
 
                                         //field First Name
@@ -3832,8 +3890,7 @@
                                                 'cursor': 'not-allowed'
                                             });;
                                         //field MiddleName
-                                        jQuery("#coapplicant_maiden_name").val(
-                                            MiddleName).css({
+                                        jQuery("#coapplicant_maiden_name").val(MaidenName).css({
                                             'pointer-events': 'none',
                                             'background-color': '#f5f5f5',
                                             'cursor': 'not-allowed'
