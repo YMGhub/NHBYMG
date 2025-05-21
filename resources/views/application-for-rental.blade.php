@@ -1292,7 +1292,7 @@
                                                                             id="co_date_of_birth" placeholder="yyyy-mm-dd"
                                                                             required="required" />
                                                                     </div>
-                                                                    <div class="col-md-12">
+                                                                    <div class="col-md-6">
                                                                         <input name="co_gender" type="text"
                                                                             id="co_gender" placeholder=""
                                                                             required="required" />
