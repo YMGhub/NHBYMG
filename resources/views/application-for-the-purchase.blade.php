@@ -3221,12 +3221,8 @@
                                         });;
 
                                     //field MaidenName
-                                    jQuery("#coapplicant_maiden_name").val(MaidenName)
-                                        .css({
-                                            'pointer-events': 'none',
-                                            'background-color': '#f5f5f5',
-                                            'cursor': 'not-allowed'
-                                        });;
+
+                                    jQuery("#coapplicant_maiden_name").val(MaidenName);
                                     //field DOB
                                     jQuery("#coapplicant_date_birth").val(DOB).css({
                                         'pointer-events': 'none',

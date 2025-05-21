@@ -36,9 +36,16 @@
       @if (!empty($details['salutation']))
     <p>
     <h3>NAME</h3>
+
     <strong>Salutation:</strong> {{ $details['salutation'] }}<br>
     <strong>First:</strong> {{ $details['applicant_first'] }}<br>
+    <strong>Surname:</strong> {{ $details['applicant_surname'] }}<br>
     <strong>Middle:</strong> {{ $details['applicant_middle'] }}<br>
+
+     @if (!empty($details['applicant_maiden']))
+    <strong>Middle:</strong> {{ $details['applicant_maiden'] }}<br>
+    @endif
+
     <strong>DATE OF BIRTH:</strong> {{ $details['applicant_date_birth'] }}<br>
     <strong>Gender:</strong> {{ $details['applicant_gender'] }}<br>
     </p>
@@ -283,12 +290,28 @@
         </p>
     @endif
 
+       @if (!empty($details['coapplicant_surname']))
+        <p>
+
+            <strong>SURNAME:</strong><br>
+            {{ $details['coapplicant_surname'] }}
+        </p>
+    @endif
+
 
     @if (!empty($details['coapplicant_middle']))
         <p>
 
             <strong>Middle:</strong><br>
             {{ $details['coapplicant_middle'] }}
+        </p>
+    @endif
+
+        @if (!empty($details['coapplicant_maiden_name']))
+        <p>
+
+            <strong>Maiden:</strong><br>
+            {{ $details['coapplicant_maiden_name'] }}
         </p>
     @endif
 
