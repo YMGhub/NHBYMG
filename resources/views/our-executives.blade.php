@@ -25,6 +25,7 @@
                     <div class="About Us-grid-container">
 
                         @foreach ($data as $item)
+
                             <div class="grid-item col-lg-3 col-md-4 col-sm-6 col-xs-12">
                                 <div class="agent">
                                     <div class="agent-avatar">

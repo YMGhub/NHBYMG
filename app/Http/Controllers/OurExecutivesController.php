@@ -43,6 +43,8 @@ class OurExecutivesController extends Controller
         }
 
 
+
+
         OurExecutives::create([
             'photo_path' => $photographPath,
             'name_executive' => $request->name_executive,
@@ -89,11 +91,17 @@ class OurExecutivesController extends Controller
             $validatedData['photo_path'] = $photographPath;
         }*/
 
+
+
         if ($request->hasFile('photo_path')) {
             $name = str_replace(' ', '', $request->photo_path->getClientOriginalName());
             $photographName = time() . "-" . $name;
             $path = $request->file('photo_path')->storeAs('our_executives', $photographName, 'public');
-            $ourExecutives->update([
+
+
+
+
+           /* $up = $ourExecutives->update([
                 'name_executive' => $request->name_executive,
                 'rol_executive' => $request->rol_executive,
                 'phone_executive' => $request->phone_executive,
@@ -103,7 +111,24 @@ class OurExecutivesController extends Controller
                 'gplus_executive' => $request->gplus_executive,
                 'linkedin_executive' => $request->linkedin_executive,
                 'photo_path' => $path,
-            ]);
+            ])*/
+
+            // Asigna campo por campo
+            $ourExecutives = OurExecutives::find($id);
+            $ourExecutives->name_executive     = $request->name_executive;
+            $ourExecutives->rol_executive      = $request->rol_executive;
+            $ourExecutives->phone_executive    = $request->phone_executive;
+            $ourExecutives->email_executive    = $request->email_executive;
+            $ourExecutives->facebook_executive = $request->facebook_executive;
+            $ourExecutives->twitter_executive  = $request->twitter_executive;
+            $ourExecutives->gplus_executive    = $request->gplus_executive;
+            $ourExecutives->linkedin_executive = $request->linkedin_executive;
+            $ourExecutives->photo_path         = $path; // Asegúrate de que $path tenga valor
+
+            // Guarda y verifica si tuvo éxito
+            $up = $ourExecutives->save();
+
+
         } else {
             $ourExecutives->update($request->only([
                 'name_executive',
