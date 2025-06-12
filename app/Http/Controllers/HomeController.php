@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\OurServiceController;
 use App\Http\Controllers\PropertyController;
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -22,8 +23,9 @@ class HomeController extends Controller
         // Llama a los métodos de cada controlador para obtener la información
         $data    = $this->ourServiceController->ourservices_info2();
         $dataproperties  = $this->propertyController->properties_info2(); // Si tienes otro método específico, reemplázalo aquí
+         $articles = Article::latest()->get();
 
         // Pasa la información a la vista
-        return view('welcome', compact('data', 'dataproperties'));
+        return view('welcome', compact('data', 'dataproperties','articles'));
     }
 }

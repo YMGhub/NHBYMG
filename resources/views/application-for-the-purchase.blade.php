@@ -116,6 +116,116 @@
                                     <span>{{ session('error')['detail'] ?? '' }}</span>
                                 </div>
                             @endif
+
+                            <!--description after form-->
+                            <style>
+                                .checklist li{
+                                    list-style: none;
+                                    margin: 0px;
+                                    padding: 0px;
+
+                                }
+
+                                  .checklist li label{
+                                        display: flex;
+                                        align-items: center;
+                                        font-size: 15px;
+                                        margin-bottom: 0px;
+
+                                }
+
+
+                                  .checklist li label input{
+                                       margin-bottom:0 !important;
+                                           margin-right: 10px !important;
+
+                                }
+
+                                #boxConfirm{
+                                    display: flex;
+                                        align-items: center;
+                                        font-size: 15px;
+                                }
+
+                                   #boxConfirm input{
+                                       margin-bottom:0 !important;
+                                           margin-right: 10px !important;
+
+                                }
+                            </style>
+                            <div class="descriptionNote">
+
+
+  <p style="margin: 0;padding: 0;"><b>To qualify note the following:</b></p>
+  <ol>
+    <li>You must be a citizen of Barbados.</li>
+    <li>
+      You must not be the owner of any land or property. The Corporation does not sell land/property to persons who already own land/property, and we will do a registry search as part of our qualifying process. If this search does find land/property owned by you, your application will be immediately declined.
+    </li>
+  </ol>
+
+  <p style="margin: 0;padding: 0;"><b>Please also note:</b></p>
+  <ul>
+    <li>Low Income lots range in size from approximately 3,000 to 4,000 sq. ft only.</li>
+    <li>Before completing this application form you must have the documents and information in the checklist ready to be uploaded as part of the process.</li>
+    <li>The application must be completed in its entirety before you can submit the form.</li>
+  </ul>
+
+  <p style="margin: 0;padding: 0;"><b>Purchases Checklist</b></p>
+  <ul class="checklist">
+      <li><label><input type="checkbox" name="checklist[]" value="email"> <span>Valid and accessible email address</span></label></li>
+  <li><label><input type="checkbox" name="checklist[]" value="id_card"> <span>Valid Barbados Identification Card</span></label></li>
+  <li><label><input type="checkbox" name="checklist[]" value="tamis_number"> <span>TAMIS Number of Applicant and Co-Applicant (if applicable)</span></label></li>
+  <li><label><input type="checkbox" name="checklist[]" value="salary_details"> <span>Salary Details per pay period of Applicant and Co-Applicant (if applicable)</span></label></li>
+  <li><label><input type="checkbox" name="checklist[]" value="recent_payslip"> <span>Recent Payslip (not more than 2 months old). This must be uploaded</span></label></li>
+  <li><label><input type="checkbox" name="checklist[]" value="bank_statement"> <span>If you are purchasing without a loan or mortgage a <strong>BANK STATEMENT</strong> is required and must be uploaded to complete the application.</span></label></li>
+  <li><label><input type="checkbox" name="checklist[]" value="mortgage_certificate"> <span>For purchases financed by mortgages/loans a <strong>MORTGAGE CERTIFICATE</strong> is required and must be uploaded to complete the application.</span></label></li>
+  <li><label><input type="checkbox" name="checklist[]" value="owner_letter"> <span>If you want a housing solution on leased or rented land, you need a letter from the owner. This must be uploaded.</span></label></li>
+  </ul>
+
+  <div class="boxConfirm">
+    <div style="    background-color: #f0f0f0;padding: 15px;border-radius: 5px;margin-top: 20px;margin-bottom: 20px;">
+  <label style="display: flex; align-items: center; font-family: Arial, sans-serif;" id="boxConfirm">
+    <input type="checkbox" id="confirmation" name="confirmation" style="margin-right: 10px;" disabled>
+    I confirm that I have read the information and have all the documents needed for the application process
+  </label>
+</div>
+  </div>
+                            </div>
+
+                            <script>
+                                    document.addEventListener('DOMContentLoaded', function() {
+  const checklist = document.querySelectorAll('input[name="checklist[]"]');
+  const confirmation = document.getElementById('confirmation');
+    const emailField2 = document.getElementById('email_field2');
+  const submitButton = document.getElementById('submit_button');
+
+// Activar checkbox de confirmación cuando todos los campos están chequeados
+  checklist.forEach(box => {
+    box.addEventListener('change', () => {
+      const allChecked = Array.from(checklist).every(cb => cb.checked);
+      confirmation.disabled = !allChecked;
+      if (!allChecked) {
+        confirmation.checked = false;
+        emailField2.disabled = true;
+        submitButton.disabled = true;
+      }
+    });
+  });
+
+  // Activar input y botón cuando se marque el checkbox de confirmación
+  confirmation.addEventListener('change', () => {
+    const isConfirmed = confirmation.checked;
+    emailField2.disabled = !isConfirmed;
+    submitButton.disabled = !isConfirmed;
+  });
+
+  });
+</script>
+
+
+
+
                             <form action="{{ route('link-request.send-purchase') }}" method="POST"
                                 id="FormRequestPurchase">
                                 @csrf
@@ -131,7 +241,7 @@
                                         <label><b>Email:</b></label>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <input name="email_field2" type="email" id="email_field2"
+                                                <input disabled name="email_field2" type="email" id="email_field2"
                                                     placeholder="Email" required="required" />
                                                 <div id="validation-result-email"
                                                     style="font-weight: bold;padding: 0;margin: 0;margin-top: -21px;display: block;font-size: 11px;">
@@ -139,7 +249,7 @@
                                             </div>
                                             <div class="col-md-12 text-center">
                                                 <input name="type_form" type="hidden" id="type_form" value="purchase" />
-                                                <button class="submit button margin-top-10" type="submit">Verify/
+                                                <button disabled id="submit_button" class="submit button margin-top-10" type="submit">Verify/
                                                     Submit</button>
                                             </div>
                                         </div>

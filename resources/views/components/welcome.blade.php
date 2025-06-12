@@ -25,8 +25,7 @@
         </div>
 
         <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-            Laravel has wonderful documentation covering every aspect of the framework. Whether you're new to the
-            framework or have previous experience, we recommend reading all of the documentation from beginning to end.
+           Your manage your profile information, including your name, email and password.
         </p>
 
         <p class="mt-4 text-sm">
@@ -51,13 +50,12 @@
                     d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
             </svg>
             <h2 class="ms-3 text-xl font-semibold text-gray-900 dark:text-white">
-                <a href="https://laracasts.com">Website Administration Manager</a>
+                <a href="/admin/dashboard">Website Administration Manager</a>
             </h2>
         </div>
 
         <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-            Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out,
-            see for yourself, and massively level up your development skills in the process.
+            You can edit the website content, add new pages, edit existing pages, and much more.
         </p>
 
         <p class="mt-4 text-sm">

@@ -29,19 +29,31 @@
                             class="block mb-2 text-sm font-medium text-white-900 dark:text-white">Gallery</label>
                         <input
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            type="file" class="form-control" name="gallery[]" multiple>
+                            type="file" class="form-control" name="gallery[]" multiple id="galleryInput">
+
                         <div class="container">
                             <strong class="block mb-2 text-sm font-medium text-white-900 dark:text-white">Current
                                 Images:</strong>
-                            <div class="flex">
+                            <div class="flexz">
                                 @foreach ($data1 as $image)
-                                    <div class="col-md-3">
-                                        <img src="{{ url('/images/our_deparment/' . $image->path) }}" width="100px">
-                                        <label>
-                                            <input type="checkbox" name="remove_images[]"
-                                                value="{{ $image->getAttributes()['id'] }}">
-                                            Remove
-                                        </label>
+                                    <div class="col-md-12">
+                                        <div class="flex" style="justify-content:space-between;  align-items: center;">
+                                            <div style="width:33.3%">
+                                            <img src="{{ url('/images/our_deparment/' . $image->path) }}" width="100px">
+                                            <!-- Campo oculto para ID de la imagen -->
+                                            <input type="hidden" name="existing_image_ids[]" value="{{ $image->id }}">
+                                            </div>
+                                            <div style="width:33.3%">
+                                            <input value="{{ $image->title_image }}" type="text" name="title_image[]" placeholder="Title for image" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                            </div>
+                                            <div style="width:33.3%;text-align:center;color:#fff">
+                                            <label>
+                                                <input type="checkbox" name="remove_images[]"
+                                                    value="{{ $image->getAttributes()['id'] }}">
+                                                Remove
+                                            </label>
+                                            </div>
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>
@@ -49,6 +61,8 @@
 
 
                     </div>
+
+
 
                     <div class="form-group">
                         <label for="description"

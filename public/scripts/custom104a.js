@@ -793,6 +793,7 @@
         /*----------------------------------------------------*/
         /*  Magnific Popup
         /*----------------------------------------------------*/
+
         $('body').magnificPopup({
             type: 'image',
             delegate: 'a.mfp-gallery',
@@ -808,7 +809,11 @@
             removalDelay: 0,
             mainClass: 'mfp-fade',
 
-            gallery: { enabled: true }
+            gallery: { enabled: true },
+            image: {
+                    titleSrc: 'title',
+                    verticalFit: true // Esto asegura que la imagen se ajuste verticalmente en pantalla
+                }
         });
 
 

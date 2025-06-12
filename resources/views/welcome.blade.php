@@ -321,83 +321,35 @@
         <!-- Box Headline -->
         <h3 class="headline-box">Articles & Tips</h3>
 
+
         <div class="container">
             <div class="row">
 
-                <div class="col-md-4">
 
-                    <!-- Blog Post -->
-                    <div class="blog-post">
+                    @foreach($articles as $article)
 
-                        <!-- Img -->
-                        <a href="javascript:void(0);" class="post-img">
-                            <img src="images/blog-post-01.jpg" alt="">
-                        </a>
+                         <div class="col-md-4">
+                            <div class="blog-post">
+                            <!-- Content -->
+                                    <div class="post-content">
+                                        <h3 style="font-size: 18px;line-height: 30px;font-weight: bold;"><a href="#">{{ $article->title }}</a></h3>
+                                        <p>{{ Str::limit(html_entity_decode(strip_tags($article->description)), 100) }}   </p>
 
-                        <!-- Content -->
-                        <div class="post-content">
-                            <h3><a href="#">8 Tips to Help You Finding New Home</a></h3>
-                            <p>Nam nisl lacus, dignissim ac tristique ut, scelerisque eu massa. Vestibulum ligula nunc,
-                                rutrum in malesuada vitae. </p>
-
-                            <a href="javascript:void(0);" class="read-more">Read More <i
-                                    class="fa fa-angle-right"></i></a>
+                                        <a href="/articles/article/{{ $article->id }}" class="read-more">Read More <i
+                                                class="fa fa-angle-right"></i></a>
+                                    </div>
+                            </div>
                         </div>
+                        </li>
+                    @endforeach
 
-                    </div>
-                    <!-- Blog Post / End -->
 
-                </div>
 
-                <div class="col-md-4">
 
-                    <!-- Blog Post -->
-                    <div class="blog-post">
 
-                        <!-- Img -->
-                        <a href="javascript:void(0);" class="post-img">
-                            <img src="images/blog-post-02.jpg" alt="">
-                        </a>
 
-                        <!-- Content -->
-                        <div class="post-content">
-                            <h3><a href="#">Bedroom Colors You'll Never Regret</a></h3>
-                            <p>Nam nisl lacus, dignissim ac tristique ut, scelerisque eu massa. Vestibulum ligula nunc,
-                                rutrum in malesuada vitae. </p>
 
-                            <a href="javascript:void(0);" class="read-more">Read More <i
-                                    class="fa fa-angle-right"></i></a>
-                        </div>
 
-                    </div>
-                    <!-- Blog Post / End -->
-
-                </div>
-
-                <div class="col-md-4">
-
-                    <!-- Blog Post -->
-                    <div class="blog-post">
-
-                        <!-- Img -->
-                        <a href="javascript:void(0);" class="post-img">
-                            <img src="images/blog-post-03.jpg" alt="">
-                        </a>
-
-                        <!-- Content -->
-                        <div class="post-content">
-                            <h3><a href="#">What to Do a Year Before Buying Apartment</a></h3>
-                            <p>Nam nisl lacus, dignissim ac tristique ut, scelerisque eu massa. Vestibulum ligula nunc,
-                                rutrum in malesuada vitae. </p>
-
-                            <a href="javascript:void(0);" class="read-more">Read More <i
-                                    class="fa fa-angle-right"></i></a>
-                        </div>
-
-                    </div>
-                    <!-- Blog Post / End -->
-
-                </div>
 
             </div>
         </div>

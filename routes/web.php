@@ -41,8 +41,13 @@ use App\Http\Controllers\ApiValidationController;
 use App\Http\Controllers\LinkRequestController;
 use App\Http\Controllers\LinkRequestRentalController;
 use App\Models\LinkRequest;
+use App\Http\Controllers\ArticleController;
+use App\Models\Article;
 
 //Route::get('/', [OurServiceController::class, 'ourservices_info2'])->name('welcome');
+
+
+
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
 
 Route::get('/about-us', [AboutUsController::class, 'aboutus_info'])->name('about-us');
@@ -196,7 +201,32 @@ Route::post('/validate-email', [ApiValidationController::class, 'validateEmail']
 
 ///
 
+Route::get('/articles', [ArticleController::class, 'archive'])->name('articles.archive');
+Route::get('/articles/article/{article}', [ArticleController::class, 'show'])->name('articles.article.show');
 Route::middleware(['auth:sanctum'])->group(function () {
+
+
+    //Articles
+
+        Route::prefix('/admin/articles')->group(function () {
+
+        Route::get('/', [ArticleController::class, 'index'])->name('admin.articles.index');
+
+        //Show the form for creating new front-end content.
+        Route::get('/create', [ArticleController::class, 'create'])->name('admin.articles.create');
+
+        // Edit
+        Route::get('/edit/{article}', [ArticleController::class, 'edit'])->name('admin.articles.edit');
+
+        // store
+        Route::post('/', [ArticleController::class, 'store'])->name('admin.articles.store');
+
+        ///Update
+        Route::put('/update-article/{id}', [ArticleController::class, 'update'])->name('admin.articles.update');
+
+        Route::delete('/delete-article/{id}/delete', [ArticleController::class, 'destroy'])->name('admin.articles.destroy');
+    });
+
 
     //About Us
     Route::prefix('/admin/about-us')->group(function () {

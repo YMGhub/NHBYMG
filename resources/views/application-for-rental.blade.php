@@ -118,8 +118,11 @@
                                 <script>
                                     document.addEventListener("DOMContentLoaded", function() {
                                         const form = document.getElementById("FormRequestRental");
-                                        if (form) {
+                                        const formDesc = document.getElementById("descriptionNote");
+
+                                        if (form && formDesc) {
                                             form.style.display = "none";
+                                            formDesc.style.display = "none";
                                         }
                                     });
                                 </script>
@@ -133,12 +136,119 @@
 
 
                             @if (session('error') && is_array(session('error')))
-                                        <div class="alert alert-danger alert-custom alert-danger-custom">
-                                            <strong>{{ session('error')['message'] ?? 'Error' }}</strong> <br>
-                                            <span>{{ session('error')['detail'] ?? '' }}</span>
-                                        </div>
-                                    @endif
+                                <div class="alert alert-danger alert-custom alert-danger-custom">
+                                    <strong>{{ session('error')['message'] ?? 'Error' }}</strong> <br>
+                                    <span>{{ session('error')['detail'] ?? '' }}</span>
+                                </div>
+                            @endif
                             <!-- Form Validation Error Messages -->
+
+                            <!--description after form-->
+                            <style>
+                                .checklist li {
+                                    list-style: none;
+                                    margin: 0px;
+                                    padding: 0px;
+
+                                }
+
+                                .checklist li label {
+                                    display: flex;
+                                    align-items: center;
+                                    font-size: 15px;
+                                    margin-bottom: 0px;
+
+                                }
+
+
+                                .checklist li label input {
+                                    margin-bottom: 0 !important;
+                                    margin-right: 10px !important;
+
+                                }
+
+                                #boxConfirm {
+                                    display: flex;
+                                    align-items: center;
+                                    font-size: 15px;
+                                }
+
+                                #boxConfirm input {
+                                    margin-bottom: 0 !important;
+                                    margin-right: 10px !important;
+
+                                }
+                            </style>
+                            <div id="descriptionNote" class="descriptionNote">
+
+
+                                <p style="margin: 0;padding: 0;"><b>To qualify note the following:</b></p>
+                                <ol>
+                                    <li>You must be a citizen of Barbados.</li>
+                                    <li>
+                                        You must not be the owner of any land or property. The Corporation does not sell land/property to persons who already own land/property, and we will do a registry search as part of our qualifying process.  If this search does find land/property owned by you, your application will be immediately declined.
+                                    </li>
+                                </ol>
+
+                                <p style="margin: 0;padding: 0;"><b>Rental Checklist</b></p>
+                                <ul class="checklist">
+                                    <li><label><input type="checkbox" name="checklist[]" value="email"> <span>Valid and accessible email address </span></label></li>
+                                    <li><label><input type="checkbox" name="checklist[]" value="id_card"> <span>Valid Barbados Identification Card </span></label></li>
+                                    <li><label><input type="checkbox" name="checklist[]" value="tamis_number"> <span>TAMIS Number of Applicant and Co-Applicant (if applicable) </span></label></li>
+                                    <li><label><input type="checkbox" name="checklist[]" value="salary_details">
+                                            <span>Salary Details per pay period of Applicant and Co-Applicant (if applicable) </span></label></li>
+                                    <li><label><input type="checkbox" name="checklist[]" value="recent_payslip">
+                                            <span>Recent Payslip (not more than 2 months old) </span></label></li>
+                                    <li><label><input type="checkbox" name="checklist[]" value="bank_statement"> <span>Current level of indebtedness (Loans from financial institutions, hire purchase, other dept) </span></label></li>
+                                    <li><label><input type="checkbox" name="checklist[]" value="mortgage_certificate">
+                                            <span>Recent Job Letter (not more than one month old) </span></label></li>
+                                    <li><label><input type="checkbox" name="checklist[]" value="owner_letter"> <span>Passport size photo </span></label></li>
+                                </ul>
+
+                                <div class="boxConfirm">
+                                    <div
+                                        style="    background-color: #f0f0f0;padding: 15px;border-radius: 5px;margin-top: 20px;margin-bottom: 20px;">
+                                        <label style="display: flex; align-items: center; font-family: Arial, sans-serif;"
+                                            id="boxConfirm">
+                                            <input type="checkbox" id="confirmation" name="confirmation"
+                                                style="margin-right: 10px;" disabled>
+                                            I confirm that I have read the information and have all the documents needed for
+                                            the application process
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const checklist = document.querySelectorAll('input[name="checklist[]"]');
+                                    const confirmation = document.getElementById('confirmation');
+                                    const emailField2 = document.getElementById('email_field2');
+                                    const submitButton = document.getElementById('submit_button');
+
+                                    // Activar checkbox de confirmación cuando todos los campos están chequeados
+                                    checklist.forEach(box => {
+                                        box.addEventListener('change', () => {
+                                            const allChecked = Array.from(checklist).every(cb => cb.checked);
+                                            confirmation.disabled = !allChecked;
+                                            if (!allChecked) {
+                                                confirmation.checked = false;
+                                                emailField2.disabled = true;
+                                                submitButton.disabled = true;
+                                            }
+                                        });
+                                    });
+
+                                    // Activar input y botón cuando se marque el checkbox de confirmación
+                                    confirmation.addEventListener('change', () => {
+                                        const isConfirmed = confirmation.checked;
+                                        emailField2.disabled = !isConfirmed;
+                                        submitButton.disabled = !isConfirmed;
+                                    });
+
+                                });
+                            </script>
+
 
 
                             <form action="{{ route('link-request.send') }}" method="POST" id="FormRequestRental">
@@ -156,7 +266,7 @@
                                         <label><b>Email:</b></label>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <input name="email_field2" type="email" id="email_field2"
+                                                <input disabled name="email_field2" type="email" id="email_field2"
                                                     placeholder="Email" required="required" />
                                                 <div id="validation-result-email"
                                                     style="font-weight: bold;padding: 0;margin: 0;margin-top: -21px;display: block;font-size: 11px;">
@@ -164,7 +274,8 @@
                                             </div>
                                             <div class="col-md-12 text-center">
                                                 <input name="type_form" type="hidden" id="type_form" value="rental" />
-                                                <button class="submit button margin-top-10" type="submit">Verify/
+                                                <button disabled id="submit_button" class="submit button margin-top-10"
+                                                    type="submit">Verify/
                                                     Submit</button>
                                             </div>
                                         </div>
@@ -228,8 +339,8 @@
                                 <div class="row">
 
                                     <!--Client ID-->
-                                    <input name="client_id" type="hidden" id="client_id" value="" required="required"
-                                        readonly />
+                                    <input name="client_id" type="hidden" id="client_id" value=""
+                                        required="required" readonly />
                                     <!--Client ID-->
 
 
@@ -240,8 +351,8 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <input name="email_field" type="email" id="email_field"
-                                                        placeholder="Email" value="{{ $email ?? '' }}" required="required"
-                                                        readonly />
+                                                        placeholder="Email" value="{{ $email ?? '' }}"
+                                                        required="required" readonly />
                                                     <div id="validation-result-email"
                                                         style="font-weight: bold;padding: 0;margin: 0;margin-top: -21px;display: block;font-size: 11px;">
                                                     </div>
@@ -284,11 +395,12 @@
                                             <div class="row">
 
                                                 <div class="col-md-4">
-                                                    <input name="applicant_salutation" type="text" id="applicant_salutation"
-                                                        placeholder="Salutation" required="required" />
+                                                    <input name="applicant_salutation" type="text"
+                                                        id="applicant_salutation" placeholder="Salutation"
+                                                        required="required" />
                                                 </div>
 
-                                                 <div class="col-md-4">
+                                                <div class="col-md-4">
                                                     <input name="applicant_first" type="text" id="applicant_first"
                                                         placeholder="First" required="required" />
                                                 </div>
@@ -301,7 +413,7 @@
 
 
                                             </div>
-                                             <div class="row">
+                                            <div class="row">
 
                                                 <div class="col-md-6">
                                                     <input name="applicant_middle" type="text" id="applicant_middle"
@@ -384,14 +496,17 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <input name="tamis_number" type="text" maxlength="13"
-                                                            id="tamis_number" placeholder="" required   minlength="13" title="Debe contener exactamente 13 dígitos numéricos"/>
-                                                            <p id="tamis_error" style="    color: red;
+                                                            id="tamis_number" placeholder="" required minlength="13"
+                                                            title="Debe contener exactamente 13 dígitos numéricos" />
+                                                        <p id="tamis_error"
+                                                            style="    color: red;
     margin: 0;
     display: block;
     padding: 0;
     position: absolute;
     top: 51px;
-    font-size: 12px;" class="text-red-600 text-sm mt-1"></p>
+    font-size: 12px;"
+                                                            class="text-red-600 text-sm mt-1"></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1038,22 +1153,25 @@
                                                 <label><b>HAVE YOU EVER OCCUPIED A UNIT? IF YES, WHERE?</b></label>
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <div
-                                                            style="display: flex;width: 100%;">
+                                                        <div style="display: flex;width: 100%;">
                                                             <div style="width:20%;display:flex;align-items: center;"
                                                                 class="form-check form-check-inline">
-                                                            <label class="" style="width: 100%;display: flex;align-items: center;">
-                                                                <input class="occuppiedUnit" type="radio"
-                                                                    value="yes" name="occuppiedUnit" required style="    margin-bottom: 0;">Yes
-                                                            </label>
+                                                                <label class=""
+                                                                    style="width: 100%;display: flex;align-items: center;">
+                                                                    <input class="occuppiedUnit" type="radio"
+                                                                        value="yes" name="occuppiedUnit" required
+                                                                        style="    margin-bottom: 0;">Yes
+                                                                </label>
                                                             </div>
                                                             <div style="width:20%;display:flex;align-items: center;"
                                                                 class="form-check form-check-inline">
-                                                            <label class="" style="width: 100%;display: flex;align-items: center;">
-                                                                <input class="occuppiedUnit" type="radio"
-                                                                    value="no" name="occuppiedUnit" style="    margin-bottom: 0;">
-                                                                No
-                                                            </label>
+                                                                <label class=""
+                                                                    style="width: 100%;display: flex;align-items: center;">
+                                                                    <input class="occuppiedUnit" type="radio"
+                                                                        value="no" name="occuppiedUnit"
+                                                                        style="    margin-bottom: 0;">
+                                                                    No
+                                                                </label>
                                                             </div>
 
                                                         </div>
@@ -1248,7 +1366,7 @@
                                                                 id="co_applicant_name" placeholder="Name" />
                                                         </div>
 
-                                                         <div class="col-md-4">
+                                                        <div class="col-md-4">
 
 
                                                             <input name="co_applicant_surname" type="text"
@@ -1259,8 +1377,8 @@
 
                                                     </div>
 
-                                                     <div class="row">
-                                                            <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
                                                             <input name="co_applicant_middle" type="text"
                                                                 id="co_applicant_middle" placeholder="Middle" />
                                                         </div>
@@ -1314,15 +1432,17 @@
                                                     <label><b>Tamis Number</b></label>
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <input name="co_tamis_number" type="text"  minlength="13" maxlength="13"
-                                                                id="co_tamis_number" placeholder="" />
-                                                                <p id="co_tamis_error" style="    color: red;
+                                                            <input name="co_tamis_number" type="text" minlength="13"
+                                                                maxlength="13" id="co_tamis_number" placeholder="" />
+                                                            <p id="co_tamis_error"
+                                                                style="    color: red;
     margin: 0;
     display: block;
     padding: 0;
     position: absolute;
     top: 51px;
-    font-size: 12px;" class="text-red-600 text-sm mt-1"></p>
+    font-size: 12px;"
+                                                                class="text-red-600 text-sm mt-1"></p>
 
                                                         </div>
                                                     </div>
@@ -1628,7 +1748,8 @@
                                                                             <option value="Algeria">Algeria</option>
                                                                             <option value="Andorra">Andorra</option>
                                                                             <option value="Angola">Angola</option>
-                                                                            <option value="Antigua and Barbuda">Antigua and
+                                                                            <option value="Antigua and Barbuda">Antigua
+                                                                                and
                                                                                 Barbuda
                                                                             </option>
                                                                             <option value="Argentina">Argentina</option>
@@ -1928,16 +2049,17 @@
                                         <div class="col-md-12 hideArea">
                                             <div>
                                                 <div class="row">
-                                                      <div class="col-md-12">
-                                                            <div style="display:flex;    align-items: center;">
-                                                                <input name="privacy" style="margin-bottom: 0;" type="checkbox"
-                                                                    id="privacy" required>
-                                                                <label style="    margin-bottom: 0;margin-left: 10px;"
-                                                                    for="privacy">I have read and accept the <a
-                                                                        href="/privacy-policy" target="_blank">Privacy Policy.</a></label>
-                                                            </div>
-
+                                                    <div class="col-md-12">
+                                                        <div style="display:flex;    align-items: center;">
+                                                            <input name="privacy" style="margin-bottom: 0;"
+                                                                type="checkbox" id="privacy" required>
+                                                            <label style="    margin-bottom: 0;margin-left: 10px;"
+                                                                for="privacy">I have read and accept the <a
+                                                                    href="/privacy-policy" target="_blank">Privacy
+                                                                    Policy.</a></label>
                                                         </div>
+
+                                                    </div>
                                                     <div class="col-md-12">
                                                         <div style="display:flex;    align-items: center;">
                                                             <input style="margin-bottom: 0;" type="checkbox"
@@ -2072,7 +2194,7 @@
             const input = document.getElementById('tamis_number');
             const errorText = document.getElementById('tamis_error');
 
-            input.addEventListener('input', function () {
+            input.addEventListener('input', function() {
                 const value = input.value;
 
                 // Si contiene letras o caracteres no numéricos
@@ -2093,10 +2215,10 @@
                 }
             });
 
-              const inputx = document.getElementById('co_tamis_number');
+            const inputx = document.getElementById('co_tamis_number');
             const errorTextx = document.getElementById('co_tamis_error');
 
-            inputx.addEventListener('input', function () {
+            inputx.addEventListener('input', function() {
                 const value = input.value;
 
                 // Si contiene letras o caracteres no numéricos
@@ -2460,11 +2582,11 @@
 
                                         //field Saludation
                                         jQuery("#applicant_salutation").val(Salutation)
-                                        .css({
-                                            'pointer-events': 'none',
-                                            'background-color': '#f5f5f5',
-                                            'cursor': 'not-allowed'
-                                        });;
+                                            .css({
+                                                'pointer-events': 'none',
+                                                'background-color': '#f5f5f5',
+                                                'cursor': 'not-allowed'
+                                            });;
 
                                         //field First Name
                                         jQuery("#applicant_first").val(FirstName);
@@ -2474,13 +2596,13 @@
                                             'cursor': 'not-allowed'
                                         });;
 
-                                         //field Surname
+                                        //field Surname
                                         jQuery("#applicant_surname").val(Surname)
-                                        .css({
-                                            'pointer-events': 'none',
-                                            'background-color': '#f5f5f5',
-                                            'cursor': 'not-allowed'
-                                        });;
+                                            .css({
+                                                'pointer-events': 'none',
+                                                'background-color': '#f5f5f5',
+                                                'cursor': 'not-allowed'
+                                            });;
 
 
                                         //field MiddleName
@@ -2491,7 +2613,7 @@
                                                 'cursor': 'not-allowed'
                                             });;
 
-                                         //field MaidenName
+                                        //field MaidenName
                                         jQuery("#maiden_name").val(MaidenName).css({
                                             'pointer-events': 'none',
                                             'background-color': '#f5f5f5',
@@ -2713,7 +2835,7 @@
                                     jQuery("#MessageInformation").show();
                                     //bloquea los campos nombre y fecha de nac para que la persona no pueda escribri su informacion
                                     //FirstName,MiddleName,LastName,DOB FechaNac
-                                     var Salutation = parsedData.data[0].Salutation;
+                                    var Salutation = parsedData.data[0].Salutation;
                                     var ClientID = parsedData.data[0]
                                         .ClientID;
                                     var FirstName = parsedData.data[0]
@@ -2739,14 +2861,14 @@
                                             'cursor': 'not-allowed'
                                         });;
 
-                                      //applicant
+                                    //applicant
                                     jQuery("#co_applicant_salutation").val(Salutation).css({
                                         'pointer-events': 'none',
                                         'background-color': '#f5f5f5',
                                         'cursor': 'not-allowed'
                                     });
 
-                                     jQuery("#co_applicant_name").val(FirstName);
+                                    jQuery("#co_applicant_name").val(FirstName);
                                     jQuery("#co_applicant_name").css({
                                         'pointer-events': 'none',
                                         'background-color': '#f5f5f5',
@@ -3261,7 +3383,7 @@
 
 
                     $occuppiedUnitArea.hide();
-                      const occupedaunitInput = document.getElementById('occupedaunit');
+                    const occupedaunitInput = document.getElementById('occupedaunit');
 
 
                     if (occupedaunitInput) {

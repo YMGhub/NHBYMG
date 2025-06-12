@@ -103,6 +103,8 @@ class OurDepartmentsController extends Controller
 
 
 
+
+
         $request->validate([
             'title' => 'required',
             'description' => 'required',
@@ -129,9 +131,29 @@ class OurDepartmentsController extends Controller
             }
         }
 
+            if ($request->has('existing_image_ids')) {
+
+                foreach ($request->existing_image_ids as $index => $imageId) {
+
+                    var_dump($imageId);
+                    $image = ImageOurDepartments::find($imageId);
+
+                    if ($image) {
+                        $image->title_image = $request->title_image[$index] ?? null;
+                        $image->save();
+                    }
+                }
+            }
+
+
+
         // Handle new image uploads
         if ($request->hasFile('gallery')) {
-            foreach ($request->file('gallery') as $imageFile) {
+            foreach ($request->file('gallery') as $index =>$imageFile) {
+
+
+
+                dd($request->title_image);
                 $imageName = time() . rand(1, 1000) . '.' . $imageFile->extension();
                 $imageFile->move(public_path('images/our_deparment'), $imageName);
                 ImageOurDepartments::create([
